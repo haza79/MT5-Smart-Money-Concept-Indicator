@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-17T10:06:23.528Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="wcQNk_O_lPLZ8D2UYuMt" version="24.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-17T10:16:24.372Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="MdaCXV20-w6a9fsTJa2h" version="24.5.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1969" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2391" dy="1066" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1141,21 +1141,16 @@
             <mxPoint x="12535.2" y="595.67" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-309" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5TaXg-DIbIuTDyavuNFr-308" vertex="1" connectable="0">
-          <mxGeometry x="-0.5528" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-310" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5TaXg-DIbIuTDyavuNFr-308" vertex="1" connectable="0">
-          <mxGeometry x="-0.6421" y="2" relative="1" as="geometry">
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-14" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="5TaXg-DIbIuTDyavuNFr-308">
+          <mxGeometry x="-0.444" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-311" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5TaXg-DIbIuTDyavuNFr-313" target="5TaXg-DIbIuTDyavuNFr-413" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-312" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5TaXg-DIbIuTDyavuNFr-311" vertex="1" connectable="0">
-          <mxGeometry x="-0.4363" y="1" relative="1" as="geometry">
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-15" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="5TaXg-DIbIuTDyavuNFr-311">
+          <mxGeometry x="-0.3109" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -1262,6 +1257,11 @@
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-339" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" parent="1" source="5TaXg-DIbIuTDyavuNFr-340" target="5TaXg-DIbIuTDyavuNFr-584" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-16" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="5TaXg-DIbIuTDyavuNFr-339">
+          <mxGeometry x="-0.2037" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-340" value="is bias bullish trend" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="13384.27" y="520.6699999999997" width="149.47" height="158.94" as="geometry" />
