@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-17T09:40:33.523Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="LQkHttoyIBj69_yZcJV1" version="24.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-17T10:06:23.528Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="wcQNk_O_lPLZ8D2UYuMt" version="24.5.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1339" dy="597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1969" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2257,7 +2257,7 @@
         <mxCell id="gH49YlxcA_Sf2SmW1wO5-8" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;wickSwingHigh&lt;/div&gt;&lt;div&gt;by candle body&lt;/div&gt;&lt;div&gt;or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15111.27" y="1544.13" width="149.47" height="158.94" as="geometry" />
         </mxCell>
-        <mxCell id="gH49YlxcA_Sf2SmW1wO5-9" value="&lt;div&gt;-mark minor trend = bullish&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing low = lowest price from range bias swing high to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing high= bias swing high&lt;/div&gt;&lt;div&gt;-is swing high wick break = false&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw bos line from wickSwingHigh to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;- change line style of swing high object to bos style&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+        <mxCell id="gH49YlxcA_Sf2SmW1wO5-9" value="&lt;div&gt;&lt;div&gt;-mark minor trend = bullish&lt;/div&gt;&lt;div&gt;-mark latest minor swing high = bias minor swing high&lt;/div&gt;&lt;div&gt;-mark latest minor swing low = bias minor swing low&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-is swing high wick break = false&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw bos line from wickSwingHigh to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;- change line style of swing high object to bos style&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="14951.01" y="1753.3600000000001" width="470" height="111.73" as="geometry" />
         </mxCell>
         <mxCell id="gH49YlxcA_Sf2SmW1wO5-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="gH49YlxcA_Sf2SmW1wO5-12" target="gH49YlxcA_Sf2SmW1wO5-13" edge="1">
@@ -2403,6 +2403,42 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="13505.26" y="1551.03" as="sourcePoint" />
             <mxPoint x="13535.26" y="1551.03" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15225.49" y="937.2800000000002" width="10" height="32.26" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-2" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="ZtcHEp7i0RaQBc899gS3-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15230.75" y="985.28" as="sourcePoint" />
+            <mxPoint x="15229.75" y="975.28" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15246.75" y="964.1300000000001" width="10" height="32.26" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15230.75" y="985.28" as="sourcePoint" />
+            <mxPoint x="15260.75" y="985.28" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15235.49" y="1554.91" width="10" height="32.26" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZtcHEp7i0RaQBc899gS3-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15275.49" y="1604.91" as="sourcePoint" />
+            <mxPoint x="15240.49" y="1534.91" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15255.49" y="1525.3899999999999" width="10" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtcHEp7i0RaQBc899gS3-13" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15239.49" y="1535" as="sourcePoint" />
+            <mxPoint x="15265.49" y="1534.91" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
