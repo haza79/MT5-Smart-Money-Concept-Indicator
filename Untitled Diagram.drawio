@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-18T03:43:40.824Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="dxIMfTlcBnHfPZNGLMHV" version="24.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-18T04:02:31.194Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="L50Q5b_5fPpDkGfTxrbu" version="24.5.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1969" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3348" dy="1528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1299,7 +1299,7 @@
         <mxCell id="5TaXg-DIbIuTDyavuNFr-349" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;bias minor high&lt;/div&gt;&lt;div&gt;by candle wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16470.47" y="742.65" width="149.47" height="158.94" as="geometry" />
         </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-350" value="&lt;div&gt;-generate obj name and add to swing high object array&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-draw line from bias swing high to wick break&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-is swing high wick break = true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-wickSwingHigh = curr high&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+        <mxCell id="5TaXg-DIbIuTDyavuNFr-350" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-is swing high wick break = true&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-wickSwingHigh = curr high&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-generate obj name and add to swing high object array&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-draw line from bias swing high to wick break&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="16390" y="972.21" width="309.8" height="94.91" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-351" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5TaXg-DIbIuTDyavuNFr-355" target="5TaXg-DIbIuTDyavuNFr-356" edge="1">
@@ -1319,21 +1319,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-355" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;bias minor low&lt;/div&gt;&lt;div&gt;by candle body&lt;/div&gt;&lt;div&gt;or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15987.130000000001" y="1319" width="149.47" height="158.94" as="geometry" />
+          <mxGeometry x="15987.130000000001" y="1318" width="149.47" height="158.94" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-356" value="&lt;div&gt;-mark minor trend = bearish &lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing low = bias minor swing low&lt;/div&gt;&lt;div&gt;-mark latest minor swing high = bias minor swing high&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw bos line from latest minor swing low to price break&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="15892.000000000002" y="1554.62" width="339.74" height="117.67" as="geometry" />
+          <mxGeometry x="15892.000000000002" y="1553.62" width="339.74" height="117.67" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-357" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="16162.000000000002" y="1496.21" as="sourcePoint" />
-            <mxPoint x="16192.000000000002" y="1496.21" as="targetPoint" />
+            <mxPoint x="16162.000000000002" y="1495.21" as="sourcePoint" />
+            <mxPoint x="16192.000000000002" y="1495.21" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-358" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="16142.000000000002" y="1536.3000000000002" as="sourcePoint" />
-            <mxPoint x="16192.000000000002" y="1536.3000000000002" as="targetPoint" />
+            <mxPoint x="16142.000000000002" y="1535.3000000000002" as="sourcePoint" />
+            <mxPoint x="16192.000000000002" y="1535.3000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-359" value="&lt;font style=&quot;font-size: 6px;&quot;&gt;BOS&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5TaXg-DIbIuTDyavuNFr-358" vertex="1" connectable="0">
@@ -1343,12 +1343,12 @@
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-360" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="16142.000000000002" y="1536.21" as="sourcePoint" />
-            <mxPoint x="16202.000000000002" y="1546.2100000000005" as="targetPoint" />
+            <mxPoint x="16142.000000000002" y="1535.21" as="sourcePoint" />
+            <mxPoint x="16202.000000000002" y="1545.2100000000005" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="16162.000000000002" y="1496.21" />
-              <mxPoint x="16172.000000000002" y="1526.21" />
-              <mxPoint x="16182.000000000002" y="1516.21" />
+              <mxPoint x="16162.000000000002" y="1495.21" />
+              <mxPoint x="16172.000000000002" y="1525.21" />
+              <mxPoint x="16182.000000000002" y="1515.21" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -1383,10 +1383,10 @@
           <mxGeometry x="16330.390000000001" y="952.65" width="3.61" height="3.61" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-367" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="16140.600000000002" y="1534.2600000000002" width="3.61" height="3.61" as="geometry" />
+          <mxGeometry x="16140.600000000002" y="1533.2600000000002" width="3.61" height="3.61" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-368" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="16160.000000000002" y="1494.7600000000002" width="3.61" height="3.61" as="geometry" />
+          <mxGeometry x="16160.000000000002" y="1493.7600000000002" width="3.61" height="3.61" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-369" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5TaXg-DIbIuTDyavuNFr-371" target="5TaXg-DIbIuTDyavuNFr-372" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -1397,10 +1397,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-371" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;bias minor low&lt;/div&gt;&lt;div&gt;by candle wick&lt;/div&gt;&lt;div&gt;or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="16336.630000000001" y="1319" width="149.47" height="158.94" as="geometry" />
+          <mxGeometry x="16336.630000000001" y="1318" width="149.47" height="158.94" as="geometry" />
         </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-372" value="&lt;div&gt;-isSwingLowWickBreak = true&lt;/div&gt;&lt;div&gt;-generate obj name and add to swing low object array&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-move bias minor swing low to wick break&lt;/div&gt;&lt;div&gt;- draw line from bias swing low to wick break&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="16263" y="1554.62" width="296" height="94.91" as="geometry" />
+        <mxCell id="5TaXg-DIbIuTDyavuNFr-372" value="&lt;div&gt;-isSwingLowWickBreak = true&lt;/div&gt;&lt;div&gt;-wickSwingLow = curr low&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-generate obj name and add to swing low object array&lt;/div&gt;&lt;div&gt;- draw line from bias swing low to wick break&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="16263" y="1553.62" width="296" height="94.91" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-373" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5TaXg-DIbIuTDyavuNFr-408" target="gH49YlxcA_Sf2SmW1wO5-3" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -1546,8 +1546,8 @@
         <mxCell id="5TaXg-DIbIuTDyavuNFr-404" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;bias minor high&lt;/div&gt;&lt;div&gt;by candle wick&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="18186.629999999997" y="1309" width="149.47" height="158.94" as="geometry" />
         </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-405" value="&lt;div&gt;-move bias minor swing high to wick break&lt;/div&gt;&lt;div&gt;- draw line from bias swing high to wick break&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="18134" y="1544.6200000000003" width="254.74" height="94.91" as="geometry" />
+        <mxCell id="5TaXg-DIbIuTDyavuNFr-405" value="&lt;div&gt;-isSwingHighWickBreak = true&lt;/div&gt;&lt;div&gt;-wickSwingHIgh = curr high&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-generate obj name and add to swing high object array&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- draw line from bias swing high to wick break&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="18095.36" y="1544.1299999999999" width="332" height="94.91" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-406" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5TaXg-DIbIuTDyavuNFr-408" target="5TaXg-DIbIuTDyavuNFr-569" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2145,7 +2145,7 @@
         <mxCell id="5TaXg-DIbIuTDyavuNFr-574" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;wickSwingLow&lt;/div&gt;&lt;div&gt;by candle body&lt;/div&gt;&lt;div&gt;or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="17021.27" y="960.77" width="149.47" height="158.94" as="geometry" />
         </mxCell>
-        <mxCell id="5TaXg-DIbIuTDyavuNFr-575" value="&lt;div&gt;-mark minor trend = bearish&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing high = highest price from range bias swing low to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing low = bias swing low&lt;/div&gt;&lt;div&gt;-is swing low wick break = false&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw bos line from wickSwingLow to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&lt;span style=&quot;background-color: initial;&quot;&gt;change line style of swing low object to bos style&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+        <mxCell id="5TaXg-DIbIuTDyavuNFr-575" value="&lt;div&gt;&lt;div&gt;-mark minor trend = bearish&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing high = highest price from range bias swing low to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing low = bias swing low&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-is swing low wick break = false&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw bos line from wickSwingLow to price break&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&lt;span style=&quot;background-color: initial;&quot;&gt;change line style of swing low object to bos style&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="16852" y="1170" width="488.99" height="111.73" as="geometry" />
         </mxCell>
         <mxCell id="5TaXg-DIbIuTDyavuNFr-576" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5TaXg-DIbIuTDyavuNFr-578" target="5TaXg-DIbIuTDyavuNFr-579" edge="1">
