@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-18T05:51:09.585Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="sbixv7eXBcgSWQO2YRyd" version="24.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-18T06:07:33.412Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="5gA7pjvfHsDMlPGfMaOv" version="24.5.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
     <mxGraphModel dx="1860" dy="2049" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2651,10 +2651,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="F3KxoBGpB7sE3D7Ed1P7-55" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;latest minor low&lt;/div&gt;&lt;div&gt;by candle body&lt;/div&gt;&lt;div&gt;or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="F3KxoBGpB7sE3D7Ed1P7-55" value="&lt;div&gt;is curr price break&lt;/div&gt;&lt;div&gt;latest minor high&lt;/div&gt;&lt;div&gt;by candle body&lt;/div&gt;&lt;div&gt;or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="11550.130000000003" y="1578.4900000000002" width="149.47" height="158.94" as="geometry" />
         </mxCell>
-        <mxCell id="F3KxoBGpB7sE3D7Ed1P7-56" value="&lt;div&gt;-mark minor trend = bearish &lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing high = bias minor swing high&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw choch line from latest minor swing low to price break&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+        <mxCell id="F3KxoBGpB7sE3D7Ed1P7-56" value="&lt;div&gt;-mark minor trend = bullish&lt;br&gt;&lt;/div&gt;&lt;div&gt;-mark latest minor swing high = bias minor swing high&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-draw choch line from latest minor swing low to price break&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="1">
           <mxGeometry x="11455.000000000002" y="1808.5" width="339.74" height="117.67" as="geometry" />
         </mxCell>
         <mxCell id="F3KxoBGpB7sE3D7Ed1P7-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="F3KxoBGpB7sE3D7Ed1P7-68" target="F3KxoBGpB7sE3D7Ed1P7-99">
@@ -2707,7 +2707,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="F3KxoBGpB7sE3D7Ed1P7-78" value="is swing low&lt;div&gt;wick break&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="F3KxoBGpB7sE3D7Ed1P7-78" value="is swing high&lt;div&gt;wick break&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="10855" y="1579.2600000000002" width="149.47" height="158.94" as="geometry" />
         </mxCell>
         <mxCell id="F3KxoBGpB7sE3D7Ed1P7-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="F3KxoBGpB7sE3D7Ed1P7-83" target="F3KxoBGpB7sE3D7Ed1P7-84">
