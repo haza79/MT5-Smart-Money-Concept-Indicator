@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-29T10:29:35.122Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="sZGzZVTuhJbeW6rjCfKU" version="24.6.3" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-29T10:30:13.822Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="qEPsJvW8UkFLz9ckIpHR" version="24.6.3" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
     <mxGraphModel dx="1762" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2821,8 +2821,14 @@
         <mxCell id="WPE3TieRItwoZUUZB3Cq-40" value="return False" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="15340" y="3385" width="110" height="50" as="geometry" />
         </mxCell>
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-45" target="WPE3TieRItwoZUUZB3Cq-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-45" value="is LEG.trend == bullish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="14630" y="2650" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-48" value="call IS_LEG_UPDATE" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="14630" y="2850" width="150" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
