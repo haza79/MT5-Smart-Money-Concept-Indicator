@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-29T11:04:56.749Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="ti5tWnGFOBml_t9WX4P6" version="24.6.3" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-29T12:08:57.440Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="dGkPkPVeZ055Qf6bQGah" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1456" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2674,176 +2674,251 @@
         <mxCell id="F3KxoBGpB7sE3D7Ed1P7-100" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-isSwingLowWickBreak = true&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-wickSwingLow = curr low&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-generate obj name and add to swing low object array&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-draw line from bias swing low to wick break&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="11965" y="1205.3000000000002" width="309.8" height="94.91" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14185.2" y="2410" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-11">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="14450" y="3550" />
-              <mxPoint x="14405" y="3550" />
+              <mxPoint x="14450" y="3690" />
+              <mxPoint x="14405" y="3690" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-12">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="14450" y="3550" />
-              <mxPoint x="14640" y="3550" />
+              <mxPoint x="14450" y="3690" />
+              <mxPoint x="14640" y="3690" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-15" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-14">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-15" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-14" vertex="1" connectable="0">
           <mxGeometry x="-0.8411" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-18">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-18" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="14450" y="3550" />
-              <mxPoint x="14875" y="3550" />
+              <mxPoint x="14450" y="3690" />
+              <mxPoint x="14875" y="3690" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-24">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-26" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-25">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-26" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-25" vertex="1" connectable="0">
           <mxGeometry x="-0.0606" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-5" value="is last high fractal&lt;span style=&quot;background-color: initial;&quot;&gt;!= null&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and last low fractal != null&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and last high fractal&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;!= last low fractal&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14355" y="3310" width="190" height="190" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-5" value="is last high fractal&lt;span style=&quot;background-color: initial;&quot;&gt;!= null&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and last low fractal != null&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and last high fractal&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;!= last low fractal&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14355" y="3450" width="190" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-11" value="set first leg high = last high fractal&lt;div&gt;set first lag low = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14300" y="3610" width="210" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-11" value="set first leg high = last high fractal&lt;div&gt;set first lag low = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14300" y="3750" width="210" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-12" target="WPE3TieRItwoZUUZB3Cq-16">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-12" target="WPE3TieRItwoZUUZB3Cq-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-22" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-17">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-22" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-17" vertex="1" connectable="0">
           <mxGeometry x="-0.2667" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-12" value="is last high fractal index &amp;gt;&lt;div&gt;last low fractal index and&lt;/div&gt;&lt;div&gt;last hig fractal price &amp;gt;&lt;/div&gt;&lt;div&gt;last low fractal price&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14545" y="3610" width="190" height="190" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-12" value="is last high fractal index &amp;gt;&lt;div&gt;last low fractal index and&lt;/div&gt;&lt;div&gt;last hig fractal price &amp;gt;&lt;/div&gt;&lt;div&gt;last low fractal price&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14545" y="3750" width="190" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-16" value="set first leg trend = bullish&lt;div&gt;return&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14535" y="3840" width="210" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-16" value="set first leg trend = bullish&lt;div&gt;return&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14535" y="3980" width="210" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-18" target="WPE3TieRItwoZUUZB3Cq-20">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-18" target="WPE3TieRItwoZUUZB3Cq-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-23" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-21">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-23" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-21" vertex="1" connectable="0">
           <mxGeometry x="-0.225" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-18" value="is last low fractal index &amp;gt;&lt;div&gt;last high fractal index and&lt;/div&gt;&lt;div&gt;last low fractal price &amp;lt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;last high fractal price&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14780" y="3610" width="190" height="190" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-18" value="is last low fractal index &amp;gt;&lt;div&gt;last high fractal index and&lt;/div&gt;&lt;div&gt;last low fractal price &amp;lt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;last high fractal price&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14780" y="3750" width="190" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-20" value="set first leg trend = bearish&lt;div&gt;return&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14770" y="3840" width="210" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-20" value="set first leg trend = bearish&lt;div&gt;return&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14770" y="3980" width="210" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-24" value="return" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14625" y="3380" width="110" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-24" value="return" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14625" y="3520" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-27" target="WPE3TieRItwoZUUZB3Cq-5">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-27" target="WPE3TieRItwoZUUZB3Cq-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-27" value="function&lt;div&gt;GET_LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
-          <mxGeometry x="14390" y="3200" width="120" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-27" value="function&lt;div&gt;GET_LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
+          <mxGeometry x="14390" y="3340" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-30">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-32" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-31">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-32" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-31" vertex="1" connectable="0">
           <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-33">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-33" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-44" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-43">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-44" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-43" vertex="1" connectable="0">
           <mxGeometry x="-0.3043" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-29" value="is have&lt;div&gt;first leg&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-29" value="is have&lt;div&gt;first leg&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14390" y="2450" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-30" value="call GET_LEG" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-30" value="call GET_LEG" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14390" y="2670" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-33" target="WPE3TieRItwoZUUZB3Cq-45">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-33" target="WPE3TieRItwoZUUZB3Cq-45" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-47" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-46">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-47" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-46" vertex="1" connectable="0">
           <mxGeometry x="-0.1154" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-33" value="call IS_LEG_UPDATE&lt;div&gt;(FIRST_LEG)&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-33" value="call IS_LEG_UPDATE&lt;div&gt;(FIRST_LEG)&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14630" y="2435" width="150" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-34" target="WPE3TieRItwoZUUZB3Cq-35">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-34" target="WPE3TieRItwoZUUZB3Cq-35" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-34" value="function&lt;div&gt;IS_LEG_UPDATE&lt;/div&gt;&lt;div&gt;params: LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
-          <mxGeometry x="15090" y="3200" width="160" height="60" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-34" value="function&lt;div&gt;IS_LEG_UPDATE&lt;/div&gt;&lt;div&gt;params: LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
+          <mxGeometry x="15090" y="3340" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-35" target="WPE3TieRItwoZUUZB3Cq-37">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-35" target="WPE3TieRItwoZUUZB3Cq-37" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-39" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-38">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-39" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-38" vertex="1" connectable="0">
           <mxGeometry x="-0.1417" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-35" target="WPE3TieRItwoZUUZB3Cq-40">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-35" target="WPE3TieRItwoZUUZB3Cq-40" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-42" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-41">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-42" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-41" vertex="1" connectable="0">
           <mxGeometry x="-0.1034" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-35" value="is LEG.high != last high fractal&lt;div&gt;AND LEG.low != last low fractal&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="15072.5" y="3310" width="195" height="200" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-35" value="is LEG.high != last high fractal&lt;div&gt;AND LEG.low != last low fractal&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="15072.5" y="3450" width="195" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-37" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="15115" y="3580" width="110" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-37" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="15115" y="3720" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-40" value="return False" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="15340" y="3385" width="110" height="50" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-40" value="return False" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="15340" y="3525" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-45" target="WPE3TieRItwoZUUZB3Cq-48">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-45" target="WPE3TieRItwoZUUZB3Cq-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-51" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WPE3TieRItwoZUUZB3Cq-49">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-51" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-49" vertex="1" connectable="0">
           <mxGeometry x="-0.047" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-45" value="is FIRST_LEG.trend&lt;div&gt;&amp;nbsp;== bullish&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-45" value="is FIRST_LEG.trend&lt;div&gt;&amp;nbsp;== bullish&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14630" y="2650" width="150" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-48" value="if last high fractal&lt;div&gt;&amp;gt; FIRST_LEG.high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG.low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-48" target="jmCjIF5f9ciYP8fqLCTL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-12" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jmCjIF5f9ciYP8fqLCTL-2">
+          <mxGeometry x="-0.2133" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WPE3TieRItwoZUUZB3Cq-48" target="jmCjIF5f9ciYP8fqLCTL-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-15" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jmCjIF5f9ciYP8fqLCTL-4">
+          <mxGeometry x="-0.2" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-48" value="if last high fractal&lt;div&gt;&amp;gt; FIRST_LEG.high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG.low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14630" y="2850" width="150" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-50" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-50" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="14960" y="2880" as="sourcePoint" />
-            <mxPoint x="15040" y="2800" as="targetPoint" />
+            <mxPoint x="15010" y="2790" as="sourcePoint" />
+            <mxPoint x="15090" y="2710" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="14980" y="2830" />
-              <mxPoint x="15000" y="2870" />
-              <mxPoint x="15010" y="2840" />
-              <mxPoint x="15020" y="2860" />
+              <mxPoint x="15030" y="2740" />
+              <mxPoint x="15050" y="2780" />
+              <mxPoint x="15060" y="2750" />
+              <mxPoint x="15070" y="2770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-1" value="SECOND_LEG high = last high fractal&lt;div&gt;SECOND_LEG low = last low fractal&lt;/div&gt;&lt;div&gt;SECOND_LEG.trend = bullish&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="14580" y="3050" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jmCjIF5f9ciYP8fqLCTL-3" target="jmCjIF5f9ciYP8fqLCTL-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-13" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jmCjIF5f9ciYP8fqLCTL-6">
+          <mxGeometry x="-0.2133" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jmCjIF5f9ciYP8fqLCTL-3" target="jmCjIF5f9ciYP8fqLCTL-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-16" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jmCjIF5f9ciYP8fqLCTL-10">
+          <mxGeometry x="-0.2778" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-3" value="if last high fractal&lt;div&gt;&amp;lt; FIRST_LEG high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG.low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="14930" y="2850" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-5" value="FIRST_LEG high = last high fractal&lt;div&gt;FIRST_LEG low = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="14880" y="3050" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jmCjIF5f9ciYP8fqLCTL-8" target="jmCjIF5f9ciYP8fqLCTL-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-14" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jmCjIF5f9ciYP8fqLCTL-7">
+          <mxGeometry x="-0.2467" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-8" value="if last high fractal&lt;div&gt;&amp;lt; FIRST_LEG high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;lt; FIRST_LEG low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15230" y="2850" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-9" value="FIRST_LEG high = last high fractal&lt;div&gt;FIRST_LEG low = last low fractal&lt;/div&gt;&lt;div&gt;FIRST_LEG trend = bearish&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15180" y="3050" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-11" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15115" y="2760" as="sourcePoint" />
+            <mxPoint x="15175" y="2750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="15135" y="2730" />
+              <mxPoint x="15155" y="2780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jmCjIF5f9ciYP8fqLCTL-17" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15214.27" y="2760" as="sourcePoint" />
+            <mxPoint x="15294.27" y="2720" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="15234.27" y="2730" />
+              <mxPoint x="15254.27" y="2780" />
             </Array>
           </mxGeometry>
         </mxCell>
