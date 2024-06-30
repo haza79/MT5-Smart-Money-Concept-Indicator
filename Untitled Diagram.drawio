@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-29T15:55:31.828Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0" etag="7dEYf1sMD_PFyETLOy3B" version="24.6.3" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-30T11:19:59.826Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="fEiF9zFqLJadglSbtbFm" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1556" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1339" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2896,10 +2896,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jmCjIF5f9ciYP8fqLCTL-8" target="rvWZQWC5rAmTGAThmuUt-5">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jmCjIF5f9ciYP8fqLCTL-8" target="rvWZQWC5rAmTGAThmuUt-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-9" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rvWZQWC5rAmTGAThmuUt-7">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-9" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rvWZQWC5rAmTGAThmuUt-7" vertex="1" connectable="0">
           <mxGeometry x="-0.1737" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -2930,21 +2930,21 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rvWZQWC5rAmTGAThmuUt-5" target="rvWZQWC5rAmTGAThmuUt-6">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="rvWZQWC5rAmTGAThmuUt-5" target="rvWZQWC5rAmTGAThmuUt-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-4" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rvWZQWC5rAmTGAThmuUt-3">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-4" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rvWZQWC5rAmTGAThmuUt-3" vertex="1" connectable="0">
           <mxGeometry x="-0.2467" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-5" value="&lt;div&gt;if last low fractal&lt;/div&gt;&lt;div&gt;&amp;lt; FIRST_LEG low&lt;/div&gt;&lt;div&gt;AND last high fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG high&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-5" value="&lt;div&gt;if last low fractal&lt;/div&gt;&lt;div&gt;&amp;lt; FIRST_LEG low&lt;/div&gt;&lt;div&gt;AND last high fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG high&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15540" y="2850" width="150" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-6" value="&lt;div&gt;major trend = bullish&lt;/div&gt;&lt;div&gt;inducement = FIRST_LEG low&lt;/div&gt;&lt;div&gt;major high = FIRST_LEG high&lt;/div&gt;&lt;div&gt;major low = last fractal low&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-6" value="&lt;div&gt;major trend = bullish&lt;/div&gt;&lt;div&gt;inducement = FIRST_LEG low&lt;/div&gt;&lt;div&gt;major high = FIRST_LEG high&lt;/div&gt;&lt;div&gt;major low = last fractal low&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15490" y="3050" width="250" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-10" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-10" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="14760" y="2880" as="sourcePoint" />
             <mxPoint x="14820" y="2830" as="targetPoint" />
@@ -2954,13 +2954,25 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-11" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="rvWZQWC5rAmTGAThmuUt-11" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="15050" y="2880" as="sourcePoint" />
             <mxPoint x="15100" y="2850" as="targetPoint" />
             <Array as="points">
               <mxPoint x="15070" y="2840" />
               <mxPoint x="15090" y="2870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UV64Su74bn6kIycTPmzI-1" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15800.2" y="2900" as="sourcePoint" />
+            <mxPoint x="15890.2" y="2830" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="15820.2" y="2860" />
+              <mxPoint x="15830.2" y="2880" />
+              <mxPoint x="15850.2" y="2850" />
+              <mxPoint x="15870.2" y="2890" />
             </Array>
           </mxGeometry>
         </mxCell>
