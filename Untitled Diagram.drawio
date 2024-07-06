@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-03T16:34:07.732Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0" etag="9GfUUA2NWcLeT8DwudNU" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-06T10:04:41.838Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="o3ILj6WewRK--_s70xi_" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="426" dy="509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2680,16 +2680,16 @@
         <mxCell id="WPE3TieRItwoZUUZB3Cq-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="14450" y="3690" />
-              <mxPoint x="14405" y="3690" />
+              <mxPoint x="13920" y="3690" />
+              <mxPoint x="13875" y="3690" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="14450" y="3690" />
-              <mxPoint x="14640" y="3690" />
+              <mxPoint x="13920" y="3690" />
+              <mxPoint x="14110" y="3690" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -2701,8 +2701,8 @@
         <mxCell id="WPE3TieRItwoZUUZB3Cq-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-18" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="14450" y="3690" />
-              <mxPoint x="14875" y="3690" />
+              <mxPoint x="13920" y="3690" />
+              <mxPoint x="14345" y="3690" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -2715,10 +2715,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-5" value="is last high fractal&lt;span style=&quot;background-color: initial;&quot;&gt;!= null&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and last low fractal != null&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and last high fractal&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;!= last low fractal&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14355" y="3450" width="190" height="190" as="geometry" />
+          <mxGeometry x="13825" y="3450" width="190" height="190" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-11" value="set first leg high = last high fractal&lt;div&gt;set first lag low = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14300" y="3750" width="210" height="50" as="geometry" />
+          <mxGeometry x="13770" y="3750" width="210" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-12" target="WPE3TieRItwoZUUZB3Cq-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2729,10 +2729,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-12" value="is last high fractal index &amp;gt;&lt;div&gt;last low fractal index and&lt;/div&gt;&lt;div&gt;last hig fractal price &amp;gt;&lt;/div&gt;&lt;div&gt;last low fractal price&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14545" y="3750" width="190" height="190" as="geometry" />
+          <mxGeometry x="14015" y="3750" width="190" height="190" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-16" value="set first leg trend = bullish&lt;div&gt;return&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14535" y="3980" width="210" height="50" as="geometry" />
+          <mxGeometry x="14005" y="3980" width="210" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-18" target="WPE3TieRItwoZUUZB3Cq-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2743,19 +2743,19 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-18" value="is last low fractal index &amp;gt;&lt;div&gt;last high fractal index and&lt;/div&gt;&lt;div&gt;last low fractal price &amp;lt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;last high fractal price&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14780" y="3750" width="190" height="190" as="geometry" />
+          <mxGeometry x="14250" y="3750" width="190" height="190" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-20" value="set first leg trend = bearish&lt;div&gt;return&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14770" y="3980" width="210" height="50" as="geometry" />
+          <mxGeometry x="14240" y="3980" width="210" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-24" value="return" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14625" y="3520" width="110" height="50" as="geometry" />
+          <mxGeometry x="14095" y="3520" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-27" target="WPE3TieRItwoZUUZB3Cq-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-27" value="function&lt;div&gt;GET_LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="14390" y="3340" width="120" height="50" as="geometry" />
+          <mxGeometry x="13860" y="3340" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2765,8 +2765,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-33" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="WPE3TieRItwoZUUZB3Cq-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="14630" y="2510" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-44" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-43" vertex="1" connectable="0">
           <mxGeometry x="-0.3043" y="1" relative="1" as="geometry">
@@ -2779,22 +2781,11 @@
         <mxCell id="WPE3TieRItwoZUUZB3Cq-30" value="call GET_LEG" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14390" y="2670" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-33" target="WPE3TieRItwoZUUZB3Cq-45" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-47" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-46" vertex="1" connectable="0">
-          <mxGeometry x="-0.1154" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-33" value="call IS_LEG_UPDATE&lt;div&gt;(FIRST_LEG)&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14630" y="2435" width="150" height="150" as="geometry" />
-        </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-34" target="WPE3TieRItwoZUUZB3Cq-35" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-34" value="function&lt;div&gt;IS_LEG_UPDATE&lt;/div&gt;&lt;div&gt;params: LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="15090" y="3340" width="160" height="60" as="geometry" />
+          <mxGeometry x="14560" y="3340" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-35" target="WPE3TieRItwoZUUZB3Cq-37" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2813,13 +2804,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-35" value="is LEG.high != last high fractal&lt;div&gt;AND LEG.low != last low fractal&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15072.5" y="3450" width="195" height="200" as="geometry" />
+          <mxGeometry x="14542.5" y="3450" width="195" height="200" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-37" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15115" y="3720" width="110" height="50" as="geometry" />
+          <mxGeometry x="14585" y="3720" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-40" value="return False" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15340" y="3525" width="110" height="50" as="geometry" />
+          <mxGeometry x="14810" y="3525" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-45" target="WPE3TieRItwoZUUZB3Cq-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2830,7 +2821,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-45" value="is FIRST_LEG.trend&lt;div&gt;&amp;nbsp;== bullish&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14630" y="2650" width="150" height="150" as="geometry" />
+          <mxGeometry x="14630" y="2435" width="150" height="150" as="geometry" />
         </mxCell>
         <mxCell id="jmCjIF5f9ciYP8fqLCTL-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-48" target="jmCjIF5f9ciYP8fqLCTL-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2840,147 +2831,87 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-48" target="jmCjIF5f9ciYP8fqLCTL-3" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-15" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jmCjIF5f9ciYP8fqLCTL-4" vertex="1" connectable="0">
-          <mxGeometry x="-0.2" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-48" value="if last high fractal&lt;div&gt;&amp;gt; FIRST_LEG.high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG.low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14630" y="2850" width="150" height="150" as="geometry" />
+          <mxGeometry x="14630" y="2660" width="150" height="150" as="geometry" />
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-50" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15010" y="2790" as="sourcePoint" />
-            <mxPoint x="15090" y="2710" as="targetPoint" />
+            <mxPoint x="15170" y="2630" as="sourcePoint" />
+            <mxPoint x="15250" y="2550" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="15030" y="2740" />
-              <mxPoint x="15050" y="2780" />
-              <mxPoint x="15060" y="2750" />
-              <mxPoint x="15070" y="2770" />
+              <mxPoint x="15190" y="2580" />
+              <mxPoint x="15210" y="2620" />
+              <mxPoint x="15220" y="2590" />
+              <mxPoint x="15230" y="2610" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="jmCjIF5f9ciYP8fqLCTL-1" value="SECOND_LEG high = last high fractal&lt;div&gt;SECOND_LEG low = last low fractal&lt;/div&gt;&lt;div&gt;SECOND_LEG.trend = bullish&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14580" y="3050" width="250" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jmCjIF5f9ciYP8fqLCTL-3" target="jmCjIF5f9ciYP8fqLCTL-5" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-13" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jmCjIF5f9ciYP8fqLCTL-6" vertex="1" connectable="0">
-          <mxGeometry x="-0.2133" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jmCjIF5f9ciYP8fqLCTL-3" target="jmCjIF5f9ciYP8fqLCTL-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-16" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jmCjIF5f9ciYP8fqLCTL-10" vertex="1" connectable="0">
-          <mxGeometry x="-0.2778" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-3" value="if last high fractal&lt;div&gt;&amp;lt; FIRST_LEG high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG.low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14930" y="2850" width="150" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-5" value="FIRST_LEG high = last high fractal&lt;div&gt;FIRST_LEG low = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14880" y="3050" width="250" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jmCjIF5f9ciYP8fqLCTL-8" target="jmCjIF5f9ciYP8fqLCTL-9" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-14" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jmCjIF5f9ciYP8fqLCTL-7" vertex="1" connectable="0">
-          <mxGeometry x="-0.2467" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jmCjIF5f9ciYP8fqLCTL-8" target="rvWZQWC5rAmTGAThmuUt-5" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-9" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rvWZQWC5rAmTGAThmuUt-7" vertex="1" connectable="0">
-          <mxGeometry x="-0.1737" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-8" value="if last high fractal&lt;div&gt;&amp;lt; FIRST_LEG high&lt;/div&gt;&lt;div&gt;AND last low fractal&lt;/div&gt;&lt;div&gt;&amp;lt; FIRST_LEG low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15230" y="2850" width="150" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-9" value="FIRST_LEG high = last high fractal&lt;div&gt;FIRST_LEG low = last low fractal&lt;/div&gt;&lt;div&gt;FIRST_LEG trend = bearish&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15180" y="3050" width="250" height="80" as="geometry" />
+          <mxGeometry x="14580" y="2860" width="250" height="80" as="geometry" />
         </mxCell>
         <mxCell id="jmCjIF5f9ciYP8fqLCTL-11" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15339.01" y="2860" as="sourcePoint" />
-            <mxPoint x="15399.01" y="2850" as="targetPoint" />
+            <mxPoint x="15339.01" y="2610" as="sourcePoint" />
+            <mxPoint x="15399.01" y="2600" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="15359.01" y="2830" />
-              <mxPoint x="15379.01" y="2880" />
+              <mxPoint x="15359.01" y="2580" />
+              <mxPoint x="15379.01" y="2630" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="jmCjIF5f9ciYP8fqLCTL-17" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15660" y="2870" as="sourcePoint" />
-            <mxPoint x="15740" y="2830" as="targetPoint" />
+            <mxPoint x="15660" y="2600" as="sourcePoint" />
+            <mxPoint x="15740" y="2560" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="15680" y="2840" />
-              <mxPoint x="15700" y="2890" />
+              <mxPoint x="15680" y="2570" />
+              <mxPoint x="15700" y="2620" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="rvWZQWC5rAmTGAThmuUt-5" target="rvWZQWC5rAmTGAThmuUt-6" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-4" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rvWZQWC5rAmTGAThmuUt-3" vertex="1" connectable="0">
-          <mxGeometry x="-0.2467" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-5" value="&lt;div&gt;if last low fractal&lt;/div&gt;&lt;div&gt;&amp;lt; FIRST_LEG low&lt;/div&gt;&lt;div&gt;AND last high fractal&lt;/div&gt;&lt;div&gt;&amp;gt; FIRST_LEG high&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15540" y="2850" width="150" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-6" value="&lt;div&gt;major trend = bullish&lt;/div&gt;&lt;div&gt;inducement = FIRST_LEG low&lt;/div&gt;&lt;div&gt;major high = FIRST_LEG high&lt;/div&gt;&lt;div&gt;major low = last fractal low&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15490" y="3050" width="250" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="rvWZQWC5rAmTGAThmuUt-10" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="14760" y="2880" as="sourcePoint" />
-            <mxPoint x="14820" y="2830" as="targetPoint" />
+            <mxPoint x="14930" y="2620" as="sourcePoint" />
+            <mxPoint x="14990" y="2570" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="14780" y="2840" />
-              <mxPoint x="14800" y="2870" />
+              <mxPoint x="14950" y="2580" />
+              <mxPoint x="14970" y="2610" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="rvWZQWC5rAmTGAThmuUt-11" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15050" y="2880" as="sourcePoint" />
-            <mxPoint x="15100" y="2850" as="targetPoint" />
+            <mxPoint x="15040" y="2610" as="sourcePoint" />
+            <mxPoint x="15090" y="2580" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="15070" y="2840" />
-              <mxPoint x="15090" y="2870" />
+              <mxPoint x="15060" y="2570" />
+              <mxPoint x="15080" y="2600" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="UV64Su74bn6kIycTPmzI-1" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15800.2" y="2900" as="sourcePoint" />
-            <mxPoint x="15890.2" y="2830" as="targetPoint" />
+            <mxPoint x="15800.2" y="2620" as="sourcePoint" />
+            <mxPoint x="15890.2" y="2550" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="15820.2" y="2860" />
-              <mxPoint x="15830.2" y="2880" />
-              <mxPoint x="15850.2" y="2850" />
-              <mxPoint x="15870.2" y="2890" />
+              <mxPoint x="15820.2" y="2580" />
+              <mxPoint x="15830.2" y="2600" />
+              <mxPoint x="15850.2" y="2570" />
+              <mxPoint x="15870.2" y="2610" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="UV64Su74bn6kIycTPmzI-2" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;variable&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;MAJOR_MARKET&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;:major trend&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:major high index&lt;/div&gt;&lt;div&gt;:major low index&lt;/div&gt;&lt;div&gt;:inducement index&lt;/div&gt;&lt;div&gt;:bias major high index&lt;/div&gt;&lt;div&gt;:bias major low index&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:major high price&lt;/div&gt;&lt;div&gt;:major low price&lt;/div&gt;&lt;div&gt;:inducement price&lt;/div&gt;&lt;div&gt;:bias major high price&lt;/div&gt;&lt;div&gt;:bias major low price&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:is swing high wick break&lt;/div&gt;&lt;div&gt;:is swing low wick break&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:wick swing high index&lt;/div&gt;&lt;div&gt;:wick swing low index&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:wick swing high price&lt;/div&gt;&lt;div&gt;:wick swing low price&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="15180" y="2310" width="160" height="400" as="geometry" />
+          <mxGeometry x="14945.2" y="2099.4" width="160" height="400" as="geometry" />
         </mxCell>
-        <mxCell id="UV64Su74bn6kIycTPmzI-3" value="function&lt;div&gt;DRAW_FIRST_STRUCTURE&lt;/div&gt;&lt;div&gt;params:&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="15620" y="3360" width="210" height="70" as="geometry" />
+        <mxCell id="WN84N7cE1bB8mFY8hfET-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WN84N7cE1bB8mFY8hfET-1" target="WN84N7cE1bB8mFY8hfET-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WN84N7cE1bB8mFY8hfET-1" value="function&lt;div&gt;IS_PRICE_BREAK_BY_BODY&lt;/div&gt;&lt;div&gt;params: trend, swing price, curr price&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="15280" y="3340" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WN84N7cE1bB8mFY8hfET-4" value="global open,high,low,close" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15320" y="3450" width="180" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
