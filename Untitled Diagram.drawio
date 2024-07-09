@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-09T09:38:38.321Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="l2uSfuJl-3i2stxDKFDQ" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-09T10:08:06.687Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="XtM6yktfjDklJFuwrKgN" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1212" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2060" dy="1326" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3569,6 +3569,17 @@
         <mxCell id="GgWoTh1Hl0IVECR88wiw-228" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-230" target="GgWoTh1Hl0IVECR88wiw-235">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-414" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-230" target="GgWoTh1Hl0IVECR88wiw-252">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="18930" y="4340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="18514" y="3650" />
+              <mxPoint x="18950" y="3650" />
+              <mxPoint x="18950" y="4230" />
+              <mxPoint x="18518" y="4230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-230" value="&lt;div&gt;first candle type = GET_CANDLE_TYPE&lt;br&gt;&lt;div&gt;second candle type = GET_CANDLE_TYPE&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="18384" y="3540" width="260" height="50" as="geometry" />
         </mxCell>
@@ -3628,7 +3639,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-247" value="if compare candle == BEARISH&lt;div&gt;AND swing price &amp;gt; compare low&lt;/div&gt;&lt;div&gt;AND swing price &amp;lt; compare close&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-247" value="if second candle == BEARISH&lt;div&gt;AND second open &amp;lt;= first low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="18133.750000000004" y="4460" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-252" target="GgWoTh1Hl0IVECR88wiw-247">
@@ -3656,7 +3667,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-255" value="if compare candle == BULLISH&lt;div&gt;AND swing price &amp;gt; compare low&lt;/div&gt;&lt;div&gt;AND swing price &amp;lt; compare open&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-255" value="if second candle == BULLISH&lt;div&gt;AND second close &amp;lt;= first low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="18405.750000000004" y="4460" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-256" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-258" target="GgWoTh1Hl0IVECR88wiw-261">
@@ -3667,7 +3678,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-258" value="if compare candle == DOJI&lt;div&gt;AND swing price &amp;gt; compare low&lt;br&gt;&lt;/div&gt;&lt;div&gt;AND swing pirce &amp;lt; compare close&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-258" value="if second candle == DOJI&lt;div&gt;AND second close &amp;lt;= first low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="18677.500000000004" y="4460" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-259" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
