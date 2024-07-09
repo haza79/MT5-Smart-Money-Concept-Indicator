@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-09T06:49:31.496Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="Igumas4q5YlNreb1WSko" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-09T07:58:37.188Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="kuZrsBhNldx3B4C_6sXi" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
     <mxGraphModel dx="1471" dy="857" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -3580,8 +3580,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-230" value="swing candle type = GET_CANDLE_TYPE&lt;div&gt;compare candle type = GET_CANDLE_TYPE&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="18384.000000000004" y="3540" width="260" height="60" as="geometry" />
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-230" value="&lt;div&gt;first candle type = GET_CANDLE_TYPE&lt;br&gt;&lt;div&gt;second candle type = GET_CANDLE_TYPE&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="18384" y="3540" width="260" height="50" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-231" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-235" target="GgWoTh1Hl0IVECR88wiw-227">
           <mxGeometry relative="1" as="geometry" />
