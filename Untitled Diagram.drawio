@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-08T07:02:36.908Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="sIUZdPZIbNeQlij2igNU" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-09T03:29:44.886Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="tWvahHSM0tRm_F5GTCmL" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1631" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1149" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2910,13 +2910,13 @@
         <mxCell id="WN84N7cE1bB8mFY8hfET-1" value="function&lt;div&gt;IS_PRICE_BREAK_BY_BODY&lt;/div&gt;&lt;div&gt;params: swing type, swing price, compare price&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="15260" y="3340" width="300" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WN84N7cE1bB8mFY8hfET-4" target="OBJHHaD_cq1S-83hxPxr-1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WN84N7cE1bB8mFY8hfET-4" target="OBJHHaD_cq1S-83hxPxr-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="WN84N7cE1bB8mFY8hfET-4" value="global open,high,low,close" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15320" y="3450" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FzEnNRD04YpUlIq2oLwZ-1" target="OBJHHaD_cq1S-83hxPxr-14">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FzEnNRD04YpUlIq2oLwZ-1" target="OBJHHaD_cq1S-83hxPxr-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="FzEnNRD04YpUlIq2oLwZ-1" value="if compare candle == BULLISH&lt;div&gt;AND swing price &amp;lt; compare close&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt; compare open&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -3141,32 +3141,41 @@
         <mxCell id="1QZBF0QkMj6y_is8bawT-59" value="return DOJI" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16709.739999999998" y="3660" width="113.26" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OBJHHaD_cq1S-83hxPxr-1" target="OBJHHaD_cq1S-83hxPxr-4">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="OBJHHaD_cq1S-83hxPxr-1" target="OBJHHaD_cq1S-83hxPxr-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-1" value="swing candle type = GET_CANDLE_TYPE&lt;div&gt;compare candle type = GET_CANDLE_TYPE&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-1" value="swing candle type = GET_CANDLE_TYPE&lt;div&gt;compare candle type = GET_CANDLE_TYPE&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15280" y="3540" width="260" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OBJHHaD_cq1S-83hxPxr-3" target="OBJHHaD_cq1S-83hxPxr-16">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="OBJHHaD_cq1S-83hxPxr-3" target="OBJHHaD_cq1S-83hxPxr-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-3" value="if compare candle == BEARISH&lt;div&gt;AND swing price &amp;lt; compare open&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt; compare close&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-3" value="if compare candle == BEARISH&lt;div&gt;AND swing price &amp;lt; compare open&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt; compare close&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15303.13" y="3910" width="223.75" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OBJHHaD_cq1S-83hxPxr-4" target="FzEnNRD04YpUlIq2oLwZ-1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="OBJHHaD_cq1S-83hxPxr-4" target="FzEnNRD04YpUlIq2oLwZ-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OBJHHaD_cq1S-83hxPxr-4" target="OBJHHaD_cq1S-83hxPxr-3">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="OBJHHaD_cq1S-83hxPxr-4" target="OBJHHaD_cq1S-83hxPxr-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-4" value="if swing type == high" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-4" value="if swing type == high" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15210" y="3680" width="140" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-14" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-14" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15093.13" y="4150" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="OBJHHaD_cq1S-83hxPxr-16" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OBJHHaD_cq1S-83hxPxr-16" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="15360" y="4150" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-11" target="GgWoTh1Hl0IVECR88wiw-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-11" value="if compare candle == BULLISH&lt;div&gt;AND swng price == compare open&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15036.25" y="4270" width="223.75" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-12" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15093.13" y="4510" width="110" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
