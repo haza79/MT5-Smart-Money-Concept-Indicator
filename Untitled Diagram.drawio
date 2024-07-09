@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-09T05:01:27.651Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="Ty3n2UthLEESH6pVDvDp" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-09T05:54:22.476Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="ltaS7wBKlN5Z4hE-4v8X" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
     <mxGraphModel dx="1212" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -3552,7 +3552,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-183" value="if compare candle == BEARISH&lt;div&gt;AND swing price &amp;lt; compare open&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt; compare close&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-183" value="if compare candle == BEARISH&lt;div&gt;AND swing price &amp;gt; compare low&lt;/div&gt;&lt;div&gt;AND swing price &amp;lt; compare close&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="16733.75" y="4460" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-184" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-188" target="GgWoTh1Hl0IVECR88wiw-183">
@@ -3580,7 +3580,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-191" value="if compare candle == BULLISH&lt;div&gt;AND swing price &amp;lt; compare close&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt; compare open&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-191" value="if compare candle == BULLISH&lt;div&gt;AND swing price &amp;gt; compare low&lt;/div&gt;&lt;div&gt;AND swing price &amp;lt; compare open&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17005.75" y="4460" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-192" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-194" target="GgWoTh1Hl0IVECR88wiw-197">
