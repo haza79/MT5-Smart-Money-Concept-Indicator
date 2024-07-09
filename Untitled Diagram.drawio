@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-09T03:59:04.077Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="W8G2iKFQDcxzu29D9hO1" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-09T04:00:46.007Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="FQVRj0w_aGIKdcM9gdAZ" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1494" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1171" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3302,7 +3302,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-67" value="if swing type == high" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-67" value="if swing type == low" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="15343.5" y="4280" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GgWoTh1Hl0IVECR88wiw-70" target="GgWoTh1Hl0IVECR88wiw-75">
@@ -3335,6 +3335,12 @@
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-76" value="return True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="15630.38" y="4710" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-81" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="14634.93" y="4640" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-82" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="14644.93" y="4650" width="20" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
