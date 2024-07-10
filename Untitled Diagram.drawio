@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-10T05:49:41.164Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="MpbR9ExyFumsJ2HVG_QI" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-10T06:51:35.425Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="E8xChu-qyoorloAkZRrL" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
     <mxGraphModel dx="1969" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -4311,10 +4311,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-415" value="if curr price break FIRST_LEG high&lt;div&gt;by body or gap&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15055" y="2660" width="250" height="110" as="geometry" />
+          <mxGeometry x="15240" y="2650" width="250" height="110" as="geometry" />
         </mxCell>
         <mxCell id="IBoW1M8tojcoIqMoIM6t-1" value="if curr price break FIRST_LEG low&amp;nbsp;&lt;div&gt;by body or gap&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="14740" y="2660" width="250" height="110" as="geometry" />
+          <mxGeometry x="14670" y="2650" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="IBoW1M8tojcoIqMoIM6t-2" value="if curr price break FIRST_LEG high&lt;div&gt;by wick&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15525" y="2650" width="250" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
