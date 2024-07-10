@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-10T08:28:10.163Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="AdfVoN-FiR_nvPbIkQRj" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-10T09:10:55.375Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="X3wC__YnnVkbp6qVabV-" version="24.6.4" type="github">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
     <mxGraphModel dx="1969" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2880,7 +2880,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="UV64Su74bn6kIycTPmzI-2" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;variable&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;MAJOR_MARKET&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;:major trend&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:major high index&lt;/div&gt;&lt;div&gt;:major low index&lt;/div&gt;&lt;div&gt;:inducement index&lt;/div&gt;&lt;div&gt;:bias major high index&lt;/div&gt;&lt;div&gt;:bias major low index&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:major high price&lt;/div&gt;&lt;div&gt;:major low price&lt;/div&gt;&lt;div&gt;:inducement price&lt;/div&gt;&lt;div&gt;:bias major high price&lt;/div&gt;&lt;div&gt;:bias major low price&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:is swing high wick break&lt;/div&gt;&lt;div&gt;:is swing low wick break&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:wick swing high index&lt;/div&gt;&lt;div&gt;:wick swing low index&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:wick swing high price&lt;/div&gt;&lt;div&gt;:wick swing low price&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="14945.2" y="1960" width="160" height="400" as="geometry" />
+          <mxGeometry x="14820" y="1960" width="160" height="400" as="geometry" />
         </mxCell>
         <mxCell id="WN84N7cE1bB8mFY8hfET-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WN84N7cE1bB8mFY8hfET-1" target="WN84N7cE1bB8mFY8hfET-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -4317,7 +4317,7 @@
           <mxGeometry x="15674.380000000001" y="2660" width="250" height="110" as="geometry" />
         </mxCell>
         <mxCell id="IBoW1M8tojcoIqMoIM6t-2" value="if curr price break FIRST_LEG high&lt;div&gt;by wick&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="15230.2" y="2670" width="250" height="110" as="geometry" />
+          <mxGeometry x="15300.27" y="2660" width="250" height="110" as="geometry" />
         </mxCell>
         <mxCell id="IBoW1M8tojcoIqMoIM6t-3" value="if curr price break FIRST_LEG low&lt;div&gt;by wick&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="15954.380000000001" y="2660" width="250" height="110" as="geometry" />
