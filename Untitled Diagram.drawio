@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="997" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1969" dy="846" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4736,25 +4736,37 @@
           <mxGeometry x="16818.82" y="2620" width="5" height="5" as="geometry" />
         </mxCell>
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-72" value="if swing high index &amp;gt; swing low index" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="17470" y="2475.25" width="140" height="125" as="geometry" />
+          <mxGeometry x="17455.42" y="2469.62" width="140" height="125" as="geometry" />
         </mxCell>
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="2sSM7nOPfoDgqtEcrEXy-73" target="2sSM7nOPfoDgqtEcrEXy-72" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-73" value="get swing high low" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
-          <mxGeometry x="17472.5" y="2402.25" width="135" height="29.5" as="geometry" />
+          <mxGeometry x="17457.92" y="2396.62" width="135" height="29.5" as="geometry" />
+        </mxCell>
+        <mxCell id="E4II4SrqeifhBk4Zqed_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2sSM7nOPfoDgqtEcrEXy-75" target="E4II4SrqeifhBk4Zqed_-1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-75" value="if price break swing high" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="17721" y="2598" width="207.81" height="117" as="geometry" />
+          <mxGeometry x="17740.92" y="2577" width="207.81" height="117" as="geometry" />
         </mxCell>
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-76" value="is swing high break" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="17760" y="2365.25" width="120" height="29.5" as="geometry" />
+          <mxGeometry x="17745.42" y="2359.62" width="120" height="29.5" as="geometry" />
         </mxCell>
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-77" value="is swing low break" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="17760" y="2407.5" width="120" height="29.5" as="geometry" />
+          <mxGeometry x="17745.42" y="2401.87" width="120" height="29.5" as="geometry" />
+        </mxCell>
+        <mxCell id="E4II4SrqeifhBk4Zqed_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZPQpm_Cg6xQ2d38JQq7B-1" target="E4II4SrqeifhBk4Zqed_-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZPQpm_Cg6xQ2d38JQq7B-1" value="if price break swing low" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="17951.35" y="2598" width="207.81" height="117" as="geometry" />
+          <mxGeometry x="17971.269999999997" y="2577" width="207.81" height="117" as="geometry" />
+        </mxCell>
+        <mxCell id="E4II4SrqeifhBk4Zqed_-1" value="swing high break = true" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17771.779999999995" y="2745" width="146.09" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E4II4SrqeifhBk4Zqed_-3" value="swing low break = true" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="18002.129999999994" y="2745" width="146.09" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
