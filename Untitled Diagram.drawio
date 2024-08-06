@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.5">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="363" dy="374" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4653" dy="4680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2685,9 +2685,6 @@
         <mxCell id="F3KxoBGpB7sE3D7Ed1P7-100" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-isSwingLowWickBreak = true&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-wickSwingLow = curr low&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-generate obj name and add to swing low object array&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-draw line from bias swing low to wick break&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="11965" y="1205.3000000000002" width="309.8" height="94.91" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14185.2" y="2410" width="120" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-5" target="WPE3TieRItwoZUUZB3Cq-11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -2768,30 +2765,6 @@
         <mxCell id="WPE3TieRItwoZUUZB3Cq-27" value="function&lt;div&gt;GET_LEG&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="13860" y="3340" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-30" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-32" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-31" vertex="1" connectable="0">
-          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-29" target="WPE3TieRItwoZUUZB3Cq-45" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="14630" y="2510" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-44" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WPE3TieRItwoZUUZB3Cq-43" vertex="1" connectable="0">
-          <mxGeometry x="-0.3043" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-29" value="is have&lt;div&gt;first leg&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14390" y="2450" width="120" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-30" value="call GET_LEG" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14390" y="2670" width="120" height="120" as="geometry" />
-        </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WPE3TieRItwoZUUZB3Cq-34" target="WPE3TieRItwoZUUZB3Cq-35" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -2822,76 +2795,6 @@
         </mxCell>
         <mxCell id="WPE3TieRItwoZUUZB3Cq-40" value="return False" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14810" y="3525" width="110" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-45" value="is FIRST_LEG.trend&lt;div&gt;&amp;nbsp;== bullish&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14940" y="2435" width="150" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="WPE3TieRItwoZUUZB3Cq-50" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15480" y="2530" as="sourcePoint" />
-            <mxPoint x="15560" y="2450" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="15500" y="2480" />
-              <mxPoint x="15520" y="2520" />
-              <mxPoint x="15530" y="2490" />
-              <mxPoint x="15540" y="2510" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-11" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15649.01" y="2510" as="sourcePoint" />
-            <mxPoint x="15709.01" y="2500" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="15669.01" y="2480" />
-              <mxPoint x="15689.01" y="2530" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jmCjIF5f9ciYP8fqLCTL-17" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15770" y="2500" as="sourcePoint" />
-            <mxPoint x="15850" y="2460" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="15790" y="2470" />
-              <mxPoint x="15810" y="2520" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-10" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15240" y="2520" as="sourcePoint" />
-            <mxPoint x="15300" y="2470" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="15260" y="2480" />
-              <mxPoint x="15280" y="2510" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rvWZQWC5rAmTGAThmuUt-11" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15350" y="2510" as="sourcePoint" />
-            <mxPoint x="15400" y="2480" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="15370" y="2470" />
-              <mxPoint x="15390" y="2500" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="UV64Su74bn6kIycTPmzI-1" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="15910.2" y="2520" as="sourcePoint" />
-            <mxPoint x="16000.2" y="2450" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="15930.2" y="2480" />
-              <mxPoint x="15940.2" y="2500" />
-              <mxPoint x="15960.2" y="2470" />
-              <mxPoint x="15980.2" y="2510" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="UV64Su74bn6kIycTPmzI-2" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;variable&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;MAJOR_MARKET&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;:major trend&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:major high index&lt;/div&gt;&lt;div&gt;:major low index&lt;/div&gt;&lt;div&gt;:inducement index&lt;/div&gt;&lt;div&gt;:bias major high index&lt;/div&gt;&lt;div&gt;:bias major low index&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:major high price&lt;/div&gt;&lt;div&gt;:major low price&lt;/div&gt;&lt;div&gt;:inducement price&lt;/div&gt;&lt;div&gt;:bias major high price&lt;/div&gt;&lt;div&gt;:bias major low price&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:is swing high wick break&lt;/div&gt;&lt;div&gt;:is swing low wick break&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:wick swing high index&lt;/div&gt;&lt;div&gt;:wick swing low index&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;:wick swing high price&lt;/div&gt;&lt;div&gt;:wick swing low price&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="14820" y="1960" width="160" height="400" as="geometry" />
         </mxCell>
         <mxCell id="WN84N7cE1bB8mFY8hfET-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WN84N7cE1bB8mFY8hfET-1" target="WN84N7cE1bB8mFY8hfET-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -4321,24 +4224,6 @@
             <mxPoint x="17830" y="4720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-415" value="if curr price break FIRST_LEG high&lt;div&gt;by body or gap&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14890" y="2650" width="250" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="IBoW1M8tojcoIqMoIM6t-1" value="if curr price break FIRST_LEG low&amp;nbsp;&lt;div&gt;by body or gap&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15674.380000000001" y="2660" width="250" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="IBoW1M8tojcoIqMoIM6t-2" value="if curr price break FIRST_LEG high&lt;div&gt;by wick&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15300.27" y="2660" width="250" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="IBoW1M8tojcoIqMoIM6t-3" value="if curr price break FIRST_LEG low&lt;div&gt;by wick&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15954.380000000001" y="2660" width="250" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="IBoW1M8tojcoIqMoIM6t-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="WPE3TieRItwoZUUZB3Cq-45" target="GgWoTh1Hl0IVECR88wiw-415" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="IBoW1M8tojcoIqMoIM6t-5" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;variable&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;MINOR_MARKET&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;:minor trend&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;:minor high index&lt;/div&gt;&lt;div style=&quot;&quot;&gt;:minor low index&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="15080" y="1960" width="160" height="400" as="geometry" />
-        </mxCell>
         <mxCell id="aSlUIThjCll-6DGcPR45-1" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="16769.6" y="2880" as="sourcePoint" />
@@ -4868,7 +4753,7 @@
         <mxCell id="2sSM7nOPfoDgqtEcrEXy-77" value="is swing low break" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="17714.43" y="2402.25" width="120" height="29.5" as="geometry" />
         </mxCell>
-        <mxCell id="ZPQpm_Cg6xQ2d38JQq7B-1" value="if price break swing low" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="ZPQpm_Cg6xQ2d38JQq7B-1" value="if price break swing low" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="17887.55" y="2570" width="207.81" height="117" as="geometry" />
         </mxCell>
       </root>
