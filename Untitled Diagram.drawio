@@ -4753,6 +4753,9 @@
         <mxCell id="05y4STwLQhlo0XWGucTr-6" value="minor trend = bullish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17510.79" y="2203" width="132.81" height="35" as="geometry" />
         </mxCell>
+        <mxCell id="05y4STwLQhlo0XWGucTr-7" value="if minor trend = bullish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17330" y="2347" width="160" height="93" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
