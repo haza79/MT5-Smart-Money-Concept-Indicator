@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="580" dy="442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="870" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4738,11 +4738,20 @@
         <mxCell id="05y4STwLQhlo0XWGucTr-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="05y4STwLQhlo0XWGucTr-1" target="05y4STwLQhlo0XWGucTr-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="05y4STwLQhlo0XWGucTr-1" value="if high index &amp;gt; low index" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17334.38" y="2320" width="165.62" height="110" as="geometry" />
+        <mxCell id="05y4STwLQhlo0XWGucTr-1" value="if low index &amp;gt; high index" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17331.010000000002" y="2343" width="165.62" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="05y4STwLQhlo0XWGucTr-2" value="minor trend = bullish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17350.789999999997" y="2473" width="132.81" height="35" as="geometry" />
+        <mxCell id="05y4STwLQhlo0XWGucTr-2" value="minor trend = bearish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17347.42" y="2496" width="132.81" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="05y4STwLQhlo0XWGucTr-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="05y4STwLQhlo0XWGucTr-5" target="05y4STwLQhlo0XWGucTr-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="05y4STwLQhlo0XWGucTr-5" value="if high index &amp;gt; low index" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17530.000000000004" y="2340.5" width="165.62" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="05y4STwLQhlo0XWGucTr-6" value="minor trend = bullish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17546.41" y="2493.5" width="132.81" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
