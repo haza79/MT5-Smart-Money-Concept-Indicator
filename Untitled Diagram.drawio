@@ -4786,6 +4786,39 @@
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-22" value="minor trend = bearish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17223.84" y="2730" width="146.16" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-26" target="jiNqrEiAqdMA9JFx-8wf-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-26" target="jiNqrEiAqdMA9JFx-8wf-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-26" value="if minor trend = bearish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17517.6" y="2317.5" width="160" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-28" target="jiNqrEiAqdMA9JFx-8wf-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-28" value="if price break minor high&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17410" y="2500.5" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-29" value="market phase array&lt;div&gt;push &quot;Bullish Bos&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17429.87" y="2635.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-31" target="jiNqrEiAqdMA9JFx-8wf-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-31" value="if price break minor low" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17617.93" y="2500.5" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-33" target="jiNqrEiAqdMA9JFx-8wf-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-33" value="market phase array&lt;div&gt;push &quot;Bearish Choch&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17624.85" y="2635.5" width="146.16" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-34" value="minor trend = bearish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17624.85" y="2727.5" width="146.16" height="40" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
