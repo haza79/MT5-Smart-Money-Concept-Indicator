@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="696" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="535" dy="408" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4757,10 +4757,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-7" value="if minor trend = bullish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16957.5" y="2275" width="160" height="93" as="geometry" />
+          <mxGeometry x="17037.63" y="2275" width="160" height="93" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-8" value="if price break last high&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16957.5" y="2406" width="160" height="80" as="geometry" />
+          <mxGeometry x="17037.63" y="2406" width="160" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
