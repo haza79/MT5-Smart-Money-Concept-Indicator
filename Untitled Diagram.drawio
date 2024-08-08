@@ -4819,11 +4819,20 @@
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-34" value="minor trend = bullish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17624.85" y="2727.5" width="146.16" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-37" target="jiNqrEiAqdMA9JFx-8wf-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-37" value="if market phase array not null" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16975.02" y="2840" width="208.73" height="100" as="geometry" />
+          <mxGeometry x="17026.03" y="2840" width="208.73" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-38" target="jiNqrEiAqdMA9JFx-8wf-40">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-38" value="if start market trend == bullish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16885.14" y="3010" width="225" height="86" as="geometry" />
+          <mxGeometry x="16936.149999999998" y="2988" width="225" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="jiNqrEiAqdMA9JFx-8wf-40" value="if market phase array&amp;nbsp;&lt;div&gt;value [0] == Bullish Bos&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="16861.01" y="3120" width="198.99" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
