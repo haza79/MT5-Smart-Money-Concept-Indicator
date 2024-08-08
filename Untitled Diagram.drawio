@@ -4739,19 +4739,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-1" value="if low index &amp;gt; high index" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17331.010000000002" y="2343" width="165.62" height="110" as="geometry" />
+          <mxGeometry x="17520.000000000004" y="2357" width="165.62" height="110" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-2" value="minor trend = bearish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17347.42" y="2496" width="132.81" height="35" as="geometry" />
+          <mxGeometry x="17536.41" y="2510" width="132.81" height="35" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="05y4STwLQhlo0XWGucTr-5" target="05y4STwLQhlo0XWGucTr-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-5" value="if high index &amp;gt; low index" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17530.000000000004" y="2340.5" width="165.62" height="110" as="geometry" />
+          <mxGeometry x="17718.990000000005" y="2354.5" width="165.62" height="110" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-6" value="minor trend = bullish" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17546.41" y="2493.5" width="132.81" height="35" as="geometry" />
+          <mxGeometry x="17735.4" y="2507.5" width="132.81" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
