@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="326" dy="227" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="672" dy="467" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4831,11 +4831,14 @@
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-38" value="if start market trend == bullish" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16936.149999999998" y="2988" width="225" height="86" as="geometry" />
         </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-40" target="J6TJxgVsWqVxrwQIK10o-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-40" value="if market phase array&amp;nbsp;&lt;div&gt;value [0] == Bullish Bos&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16861.01" y="3120" width="198.99" height="90" as="geometry" />
         </mxCell>
         <mxCell id="J6TJxgVsWqVxrwQIK10o-16" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="16904" y="3300" width="96" height="80" as="geometry" />
+          <mxGeometry x="16912.5" y="3260" width="96" height="80" as="geometry" />
         </mxCell>
         <mxCell id="J6TJxgVsWqVxrwQIK10o-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="J6TJxgVsWqVxrwQIK10o-16">
           <mxGeometry width="96" height="80" as="geometry" />
