@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="671" dy="331" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="326" dy="227" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4833,6 +4833,54 @@
         </mxCell>
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-40" value="if market phase array&amp;nbsp;&lt;div&gt;value [0] == Bullish Bos&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16861.01" y="3120" width="198.99" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-16" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="16904" y="3300" width="96" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry width="96" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-8" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="7.739999999997963" y="70" as="sourcePoint" />
+            <mxPoint x="77.5099999999984" y="10" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="26.239999999997963" y="30" />
+              <mxPoint x="47.5099999999984" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="26.239999999997963" y="30" as="sourcePoint" />
+            <mxPoint x="67.5099999999984" y="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-10" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="7.509999999998399" y="70" as="sourcePoint" />
+            <mxPoint x="47.5099999999984" y="70" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="37.5099999999984" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-11" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;" vertex="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry x="5.509999999998399" y="68" width="5" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-12" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;" vertex="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry x="23.5099999999984" y="27" width="5" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-13" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="J6TJxgVsWqVxrwQIK10o-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="47.5099999999984" y="60" as="sourcePoint" />
+            <mxPoint x="86" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J6TJxgVsWqVxrwQIK10o-14" value="x" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="J6TJxgVsWqVxrwQIK10o-13">
+          <mxGeometry x="-0.0333" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
