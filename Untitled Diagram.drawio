@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1969" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="514" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4891,7 +4891,7 @@
         <mxCell id="I_ah-1im0SG-CYvUQelP-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="I_ah-1im0SG-CYvUQelP-2" target="I_ah-1im0SG-CYvUQelP-4" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="I_ah-1im0SG-CYvUQelP-2" value="IF market phase array size = 1&lt;div&gt;AND market phase array&amp;nbsp;&lt;div&gt;value [0] == Bullish Bos&lt;/div&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="I_ah-1im0SG-CYvUQelP-2" value="IF market phase array size = 3&lt;div&gt;AND market phase array&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[0] == bullish AND&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[]&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17145.489999999998" y="3140" width="258.99" height="110" as="geometry" />
         </mxCell>
         <mxCell id="I_ah-1im0SG-CYvUQelP-3" value="" style="group" vertex="1" connectable="0" parent="1">
