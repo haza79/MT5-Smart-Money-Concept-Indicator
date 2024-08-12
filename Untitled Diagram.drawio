@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="778" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2024" dy="1660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4819,11 +4819,24 @@
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-34" value="minor trend = bullish" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="17624.85" y="2727.5" width="146.16" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="jiNqrEiAqdMA9JFx-8wf-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jiNqrEiAqdMA9JFx-8wf-37" target="jiNqrEiAqdMA9JFx-8wf-38" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-37" target="jiNqrEiAqdMA9JFx-8wf-38">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="17568" y="2970" />
+              <mxPoint x="17111" y="2970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jiNqrEiAqdMA9JFx-8wf-37" target="TPZB2_SI1FzgeFvL1sdH-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="17568" y="2970" />
+              <mxPoint x="17982" y="2970" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-37" value="if market phase array not null" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="17006.969999999998" y="2842" width="208.73" height="100" as="geometry" />
+          <mxGeometry x="17463.92" y="2830" width="208.73" height="100" as="geometry" />
         </mxCell>
         <mxCell id="jiNqrEiAqdMA9JFx-8wf-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jiNqrEiAqdMA9JFx-8wf-38" target="jiNqrEiAqdMA9JFx-8wf-40" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -5029,29 +5042,48 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TPZB2_SI1FzgeFvL1sdH-1" target="TPZB2_SI1FzgeFvL1sdH-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TPZB2_SI1FzgeFvL1sdH-1" target="TPZB2_SI1FzgeFvL1sdH-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="17983" y="3160" />
+              <mxPoint x="17708" y="3160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TPZB2_SI1FzgeFvL1sdH-1" target="TPZB2_SI1FzgeFvL1sdH-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="17983" y="3160" />
+              <mxPoint x="18269" y="3160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-1" value="if start market trend == bearish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17924.999999999996" y="3001" width="225" height="86" as="geometry" />
+          <mxGeometry x="17869.999999999996" y="2994" width="225" height="86" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TPZB2_SI1FzgeFvL1sdH-2" target="TPZB2_SI1FzgeFvL1sdH-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-2" value="IF market phase array size = 1&lt;div&gt;AND market phase array&amp;nbsp;&lt;div&gt;value [0] == Bearish Bos&lt;/div&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17580.000000000004" y="3210" width="258.99" height="110" as="geometry" />
+          <mxGeometry x="17578.000000000004" y="3210" width="258.99" height="110" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TPZB2_SI1FzgeFvL1sdH-4" target="TPZB2_SI1FzgeFvL1sdH-31">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-4" value="IF market phase array size = 2&lt;div&gt;AND market phase array&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[0] == bullish choch AND&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[1] = bearish choch&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="17850.000000000007" y="3200" width="270.03" height="130" as="geometry" />
+          <mxGeometry x="17848.000000000007" y="3200" width="270.03" height="130" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TPZB2_SI1FzgeFvL1sdH-6" target="TPZB2_SI1FzgeFvL1sdH-33">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-6" value="IF market phase array size = 2&lt;div&gt;AND market phase array&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[0] == bullish choch AND&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[1] = bullish bos&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="18135.72000000001" y="3200" width="270.03" height="130" as="geometry" />
+          <mxGeometry x="18133.72000000001" y="3200" width="270.03" height="130" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-30" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="17664.5" y="3382" width="90" height="70" as="geometry" />
+          <mxGeometry x="17662.5" y="3382" width="90" height="70" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-29" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="TPZB2_SI1FzgeFvL1sdH-30">
           <mxGeometry width="90" height="70" as="geometry" />
@@ -5090,7 +5122,7 @@
           <mxGeometry x="25.13000000000102" y="50" width="5" height="5" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-32" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="17945" y="3382" width="80" height="74" as="geometry" />
+          <mxGeometry x="17943" y="3382" width="80" height="74" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-31" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="TPZB2_SI1FzgeFvL1sdH-32">
           <mxGeometry width="80" height="74" as="geometry" />
@@ -5137,7 +5169,7 @@
           <mxGeometry x="45.93000000000029" y="4" width="5" height="5" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-34" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="18232.79" y="3381" width="75.9" height="69" as="geometry" />
+          <mxGeometry x="18230.79" y="3381" width="75.9" height="69" as="geometry" />
         </mxCell>
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-33" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="TPZB2_SI1FzgeFvL1sdH-34">
           <mxGeometry width="75.9" height="69" as="geometry" />
