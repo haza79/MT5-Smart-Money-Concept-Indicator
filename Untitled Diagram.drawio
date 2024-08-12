@@ -5038,6 +5038,9 @@
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-4" value="IF market phase array size = 2&lt;div&gt;AND market phase array&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[0] == bullish choch AND&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[1] = bearish choch&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17850.000000000007" y="3200" width="270.03" height="130" as="geometry" />
         </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-6" value="IF market phase array size = 2&lt;div&gt;AND market phase array&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[0] == bearish choch AND&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[1] = bearish bos&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="18462.500000000007" y="3200" width="270.03" height="130" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
