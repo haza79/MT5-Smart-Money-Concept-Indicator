@@ -5032,6 +5032,12 @@
         <mxCell id="TPZB2_SI1FzgeFvL1sdH-1" value="if start market trend == bearish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="17629.999999999996" y="2994" width="225" height="86" as="geometry" />
         </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-2" value="IF market phase array size = 1&lt;div&gt;AND market phase array&amp;nbsp;&lt;div&gt;value [0] == Bearish Bos&lt;/div&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17580.000000000004" y="3210" width="258.99" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="TPZB2_SI1FzgeFvL1sdH-3" value="IF market phase array size = 1&lt;div&gt;AND market phase array&amp;nbsp;&lt;div&gt;value [0] == Bearish Bos&lt;/div&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="17860.000000000004" y="3210" width="258.99" height="110" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
