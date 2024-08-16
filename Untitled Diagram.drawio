@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.7">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="805" dy="1245" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="460" dy="711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5219,8 +5219,11 @@
         <mxCell id="XSaWTrEt9ubtckjiHbg_-8" value="&lt;div&gt;FUNCTION&lt;/div&gt;&lt;div&gt;Update Market Action&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="15231.4" y="3160" width="152.4" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="YlmMqYYCDhVwRKa3kiV3-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XSaWTrEt9ubtckjiHbg_-13" target="YlmMqYYCDhVwRKa3kiV3-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="XSaWTrEt9ubtckjiHbg_-13" value="&lt;div&gt;FUNCTION&lt;/div&gt;&lt;div&gt;Get First Market Trend&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="16333.539999999999" y="2890" width="200" height="50" as="geometry" />
+          <mxGeometry x="16333.539999999999" y="2870" width="200" height="50" as="geometry" />
         </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-1" value="bullish bos&lt;div&gt;*start bullish&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="14320.2" y="3585.5" width="69.8" height="30" as="geometry" />
@@ -5242,10 +5245,7 @@
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-59" value="if market phase array value[0] == bearish bos&lt;div&gt;OR value[0] == bullish choch&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="16287.51" y="3853" width="311.72" height="131" as="geometry" />
         </mxCell>
-        <mxCell id="YlmMqYYCDhVwRKa3kiV3-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlmMqYYCDhVwRKa3kiV3-63" target="jiNqrEiAqdMA9JFx-8wf-38">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="YlmMqYYCDhVwRKa3kiV3-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YlmMqYYCDhVwRKa3kiV3-63" target="YlmMqYYCDhVwRKa3kiV3-64">
+        <mxCell id="YlmMqYYCDhVwRKa3kiV3-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlmMqYYCDhVwRKa3kiV3-63" target="YlmMqYYCDhVwRKa3kiV3-64">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-63" value="call *Update Market Action" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -5254,11 +5254,19 @@
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlmMqYYCDhVwRKa3kiV3-64" target="YlmMqYYCDhVwRKa3kiV3-67">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="YlmMqYYCDhVwRKa3kiV3-76" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="YlmMqYYCDhVwRKa3kiV3-68">
+          <mxGeometry x="-0.2014" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlmMqYYCDhVwRKa3kiV3-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlmMqYYCDhVwRKa3kiV3-64" target="jiNqrEiAqdMA9JFx-8wf-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-64" value="if market phase array &amp;lt; 1" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16518.31" y="3090" width="258" height="80" as="geometry" />
+          <mxGeometry x="16305.140000000001" y="3130" width="258" height="80" as="geometry" />
         </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-67" value="return" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16833.75" y="3115" width="120" height="30" as="geometry" />
+          <mxGeometry x="16659.63" y="3155" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
