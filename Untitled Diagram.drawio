@@ -5255,10 +5255,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-64" value="if market phase array &amp;lt; 1" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16518.31" y="3130" width="258" height="80" as="geometry" />
+          <mxGeometry x="16518.31" y="3090" width="258" height="80" as="geometry" />
         </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-67" value="return" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="16586.73" y="3240" width="120" height="30" as="geometry" />
+          <mxGeometry x="16833.75" y="3115" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
