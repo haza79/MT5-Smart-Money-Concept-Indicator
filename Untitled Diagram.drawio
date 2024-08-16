@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.7">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1163" dy="1245" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="388" dy="415" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4903,14 +4903,8 @@
         <mxCell id="I_ah-1im0SG-CYvUQelP-2" value="IF market phase array size = 2&lt;div&gt;AND market phase array&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[0] == bearish choch AND&amp;nbsp;&lt;/div&gt;&lt;div&gt;value[1] = bullish choch&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16299.120000000006" y="3517.5" width="270.03" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="I_ah-1im0SG-CYvUQelP-14" value="bullish -&amp;gt; bullish" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="14320.199999999999" y="3572" width="106" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="I_ah-1im0SG-CYvUQelP-15" value="bullish -&amp;gt; bearish -&amp;gt; bullish" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="14305.57" y="3692" width="163.12" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="I_ah-1im0SG-CYvUQelP-16" value="bullish -&amp;gt; bearish -&amp;gt; bearish" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="14307.509999999998" y="3787" width="163.12" height="30" as="geometry" />
+        <mxCell id="I_ah-1im0SG-CYvUQelP-16" value="bearish choch -&amp;gt; bearish bos" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="14315.199999999999" y="3787" width="163.12" height="30" as="geometry" />
         </mxCell>
         <mxCell id="I_ah-1im0SG-CYvUQelP-17" value="bearish -&amp;gt; bearish" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="13864.390000000003" y="3613" width="106" height="30" as="geometry" />
@@ -5254,7 +5248,10 @@
           <mxGeometry x="15513.44" y="3080" width="120" height="140" as="geometry" />
         </mxCell>
         <mxCell id="YlmMqYYCDhVwRKa3kiV3-1" value="bullish bos" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="14320.199999999999" y="3608" width="106" height="30" as="geometry" />
+          <mxGeometry x="14320.199999999999" y="3584.5" width="106" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlmMqYYCDhVwRKa3kiV3-2" value="bearish choch -&amp;gt; bullish choch" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="14320.2" y="3679.5" width="164.8" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
