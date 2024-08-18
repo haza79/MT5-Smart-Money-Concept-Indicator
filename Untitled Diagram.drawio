@@ -5269,7 +5269,7 @@
           <mxGeometry x="16659.63" y="3155" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zl7i3nr-e4Tal_waeiTc-2" value="major trend" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="14585" y="4000" width="140" height="120" as="geometry" />
+          <mxGeometry x="14585" y="4000" width="140" height="180" as="geometry" />
         </mxCell>
         <mxCell id="zl7i3nr-e4Tal_waeiTc-3" value="major high array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="zl7i3nr-e4Tal_waeiTc-2" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
@@ -5279,6 +5279,12 @@
         </mxCell>
         <mxCell id="zl7i3nr-e4Tal_waeiTc-5" value="inducement array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="zl7i3nr-e4Tal_waeiTc-2" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMUGvpuv_1F7tHf8zmUJ-5" value="swing high point array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zl7i3nr-e4Tal_waeiTc-2">
+          <mxGeometry y="120" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMUGvpuv_1F7tHf8zmUJ-6" value="swing low point array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zl7i3nr-e4Tal_waeiTc-2">
+          <mxGeometry y="150" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zl7i3nr-e4Tal_waeiTc-7" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="14830" y="3960" width="170" height="240" as="geometry" />
