@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.7">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1040" dy="677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="514" dy="364" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5316,8 +5316,11 @@
         <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;last major high = first high fractal&lt;/div&gt;&lt;div&gt;last major low = first low fractal&lt;/div&gt;&lt;div&gt;last inducement = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16038.98" y="3766.25" width="241.02" height="72.5" as="geometry" />
         </mxCell>
-        <mxCell id="4EWpsRilyd0SregY2jGM-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4EWpsRilyd0SregY2jGM-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16099.49" y="3860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;last major high = first high fractal&lt;/div&gt;&lt;div&gt;last major low = first low fractal&lt;/div&gt;&lt;div&gt;last inducement = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="16313.63" y="3766.25" width="241.02" height="72.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
