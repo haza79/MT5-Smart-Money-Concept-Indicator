@@ -5316,8 +5316,8 @@
         <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;last major high = first high fractal&lt;/div&gt;&lt;div&gt;last major low = first low fractal&lt;/div&gt;&lt;div&gt;last inducement = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16038.98" y="3766.25" width="241.02" height="72.5" as="geometry" />
         </mxCell>
-        <mxCell id="4EWpsRilyd0SregY2jGM-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="16074" y="3860" width="120" height="60" as="geometry" />
+        <mxCell id="4EWpsRilyd0SregY2jGM-1" value="market struct&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;minor high&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="15867.13" y="3881" width="120" height="109" as="geometry" />
         </mxCell>
         <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;last major high = first high fractal&lt;/div&gt;&lt;div&gt;last major low = first low fractal&lt;/div&gt;&lt;div&gt;last inducement = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16313.63" y="3766.25" width="241.02" height="72.5" as="geometry" />
