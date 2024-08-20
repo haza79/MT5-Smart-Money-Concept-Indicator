@@ -5316,11 +5316,26 @@
         <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;last major high = first high fractal&lt;/div&gt;&lt;div&gt;last major low = first low fractal&lt;/div&gt;&lt;div&gt;last inducement = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16038.98" y="3766.25" width="241.02" height="72.5" as="geometry" />
         </mxCell>
-        <mxCell id="4EWpsRilyd0SregY2jGM-1" value="market struct&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;minor high&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="15867.13" y="3881" width="120" height="109" as="geometry" />
-        </mxCell>
         <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;last major high = first high fractal&lt;/div&gt;&lt;div&gt;last major low = first low fractal&lt;/div&gt;&lt;div&gt;last inducement = last low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="16313.63" y="3766.25" width="241.02" height="72.5" as="geometry" />
+        </mxCell>
+        <mxCell id="0F6CFL3GcsHfkDoipPrm-3" value="swing point" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15959.5" y="3910.5" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0F6CFL3GcsHfkDoipPrm-4" value="swing type (high,low)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="0F6CFL3GcsHfkDoipPrm-3">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0F6CFL3GcsHfkDoipPrm-5" value="candle index" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="0F6CFL3GcsHfkDoipPrm-3">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0F6CFL3GcsHfkDoipPrm-6" value="swing price" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="0F6CFL3GcsHfkDoipPrm-3">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0F6CFL3GcsHfkDoipPrm-7" value="swing time" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="0F6CFL3GcsHfkDoipPrm-3">
+          <mxGeometry y="120" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0F6CFL3GcsHfkDoipPrm-8" value="is breaked" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="0F6CFL3GcsHfkDoipPrm-3">
+          <mxGeometry y="150" width="140" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
