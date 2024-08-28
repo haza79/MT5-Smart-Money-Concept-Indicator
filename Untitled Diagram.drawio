@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.7">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0" version="24.7.7">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="896" dy="797" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2042" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5295,8 +5295,8 @@
         <mxCell id="zMUGvpuv_1F7tHf8zmUJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zl7i3nr-e4Tal_waeiTc-3" target="zl7i3nr-e4Tal_waeiTc-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major low = latest minor low&lt;/div&gt;&lt;div&gt;major high = EMPTY&lt;/div&gt;&lt;div&gt;major inducement = latest low fractal&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1978.9799999999996" y="3766.25" width="241.02" height="93.75" as="geometry" />
+        <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;last market structure&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;br&gt;&lt;/div&gt;&lt;div&gt;latest major high = EMPTY&lt;br&gt;&lt;/div&gt;&lt;div&gt;latest major low = prev minor low&lt;/div&gt;&lt;div&gt;latest major inducement = latest low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1978.98" y="3766.25" width="241.02" height="123.75" as="geometry" />
         </mxCell>
         <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;prev market struct&lt;/div&gt;&lt;div&gt;minor high = first high fractal&lt;/div&gt;&lt;div&gt;minor low = lowest low fractal in range minor high to price break&lt;/div&gt;&lt;div&gt;inducement = first low fractal&lt;/div&gt;&lt;div&gt;trend = bullish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2253.629999999999" y="3766.25" width="241.02" height="103.75" as="geometry" />
