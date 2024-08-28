@@ -5296,14 +5296,11 @@
         <mxCell id="zMUGvpuv_1F7tHf8zmUJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zl7i3nr-e4Tal_waeiTc-3" target="zl7i3nr-e4Tal_waeiTc-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;last market structure&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;br&gt;&lt;/div&gt;&lt;div&gt;latest major high = EMPTY&lt;br&gt;&lt;/div&gt;&lt;div&gt;latest major low = prev minor low&lt;/div&gt;&lt;div&gt;latest major inducement = latest low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;last market structure&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;major high = EMPTY&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;major low = prev minor low&lt;/div&gt;&lt;div&gt;&amp;nbsp;major inducement = latest low fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1978.98" y="3766.25" width="241.02" height="123.75" as="geometry" />
         </mxCell>
-        <mxCell id="Gjz-I-e57WAGZpLnH9VJ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mCx_8vxQeqSFPfcV-0hZ-1" target="Gjz-I-e57WAGZpLnH9VJ-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;prev market structure&lt;/div&gt;&lt;div&gt;latest major low = latest minor low&lt;/div&gt;&lt;div&gt;latest major high = latest minor high&lt;/div&gt;&lt;div&gt;major inducement = prev minor low&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="2253.63" y="3766.25" width="241.02" height="73.75" as="geometry" />
+        <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;latest market structure&lt;/div&gt;&lt;div&gt;major low = curr minor low&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;/div&gt;&lt;div&gt;major high = EMPTY&lt;/div&gt;&lt;div&gt;major inducement = latest low fractal&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2253.63" y="3766.25" width="241.02" height="123.75" as="geometry" />
         </mxCell>
         <mxCell id="0F6CFL3GcsHfkDoipPrm-3" value="swing point" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1248.9599999999991" y="4017" width="140" height="210" as="geometry" />
@@ -5385,9 +5382,6 @@
         </mxCell>
         <mxCell id="mez8mpQOUkfruate02ng-7" value="&lt;div&gt;if latest minor low = EMPTY&lt;/div&gt;&lt;div&gt;AND latest low fractal &amp;lt; prev minor low&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1545.4799999999977" y="3498" width="274.25" height="108" as="geometry" />
-        </mxCell>
-        <mxCell id="Gjz-I-e57WAGZpLnH9VJ-1" value="&lt;div&gt;curr market structure&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="2253.03" y="3870.25" width="241.02" height="73.75" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
