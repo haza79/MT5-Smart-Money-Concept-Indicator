@@ -5297,7 +5297,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uFaDco7csvNoOFHoUIf4-1" value="&lt;div&gt;latest market structure&lt;/div&gt;&lt;div&gt;bias trend = prev market struct major trend&lt;/div&gt;&lt;div&gt;major trend = EMPTY&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;/div&gt;&lt;div&gt;major high = EMPTY&lt;/div&gt;&lt;div&gt;major low = EMPTY&lt;/div&gt;&lt;div&gt;major inducement = latest fractal&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;align=left;" parent="1" vertex="1">
-          <mxGeometry x="1977.26" y="3880" width="241.02" height="120" as="geometry" />
+          <mxGeometry x="1977.26" y="3858" width="241.02" height="120" as="geometry" />
         </mxCell>
         <mxCell id="mCx_8vxQeqSFPfcV-0hZ-1" value="&lt;div&gt;latest market structure&lt;/div&gt;&lt;div&gt;major low = curr minor low&lt;/div&gt;&lt;div&gt;bias major high = EMPTY&lt;/div&gt;&lt;div&gt;major high = EMPTY&lt;/div&gt;&lt;div&gt;major inducement = latest low fractal&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="2253.63" y="3766.25" width="241.02" height="123.75" as="geometry" />
