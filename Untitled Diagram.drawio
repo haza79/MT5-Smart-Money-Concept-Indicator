@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.8">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0" version="24.7.8">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="2369" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1956" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5389,7 +5389,7 @@
         <mxCell id="08D9Odfr7uZ1Ed2h_b4F-6" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;labelBackgroundColor=none;fontColor=default;" parent="1" source="08D9Odfr7uZ1Ed2h_b4F-1" target="uFaDco7csvNoOFHoUIf4-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="08D9Odfr7uZ1Ed2h_b4F-1" value="&lt;div&gt;prev market structure&lt;/div&gt;&lt;div&gt;major low = prev minor low&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;align=left;" parent="1" vertex="1">
+        <mxCell id="08D9Odfr7uZ1Ed2h_b4F-1" value="&lt;div&gt;prev market structure&lt;/div&gt;&lt;div&gt;major low = prev minor low&lt;/div&gt;&lt;div&gt;major high = latest minor high&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;align=left;" parent="1" vertex="1">
           <mxGeometry x="1977.26" y="3766.25" width="241.02" height="63.75" as="geometry" />
         </mxCell>
         <mxCell id="08D9Odfr7uZ1Ed2h_b4F-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;labelBackgroundColor=none;fontColor=default;" parent="1" source="J6TJxgVsWqVxrwQIK10o-15" target="08D9Odfr7uZ1Ed2h_b4F-1" edge="1">
@@ -5401,8 +5401,75 @@
         <mxCell id="MihJfHGvdj-VcYBfhQk9-4" value="&lt;div&gt;latest market structure&lt;/div&gt;&lt;div&gt;bias trend = bearish&lt;/div&gt;&lt;div&gt;major trend = EMPTY&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;bias major low = EMPTY&lt;/div&gt;&lt;div&gt;major low = EMPTY&lt;/div&gt;&lt;div&gt;major high = EMPTY&lt;/div&gt;&lt;div&gt;major inducement = latest high fractal&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;align=left;" parent="1" vertex="1">
           <mxGeometry x="2541.31" y="3878" width="238.69" height="122" as="geometry" />
         </mxCell>
-        <mxCell id="UO9b_KaKuOMnrp8i8TMT-1" value="if market phase array value[0] == bullish bos&lt;div&gt;OR value[0] == bearish choch&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="3090.000000000001" y="3280" width="311.72" height="131" as="geometry" />
+        <mxCell id="EfM3MypTGowbaBVjVbgs-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UO9b_KaKuOMnrp8i8TMT-1" target="EfM3MypTGowbaBVjVbgs-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UO9b_KaKuOMnrp8i8TMT-1" value="if bias trend = bullish" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3401.64" y="3250" width="151.72" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-1" target="EfM3MypTGowbaBVjVbgs-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3162" y="3514" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-9" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EfM3MypTGowbaBVjVbgs-8">
+          <mxGeometry x="0.7397" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-1" target="EfM3MypTGowbaBVjVbgs-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-1" target="EfM3MypTGowbaBVjVbgs-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3478" y="3600" />
+              <mxPoint x="3800" y="3600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-18" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EfM3MypTGowbaBVjVbgs-17">
+          <mxGeometry x="-0.8903" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-1" value="if have bias major high" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="3396.2499999999995" y="3480" width="162.5" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-2" target="EfM3MypTGowbaBVjVbgs-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-2" value="&lt;div&gt;if latest high fractal index &amp;gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;prev major high &lt;br&gt;&lt;/div&gt;&lt;div&gt;AND latest high fractal price&lt;/div&gt;&lt;div&gt;&amp;gt; prev major high&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="3030" y="3627" width="265" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-3" value="bias major high = latest high fractal" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3055" y="3805" width="215" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-7" target="EfM3MypTGowbaBVjVbgs-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-7" value="major inducement = latest low fractal" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3366.25" y="3380" width="222.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-10" target="EfM3MypTGowbaBVjVbgs-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-10" value="&lt;div&gt;if latest high fractal index &amp;gt;&lt;/div&gt;&lt;div&gt;bias major high &lt;br&gt;&lt;/div&gt;&lt;div&gt;AND latest high fractal price&lt;/div&gt;&lt;div&gt;&amp;gt; bias major high&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="3345" y="3628" width="265" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-11" value="bias major high = latest high fractal" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3370" y="3805" width="215" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EfM3MypTGowbaBVjVbgs-13" target="EfM3MypTGowbaBVjVbgs-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-13" value="&lt;div&gt;if curr price break inducement&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="3685" y="3655" width="230" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="EfM3MypTGowbaBVjVbgs-14" value="major high = bias major high" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3692.5" y="3810" width="215" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
