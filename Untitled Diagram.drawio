@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="4340" dy="4980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1056" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5628,6 +5628,9 @@
         <mxCell id="xddP2zgrz25iYeInGhT3-8" value="major wick swing high = curr candle" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6020" y="3450" width="219.6" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="AIjiO7BuqbOFB9a8MvIY-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xddP2zgrz25iYeInGhT3-10" target="AIjiO7BuqbOFB9a8MvIY-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="xddP2zgrz25iYeInGhT3-10" value="&lt;div&gt;if curr price break &lt;br&gt;&lt;/div&gt;&lt;div&gt;wick swing high by body&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="5751.28" y="3575" width="209.8" height="97.5" as="geometry" />
         </mxCell>
@@ -5639,6 +5642,15 @@
         </mxCell>
         <mxCell id="AIjiO7BuqbOFB9a8MvIY-1" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new empty struct&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="5293.54" y="3867.5" width="196.46" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="AIjiO7BuqbOFB9a8MvIY-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="AIjiO7BuqbOFB9a8MvIY-3" target="AIjiO7BuqbOFB9a8MvIY-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AIjiO7BuqbOFB9a8MvIY-3" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major low = lowest fractal from range major high to price break&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="6020" y="3589.5" width="196.46" height="68.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AIjiO7BuqbOFB9a8MvIY-5" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new empty struct&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="6260" y="3592.75" width="196.46" height="62" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
