@@ -5679,7 +5679,7 @@
           <mxGeometry x="6103.14" y="3761.5" width="196.46" height="68.5" as="geometry" />
         </mxCell>
         <mxCell id="AIjiO7BuqbOFB9a8MvIY-1" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new empty struct&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="6103.14" y="3867.5" width="196.46" height="62" as="geometry" />
+          <mxGeometry x="6103.14" y="3845" width="196.46" height="62" as="geometry" />
         </mxCell>
         <mxCell id="AIjiO7BuqbOFB9a8MvIY-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="AIjiO7BuqbOFB9a8MvIY-3" target="AIjiO7BuqbOFB9a8MvIY-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -5783,6 +5783,9 @@
         </mxCell>
         <mxCell id="AIjiO7BuqbOFB9a8MvIY-47" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new empty struct&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="5772.9400000000005" y="4207" width="196.46" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="Ax2ErrOnY6xoEQPveRVc-12" value="bullish bos" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="6103.14" y="3916" width="196.46" height="62" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
