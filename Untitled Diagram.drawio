@@ -5974,7 +5974,7 @@
         <mxCell id="sySzp8IOY0_T8QJC64v1-19" value="draw bos line from major high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6007.37" y="4095.5" width="217.26" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="W6Wo2tiSpH66qEsnMcmS-1" value="draw bos line from major high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="W6Wo2tiSpH66qEsnMcmS-1" value="draw choch line from prev major high&lt;div&gt;to price break&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
           <mxGeometry x="6260" y="4095.5" width="217.26" height="62" as="geometry" />
         </mxCell>
       </root>
