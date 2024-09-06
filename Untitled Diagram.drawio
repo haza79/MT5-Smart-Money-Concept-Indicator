@@ -5981,13 +5981,13 @@
           <mxGeometry x="6275.52" y="3890.5" width="184.48" height="60" as="geometry" />
         </mxCell>
         <mxCell id="7s1vvpatwcQvneFG9qWE-13" value="draw bos line from wick swing high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="7088.8" y="4069.99" width="170" height="62" as="geometry" />
+          <mxGeometry x="7088.8" y="4070.5" width="170" height="62" as="geometry" />
         </mxCell>
         <mxCell id="7s1vvpatwcQvneFG9qWE-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7s1vvpatwcQvneFG9qWE-15" target="7s1vvpatwcQvneFG9qWE-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="7s1vvpatwcQvneFG9qWE-15" value="set bullish bos market struct" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="7092.8" y="3978" width="164" height="60" as="geometry" />
+          <mxGeometry x="7091.8" y="3977" width="164" height="60" as="geometry" />
         </mxCell>
         <mxCell id="7s1vvpatwcQvneFG9qWE-18" value="draw choch line from wick swing high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="7340" y="4070.4999999999995" width="217.26" height="62" as="geometry" />
