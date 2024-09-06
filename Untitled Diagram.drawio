@@ -5645,6 +5645,9 @@
         <mxCell id="xddP2zgrz25iYeInGhT3-2" value="&lt;div&gt;if curr price break&lt;/div&gt;&lt;div&gt;&amp;nbsp;wick swing high by wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6850.400000000001" y="3635.5" width="209.8" height="97.5" as="geometry" />
         </mxCell>
+        <mxCell id="nVh5HUX8i_pqrzNFod5B-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="xddP2zgrz25iYeInGhT3-8" target="nVh5HUX8i_pqrzNFod5B-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="xddP2zgrz25iYeInGhT3-8" value="major wick swing high = curr candle" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6845.5" y="3777" width="219.6" height="43" as="geometry" />
         </mxCell>
@@ -5995,8 +5998,8 @@
         <mxCell id="7s1vvpatwcQvneFG9qWE-20" value="set bullish choch market struct" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="7356.390000000001" y="3978.5099999999998" width="184.48" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="nVh5HUX8i_pqrzNFod5B-1" value="generate wick break line obj&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="6845.5" y="3840" width="219.6" height="43" as="geometry" />
+        <mxCell id="nVh5HUX8i_pqrzNFod5B-1" value="generate wick break line obj&lt;div&gt;wick swing high obj *push wick line obj&lt;/div&gt;&lt;div&gt;wick swing high index ++&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="6845.5" y="3850" width="219.6" height="57" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
