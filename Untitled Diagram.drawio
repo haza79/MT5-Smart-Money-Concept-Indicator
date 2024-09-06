@@ -6001,6 +6001,9 @@
         <mxCell id="nVh5HUX8i_pqrzNFod5B-1" value="generate wick break line obj&lt;div&gt;wick swing high obj *push wick line obj&lt;/div&gt;&lt;div&gt;wick swing high index ++&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="6845.5" y="3850" width="219.6" height="57" as="geometry" />
         </mxCell>
+        <mxCell id="nVh5HUX8i_pqrzNFod5B-3" value="FUNCTION&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="6800" y="4092" width="170" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
