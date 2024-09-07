@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.12">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1796" dy="1494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1057" dy="711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6001,8 +6001,8 @@
         <mxCell id="nVh5HUX8i_pqrzNFod5B-1" value="generate wick break line obj&lt;div&gt;wick swing high obj *push wick line obj&lt;/div&gt;&lt;div&gt;wick swing high index ++&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6845.5" y="3850" width="219.6" height="57" as="geometry" />
         </mxCell>
-        <mxCell id="nVh5HUX8i_pqrzNFod5B-3" value="FUNCTION&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="6870.3" y="3936.5" width="170" height="60" as="geometry" />
+        <mxCell id="nVh5HUX8i_pqrzNFod5B-3" value="FUNCTION&lt;div&gt;draw wick swing break line&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: &amp;amp;wick swing arr, &amp;amp;wick swing index,&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
+          <mxGeometry x="6795.7" y="4007" width="269.4" height="93" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
