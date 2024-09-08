@@ -6011,7 +6011,7 @@
           <mxGeometry x="7029.080000000001" y="4320" width="269.4" height="83" as="geometry" />
         </mxCell>
         <mxCell id="C0_KcbRmnrkUhB__F-XA-2" value="ObjectCreate(0,objName,OBJ_TREND,0,start_time,price,end_time,price)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="6960" y="4434" width="407.56" height="57" as="geometry" />
+          <mxGeometry x="6960" y="4434" width="407.56" height="46" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
