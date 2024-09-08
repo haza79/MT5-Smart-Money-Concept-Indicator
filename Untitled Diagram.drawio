@@ -6007,7 +6007,7 @@
         <mxCell id="C0_KcbRmnrkUhB__F-XA-3" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C0_KcbRmnrkUhB__F-XA-1" target="C0_KcbRmnrkUhB__F-XA-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="C0_KcbRmnrkUhB__F-XA-1" value="FUNCTION&lt;div&gt;draw wick swing break line&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: &amp;amp;wick swing arr, &amp;amp;wick swing index,&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+        <mxCell id="C0_KcbRmnrkUhB__F-XA-1" value="FUNCTION&lt;div&gt;draw bos line&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: price, start time, end time&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
           <mxGeometry x="6971.52" y="4320" width="269.4" height="83" as="geometry" />
         </mxCell>
         <mxCell id="C0_KcbRmnrkUhB__F-XA-2" value="generate wick break line obj&lt;div&gt;&amp;amp;wick swing arr *push wick line obj&lt;/div&gt;&lt;div&gt;&amp;amp;wick swing index ++&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
