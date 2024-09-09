@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.12">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1537" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2042" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6004,7 +6004,7 @@
         <mxCell id="Dzac9bIpkfYUOjUFQSfT-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nVh5HUX8i_pqrzNFod5B-3" target="nVh5HUX8i_pqrzNFod5B-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nVh5HUX8i_pqrzNFod5B-3" value="FUNCTION&lt;div&gt;draw wick swing break line&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: &amp;amp;wick swing arr, &amp;amp;wick swing index,&lt;/div&gt;&lt;div&gt;break type&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
+        <mxCell id="nVh5HUX8i_pqrzNFod5B-3" value="FUNCTION&lt;div&gt;draw wick swing break line&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: &amp;amp;wick swing arr, &amp;amp;wick swing index,&lt;/div&gt;&lt;div&gt;break type,&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="6640" y="4320" width="269.4" height="83" as="geometry" />
         </mxCell>
         <mxCell id="txm1EYMniRe5JCh2u1w5-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="C0_KcbRmnrkUhB__F-XA-1" target="C0_KcbRmnrkUhB__F-XA-2" edge="1">
@@ -6049,16 +6049,16 @@
         <mxCell id="txm1EYMniRe5JCh2u1w5-14" value="choch" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6823.200000000001" y="4611.25" width="80" height="48.75" as="geometry" />
         </mxCell>
-        <mxCell id="02H259kTNEh0oY963VQ--1" value="draw bos line(objName,)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="02H259kTNEh0oY963VQ--1" value="draw bos line(objName,)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6640" y="4680" width="219.6" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="02H259kTNEh0oY963VQ--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="02H259kTNEh0oY963VQ--3" target="02H259kTNEh0oY963VQ--4" parent="1">
+        <mxCell id="02H259kTNEh0oY963VQ--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="02H259kTNEh0oY963VQ--3" target="02H259kTNEh0oY963VQ--4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="02H259kTNEh0oY963VQ--3" value="&lt;div&gt;FUNCTION&lt;/div&gt;&lt;div&gt;set line color&lt;/div&gt;&lt;div&gt;params: objName,color&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+        <mxCell id="02H259kTNEh0oY963VQ--3" value="&lt;div&gt;FUNCTION&lt;/div&gt;&lt;div&gt;set line color&lt;/div&gt;&lt;div&gt;params: objName,color&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="7730.3" y="4554.38" width="269.4" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="02H259kTNEh0oY963VQ--4" value="&lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;functions&quot;&gt;ObjectSetInteger&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;objName&lt;/span&gt;,&lt;span class=&quot;macro&quot;&gt;OBJPROP_COLOR&lt;/span&gt;, color);&lt;br&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="02H259kTNEh0oY963VQ--4" value="&lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;functions&quot;&gt;ObjectSetInteger&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;objName&lt;/span&gt;,&lt;span class=&quot;macro&quot;&gt;OBJPROP_COLOR&lt;/span&gt;, color);&lt;br&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="7680" y="4659.88" width="370" height="57" as="geometry" />
         </mxCell>
       </root>
