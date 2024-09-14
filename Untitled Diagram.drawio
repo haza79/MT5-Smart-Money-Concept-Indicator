@@ -3511,7 +3511,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-241" value="if second candle == DOJI&lt;br&gt;&lt;div&gt;AND second close &amp;gt;= first high&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-241" value="if curr candle == DOJI&lt;br&gt;&lt;div&gt;AND curr close &amp;gt;= prev high&lt;/div&gt;&lt;div&gt;AND swing price &amp;lt;= curr close&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="4613.750000000004" y="5100" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-242" value="return True" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
