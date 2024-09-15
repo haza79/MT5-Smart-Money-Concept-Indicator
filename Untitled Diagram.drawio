@@ -3531,7 +3531,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-247" value="if curr candle == BEARISH&lt;div&gt;AND curr open &amp;lt;= first low&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt;= curr close&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-247" value="if curr candle == BEARISH&lt;div&gt;AND curr open &amp;lt;= first low&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt;= curr open&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="4073.7500000000036" y="5700" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="GgWoTh1Hl0IVECR88wiw-252" target="GgWoTh1Hl0IVECR88wiw-247" edge="1">
@@ -3559,7 +3559,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-255" value="if second candle == BULLISH&lt;div&gt;AND second close &amp;lt;= first low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-255" value="if curr candle == BULLISH&lt;div&gt;AND curr close &amp;lt;= first low&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt;= curr close&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="4345.750000000004" y="5700" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-256" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="GgWoTh1Hl0IVECR88wiw-258" target="GgWoTh1Hl0IVECR88wiw-261" edge="1">
