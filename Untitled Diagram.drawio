@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.13">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.14">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1584" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2248" dy="923" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3531,7 +3531,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GgWoTh1Hl0IVECR88wiw-247" value="if second candle == BEARISH&lt;div&gt;AND second open &amp;lt;= first low&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="GgWoTh1Hl0IVECR88wiw-247" value="if curr candle == BEARISH&lt;div&gt;AND curr open &amp;lt;= first low&lt;/div&gt;&lt;div&gt;AND swing price &amp;gt;= curr close&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="4073.7500000000036" y="5700" width="223.75" height="180" as="geometry" />
         </mxCell>
         <mxCell id="GgWoTh1Hl0IVECR88wiw-248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="GgWoTh1Hl0IVECR88wiw-252" target="GgWoTh1Hl0IVECR88wiw-247" edge="1">
