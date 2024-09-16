@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.14">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="2511" dy="1054" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1419" dy="509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6014,10 +6014,10 @@
             <mxPoint x="1" y="4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0IqTgT-MuyGVwKQklRUj-1" value="ผ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0IqTgT-MuyGVwKQklRUj-2" target="0IqTgT-MuyGVwKQklRUj-75" parent="1">
+        <mxCell id="0IqTgT-MuyGVwKQklRUj-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0IqTgT-MuyGVwKQklRUj-2" target="0IqTgT-MuyGVwKQklRUj-75">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0IqTgT-MuyGVwKQklRUj-2" value="&lt;div&gt;if curr price break major high&lt;/div&gt;&lt;div&gt;by body or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="0IqTgT-MuyGVwKQklRUj-2" value="&lt;div&gt;if curr price break major low&lt;/div&gt;&lt;div&gt;by body or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="6130.000000000001" y="4518" width="220" height="95" as="geometry" />
         </mxCell>
         <mxCell id="0IqTgT-MuyGVwKQklRUj-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0IqTgT-MuyGVwKQklRUj-8" target="0IqTgT-MuyGVwKQklRUj-2" parent="1">
@@ -6037,7 +6037,7 @@
         <mxCell id="0IqTgT-MuyGVwKQklRUj-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0IqTgT-MuyGVwKQklRUj-8" target="0IqTgT-MuyGVwKQklRUj-17" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0IqTgT-MuyGVwKQklRUj-8" value="if major swing high wick break = TRUE" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="0IqTgT-MuyGVwKQklRUj-8" value="if major swing low wick break = TRUE" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="6330" y="4290" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="0IqTgT-MuyGVwKQklRUj-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0IqTgT-MuyGVwKQklRUj-10" target="0IqTgT-MuyGVwKQklRUj-12" parent="1">
