@@ -6096,7 +6096,7 @@
         <mxCell id="0IqTgT-MuyGVwKQklRUj-42" value="draw choch line from prev major low to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6380.31" y="4798" width="170" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="0IqTgT-MuyGVwKQklRUj-43" value="draw choch line from prev major high&lt;div&gt;to price break&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="0IqTgT-MuyGVwKQklRUj-43" value="&lt;div&gt;draw bos line from major low to &lt;br&gt;&lt;/div&gt;&lt;div&gt;price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6356.679999999999" y="4965.25" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="0IqTgT-MuyGVwKQklRUj-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="0IqTgT-MuyGVwKQklRUj-45" target="0IqTgT-MuyGVwKQklRUj-42" edge="1">
@@ -6108,7 +6108,7 @@
         <mxCell id="0IqTgT-MuyGVwKQklRUj-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="0IqTgT-MuyGVwKQklRUj-47" target="0IqTgT-MuyGVwKQklRUj-43" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0IqTgT-MuyGVwKQklRUj-47" value="set bullish choch market struct" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
+        <mxCell id="0IqTgT-MuyGVwKQklRUj-47" value="set bearish bos market struct" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="6373.07" y="4885.75" width="184.48" height="60" as="geometry" />
         </mxCell>
         <mxCell id="0IqTgT-MuyGVwKQklRUj-48" value="draw bos line from wick swing high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
