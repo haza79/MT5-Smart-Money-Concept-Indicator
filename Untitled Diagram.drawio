@@ -5775,7 +5775,7 @@
         <mxCell id="yH69GDs2usfKh2oQtjpG-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yH69GDs2usfKh2oQtjpG-55" target="yH69GDs2usfKh2oQtjpG-53">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-55" value="set bullish bos market struct" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+        <mxCell id="yH69GDs2usfKh2oQtjpG-55" value="&lt;div&gt;-swing high wick break = false&lt;br&gt;&lt;/div&gt;&lt;div&gt;set bullish bos market struct&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
           <mxGeometry x="7042.900000000001" y="3703.62" width="164" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-56" value="&lt;div&gt;draw bos line from major high&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
@@ -5962,7 +5962,7 @@
         <mxCell id="yH69GDs2usfKh2oQtjpG-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="yH69GDs2usfKh2oQtjpG-104" target="yH69GDs2usfKh2oQtjpG-102" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-104" value="set bearish choch market struct" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+        <mxCell id="yH69GDs2usfKh2oQtjpG-104" value="&lt;div&gt;-swing low wick break = false&lt;br&gt;&lt;/div&gt;&lt;div&gt;set bearish choch market struct&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
           <mxGeometry x="7042.900000000001" y="4293.62" width="164" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-105" value="&lt;div&gt;draw choch line from prev major low&lt;br&gt;&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
