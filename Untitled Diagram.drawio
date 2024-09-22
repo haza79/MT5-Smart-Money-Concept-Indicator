@@ -5802,7 +5802,7 @@
           <mxGeometry x="6202.11" y="3242.25" width="183.84" height="44.5" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-65" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="6090" y="4270" width="80" height="67.87" as="geometry" />
+          <mxGeometry x="6060" y="4000" width="80" height="67.87" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-66" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-65" vertex="1">
           <mxGeometry width="80" height="67.87" as="geometry" />
@@ -6006,6 +6006,27 @@
         </mxCell>
         <mxCell id="nqShiEEi33GG4ir7MfXn-13" value="&lt;div&gt;new latest struct&lt;/div&gt;&lt;div&gt;bias trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
           <mxGeometry x="5606.67" y="4331.75" width="196.46" height="51.5" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="nqShiEEi33GG4ir7MfXn-15" target="nqShiEEi33GG4ir7MfXn-20" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-15" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major high = highest high from prev&lt;/div&gt;&lt;div&gt;major low to price break&lt;/div&gt;&lt;div&gt;major trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="5917.339999999999" y="4223.25" width="196.46" height="87.25" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-16" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new latest struct&lt;br&gt;&lt;/div&gt;&lt;div&gt;market phase array *push bullish choch&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="5906.47" y="4418" width="217.26" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="nqShiEEi33GG4ir7MfXn-18" target="nqShiEEi33GG4ir7MfXn-15" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-18" value="&lt;div&gt;FUNCTION&lt;/div&gt;&lt;div&gt;set bearish choch market struct&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: prev market,latest struct&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="5900.2" y="4116.25" width="229.8" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="nqShiEEi33GG4ir7MfXn-20" target="nqShiEEi33GG4ir7MfXn-16" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nqShiEEi33GG4ir7MfXn-20" value="&lt;div&gt;new latest struct&lt;/div&gt;&lt;div&gt;bias trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="5917.34" y="4338" width="196.46" height="52.75" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
