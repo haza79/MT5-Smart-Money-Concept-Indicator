@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1199" dy="476" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1432" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5637,7 +5637,7 @@
           <mxGeometry x="5596.27" y="3880" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-25" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="6039" y="3730" width="81" height="60" as="geometry" />
+          <mxGeometry x="6066.92" y="3492.13" width="81" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-25" vertex="1">
           <mxGeometry width="81" height="60" as="geometry" />
@@ -5689,7 +5689,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-34" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="5923.080000000001" y="3577.87" width="77.92" height="60" as="geometry" />
+          <mxGeometry x="5920.000000000001" y="3490" width="77.92" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-35" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-34" vertex="1">
           <mxGeometry width="77.92" height="60" as="geometry" />
@@ -5743,10 +5743,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-44" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major low = lowest fractal from&lt;/div&gt;&lt;div&gt;range prev major high to price break&lt;/div&gt;&lt;div&gt;major high = EMPTY&lt;/div&gt;&lt;div&gt;major trend = bullish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="7170.289999999999" y="3123.75" width="196.46" height="87.25" as="geometry" />
+          <mxGeometry x="5869.909999999999" y="3685.25" width="196.46" height="87.25" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-45" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new empty struct&lt;/div&gt;&lt;div&gt;market phase array *push bullish choch&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="7159.42" y="3240.25" width="217.26" height="62" as="geometry" />
+          <mxGeometry x="5859.04" y="3801.75" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-46" value="draw bos line from major high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6239.030000000001" y="3850.7099999999996" width="170" height="62" as="geometry" />
@@ -5767,7 +5767,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-52" value="&lt;div&gt;FUNCTION&lt;/div&gt;&lt;div&gt;set bullish choch market struct&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;params: prev market,latest struct&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="7153.15" y="3016.75" width="229.8" height="80" as="geometry" />
+          <mxGeometry x="5852.7699999999995" y="3578.25" width="229.8" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-53" value="draw bos line from wick swing high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="7039.900000000001" y="3791" width="170" height="62" as="geometry" />
@@ -5854,7 +5854,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-74" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="5930" y="3730" width="70" height="60" as="geometry" />
+          <mxGeometry x="6110" y="4030" width="70" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-75" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-74" vertex="1">
           <mxGeometry width="70" height="60" as="geometry" />
