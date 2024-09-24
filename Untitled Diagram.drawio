@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" version="24.7.16">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1766" dy="727" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1838" dy="1245" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5637,7 +5637,7 @@
           <mxGeometry x="7388.400000000001" y="3427" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-25" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="6047.64" y="3510" width="81" height="60" as="geometry" />
+          <mxGeometry x="6940" y="3270" width="81" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-25" vertex="1">
           <mxGeometry width="81" height="60" as="geometry" />
@@ -5689,7 +5689,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-34" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="5940.000000000001" y="3511" width="77.92" height="60" as="geometry" />
+          <mxGeometry x="6040.000000000001" y="3630" width="77.92" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-35" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-34" vertex="1">
           <mxGeometry width="77.92" height="60" as="geometry" />
@@ -5802,7 +5802,7 @@
           <mxGeometry x="6202.11" y="3242.25" width="183.84" height="44.5" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-65" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="6050" y="3980" width="80" height="67.87" as="geometry" />
+          <mxGeometry x="6050" y="3990" width="80" height="67.87" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-66" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-65" vertex="1">
           <mxGeometry width="80" height="67.87" as="geometry" />
@@ -5854,7 +5854,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-74" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="5960" y="3980" width="70" height="60" as="geometry" />
+          <mxGeometry x="6840" y="3270" width="70" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-75" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="yH69GDs2usfKh2oQtjpG-74" vertex="1">
           <mxGeometry width="70" height="60" as="geometry" />
@@ -6028,7 +6028,7 @@
         <mxCell id="nqShiEEi33GG4ir7MfXn-20" value="&lt;div&gt;new latest struct&lt;/div&gt;&lt;div&gt;bias trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="8257.34" y="3348" width="196.46" height="52.75" as="geometry" />
         </mxCell>
-        <mxCell id="tydZ98peXNVrIA9uwgni-1" value="&amp;nbsp;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="tydZ98peXNVrIA9uwgni-1" value="&amp;nbsp;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-180" y="900" width="40" height="40" as="geometry" />
         </mxCell>
       </root>
