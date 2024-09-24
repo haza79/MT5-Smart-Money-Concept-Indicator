@@ -5580,12 +5580,6 @@
         <mxCell id="yH69GDs2usfKh2oQtjpG-6" value="&lt;div&gt;if curr price break major high&lt;/div&gt;&lt;div&gt;by body or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6214.030000000002" y="3752.71" width="220" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-12" target="yH69GDs2usfKh2oQtjpG-18" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-12" target="yH69GDs2usfKh2oQtjpG-21" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="j8YgvF3r5g4JpJgSj6a6-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="yH69GDs2usfKh2oQtjpG-12" target="j8YgvF3r5g4JpJgSj6a6-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
