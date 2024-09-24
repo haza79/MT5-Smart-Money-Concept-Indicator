@@ -5606,20 +5606,23 @@
         <mxCell id="yH69GDs2usfKh2oQtjpG-16" value="&lt;div&gt;major swing high wick break = TRUE&lt;/div&gt;&lt;div&gt;major wick swing high = curr candle&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6467.340000000001" y="3880.25" width="219.6" height="67" as="geometry" />
         </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-18" target="yH69GDs2usfKh2oQtjpG-58" edge="1">
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yH69GDs2usfKh2oQtjpG-18" target="ib9epmy-cLcLqfZwJ37Y-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yH69GDs2usfKh2oQtjpG-18" target="ib9epmy-cLcLqfZwJ37Y-34">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-18" value="&lt;div&gt;if curr price break&lt;/div&gt;&lt;div&gt;&amp;nbsp;wick swing high by wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="7306.070000000001" y="3755.88" width="209.8" height="97.5" as="geometry" />
+          <mxGeometry x="7430.400000000001" y="3727.5" width="209.8" height="97.5" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-19" value="major wick swing high = curr candle high" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="7300" y="3997.88" width="219.6" height="43" as="geometry" />
+          <mxGeometry x="7303.51" y="4046" width="219.6" height="43" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-21" target="yH69GDs2usfKh2oQtjpG-55" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-21" value="&lt;div&gt;if curr price break &lt;br&gt;&lt;/div&gt;&lt;div&gt;wick swing high by body&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="7549.999999999999" y="3755" width="209.8" height="97.5" as="geometry" />
+          <mxGeometry x="7839.999999999999" y="3765" width="209.8" height="97.5" as="geometry" />
         </mxCell>
         <mxCell id="nqShiEEi33GG4ir7MfXn-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-23" target="nqShiEEi33GG4ir7MfXn-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -5764,13 +5767,13 @@
           <mxGeometry x="7644.9" y="2875.25" width="229.8" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-53" value="draw bos line from wick swing high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="7569.900000000001" y="3986.88" width="170" height="62" as="geometry" />
+          <mxGeometry x="7859.900000000001" y="3996.88" width="170" height="62" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-55" target="yH69GDs2usfKh2oQtjpG-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-55" value="&lt;div&gt;-swing high wick break = false&lt;br&gt;&lt;/div&gt;&lt;div&gt;set bullish bos market struct&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="7572.900000000001" y="3899.5" width="164" height="60" as="geometry" />
+          <mxGeometry x="7862.900000000001" y="3909.5" width="164" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-56" value="&lt;div&gt;draw bos line from major high&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6468.71" y="3979.25" width="217.26" height="62" as="geometry" />
@@ -5779,7 +5782,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-58" value="&lt;div&gt;draw bos line from&amp;nbsp; wick swing high&lt;/div&gt;&lt;div&gt;to price break&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="7302.339999999999" y="3900.38" width="217.26" height="62" as="geometry" />
+          <mxGeometry x="7304.679999999999" y="3956.5" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-63" target="yH69GDs2usfKh2oQtjpG-64" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -6073,54 +6076,6 @@
         <mxCell id="j8YgvF3r5g4JpJgSj6a6-24" value="&lt;div&gt;draw choch line from prev major high&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6987.14" y="3980.46" width="217.26" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="j8YgvF3r5g4JpJgSj6a6-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j8YgvF3r5g4JpJgSj6a6-28" target="yH69GDs2usfKh2oQtjpG-18" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="j8YgvF3r5g4JpJgSj6a6-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j8YgvF3r5g4JpJgSj6a6-28" target="yH69GDs2usfKh2oQtjpG-21" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="j8YgvF3r5g4JpJgSj6a6-28" value="bias bullish" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="7485.12" y="3637.5" width="93.97" height="57.5" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-2" target="ib9epmy-cLcLqfZwJ37Y-10" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-2" value="&lt;div&gt;if curr price break&lt;/div&gt;&lt;div&gt;&amp;nbsp;wick swing high by wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="7796.070000000001" y="3755.88" width="209.8" height="97.5" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-3" value="major wick swing high = curr candle high" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="7790" y="3997.88" width="219.6" height="43" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-5" target="ib9epmy-cLcLqfZwJ37Y-8" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-5" value="&lt;div&gt;if curr price break &lt;br&gt;&lt;/div&gt;&lt;div&gt;wick swing high by body&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="8039.999999999999" y="3755" width="209.8" height="97.5" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-6" value="draw bos line from wick swing high to price break" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="8059.900000000001" y="3986.88" width="170" height="62" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-8" target="ib9epmy-cLcLqfZwJ37Y-6" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-8" value="&lt;div&gt;-swing high wick break = false&lt;br&gt;&lt;/div&gt;&lt;div&gt;set bullish bos market struct&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
-          <mxGeometry x="8062.900000000001" y="3899.5" width="164" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-10" target="ib9epmy-cLcLqfZwJ37Y-3" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-10" value="&lt;div&gt;draw bos line from&amp;nbsp; wick swing high&lt;/div&gt;&lt;div&gt;to price break&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="7792.339999999999" y="3900.38" width="217.26" height="62" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-13" target="ib9epmy-cLcLqfZwJ37Y-2" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-13" target="ib9epmy-cLcLqfZwJ37Y-5" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ib9epmy-cLcLqfZwJ37Y-13" value="bias bearish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="7975.12" y="3637.5" width="93.97" height="57.5" as="geometry" />
-        </mxCell>
         <mxCell id="ib9epmy-cLcLqfZwJ37Y-14" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="7800" y="3520" width="81" height="60" as="geometry" />
         </mxCell>
@@ -6223,6 +6178,27 @@
           <mxGeometry x="0.4" y="-2" relative="1" as="geometry">
             <mxPoint x="6" y="-2" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ib9epmy-cLcLqfZwJ37Y-32" target="yH69GDs2usfKh2oQtjpG-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-32" value="bias bullish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="7366.33" y="3871.75" width="93.97" height="57.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ib9epmy-cLcLqfZwJ37Y-34" target="ib9epmy-cLcLqfZwJ37Y-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-34" value="bias bearish" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="7605.66" y="3871.75" width="93.97" height="57.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-37" value="major wick swing high = curr candle high" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="7550" y="4046" width="219.6" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="ib9epmy-cLcLqfZwJ37Y-39" target="ib9epmy-cLcLqfZwJ37Y-37" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ib9epmy-cLcLqfZwJ37Y-39" value="&lt;div&gt;draw bos line from&amp;nbsp; wick swing high&lt;/div&gt;&lt;div&gt;to price break&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="7551.169999999999" y="3956.5" width="217.26" height="62" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
