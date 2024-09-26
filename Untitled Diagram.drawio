@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="1414" dy="1064" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1235" dy="876" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4627,7 +4627,7 @@
         <mxCell id="05y4STwLQhlo0XWGucTr-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;" parent="1" source="05y4STwLQhlo0XWGucTr-1" target="05y4STwLQhlo0XWGucTr-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="05y4STwLQhlo0XWGucTr-1" value="if low index &amp;gt; high index" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="05y4STwLQhlo0XWGucTr-1" value="&lt;span style=&quot;background-color: initial;&quot;&gt;if latest low fractal index&lt;/span&gt;&lt;div&gt;&amp;gt; latest high fractal index&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="622.6900000000041" y="3562.5" width="165.62" height="110" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-2" value="&lt;div&gt;minor trend = bearish&lt;/div&gt;&lt;div&gt;latest minor high = latest high fractal&lt;br&gt;&lt;/div&gt;&lt;div&gt;latest minor low = latest low fractal&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
@@ -4636,7 +4636,7 @@
         <mxCell id="05y4STwLQhlo0XWGucTr-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;" parent="1" source="05y4STwLQhlo0XWGucTr-5" target="05y4STwLQhlo0XWGucTr-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="05y4STwLQhlo0XWGucTr-5" value="if high index &amp;gt; low index" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="05y4STwLQhlo0XWGucTr-5" value="&lt;div&gt;if latest high fractal index&lt;/div&gt;&lt;div&gt;&amp;gt; latest low fractal index&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="843.690000000006" y="3562.5" width="165.62" height="110" as="geometry" />
         </mxCell>
         <mxCell id="05y4STwLQhlo0XWGucTr-6" value="&lt;div&gt;minor trend = bullish&lt;/div&gt;&lt;div&gt;latest minor low = latest low fractal&lt;/div&gt;&lt;div&gt;latest minor high = latest high fractal&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
