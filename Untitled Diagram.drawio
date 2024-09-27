@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="2728" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2884" dy="1067" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6070,17 +6070,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3z8683c2tLeIMrpywe4I-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="3z8683c2tLeIMrpywe4I-11" target="3z8683c2tLeIMrpywe4I-24" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="3z8683c2tLeIMrpywe4I-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="3z8683c2tLeIMrpywe4I-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="169.28571428571468" y="3820.0154522790353" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="3z8683c2tLeIMrpywe4I-11" value="if minor trend == null" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="-462.39999999999964" y="3723" width="174.8" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="pmj-4JbYw_H_zWwlsKZz-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3z8683c2tLeIMrpywe4I-24" target="pmj-4JbYw_H_zWwlsKZz-2">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="3z8683c2tLeIMrpywe4I-24" value="switch bias trend" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
-          <mxGeometry x="108.52" y="3820" width="121.48" height="73" as="geometry" />
         </mxCell>
         <mxCell id="3z8683c2tLeIMrpywe4I-37" value="major market structure" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="5736.27" y="5050" width="200" height="390" as="geometry" />
@@ -6472,9 +6468,6 @@
           <mxGeometry x="0.0472" relative="1" as="geometry">
             <mxPoint x="-2" y="5" as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="pmj-4JbYw_H_zWwlsKZz-2" value="switch bias trend" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="29.99999999999999" y="3939" width="121.48" height="73" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
