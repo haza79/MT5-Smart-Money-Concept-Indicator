@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="3017" dy="1184" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2838" dy="975" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6472,7 +6472,7 @@
         <mxCell id="Hhp8iElSuVVZwGjUWeNH-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="Hhp8iElSuVVZwGjUWeNH-3" target="Hhp8iElSuVVZwGjUWeNH-41" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Hhp8iElSuVVZwGjUWeNH-3" value="&lt;div&gt;if curr price break major high&lt;/div&gt;&lt;div&gt;by body or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Hhp8iElSuVVZwGjUWeNH-3" value="&lt;div&gt;if curr price break minor high&lt;/div&gt;&lt;div&gt;by body or gap&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1889.9999999999982" y="5083.73" width="220" height="95" as="geometry" />
         </mxCell>
         <mxCell id="Hhp8iElSuVVZwGjUWeNH-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="Hhp8iElSuVVZwGjUWeNH-10" target="Hhp8iElSuVVZwGjUWeNH-50" parent="1">
@@ -6497,7 +6497,7 @@
             <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Hhp8iElSuVVZwGjUWeNH-10" value="if major swing high wick break = TRUE" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Hhp8iElSuVVZwGjUWeNH-10" value="&lt;div&gt;if allow wick break = TRUE AND&lt;/div&gt;minor high wick break = TRUE" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1497.6399999999994" y="4816.52" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Hhp8iElSuVVZwGjUWeNH-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="Hhp8iElSuVVZwGjUWeNH-12" target="Hhp8iElSuVVZwGjUWeNH-14" parent="1">
