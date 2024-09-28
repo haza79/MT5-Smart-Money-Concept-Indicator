@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="4139" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3797" dy="1067" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5701,7 +5701,7 @@
         <mxCell id="nqShiEEi33GG4ir7MfXn-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nqShiEEi33GG4ir7MfXn-8" target="nqShiEEi33GG4ir7MfXn-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nqShiEEi33GG4ir7MfXn-8" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major high = highest high from&lt;/div&gt;&lt;div&gt;major low to price break&lt;/div&gt;&lt;div&gt;major trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="nqShiEEi33GG4ir7MfXn-8" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;swing high = highest high from&lt;/div&gt;&lt;div&gt;swing low to price break&lt;/div&gt;&lt;div&gt;trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="5754.540000000002" y="5728" width="196.46" height="88.5" as="geometry" />
         </mxCell>
         <mxCell id="nqShiEEi33GG4ir7MfXn-9" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new latest struct&lt;br&gt;&lt;/div&gt;&lt;div&gt;market phase array *push bearish bos&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
@@ -5722,7 +5722,7 @@
         <mxCell id="nqShiEEi33GG4ir7MfXn-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nqShiEEi33GG4ir7MfXn-15" target="nqShiEEi33GG4ir7MfXn-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nqShiEEi33GG4ir7MfXn-15" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major high = highest high from prev&lt;/div&gt;&lt;div&gt;major low to price break&lt;/div&gt;&lt;div&gt;major trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="nqShiEEi33GG4ir7MfXn-15" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;swing high = highest high from prev&lt;/div&gt;&lt;div&gt;swing low to price break&lt;/div&gt;&lt;div&gt;trend = bearish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6065.21" y="5734.25" width="196.46" height="87.25" as="geometry" />
         </mxCell>
         <mxCell id="nqShiEEi33GG4ir7MfXn-16" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new latest struct&lt;br&gt;&lt;/div&gt;&lt;div&gt;market phase array *push bearish choch&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
@@ -6073,7 +6073,7 @@
         <mxCell id="3z8683c2tLeIMrpywe4I-11" value="if minor trend == null" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="-2333.41" y="5011" width="174.8" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="3z8683c2tLeIMrpywe4I-37" value="major market structure" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="3z8683c2tLeIMrpywe4I-37" value="market structure" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="5736.27" y="5050" width="200" height="390" as="geometry" />
         </mxCell>
         <mxCell id="3z8683c2tLeIMrpywe4I-38" value="trend" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="3z8683c2tLeIMrpywe4I-37" vertex="1">
