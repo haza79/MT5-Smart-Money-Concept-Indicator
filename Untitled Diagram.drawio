@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.16">
   <diagram name="Page-1" id="WlS4WW_dJ6p3mW0exKI5">
-    <mxGraphModel dx="3979" dy="703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5276" dy="1476" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5894,7 +5894,7 @@
         <mxCell id="8PINX88dcm3awkT3LpMV-21" value="&lt;div&gt;if curr price break&lt;/div&gt;&lt;div&gt;&amp;nbsp;wick swing low by wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="7430.400000000001" y="4338.9" width="209.8" height="97.5" as="geometry" />
         </mxCell>
-        <mxCell id="8PINX88dcm3awkT3LpMV-22" value="major wick swing low = curr candle low" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="8PINX88dcm3awkT3LpMV-22" value="wick swing low = curr candle low" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="7303.51" y="4657.4" width="219.6" height="43" as="geometry" />
         </mxCell>
         <mxCell id="8PINX88dcm3awkT3LpMV-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8PINX88dcm3awkT3LpMV-24" target="8PINX88dcm3awkT3LpMV-72" edge="1">
@@ -5972,10 +5972,10 @@
         <mxCell id="8PINX88dcm3awkT3LpMV-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8PINX88dcm3awkT3LpMV-54" target="8PINX88dcm3awkT3LpMV-55" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="8PINX88dcm3awkT3LpMV-54" value="&lt;div&gt;major swing low wick break = TRUE&lt;/div&gt;&lt;div&gt;major wick swing low = curr candle low&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="8PINX88dcm3awkT3LpMV-54" value="&lt;div&gt;major swing low wick break = TRUE&lt;/div&gt;&lt;div&gt;wick swing low = curr candle low&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6985.770000000001" y="4620.36" width="219.6" height="67" as="geometry" />
         </mxCell>
-        <mxCell id="8PINX88dcm3awkT3LpMV-55" value="&lt;div&gt;draw bos line from major low&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="8PINX88dcm3awkT3LpMV-55" value="&lt;div&gt;draw bos line from swing low&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6987.14" y="4719.36" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="8PINX88dcm3awkT3LpMV-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8PINX88dcm3awkT3LpMV-57" target="8PINX88dcm3awkT3LpMV-39" edge="1">
@@ -5990,7 +5990,7 @@
         <mxCell id="8PINX88dcm3awkT3LpMV-59" value="bias bearish" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="7612.93" y="4483.15" width="93.97" height="57.5" as="geometry" />
         </mxCell>
-        <mxCell id="8PINX88dcm3awkT3LpMV-60" value="major wick swing low = curr candle low" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="8PINX88dcm3awkT3LpMV-60" value="wick swing low = curr candle low" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="7550" y="4657.4" width="219.6" height="43" as="geometry" />
         </mxCell>
         <mxCell id="8PINX88dcm3awkT3LpMV-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8PINX88dcm3awkT3LpMV-62" target="8PINX88dcm3awkT3LpMV-60" edge="1">
