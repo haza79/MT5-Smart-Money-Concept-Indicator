@@ -5779,16 +5779,16 @@
         <mxCell id="j8YgvF3r5g4JpJgSj6a6-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j8YgvF3r5g4JpJgSj6a6-21" target="j8YgvF3r5g4JpJgSj6a6-23" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j8YgvF3r5g4JpJgSj6a6-21" value="&lt;div&gt;if curr price break prev&amp;nbsp;&lt;/div&gt;&lt;div&gt;major high&lt;/div&gt;&lt;div&gt;by wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="j8YgvF3r5g4JpJgSj6a6-21" value="&lt;div&gt;if curr price break prev&amp;nbsp;&lt;/div&gt;&lt;div&gt;swing high&lt;/div&gt;&lt;div&gt;by wick&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6985.770000000001" y="3753.21" width="220" height="95" as="geometry" />
         </mxCell>
         <mxCell id="j8YgvF3r5g4JpJgSj6a6-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j8YgvF3r5g4JpJgSj6a6-23" target="j8YgvF3r5g4JpJgSj6a6-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j8YgvF3r5g4JpJgSj6a6-23" value="&lt;div&gt;major swing high wick break = TRUE&lt;/div&gt;&lt;div&gt;major wick swing high = curr candle&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="j8YgvF3r5g4JpJgSj6a6-23" value="&lt;div&gt;swing high wick break = TRUE&lt;/div&gt;&lt;div&gt;wick swing high = curr candle&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="6985.770000000001" y="3881.46" width="219.6" height="67" as="geometry" />
         </mxCell>
-        <mxCell id="j8YgvF3r5g4JpJgSj6a6-24" value="&lt;div&gt;draw choch line from prev major high&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="j8YgvF3r5g4JpJgSj6a6-24" value="&lt;div&gt;draw choch line from prev swing high&lt;/div&gt;&lt;div&gt;to price break&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="6987.14" y="3980.46" width="217.26" height="62" as="geometry" />
         </mxCell>
         <mxCell id="ib9epmy-cLcLqfZwJ37Y-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ib9epmy-cLcLqfZwJ37Y-32" target="yH69GDs2usfKh2oQtjpG-58" edge="1">
