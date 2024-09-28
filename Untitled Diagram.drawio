@@ -5436,7 +5436,7 @@
         <mxCell id="nqShiEEi33GG4ir7MfXn-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-23" target="nqShiEEi33GG4ir7MfXn-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-23" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major low = lowest low from major high to price break&lt;/div&gt;&lt;div&gt;major trend = bullish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="yH69GDs2usfKh2oQtjpG-23" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;swing low = lowest low from swing high to price break&lt;/div&gt;&lt;div&gt;trend = bullish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="5206.670000000002" y="5733.25" width="196.46" height="88.5" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-24" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new latest struct&lt;br&gt;&lt;/div&gt;&lt;div&gt;market phase array *push bullish bos&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
@@ -5548,7 +5548,7 @@
         <mxCell id="nqShiEEi33GG4ir7MfXn-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yH69GDs2usfKh2oQtjpG-44" target="nqShiEEi33GG4ir7MfXn-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yH69GDs2usfKh2oQtjpG-44" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;major low = lowest low from prev&lt;/div&gt;&lt;div&gt;major high to price break&lt;/div&gt;&lt;div&gt;major trend = bullish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="yH69GDs2usfKh2oQtjpG-44" value="&lt;div&gt;latest market struct&lt;/div&gt;&lt;div&gt;swing low = lowest low from prev&lt;/div&gt;&lt;div&gt;swing high to price break&lt;/div&gt;&lt;div&gt;trend = bullish&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="5469.909999999999" y="5733.25" width="196.46" height="87.25" as="geometry" />
         </mxCell>
         <mxCell id="yH69GDs2usfKh2oQtjpG-45" value="&lt;div&gt;prev struct = latest struct&lt;/div&gt;&lt;div&gt;latest struct = new latest struct&lt;br&gt;&lt;/div&gt;&lt;div&gt;market phase array *push bullish choch&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
