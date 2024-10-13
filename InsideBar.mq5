@@ -7,27 +7,23 @@
 #property link      "https://www.mql5.com"
 #property version   "1.01"
 #property indicator_chart_window
-#property indicator_buffers 4
+#property indicator_buffers 2
 #property indicator_plots   2
 
-#property indicator_label1  "MotherBar"
-#property indicator_label2  "InsideBar"
-
-/*
-#property indicator_label1  "MotherBar"
-#property indicator_type1   DRAW_FILLING
-#property indicator_color1  clrBlue
+#property indicator_label1  "MotherBarTop"
+#property indicator_type1   DRAW_ARROW
+#property indicator_color1  clrGreen
 #property indicator_style1  STYLE_SOLID
-#property indicator_width1  2
+#property indicator_width1  1
 
-#property indicator_label2  "InsideBar"
-#property indicator_type2   DRAW_FILLING
-#property indicator_color2  clrBlue
+#property indicator_label2  "MotherBarBottom"
+#property indicator_type2   DRAW_ARROW
+#property indicator_color2  clrGreen
 #property indicator_style2  STYLE_SOLID
-#property indicator_width2  2
-*/
+#property indicator_width2  1
 
-double upperBuffer[], lowerBuffer[], motherBarBuffer[], insideBarBuffer[];
+double motherBarTopBuffer[],motherBarBottomBuffer[];
+
 int motherBarIndex = -1;
 double motherBarHigh = 0, motherBarLow = 0;
 
@@ -36,14 +32,11 @@ double motherBarHigh = 0, motherBarLow = 0;
 //+------------------------------------------------------------------+
 int OnInit()
 {
-   // Set indicator buffers
-   SetIndexBuffer(0, motherBarBuffer, INDICATOR_DATA);
-   SetIndexBuffer(1, insideBarBuffer, INDICATOR_DATA);
+   SetIndexBuffer(0,motherBarTopBuffer,INDICATOR_DATA);
+   SetIndexBuffer(1,motherBarBottomBuffer,INDICATOR_DATA);
    
-   /*
-   PlotIndexSetDouble(0, PLOT_EMPTY_VALUE, 0.0);
-   PlotIndexSetDouble(1, PLOT_EMPTY_VALUE, 0.0);
-   */
+   PlotIndexSetInteger(0,PLOT_ARROW,167);
+   PlotIndexSetInteger(1,PLOT_ARROW,167);
    
    return (INIT_SUCCEEDED);
 }
@@ -62,28 +55,35 @@ int OnCalculate(const int rates_total,
                 const long &volume[],
                 const int &spread[])
 {  
-   
    for (int i = 1; i < rates_total-1; i++){
-      if(motherBarIndex != -1){
+      if(motherBarIndex == -1){
          if(IsInsideBar(i,high,low)){
-            motherBarIndex = i;
-            motherBarBuffer[i-1] = 1;
-            insideBarBuffer[i] = 1;
+            motherBarIndex = i-1;
+            motherBarHigh = high[i-1];
+            motherBarLow = low[i-1];
+            
+            motherBarTopBuffer[i-1] = motherBarHigh;
+            motherBarBottomBuffer[i-1] = motherBarLow;
+            
+            motherBarTopBuffer[i] = motherBarHigh;
+            motherBarBottomBuffer[i] = motherBarLow;
+         }else{
+            motherBarTopBuffer[i] = EMPTY_VALUE;
+            motherBarBottomBuffer[i] = EMPTY_VALUE;
+         }
+      }else{
+         if(IsInsideMotherBar(i,high,low)){
+            motherBarTopBuffer[i] = motherBarHigh;
+            motherBarBottomBuffer[i] = motherBarLow;
+         }else{
+            motherBarIndex = -1;
          }
       }
+      
    }
    
    
    return rates_total;
-}
-
-void DrawRectangle(int currentBarIndex, double high, double low)
-{
-   for (int i = motherBarIndex; i <= currentBarIndex; i++)
-   {
-      upperBuffer[i] = high;
-      lowerBuffer[i] = low;
-   }
 }
 
 bool IsInsideBar(int index,const double &high[],const double &low[]){
