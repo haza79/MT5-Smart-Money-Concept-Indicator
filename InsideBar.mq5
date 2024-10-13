@@ -7,9 +7,13 @@
 #property link      "https://www.mql5.com"
 #property version   "1.01"
 #property indicator_chart_window
-#property indicator_buffers 2
+#property indicator_buffers 4
 #property indicator_plots   2
 
+#property indicator_label1  "MotherBar"
+#property indicator_label2  "InsideBar"
+
+/*
 #property indicator_label1  "MotherBar"
 #property indicator_type1   DRAW_FILLING
 #property indicator_color1  clrBlue
@@ -21,8 +25,9 @@
 #property indicator_color2  clrBlue
 #property indicator_style2  STYLE_SOLID
 #property indicator_width2  2
+*/
 
-double upperBuffer[], lowerBuffer[];
+double upperBuffer[], lowerBuffer[], motherBarBuffer[], insideBarBuffer[];
 int motherBarIndex = -1;
 double motherBarHigh = 0, motherBarLow = 0;
 
@@ -32,12 +37,13 @@ double motherBarHigh = 0, motherBarLow = 0;
 int OnInit()
 {
    // Set indicator buffers
-   SetIndexBuffer(0, upperBuffer, INDICATOR_DATA);
-   SetIndexBuffer(1, lowerBuffer, INDICATOR_DATA);
+   SetIndexBuffer(0, motherBarBuffer, INDICATOR_DATA);
+   SetIndexBuffer(1, insideBarBuffer, INDICATOR_DATA);
    
-   // Set buffer empty values
+   /*
    PlotIndexSetDouble(0, PLOT_EMPTY_VALUE, 0.0);
    PlotIndexSetDouble(1, PLOT_EMPTY_VALUE, 0.0);
+   */
    
    return (INIT_SUCCEEDED);
 }
@@ -55,8 +61,19 @@ int OnCalculate(const int rates_total,
                 const long &tick_volume[],
                 const long &volume[],
                 const int &spread[])
-{
-
+{  
+   
+   for (int i = 1; i < rates_total-1; i++){
+      if(motherBarIndex != -1){
+         if(IsInsideBar(i,high,low)){
+            motherBarIndex = i;
+            motherBarBuffer[i-1] = 1;
+            insideBarBuffer[i] = 1;
+         }
+      }
+   }
+   
+   
    return rates_total;
 }
 
@@ -83,13 +100,14 @@ bool IsInsideBar(int index,const double &high[],const double &low[]){
    return false;
 }
 
-bool isInsideBarBreak(int index,const double &high[],const double &low[]){
+bool IsInsideMotherBar(int index,const double &high[],const double &low[]){
    double currHigh = high[index];
    double currLow = low[index];
    
-   if(currHigh > motherBarHigh || currLow < motherBarLow){
+   if(currHigh < motherBarHigh && currLow > motherBarLow){
       return true;
+   }else{
+      return false;
    }
    
-   return false;
 }
