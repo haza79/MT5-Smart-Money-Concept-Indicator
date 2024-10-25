@@ -4,7 +4,7 @@ class ImpulsePullbackDetectorClass
 {
 private:
    InsideBarClass* insideBarClass;
-   double highZigZagBuffer[],lowZigZagBuffer[];
+   
    enum Trend {NONE,BULLISH,BEARISH};
    Trend trend;
    bool isInsideBar;
@@ -12,10 +12,12 @@ private:
    double swingHighPrice,swingLowPrice;
 
 public:
+
+double highZigZagBuffer[],lowZigZagBuffer[];
    ImpulsePullbackDetectorClass() : insideBarClass(NULL){}
 
    void Init(InsideBarClass* insideBarInstance){
-      insideBar = insideBarInstance;
+      insideBarClass = insideBarInstance;
       trend          = NONE;
       isInsideBar    = false;
       swingHighIndex = -1;
@@ -28,6 +30,10 @@ public:
    }
    
    void Calculate(int i,const int rates_total, const double &high[], const double &low[]){\
+      if(i <= 1){
+         return;
+      }
+      
       double currHigh   = high[i];
       double currLow    = low[i];
       double prevIndex  = i-1;

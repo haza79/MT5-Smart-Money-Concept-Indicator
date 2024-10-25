@@ -1,6 +1,8 @@
 class InsideBarClass
 {
-private:
+
+public:
+
     double motherBarTopBuffer[];
     double motherBarBottomBuffer[];
     double motherBarBuffer[];
@@ -8,8 +10,6 @@ private:
 
     int motherBarIndex;
     double motherBarHigh, motherBarLow;
-
-public:
 
     // Initialization method
     void Init()
@@ -64,26 +64,11 @@ public:
    int GetMotherBarIndex(){
       return motherBarIndex;
    }
-   double GetMotherBarTop(int index){
-      // Check if the index is within bounds of the array
-      if (index < 0 || index >= ArraySize(motherBarTopBuffer)){
-         return EMPTY_VALUE;  // Return EMPTY_VALUE if out of bounds
-      }
-      
-      return motherBarTopBuffer[index];  // Return the value if within bounds
-   }
-    
-   double GetMotherBarBottom(int index){
-      // Check if the index is within bounds of the array
-      if (index < 0 || index >= ArraySize(motherBarBottomBuffer)){
-         return EMPTY_VALUE;  // Return EMPTY_VALUE if out of bounds
-      }
-      
-      return motherBarBottomBuffer[index];  // Return the value if within bounds
-   }
    
     double GetMotherBar(int index) { return motherBarBuffer[index]; }
     double GetInsideBar(int index) { return insideBarBuffer[index]; }
+    
+    
 
 private:
     // Helper function to detect if the current bar is an inside bar

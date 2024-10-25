@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 2
-#property indicator_plots   2
+#property indicator_buffers 4
+#property indicator_plots   4
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -14,19 +14,26 @@
 #property indicator_style2  STYLE_SOLID
 #property indicator_width2  1
 
+#property indicator_label3  "ZigZag"
+#property indicator_type3   DRAW_ZIGZAG
+#property indicator_color3  clrGreen
+#property indicator_style3  STYLE_SOLID
+#property indicator_width3  1
+
 #include "InsideBarClass.mq5";
 #include "ImpulsePullbackDetector.mq5";
 
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 
-double plotMotherBarTopBuffer[];
-double plotMotherBarBottomBuffer[];
 
 int OnInit()
 {
-    SetIndexBuffer(0, plotMotherBarTopBuffer, INDICATOR_DATA);
-    SetIndexBuffer(1, plotMotherBarBottomBuffer, INDICATOR_DATA);
+
+    SetIndexBuffer(0, insideBar.motherBarTopBuffer, INDICATOR_DATA);
+    SetIndexBuffer(1, insideBar.motherBarBottomBuffer, INDICATOR_DATA);
+    SetIndexBuffer(2, impulsePullbackDetector.highZigZagBuffer, INDICATOR_DATA);
+    SetIndexBuffer(3, impulsePullbackDetector.lowZigZagBuffer, INDICATOR_DATA);
     
     PlotIndexSetInteger(0, PLOT_ARROW, 167); // Set arrow symbol for mother bar top
     PlotIndexSetInteger(1, PLOT_ARROW, 167); // Set arrow symbol for mother bar bottom
@@ -53,14 +60,8 @@ int OnCalculate(const int rates_total,
    
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
+      impulsePullbackDetector.Calculate(i,rates_total,high,low);
       
-      if(i>1){
-         plotMotherBarTopBuffer[i-1] = insideBar.GetMotherBarTop(i-1);
-         plotMotherBarBottomBuffer[i-1] = insideBar.GetMotherBarBottom(i-1);
-         
-         plotMotherBarTopBuffer[i] = insideBar.GetMotherBarTop(i);
-         plotMotherBarBottomBuffer[i] = insideBar.GetMotherBarBottom(i);
-      }
    }
    
    return rates_total;
