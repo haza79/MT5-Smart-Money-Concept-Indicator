@@ -15,24 +15,28 @@
 #property indicator_width2  1
 
 #include "InsideBarClass.mq5";
+#include "ImpulsePullbackDetector.mq5";
 
 InsideBarClass insideBar;
+ImpulsePullbackDetectorClass impulsePullbackDetector;
 
 double plotMotherBarTopBuffer[];
 double plotMotherBarBottomBuffer[];
 
-int OnInit(){
-   ////
-   insideBar.Init();
-   
-   SetIndexBuffer(0, plotMotherBarTopBuffer, INDICATOR_DATA);
-   SetIndexBuffer(1, plotMotherBarBottomBuffer, INDICATOR_DATA);
-   
-   PlotIndexSetInteger(0, PLOT_ARROW, 167); // Set arrow symbol for mother bar top
-   PlotIndexSetInteger(1, PLOT_ARROW, 167); // Set arrow symbol for mother bar bottom
-   
-   return(INIT_SUCCEEDED);
+int OnInit()
+{
+    SetIndexBuffer(0, plotMotherBarTopBuffer, INDICATOR_DATA);
+    SetIndexBuffer(1, plotMotherBarBottomBuffer, INDICATOR_DATA);
+    
+    PlotIndexSetInteger(0, PLOT_ARROW, 167); // Set arrow symbol for mother bar top
+    PlotIndexSetInteger(1, PLOT_ARROW, 167); // Set arrow symbol for mother bar bottom
+    
+    insideBar.Init();
+    impulsePullbackDetector.Init(&insideBar);
+
+    return(INIT_SUCCEEDED);
 }
+
 int OnCalculate(const int rates_total,
                 const int prev_calculated,
                 const datetime &time[],
@@ -43,15 +47,21 @@ int OnCalculate(const int rates_total,
                 const long &tick_volume[],
                 const long &volume[],
                 const int &spread[])
-  {
-   /////
-   insideBar.Calculate(rates_total, prev_calculated, high, low);
-   for (int i = 0; i < rates_total; i++)
-    {
+{
+   
+   int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
+   
+   for (int i = start; i < rates_total; i++){
+      insideBar.Calculate(i,rates_total, high, low);
+      
+      if(i>1){
+         plotMotherBarTopBuffer[i-1] = insideBar.GetMotherBarTop(i-1);
+         plotMotherBarBottomBuffer[i-1] = insideBar.GetMotherBarBottom(i-1);
+         
          plotMotherBarTopBuffer[i] = insideBar.GetMotherBarTop(i);
-          plotMotherBarBottomBuffer[i] = insideBar.GetMotherBarBottom(i);
-
-        
-    }
-   return(rates_total);
+         plotMotherBarBottomBuffer[i] = insideBar.GetMotherBarBottom(i);
+      }
+   }
+   
+   return rates_total;
 }
