@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 4
-#property indicator_plots   4
+#property indicator_buffers 8
+#property indicator_plots   8
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -20,6 +20,18 @@
 #property indicator_style3  STYLE_SOLID
 #property indicator_width3  1
 
+#property indicator_label5  "SwingHigh"
+#property indicator_type5   DRAW_COLOR_ARROW
+#property indicator_color5  clrGreen
+#property indicator_style5  STYLE_SOLID
+#property indicator_width5  1
+
+#property indicator_label6  "SwingLow"
+#property indicator_type6   DRAW_COLOR_ARROW
+#property indicator_color6  clrGreen
+#property indicator_style6  STYLE_SOLID
+#property indicator_width6  1
+
 #include "InsideBarClass.mq5";
 #include "ImpulsePullbackDetector.mq5";
 
@@ -32,11 +44,25 @@ int OnInit()
 
     SetIndexBuffer(0, insideBar.motherBarTopBuffer, INDICATOR_DATA);
     SetIndexBuffer(1, insideBar.motherBarBottomBuffer, INDICATOR_DATA);
+    
     SetIndexBuffer(2, impulsePullbackDetector.highZigZagBuffer, INDICATOR_DATA);
     SetIndexBuffer(3, impulsePullbackDetector.lowZigZagBuffer, INDICATOR_DATA);
     
+    SetIndexBuffer(4, impulsePullbackDetector.swingHighBuffer, INDICATOR_DATA);
+    SetIndexBuffer(5, impulsePullbackDetector.swingLowBuffer, INDICATOR_DATA);
+    
     PlotIndexSetInteger(0, PLOT_ARROW, 167); // Set arrow symbol for mother bar top
     PlotIndexSetInteger(1, PLOT_ARROW, 167); // Set arrow symbol for mother bar bottom
+    
+    PlotIndexSetInteger(4, PLOT_ARROW, 108);
+    PlotIndexSetInteger(5, PLOT_ARROW, 108);
+    
+    PlotIndexSetDouble(2,PLOT_EMPTY_VALUE,0);
+    PlotIndexSetDouble(4,PLOT_EMPTY_VALUE,0);
+    PlotIndexSetDouble(5,PLOT_EMPTY_VALUE,0);
+    
+    //PlotIndexSetInteger(4,PLOT_ARROW_SHIFT,1);
+    //PlotIndexSetInteger(5,PLOT_ARROW_SHIFT,1);
     
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);

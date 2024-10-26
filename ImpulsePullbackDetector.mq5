@@ -9,11 +9,14 @@ private:
    Trend trend;
    bool isInsideBar;
    int swingHighIndex,swingLowIndex;
+   int motherBarIndex;
    double swingHighPrice,swingLowPrice;
 
 public:
 
-double highZigZagBuffer[],lowZigZagBuffer[];
+   double highZigZagBuffer[],lowZigZagBuffer[];
+   double swingHighBuffer[],swingLowBuffer[];
+   
    ImpulsePullbackDetectorClass() : insideBarClass(NULL){}
 
    void Init(InsideBarClass* insideBarInstance){
@@ -29,7 +32,8 @@ double highZigZagBuffer[],lowZigZagBuffer[];
       ArrayInitialize(lowZigZagBuffer, EMPTY_VALUE);
    }
    
-   void Calculate(int i,const int rates_total, const double &high[], const double &low[]){\
+   void Calculate(int i,const int rates_total, const double &high[], const double &low[]){
+      
       if(i <= 1){
          return;
       }
@@ -53,11 +57,12 @@ double highZigZagBuffer[],lowZigZagBuffer[];
       }
       
       if(isInsideBar){
-         prevIndex = insideBarClass.GetMotherBarIndex();
+         prevIndex = motherBarIndex;
       }else{
          if(insideBarClass.GetMotherBarIndex() != -1){
             isInsideBar = true;
-            prevIndex = insideBarClass.GetMotherBarIndex();
+            motherBarIndex = insideBarClass.GetMotherBarIndex();
+            prevIndex = motherBarIndex;
          }
       }
       
@@ -70,12 +75,13 @@ private:
                               int prevIndex,
                               const double &high[],
                               const double &low[]){
-      // start here                              
+      // start here
       double currHigh = high[currIndex];
       double currLow = low[currIndex];
       double prevHigh = high[prevIndex];
       double prevLow = low[prevIndex];
                                     
+      Print("curr index:",currIndex,"\tprev index:",prevIndex);                                    
       switch(trend){
          case BULLISH:
             if(currHigh > prevHigh && currLow >= prevLow){
@@ -92,6 +98,7 @@ private:
                isInsideBar = false;
                
                AddHighZigZag();
+               AddSwingHighPoint();
                break;
             }
             
@@ -105,6 +112,9 @@ private:
                
                AddHighZigZag();
                AddLowZigZag();
+               
+               AddSwingHighPoint();
+               AddSwingLowPoint();
                break;
             }
             
@@ -124,6 +134,7 @@ private:
                isInsideBar = false;
                
                AddLowZigZag();
+               AddSwingLowPoint();
                break;
             }
             
@@ -137,6 +148,9 @@ private:
                
                AddHighZigZag();
                AddLowZigZag();
+               
+               AddSwingHighPoint();
+               AddSwingLowPoint();
                break;
             }
             break;
@@ -149,5 +163,13 @@ private:
    
    void AddLowZigZag(){
       lowZigZagBuffer[swingLowIndex] = swingLowPrice;
+   }
+   
+   void AddSwingHighPoint(){
+      swingHighBuffer[swingHighIndex] = swingHighPrice;
+   }
+   
+   void AddSwingLowPoint(){
+      swingLowBuffer[swingLowIndex] = swingLowPrice;
    }
 };   
