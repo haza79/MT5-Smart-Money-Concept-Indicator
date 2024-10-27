@@ -20,6 +20,8 @@ public:
    double swingHighBuffer[],swingLowBuffer[];
    double highFractalBuffer[],lowFractalBuffer[];
    
+   int prevSwingHighIndex,prevSwingLowIndex,latestSwingHighIndex,latestSwingLowIndex;
+   
    ImpulsePullbackDetectorClass() : insideBarClass(NULL){}
 
    void Init(InsideBarClass* insideBarInstance){
@@ -37,13 +39,20 @@ public:
    
    void Calculate(int i,const int rates_total, const double &high[], const double &low[]){
       
+      ArrayResize(highZigZagBuffer, rates_total);
+      ArrayResize(lowZigZagBuffer, rates_total);
+      ArrayResize(swingHighBuffer, rates_total);
+      ArrayResize(swingLowBuffer, rates_total);
+      ArrayResize(highFractalBuffer, rates_total);
+      ArrayResize(lowFractalBuffer, rates_total);
+      
       if(i <= 1){
          return;
       }
       
       double currHigh   = high[i];
       double currLow    = low[i];
-      double prevIndex  = i-1;
+      int prevIndex  = i-1;
       double prevHigh   = high[i-1];
       double prevLow    = low[i-1];
       
@@ -197,9 +206,16 @@ private:
    
    void AddSwingHighPoint(){
       swingHighBuffer[swingHighIndex] = swingHighPrice;
+      
+      prevSwingHighIndex   = latestSwingHighIndex;
+      latestSwingHighIndex = swingHighIndex;
+      
    }
    
    void AddSwingLowPoint(){
       swingLowBuffer[swingLowIndex] = swingLowPrice;
+      
+      prevSwingLowIndex    = latestSwingLowIndex;
+      latestSwingLowIndex  = swingLowIndex;
    }
 };   

@@ -47,21 +47,25 @@ int OnInit()
     SetIndexBuffer(0, insideBar.motherBarTopBuffer, INDICATOR_DATA);
     SetIndexBuffer(1, insideBar.motherBarBottomBuffer, INDICATOR_DATA);
     
-    SetIndexBuffer(2, impulsePullbackDetector.swingHighBuffer, INDICATOR_DATA);
-    SetIndexBuffer(3, impulsePullbackDetector.swingLowBuffer, INDICATOR_DATA);
+    SetIndexBuffer(2, impulsePullbackDetector.highFractalBuffer, INDICATOR_DATA);
+    SetIndexBuffer(3, impulsePullbackDetector.lowFractalBuffer, INDICATOR_DATA);
     
     SetIndexBuffer(4, impulsePullbackDetector.highZigZagBuffer, INDICATOR_DATA);
     SetIndexBuffer(5, impulsePullbackDetector.lowZigZagBuffer, INDICATOR_DATA);
     
-    PlotIndexSetInteger(0, PLOT_ARROW, 167); // Set arrow symbol for mother bar top
-    PlotIndexSetInteger(1, PLOT_ARROW, 167); // Set arrow symbol for mother bar bottom
+    // mother bar fractal
+    PlotIndexSetInteger(0, PLOT_ARROW, 158);
+    PlotIndexSetInteger(1, PLOT_ARROW, 158);
     
-    PlotIndexSetInteger(2, PLOT_ARROW, 108);
-    PlotIndexSetInteger(3, PLOT_ARROW, 108);
+    // swing high low
+    PlotIndexSetInteger(2, PLOT_ARROW, 159);
+    PlotIndexSetInteger(3, PLOT_ARROW, 159);
     
+    // zigzag plot empty
     PlotIndexSetDouble(4,PLOT_EMPTY_VALUE,0);
     PlotIndexSetDouble(5,PLOT_EMPTY_VALUE,0);
     
+    // swing high low arrwo shift
     PlotIndexSetInteger(2,PLOT_ARROW_SHIFT,-10);
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,10);
     
