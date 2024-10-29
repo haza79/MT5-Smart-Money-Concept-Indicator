@@ -36,9 +36,12 @@
 
 #include "InsideBarClass.mqh";
 #include "ImpulsePullbackDetector.mqh";
+#include "CandleStructs.mqh"
+#include "CandleBreakAnalyzer.mqh";
 
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
+CandleBreakAnalyzerClass candleBreakAnalyzer;
 
 int OnInit()
 {
@@ -91,6 +94,8 @@ int OnCalculate(const int rates_total,
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
       impulsePullbackDetector.Calculate(i,rates_total,high,low);
+      Candle candle(open[i],high[i],low[i],close[i]);
+      Print(candleBreakAnalyzer.GetCandleType(candle));
 
    }
    

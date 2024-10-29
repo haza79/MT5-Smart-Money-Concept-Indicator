@@ -1,6 +1,8 @@
 #ifndef CANDLEBREAKANALYZERCLASS_MQH
 #define CANDLEBREAKANALYZERCLASS_MQH
 
+#include "CandleStructs.mqh"
+
 class CandleBreakAnalyzerClass{
 
 public:
@@ -10,20 +12,17 @@ public:
    CandleType candleType;
    SwingType swingType;
 
-   CandleType GetCandleType(const double &open,const double &close){
-      if(close > open){
+   CandleType GetCandleType(const Candle &candle){
+      if(candle.close > candle.open){
          return BULLISH;
       }
       
-      if(close < open){
+      if(candle.close < candle.open){
          return BEARISH;
       }
       
-      if(close == open){
-         return DOJI;
-      }
+      return DOJI;
       
-      return CandleType::NONE;
    }
    
 }
