@@ -3,6 +3,7 @@
 
 #include "InsideBarClass.mqh";
 #include "Fractal.mqh";
+#include "Enums.mqh"
 
 class ImpulsePullbackDetectorClass
 {
@@ -10,7 +11,6 @@ private:
    InsideBarClass* insideBarClass;
    FractalClass fractal;
    
-   enum Trend {NONE,BULLISH,BEARISH};
    Trend trend;
    bool isInsideBar;
    int swingHighIndex,swingLowIndex;
@@ -24,17 +24,28 @@ public:
    double highFractalBuffer[],lowFractalBuffer[];
    
    int prevSwingHighIndex,prevSwingLowIndex,latestSwingHighIndex,latestSwingLowIndex;
+   double prevSwingHighPrice,prevSwingLowPrice,latestSwingHighPrice,latestSwingLowPrice;
    
    ImpulsePullbackDetectorClass() : insideBarClass(NULL){}
 
    void Init(InsideBarClass* insideBarInstance){
       insideBarClass = insideBarInstance;
-      trend          = NONE;
+      trend          = TREND_NONE;
       isInsideBar    = false;
       swingHighIndex = -1;
       swingLowIndex  = -1;
       swingHighPrice = -1;
       swingLowPrice  = -1;
+      
+      prevSwingHighIndex   = -1;
+      prevSwingLowIndex    = -1;
+      latestSwingHighIndex = -1;
+      latestSwingLowIndex  = -1;
+      
+      prevSwingHighPrice   = -1;
+      prevSwingLowPrice    = -1;
+      latestSwingHighPrice = -1;
+      latestSwingLowPrice  = -1;
       
       ArrayInitialize(highZigZagBuffer, EMPTY_VALUE);
       ArrayInitialize(lowZigZagBuffer, EMPTY_VALUE);
@@ -53,6 +64,12 @@ public:
       ArrayResize(highFractalBuffer, rates_total);
       ArrayResize(lowFractalBuffer, rates_total);
       
+      highZigZagBuffer[i] = EMPTY_VALUE;
+      lowZigZagBuffer[i] = EMPTY_VALUE;
+      swingHighBuffer[i] = EMPTY_VALUE;
+      swingLowBuffer[i] = EMPTY_VALUE;
+      highFractalBuffer[i] = EMPTY_VALUE;
+      lowFractalBuffer[i] = EMPTY_VALUE;
       
       
       if(i <= 1){
@@ -65,14 +82,14 @@ public:
       double prevHigh   = high[i-1];
       double prevLow    = low[i-1];
       
-      if(trend == NONE){
+      if(trend == TREND_NONE){
          if(currHigh > prevHigh && currLow >= prevLow){
-            trend = BULLISH;
+            trend = TREND_BULLISH;
             return;
          }
          
          if(currLow < prevLow && currHigh <= prevHigh){
-            trend = BEARISH;
+            trend = TREND_BEARISH;
             return;
          }
       }
@@ -101,9 +118,11 @@ private:
       double currLow = low[currIndex];
       double prevHigh = high[prevIndex];
       double prevLow = low[prevIndex];
+      
+      
                                                                      
       switch(trend){
-         case BULLISH:
+         case TREND_BULLISH:
             if(currHigh > prevHigh && currLow >= prevLow){
                // impulse
                isInsideBar=false;
@@ -112,7 +131,7 @@ private:
             
             if(currHigh <= prevHigh && currLow < prevLow){
                //pullback
-               trend = BEARISH;
+               trend = TREND_BEARISH;
                swingHighIndex = prevIndex;
                swingHighPrice = prevHigh;
                isInsideBar = false;
@@ -120,7 +139,7 @@ private:
                AddHighZigZag();
                AddSwingHighPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, fractal.FractalType::HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
                }
                
@@ -141,11 +160,11 @@ private:
                AddSwingHighPoint();
                AddSwingLowPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, fractal.FractalType::HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
                }
                
-               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, fractal.FractalType::LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
                }
                
@@ -153,7 +172,7 @@ private:
             }
             
             break;
-         case BEARISH:
+         case TREND_BEARISH:
             if(currLow < prevLow && currHigh <= prevHigh){
                //impulse
                isInsideBar = false;
@@ -162,7 +181,7 @@ private:
             
             if(currHigh > prevHigh && currLow >= prevLow){
                //pullback
-               trend = BULLISH;
+               trend = TREND_BULLISH;
                swingLowIndex = prevIndex;
                swingLowPrice = prevLow;
                isInsideBar = false;
@@ -170,7 +189,7 @@ private:
                AddLowZigZag();
                AddSwingLowPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, fractal.FractalType::LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
                }
                
@@ -191,11 +210,11 @@ private:
                AddSwingHighPoint();
                AddSwingLowPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, fractal.FractalType::HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
                }
                
-               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, fractal.FractalType::LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
                }
                
@@ -217,7 +236,9 @@ private:
       swingHighBuffer[swingHighIndex] = swingHighPrice;
       
       prevSwingHighIndex   = latestSwingHighIndex;
+      prevSwingHighPrice   = latestSwingHighPrice;
       latestSwingHighIndex = swingHighIndex;
+      latestSwingHighPrice = swingHighPrice;
       
    }
    
@@ -225,7 +246,9 @@ private:
       swingLowBuffer[swingLowIndex] = swingLowPrice;
       
       prevSwingLowIndex    = latestSwingLowIndex;
+      prevSwingHighPrice   = latestSwingHighPrice;
       latestSwingLowIndex  = swingLowIndex;
+      latestSwingLowPrice  = swingLowPrice;
    }
 };   
 

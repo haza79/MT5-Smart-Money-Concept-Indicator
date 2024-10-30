@@ -64,8 +64,8 @@ int OnInit()
     PlotIndexSetInteger(3, PLOT_ARROW, 159);
     
     // zigzag plot empty
-    PlotIndexSetDouble(4,PLOT_EMPTY_VALUE,0);
-    PlotIndexSetDouble(5,PLOT_EMPTY_VALUE,0);
+    PlotIndexSetDouble(4,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(5,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     // swing high low arrwo shift
     PlotIndexSetInteger(2,PLOT_ARROW_SHIFT,-10);
@@ -94,8 +94,6 @@ int OnCalculate(const int rates_total,
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
       impulsePullbackDetector.Calculate(i,rates_total,high,low);
-      Candle candle(open[i],high[i],low[i],close[i]);
-      Print(candleBreakAnalyzer.GetCandleType(candle));
 
    }
    
