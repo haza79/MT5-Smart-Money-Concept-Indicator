@@ -11,6 +11,7 @@ private:
    ImpulsePullbackDetectorClass* impulsePullbackDetector;
    CandleBreakAnalyzerClass candleBreakAnalyzer;
    Trend trend;
+   SwingType swingType;
 
 public:
    
@@ -43,12 +44,6 @@ public:
       int prevSwingHighIndex = impulsePullbackDetector.prevSwingHighIndex;
       int prevSwingLowIndex = impulsePullbackDetector.latestSwingHighIndex;
       
-      double latestSwingHighPrice = impulsePullbackDetector.latestSwingHighPrice;
-      double latestSwingLowPrice = impulsePullbackDetector.latestSwingLowPrice;
-      
-      double prevSwingHighPrice = impulsePullbackDetector.prevSwingHighPrice;
-      double prevSwingLowPrice = impulsePullbackDetector.prevSwingLowPrice;
-      
       
       // first run . no trend
       if(latestSwingHighIndex != -1 && latestSwingLowIndex != -1){
@@ -60,20 +55,21 @@ public:
          }
          
          latestMinorHighIndex = latestSwingHighIndex;
-         latestMinorHighPrice = latestSwingHighPrice;
          
          latestMinorLowIndex = latestSwingLowIndex;
-         latestMinorLowPrice = latestSwingLowPrice;
          
       }
       
       //start here
       Candle currCandleStruct(open[i],high[i],low[i],close[i]);
-      Candle currCandleStruct(open[i],high[i],low[i],close[i]);
+      Candle prevCandleStruct(open[i-1],high[i-1],low[i-1],close[i-1]);
       
       if(trend == TREND_BULLISH){
+         Candle swingPriceStruct(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
          
-         if(candleBreakAnalyzer.IsPriceBreakByBody() || candleBreakAnalyzer.IsPriceBreakByWick || candleBreakAnalyzer.IsPriceBreakByGap)
+         if(candleBreakAnalyzer.IsPriceBreakByBody(swingType,swingPriceStruct,currCandleStruct) || candleBreakAnalyzer.IsPriceBreakByWick(swingType,swingPriceStruct,currCandleStruct) || candleBreakAnalyzer.IsPriceBreakByGap(swingType,swingPriceStruct,prevCandleStruct,currCandleStruct)){
+            // todo -> draw choch line from latest minor low to price break
+         }
          
       }
       

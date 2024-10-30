@@ -30,4 +30,12 @@ enum Trend {
     TREND_BEARISH
 };
 
+enum MarketStructureType {
+    MS_NONE,
+    MS_BULLISH_BOS,  // Bullish Break of Structure
+    MS_BEARISH_BOS,  // Bearish Break of Structure
+    MS_BULLISH_CHOCH, // Bullish Change of Character
+    MS_BEARISH_CHOCH  // Bearish Change of Character
+};
+
 #endif
