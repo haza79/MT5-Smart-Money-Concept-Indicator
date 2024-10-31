@@ -4,26 +4,42 @@
 #include "ImpulsePullbackDetector.mqh";
 #include "CandleBreakAnalyzer.mqh";
 #include "Enums.mqh"
+#include "LineDrawing.mqh";
 
 class MinorMarketStructureClass{
 
 private:
+
+   // -> private variable ---------------------------------------
    ImpulsePullbackDetectorClass* impulsePullbackDetector;
    CandleBreakAnalyzerClass candleBreakAnalyzer;
+   LineDrawing bosLineDrawing;
+   LineDrawing chochLineDrawing;
+   
    Trend trend;
    SwingType swingType;
+   
+   MarketStructureType prevMarketStructure,latestMarketStructure;
+   // -----------------------------------------------------------
+   
+   // -> private function ---------------------------------------
+   void UpdateMarketStructure(MarketStructureType newStructure) {
+      prevMarketStructure = latestMarketStructure;
+      latestMarketStructure = newStructure;
+   }
+   // -----------------------------------------------------------
 
 public:
    
-   const double marketPhase[];
    int prevMinorHighIndex,prevMinorLowIndex,latestMinorHighIndex,latestMinorLowIndex;
-   double prevMinorHighPrice,prevMinorLowPrice,latestMinorHighPrice,latestMinorLowPrice;
    
    MinorMarketStructureClass() : impulsePullbackDetector(NULL){}
 
    void Init(ImpulsePullbackDetectorClass* impulsePullbackDetectorInstance){
       impulsePullbackDetector = impulsePullbackDetectorInstance;
-      trend = NONE;
+      trend = TREND_NONE;
+      prevMarketStructure = MS_NONE;
+      latestMarketStructure = MS_NONE;
       
    }
    
@@ -39,7 +55,7 @@ public:
       }
       
       int latestSwingHighIndex = impulsePullbackDetector.latestSwingHighIndex;
-      int latestSwingLowIndex = impulsePullbackDetector.latestSwingHighIndex
+      int latestSwingLowIndex = impulsePullbackDetector.latestSwingHighIndex;
       
       int prevSwingHighIndex = impulsePullbackDetector.prevSwingHighIndex;
       int prevSwingLowIndex = impulsePullbackDetector.latestSwingHighIndex;
@@ -47,6 +63,9 @@ public:
       
       // first run . no trend
       if(latestSwingHighIndex != -1 && latestSwingLowIndex != -1){
+         
+         double latestSwingHighPrice = high[latestSwingHighIndex];
+         double latestSwingLowPrice = low[latestSwingLowIndex];
          
          if(latestSwingHighIndex > latestSwingLowIndex && latestSwingHighPrice > latestSwingLowPrice){
             trend = TREND_BULLISH;
@@ -64,15 +83,104 @@ public:
       Candle currCandleStruct(open[i],high[i],low[i],close[i]);
       Candle prevCandleStruct(open[i-1],high[i-1],low[i-1],close[i-1]);
       
+      Candle latestMinorHighPriceStruct(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
+      Candle latestMinorLowPriceStruct(open[latestMinorLowIndex],high[latestMinorLowIndex],low[latestMinorLowIndex],close[latestMinorLowIndex]);
+      
       if(trend == TREND_BULLISH){
-         Candle swingPriceStruct(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
-         
-         if(candleBreakAnalyzer.IsPriceBreakByBody(swingType,swingPriceStruct,currCandleStruct) || candleBreakAnalyzer.IsPriceBreakByWick(swingType,swingPriceStruct,currCandleStruct) || candleBreakAnalyzer.IsPriceBreakByGap(swingType,swingPriceStruct,prevCandleStruct,currCandleStruct)){
-            // todo -> draw choch line from latest minor low to price break
+         // choch curr price break minor low
+         if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
+         || candleBreakAnalyzer.IsPriceBreakByWick(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
+         || candleBreakAnalyzer.IsPriceBreakByGap(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
+            // draw choch line from latest minor low to price break
+            chochLineDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
+            
+            UpdateMarketStructure(MS_BEARISH_CHOCH);
+            
+            prevMinorHighIndex = -1;
+            prevMinorLowIndex = latestMinorLowIndex;
+            
+            latestMinorLowIndex = -1;
+            
+            return;
+            
          }
+         
+         // -> bos
+         if(latestMinorHighIndex == -1){
+            // -> get new swing high as minor high
+            if(latestSwingHighIndex > prevMinorHighIndex && high[latestSwingHighIndex] > high[prevMinorHighIndex]){
+               latestMinorHighIndex = latestSwingHighIndex;
+            }
+         }else{
+            if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
+            || candleBreakAnalyzer.IsPriceBreakByWick(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
+            || candleBreakAnalyzer.IsPriceBreakByGap(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
+               // -> bos
+               bosLineDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
+               
+               UpdateMarketStructure(MS_BULLISH_BOS);
+               
+               prevMinorHighIndex = latestMinorHighIndex;
+               prevMinorLowIndex = latestMinorLowIndex;
+               
+               latestMinorHighIndex = -1;
+               latestMinorLowIndex = candleBreakAnalyzer.GetLowestLowIndex(low,prevMinorHighIndex,i);
+            }
+         
+         }
+         
+         return;
          
       }
       
+      
+      if(trend == TREND_BEARISH){
+         
+         // -> choch
+         if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
+         || candleBreakAnalyzer.IsPriceBreakByWick(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
+         || candleBreakAnalyzer.IsPriceBreakByGap(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
+            
+            chochLineDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
+            
+            UpdateMarketStructure(MS_BULLISH_CHOCH);
+            
+            prevMinorHighIndex = latestMinorHighIndex;
+            prevMinorLowIndex = -1;
+            
+            latestMinorHighIndex = -1;
+            
+            return;
+            
+         }
+         
+         // -> bos
+         if(latestMinorLowIndex == -1){
+            // -> get new swing high as minor high
+            if(latestSwingLowIndex > prevMinorLowIndex && low[latestSwingLowIndex] < low[prevMinorLowIndex]){
+               latestMinorLowIndex = latestSwingLowIndex;
+            }
+         }else{
+            if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
+            || candleBreakAnalyzer.IsPriceBreakByWick(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
+            || candleBreakAnalyzer.IsPriceBreakByGap(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
+               // -> bos
+               bosLineDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
+               
+               UpdateMarketStructure(MS_BEARISH_BOS);
+               
+               prevMinorHighIndex = latestMinorHighIndex;
+               prevMinorLowIndex = latestMinorLowIndex;
+               
+               latestMinorHighIndex = candleBreakAnalyzer.GetHighestHighIndex(high,prevMinorLowIndex,i);
+               latestMinorLowIndex = -1;
+            }
+         
+         }
+         
+         return;
+         
+      }
       
    }
 }

@@ -154,6 +154,46 @@ public:
       
    }   
    
+   int GetLowestLowIndex(const double &low[], int startIndex, int endIndex) {
+      // Ensure the range is valid
+      if (startIndex < 0 || endIndex >= ArraySize(low) || startIndex > endIndex) {
+         return -1; // Invalid range
+      }
+      
+      double lowestLow = low[startIndex];
+      int lowestIndex = startIndex;
+      
+      for (int i = startIndex + 1; i <= endIndex; i++) {
+         if (low[i] < lowestLow) {
+            lowestLow = low[i];
+            lowestIndex = i;
+         }
+      }
+      
+      return lowestIndex;
+   }
+
+   int GetHighestHighIndex(const double &high[], int startIndex, int endIndex) {
+      // Ensure the range is valid
+      if (startIndex < 0 || endIndex >= ArraySize(high) || startIndex > endIndex) {
+         return -1; // Invalid range
+      }
+      
+      double highestHigh = high[startIndex];
+      int highestIndex = startIndex;
+      
+      for (int i = startIndex + 1; i <= endIndex; i++) {
+         if (high[i] > highestHigh) {
+            highestHigh = high[i];
+            highestIndex = i;
+         }
+      }
+      
+      return highestIndex;
+   }
+
+
+   
 }
 
 #endif

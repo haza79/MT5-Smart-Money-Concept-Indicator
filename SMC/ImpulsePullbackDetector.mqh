@@ -10,7 +10,6 @@ class ImpulsePullbackDetectorClass
 private:
    InsideBarClass* insideBarClass;
    FractalClass fractal;
-   
    Trend trend;
    bool isInsideBar;
    int swingHighIndex,swingLowIndex;
