@@ -13,8 +13,7 @@ private:
    // -> private variable ---------------------------------------
    ImpulsePullbackDetectorClass* impulsePullbackDetector;
    CandleBreakAnalyzerClass candleBreakAnalyzer;
-   LineDrawing bosLineDrawing;
-   LineDrawing chochLineDrawing;
+   
    
    Trend trend;
    SwingType swingType;
@@ -30,7 +29,8 @@ private:
    // -----------------------------------------------------------
 
 public:
-   
+   LineDrawing bosLineDrawing;
+   LineDrawing chochLineDrawing;
    int prevMinorHighIndex,prevMinorLowIndex,latestMinorHighIndex,latestMinorLowIndex;
    
    MinorMarketStructureClass() : impulsePullbackDetector(NULL){}
@@ -50,15 +50,19 @@ public:
                 const double &low[],
                 const double &close[]){
       // start here
+      ArrayResize(bosLineDrawing.buffer, rates_total);
+      ArrayResize(chochLineDrawing.buffer, rates_total);
+      
+      Print(latestMarketStructure);
       if(i<1){
          return;
       }
       
       int latestSwingHighIndex = impulsePullbackDetector.latestSwingHighIndex;
-      int latestSwingLowIndex = impulsePullbackDetector.latestSwingHighIndex;
+      int latestSwingLowIndex = impulsePullbackDetector.latestSwingLowIndex;
       
       int prevSwingHighIndex = impulsePullbackDetector.prevSwingHighIndex;
-      int prevSwingLowIndex = impulsePullbackDetector.latestSwingHighIndex;
+      int prevSwingLowIndex = impulsePullbackDetector.prevSwingLowIndex;
       
       
       // first run . no trend

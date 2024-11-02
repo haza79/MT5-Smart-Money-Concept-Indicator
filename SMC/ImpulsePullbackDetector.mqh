@@ -140,6 +140,12 @@ private:
                
                if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
+                    
+                    prevSwingHighIndex   = latestSwingHighIndex;
+                    prevSwingHighPrice   = latestSwingHighPrice;
+                    
+                    latestSwingHighIndex = swingHighIndex;
+                    latestSwingHighPrice = swingHighPrice;
                }
                
                break;
@@ -161,10 +167,22 @@ private:
                
                if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
+                    
+                    prevSwingHighIndex   = latestSwingHighIndex;
+                    prevSwingHighPrice   = latestSwingHighPrice;
+                    
+                    latestSwingHighIndex = swingHighIndex;
+                    latestSwingHighPrice = swingHighPrice;
                }
                
                if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
+                    
+                    prevSwingLowIndex    = latestSwingLowIndex;
+                    prevSwingHighPrice   = latestSwingHighPrice;
+                    
+                    latestSwingLowIndex  = swingLowIndex;
+                    latestSwingLowPrice  = swingLowPrice;
                }
                
                break;
@@ -190,6 +208,12 @@ private:
                
                if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
+                    
+                    prevSwingLowIndex    = latestSwingLowIndex;
+                    prevSwingHighPrice   = latestSwingHighPrice;
+                    
+                    latestSwingLowIndex  = swingLowIndex;
+                    latestSwingLowPrice  = swingLowPrice;
                }
                
                break;
@@ -211,10 +235,22 @@ private:
                
                if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
+                    
+                    prevSwingHighIndex   = latestSwingHighIndex;
+                    prevSwingHighPrice   = latestSwingHighPrice;
+                    
+                    latestSwingHighIndex = swingHighIndex;
+                    latestSwingHighPrice = swingHighPrice;
                }
                
                if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
+                    
+                    prevSwingLowIndex    = latestSwingLowIndex;
+                    prevSwingHighPrice   = latestSwingHighPrice;
+                    
+                    latestSwingLowIndex  = swingLowIndex;
+                    latestSwingLowPrice  = swingLowPrice;
                }
                
                break;
@@ -233,22 +269,13 @@ private:
    
    void AddSwingHighPoint(){
       swingHighBuffer[swingHighIndex] = swingHighPrice;
-      
-      prevSwingHighIndex   = latestSwingHighIndex;
-      prevSwingHighPrice   = latestSwingHighPrice;
-      latestSwingHighIndex = swingHighIndex;
-      latestSwingHighPrice = swingHighPrice;
-      
    }
    
    void AddSwingLowPoint(){
       swingLowBuffer[swingLowIndex] = swingLowPrice;
-      
-      prevSwingLowIndex    = latestSwingLowIndex;
-      prevSwingHighPrice   = latestSwingHighPrice;
-      latestSwingLowIndex  = swingLowIndex;
-      latestSwingLowPrice  = swingLowPrice;
    }
+   
+   
 };   
 
 #endif
