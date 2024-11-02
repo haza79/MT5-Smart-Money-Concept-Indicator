@@ -41,6 +41,11 @@ public:
       prevMarketStructure = MS_NONE;
       latestMarketStructure = MS_NONE;
       
+      prevMinorHighIndex   = -1;
+      prevMinorLowIndex    = -1;
+      latestMinorHighIndex = -1;
+      latestMinorLowIndex  = -1;
+      
    }
    
    void Calculate(int i,
@@ -53,7 +58,11 @@ public:
       ArrayResize(bosLineDrawing.buffer, rates_total);
       ArrayResize(chochLineDrawing.buffer, rates_total);
       
-      Print(latestMarketStructure);
+      bosLineDrawing.buffer[i] = EMPTY_VALUE;
+      chochLineDrawing.buffer[i] = EMPTY_VALUE;
+      
+      Print("prev market:",prevMarketStructure," | latest market:",latestMarketStructure);
+      
       if(i<1){
          return;
       }
@@ -64,16 +73,24 @@ public:
       int prevSwingHighIndex = impulsePullbackDetector.prevSwingHighIndex;
       int prevSwingLowIndex = impulsePullbackDetector.prevSwingLowIndex;
       
+      Print("latest high i:",latestSwingHighIndex,"|latest low i:",latestSwingLowIndex);
+      Print("  prev high i:",prevSwingHighIndex,"  |prev low i  :",prevSwingLowIndex);
+      Print("latest minor high i:",latestMinorHighIndex,"  |latest minor low i:",latestMinorLowIndex);
+      
       
       // first run . no trend
-      if(latestSwingHighIndex != -1 && latestSwingLowIndex != -1){
+      if(latestSwingHighIndex != -1 && latestSwingLowIndex != -1 && latestMinorHighIndex == -1 && latestMinorLowIndex == -1){
+         
+         Print("two swing are detected");
          
          double latestSwingHighPrice = high[latestSwingHighIndex];
          double latestSwingLowPrice = low[latestSwingLowIndex];
          
          if(latestSwingHighIndex > latestSwingLowIndex && latestSwingHighPrice > latestSwingLowPrice){
             trend = TREND_BULLISH;
+            Print("trend bullish");
          }else if(latestSwingLowIndex > latestSwingHighIndex && latestSwingLowPrice < latestSwingHighPrice){
+            Print("trend bearish");
             trend = TREND_BEARISH;
          }
          
@@ -83,12 +100,31 @@ public:
          
       }
       
+      if(trend == TREND_NONE){
+         Print("don't have first trend");
+         return;
+      }
+      
+      Print("pass the function get trend");
+      
       //start here
       Candle currCandleStruct(open[i],high[i],low[i],close[i]);
       Candle prevCandleStruct(open[i-1],high[i-1],low[i-1],close[i-1]);
       
-      Candle latestMinorHighPriceStruct(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
-      Candle latestMinorLowPriceStruct(open[latestMinorLowIndex],high[latestMinorLowIndex],low[latestMinorLowIndex],close[latestMinorLowIndex]);
+      Print("latestMinorHighIndex: ", latestMinorHighIndex, ", rates_total: ", rates_total);
+      Print("latestMinorLowIndex: ", latestMinorLowIndex, ", rates_total: ", rates_total);
+
+      Candle latestMinorHighPriceStruct;
+      Candle latestMinorLowPriceStruct;
+      if(latestMinorHighIndex != -1){
+         latestMinorHighPriceStruct.setValue(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
+      }
+      
+      if(latestMinorLowIndex != -1){
+         latestMinorLowPriceStruct.setValue(open[latestMinorLowIndex],high[latestMinorLowIndex],low[latestMinorLowIndex],close[latestMinorLowIndex]);
+      }
+      //Candle latestMinorHighPriceStruct(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
+      //Candle latestMinorLowPriceStruct(open[latestMinorLowIndex],high[latestMinorLowIndex],low[latestMinorLowIndex],close[latestMinorLowIndex]);
       
       if(trend == TREND_BULLISH){
          // choch curr price break minor low

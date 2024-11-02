@@ -1,6 +1,6 @@
 #property indicator_chart_window
 #property indicator_buffers 8
-#property indicator_plots   7
+#property indicator_plots   8
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -113,6 +113,7 @@ int OnCalculate(const int rates_total,
 {
    
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
+   //int start = MathMax(rates_total - 100, 0);
    
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
