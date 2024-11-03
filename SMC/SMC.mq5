@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 8
-#property indicator_plots   8
+#property indicator_buffers 10
+#property indicator_plots   10
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -32,17 +32,29 @@
 #property indicator_style5  STYLE_SOLID
 #property indicator_width5  1
 
-#property indicator_label6  "minor bos"
+#property indicator_label6  "minor bullish bos"
 #property indicator_type6   DRAW_LINE
 #property indicator_color6  clrGreen
-#property indicator_style6  STYLE_DASH
+#property indicator_style6  STYLE_DOT
 #property indicator_width6  1
 
-#property indicator_label7  "minor choch"
+#property indicator_label7  "minor bullish choch"
 #property indicator_type7   DRAW_LINE
 #property indicator_color7  clrRed
-#property indicator_style7  STYLE_DASH
+#property indicator_style7  STYLE_SOLID
 #property indicator_width7  1
+
+#property indicator_label8  "minor bearish bos"
+#property indicator_type8   DRAW_LINE
+#property indicator_color8  clrGreen
+#property indicator_style8  STYLE_DOT
+#property indicator_width8  1
+
+#property indicator_label9  "minor bearish choch"
+#property indicator_type9   DRAW_LINE
+#property indicator_color9  clrRed
+#property indicator_style9  STYLE_SOLID
+#property indicator_width9  1
 
 
 
@@ -69,8 +81,11 @@ int OnInit()
     SetIndexBuffer(4, impulsePullbackDetector.highFractalBuffer, INDICATOR_DATA);
     SetIndexBuffer(5, impulsePullbackDetector.lowFractalBuffer, INDICATOR_DATA);
     
-    SetIndexBuffer(6, minorMarketStructure.bosLineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(7, minorMarketStructure.chochLineDrawing.buffer, INDICATOR_DATA);
+    ///
+    SetIndexBuffer(6, minorMarketStructure.bullishBosDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(7, minorMarketStructure.bullishChochDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(8, minorMarketStructure.bearishBosDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(9, minorMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
     
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);
@@ -81,6 +96,8 @@ int OnInit()
     PlotIndexSetInteger(5, PLOT_ARROW, 159);
     
     // zigzag plot empty
+    PlotIndexSetDouble(0,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(1,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(2,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(3,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(4,PLOT_EMPTY_VALUE,EMPTY_VALUE);
@@ -88,6 +105,7 @@ int OnInit()
     PlotIndexSetDouble(6,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(7,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(8,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(9,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     // swing high low arrwo shift
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,-10);
@@ -112,8 +130,8 @@ int OnCalculate(const int rates_total,
                 const int &spread[])
 {
    
-   //int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
-   int start = MathMax(rates_total - 130, 0);
+   int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
+   //int start = MathMax(rates_total - 130, 0);
    
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
