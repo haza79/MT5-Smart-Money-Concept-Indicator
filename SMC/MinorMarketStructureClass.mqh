@@ -81,9 +81,6 @@ public:
       bearishBosDrawing.buffer[i] = EMPTY_VALUE;
       bearishChochDrawing.buffer[i] = EMPTY_VALUE;
 
-      Print("trend:",trend);
-      Print("prev market:",prevMarketStructure," | latest market:",latestMarketStructure);
-
       if(i<1)
         {
          return;
@@ -96,6 +93,7 @@ public:
       int prevSwingLowIndex = impulsePullbackDetector.prevSwingLowIndex;
 
       // first run . no trend
+      
       if(latestSwingHighIndex != -1 && latestSwingLowIndex != -1 && latestMinorHighIndex == -1 && latestMinorLowIndex == -1)
         {
 

@@ -21,139 +21,53 @@ public:
       
    }
    
-   bool IsPriceBreakByBody(const SwingType &swingType,
-                           const Candle &swingPrice,
-                           const Candle &comparePrice){
-                           
-      // start here
-      CandleType swingCandleType = GetCandleType(swingPrice);
-      CandleType compareCandleType = GetCandleType(comparePrice);
-      
-      if(swingType == SWING_HIGH){
-         
-         if(compareCandleType == CANDLE_BULLISH && swingPrice.high < comparePrice.close && swingPrice.high > comparePrice.open){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_BEARISH && swingPrice.high < comparePrice.open && swingPrice.high > comparePrice.close){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_DOJI && (swingPrice.high == comparePrice.open || swingPrice.high == comparePrice.close)){
-            return true;
-         }
-         
-      }
-      
-      if(swingType == SWING_LOW){
-      
-         if(compareCandleType == CANDLE_BEARISH && swingPrice.low < comparePrice.open && swingPrice.low > comparePrice.close){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_BULLISH && swingPrice.low < comparePrice.close && swingPrice.low > comparePrice.open){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_DOJI && (swingPrice.low == comparePrice.open || swingPrice.low == comparePrice.close)){
-            return true;
-         }
-      
-      }
-      
-      return false;
-      
-   }
-   
-      bool IsPriceBreakByWick(const SwingType &swingType,
-                           const Candle &swingPrice,
-                           const Candle &comparePrice){
-                           
-      // start here
-      CandleType swingCandleType = GetCandleType(swingPrice);
-      CandleType compareCandleType = GetCandleType(comparePrice);
-      
-      if(swingType == SWING_HIGH){
-         
-         if(compareCandleType == CANDLE_BULLISH && swingPrice.high < comparePrice.high && swingPrice.high > comparePrice.close){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_BEARISH && swingPrice.high < comparePrice.high && swingPrice.high > comparePrice.open){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_DOJI && swingPrice.high < comparePrice.high && swingPrice.high > comparePrice.close){
-            return true;
-         }
-         
-      }
-      
-      if(swingType == SWING_LOW){
-      
-         if(compareCandleType == CANDLE_BEARISH && swingPrice.low > comparePrice.low && swingPrice.low < comparePrice.close){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_BULLISH && swingPrice.low > comparePrice.low && swingPrice.low < comparePrice.open){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_DOJI && swingPrice.low > comparePrice.low && swingPrice.low < comparePrice.close){
-            return true;
-         }
-      
-      }
-      
-      return false;
-      
-   }
-   
-      bool IsPriceBreakByGap(const SwingType &swingType,
-                           const Candle &swingPrice,
-                           const Candle &beforeComparePrice,
-                           const Candle &comparePrice){
-                           
-      // start here
-      CandleType swingCandleType = GetCandleType(swingPrice);
-      CandleType compareCandleType = GetCandleType(comparePrice);
-      
-      if(swingType == SWING_HIGH){
-         
-         if(compareCandleType == CANDLE_BULLISH && comparePrice.open >= beforeComparePrice.high && swingPrice.high <= comparePrice.open){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_BEARISH && comparePrice.close >= beforeComparePrice.high && swingPrice.high <= comparePrice.close){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_DOJI && comparePrice.close >= beforeComparePrice.high && swingPrice.high <= comparePrice.close){
-            return true;
-         }
-         
-      }
-      
-      if(swingType == SWING_LOW){
-      
-         if(compareCandleType == CANDLE_BEARISH && comparePrice.open <= beforeComparePrice.low && swingPrice.low >= comparePrice.open){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_BULLISH && comparePrice.close <= beforeComparePrice.low && swingPrice.low >= comparePrice.close){
-            return true;
-         }
-         
-         if(compareCandleType == CANDLE_DOJI && comparePrice.close <= beforeComparePrice.low && swingPrice.low >= comparePrice.close){
-            return true;
-         }
-      
-      }
-      
-      return false;
-      
-   }   
-   
+bool IsPriceBreakByBody(const SwingType &swingType, const Candle &swingPrice, const Candle &comparePrice) {
+    CandleType compareCandleType = GetCandleType(comparePrice);
+    double swingLevel = (swingType == SWING_HIGH) ? swingPrice.high : swingPrice.low;
+    double compareOpen = comparePrice.open, compareClose = comparePrice.close;
+
+    if (swingType == SWING_HIGH) {
+        return (compareCandleType == CANDLE_BULLISH && swingLevel < compareClose && swingLevel > compareOpen) ||
+               (compareCandleType == CANDLE_BEARISH && swingLevel < compareOpen && swingLevel > compareClose) ||
+               (compareCandleType == CANDLE_DOJI && (swingLevel == compareOpen || swingLevel == compareClose));
+    } else {  // SWING_LOW
+        return (compareCandleType == CANDLE_BEARISH && swingLevel < compareOpen && swingLevel > compareClose) ||
+               (compareCandleType == CANDLE_BULLISH && swingLevel < compareClose && swingLevel > compareOpen) ||
+               (compareCandleType == CANDLE_DOJI && (swingLevel == compareOpen || swingLevel == compareClose));
+    }
+}
+
+bool IsPriceBreakByWick(const SwingType &swingType, const Candle &swingPrice, const Candle &comparePrice) {
+    CandleType compareCandleType = GetCandleType(comparePrice);
+    double swingLevel = (swingType == SWING_HIGH) ? swingPrice.high : swingPrice.low;
+    double compareHigh = comparePrice.high, compareLow = comparePrice.low;
+
+    if (swingType == SWING_HIGH) {
+        return (compareCandleType == CANDLE_BULLISH && swingLevel < compareHigh && swingLevel > comparePrice.close) ||
+               (compareCandleType == CANDLE_BEARISH && swingLevel < compareHigh && swingLevel > comparePrice.open) ||
+               (compareCandleType == CANDLE_DOJI && swingLevel < compareHigh && swingLevel > comparePrice.close);
+    } else {  // SWING_LOW
+        return (compareCandleType == CANDLE_BEARISH && swingLevel > compareLow && swingLevel < comparePrice.close) ||
+               (compareCandleType == CANDLE_BULLISH && swingLevel > compareLow && swingLevel < comparePrice.open) ||
+               (compareCandleType == CANDLE_DOJI && swingLevel > compareLow && swingLevel < comparePrice.close);
+    }
+}
+
+bool IsPriceBreakByGap(const SwingType &swingType, const Candle &swingPrice, const Candle &beforeComparePrice, const Candle &comparePrice) {
+    CandleType compareCandleType = GetCandleType(comparePrice);
+    double swingLevel = (swingType == SWING_HIGH) ? swingPrice.high : swingPrice.low;
+    double beforeCompareLevel = (swingType == SWING_HIGH) ? beforeComparePrice.high : beforeComparePrice.low;
+
+    if (swingType == SWING_HIGH) {
+        return (compareCandleType == CANDLE_BULLISH && comparePrice.open >= beforeCompareLevel && swingLevel <= comparePrice.open) ||
+               (compareCandleType == CANDLE_BEARISH && comparePrice.close >= beforeCompareLevel && swingLevel <= comparePrice.close) ||
+               (compareCandleType == CANDLE_DOJI && comparePrice.close >= beforeCompareLevel && swingLevel <= comparePrice.close);
+    } else {  // SWING_LOW
+        return (compareCandleType == CANDLE_BEARISH && comparePrice.open <= beforeCompareLevel && swingLevel >= comparePrice.open) ||
+               (compareCandleType == CANDLE_BULLISH && comparePrice.close <= beforeCompareLevel && swingLevel >= comparePrice.close) ||
+               (compareCandleType == CANDLE_DOJI && comparePrice.close <= beforeCompareLevel && swingLevel >= comparePrice.close);
+    }
+}   
    int GetLowestLowIndex(const double &low[], int startIndex, int endIndex) {
       // Ensure the range is valid
       if (startIndex < 0 || endIndex >= ArraySize(low) || startIndex > endIndex) {
@@ -172,6 +86,15 @@ public:
       
       return lowestIndex;
    }
+   
+   bool IsPriceBreakByAny(const SwingType &swingType,
+                       const Candle &swingPrice,
+                       const Candle &beforeComparePrice,
+                       const Candle &comparePrice) {
+    return IsPriceBreakByBody(swingType, swingPrice, comparePrice) ||
+           IsPriceBreakByWick(swingType, swingPrice, comparePrice) ||
+           IsPriceBreakByGap(swingType, swingPrice, beforeComparePrice, comparePrice);
+}
 
    int GetHighestHighIndex(const double &high[], int startIndex, int endIndex) {
       // Ensure the range is valid
