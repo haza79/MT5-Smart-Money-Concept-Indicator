@@ -112,13 +112,13 @@ int OnCalculate(const int rates_total,
                 const int &spread[])
 {
    
-   int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
-   //int start = MathMax(rates_total - 100, 0);
+   //int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
+   int start = MathMax(rates_total - 130, 0);
    
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
       impulsePullbackDetector.Calculate(i,rates_total,high,low);
-      minorMarketStructure.Calculate(i,rates_total,open,high,low,close);
+      minorMarketStructure.Calculate(i,rates_total,time,open,high,low,close);
 
    }
    
