@@ -145,8 +145,9 @@ public:
             || candleBreakAnalyzer.IsPriceBreakByGap(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct))
            {
             // draw choch line from latest minor low to price break
+            Print(time[i]," ");
             trend = TREND_BEARISH;
-            bearishChochDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
+            bearishChochDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
             //chochLineDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
 
             UpdateMarketStructure(MS_BEARISH_CHOCH);
@@ -177,7 +178,7 @@ public:
               {
                // -> bos
                //bosLineDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
-               bullishBosDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
+               bullishBosDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
 
                UpdateMarketStructure(MS_BULLISH_BOS);
 
@@ -205,7 +206,7 @@ public:
            {
             trend = TREND_BULLISH;
             //chochLineDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
-            bullishChochDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
+            bullishChochDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
 
             UpdateMarketStructure(MS_BULLISH_CHOCH);
 
@@ -235,7 +236,7 @@ public:
               {
                // -> bos
                //bosLineDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
-               bearishBosDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
+               bearishBosDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
 
                UpdateMarketStructure(MS_BEARISH_BOS);
 

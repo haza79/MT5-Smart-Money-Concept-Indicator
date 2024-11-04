@@ -34,7 +34,7 @@
 
 #property indicator_label6  "minor bullish bos"
 #property indicator_type6   DRAW_LINE
-#property indicator_color6  clrWhite
+#property indicator_color6  clrGreen
 #property indicator_style6  STYLE_DOT
 #property indicator_width6  1
 
@@ -46,7 +46,7 @@
 
 #property indicator_label8  "minor bearish bos"
 #property indicator_type8   DRAW_LINE
-#property indicator_color8  clrWhite
+#property indicator_color8  clrGreen
 #property indicator_style8  STYLE_DOT
 #property indicator_width8  1
 
