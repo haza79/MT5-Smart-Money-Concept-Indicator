@@ -138,7 +138,7 @@ private:
                AddHighZigZag();
                AddSwingHighPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
                     
                     prevSwingHighIndex   = latestSwingHighIndex;
@@ -165,7 +165,7 @@ private:
                AddSwingHighPoint();
                AddSwingLowPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
                     
                     prevSwingHighIndex   = latestSwingHighIndex;
@@ -175,7 +175,7 @@ private:
                     latestSwingHighPrice = swingHighPrice;
                }
                
-               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
                     
                     prevSwingLowIndex    = latestSwingLowIndex;
@@ -206,7 +206,7 @@ private:
                AddLowZigZag();
                AddSwingLowPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
                     
                     prevSwingLowIndex    = latestSwingLowIndex;
@@ -233,7 +233,7 @@ private:
                AddSwingHighPoint();
                AddSwingLowPoint();
                
-               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH) && swingHighIndex < ArraySize(highFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingHighIndex, FRACTAL_HIGH)) {
                     highFractalBuffer[swingHighIndex] = swingHighPrice;
                     
                     prevSwingHighIndex   = latestSwingHighIndex;
@@ -243,7 +243,7 @@ private:
                     latestSwingHighPrice = swingHighPrice;
                }
                
-               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW) && swingLowIndex < ArraySize(lowFractalBuffer)) {
+               if (fractal.CheckFractalAtIndex(high, low, swingLowIndex, FRACTAL_LOW)) {
                     lowFractalBuffer[swingLowIndex] = swingLowPrice;
                     
                     prevSwingLowIndex    = latestSwingLowIndex;

@@ -139,29 +139,8 @@ public:
 
       if(trend == TREND_BULLISH)
         {
-         // choch curr price break minor low
-         if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
-            || candleBreakAnalyzer.IsPriceBreakByWick(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
-            || candleBreakAnalyzer.IsPriceBreakByGap(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct))
-           {
-            // draw choch line from latest minor low to price break
-            Print(time[i]," ");
-            trend = TREND_BEARISH;
-            bearishChochDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
-            //chochLineDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
-
-            UpdateMarketStructure(MS_BEARISH_CHOCH);
-
-            prevMinorHighIndex = -1;
-            prevMinorLowIndex = latestMinorLowIndex;
-
-            latestMinorLowIndex = -1;
-
-            return;
-
-           }
-
-         // -> bos
+        
+        // -> bos
          if(latestMinorHighIndex == -1)
            {
             // -> get new swing high as minor high
@@ -172,12 +151,8 @@ public:
            }
          else
            {
-            if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
-               || candleBreakAnalyzer.IsPriceBreakByWick(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
-               || candleBreakAnalyzer.IsPriceBreakByGap(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct))
-              {
+            if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
                // -> bos
-               //bosLineDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
                bullishBosDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
 
                UpdateMarketStructure(MS_BULLISH_BOS);
@@ -190,6 +165,23 @@ public:
               }
 
            }
+        
+         // choch curr price break minor low
+         if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
+         
+            trend = TREND_BEARISH;
+            bearishChochDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
+
+            UpdateMarketStructure(MS_BEARISH_CHOCH);
+
+            prevMinorHighIndex = -1;
+            prevMinorLowIndex = latestMinorLowIndex;
+
+            latestMinorLowIndex = -1;
+
+           }
+
+         
 
          return;
 
@@ -198,26 +190,6 @@ public:
 
       if(trend == TREND_BEARISH)
         {
-
-         // -> choch
-         if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
-            || candleBreakAnalyzer.IsPriceBreakByWick(SWING_HIGH,latestMinorHighPriceStruct,currCandleStruct)
-            || candleBreakAnalyzer.IsPriceBreakByGap(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct))
-           {
-            trend = TREND_BULLISH;
-            //chochLineDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex]);
-            bullishChochDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
-
-            UpdateMarketStructure(MS_BULLISH_CHOCH);
-
-            prevMinorHighIndex = latestMinorHighIndex;
-            prevMinorLowIndex = -1;
-
-            latestMinorHighIndex = -1;
-
-            return;
-
-           }
 
          // -> bos
          if(latestMinorLowIndex == -1)
@@ -230,12 +202,8 @@ public:
            }
          else
            {
-            if(candleBreakAnalyzer.IsPriceBreakByBody(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
-               || candleBreakAnalyzer.IsPriceBreakByWick(SWING_LOW,latestMinorLowPriceStruct,currCandleStruct)
-               || candleBreakAnalyzer.IsPriceBreakByGap(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct))
-              {
+            if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
                // -> bos
-               //bosLineDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex]);
                bearishBosDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
 
                UpdateMarketStructure(MS_BEARISH_BOS);
@@ -248,6 +216,24 @@ public:
               }
 
            }
+
+         // -> choch
+         if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
+         
+            trend = TREND_BULLISH;
+            bullishChochDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
+
+            UpdateMarketStructure(MS_BULLISH_CHOCH);
+
+            prevMinorHighIndex = latestMinorHighIndex;
+            prevMinorLowIndex = -1;
+
+            latestMinorHighIndex = -1;
+
+
+           }
+
+         
          return;
 
         }
