@@ -111,6 +111,11 @@ int OnInit()
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,-10);
     PlotIndexSetInteger(4,PLOT_ARROW_SHIFT,10);
     
+    //PlotIndexSetInteger(6,PLOT_SHIFT,1);
+    //PlotIndexSetInteger(7,PLOT_SHIFT,1);
+    //PlotIndexSetInteger(8,PLOT_SHIFT,1);
+    //PlotIndexSetInteger(9,PLOT_SHIFT,1);
+    
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);
     minorMarketStructure.Init(&impulsePullbackDetector);
