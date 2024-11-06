@@ -166,8 +166,9 @@ int OnCalculate(const int rates_total,
    for (int i = start; i < rates_total; i++){
       insideBar.Calculate(i,rates_total, high, low);
       impulsePullbackDetector.Calculate(i,rates_total,high,low);
-      minorMarketStructure.Calculate(i,rates_total,time,open,high,low,close);
       fractal.Calculate(i,high,low);
+      minorMarketStructure.Calculate(i,rates_total,time,open,high,low,close);
+      
    }
    
    return rates_total;
