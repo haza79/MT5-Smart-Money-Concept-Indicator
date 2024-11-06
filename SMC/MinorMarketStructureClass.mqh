@@ -6,7 +6,7 @@
 #ifndef MINORMARKETSTRUCTURECLASS_MQH
 #define MINORMARKETSTRUCTURECLASS_MQH
 
-#include "ImpulsePullbackDetector.mqh";
+#include "Fractal.mqh";
 #include "CandleBreakAnalyzer.mqh";
 #include "Enums.mqh"
 #include "LineDrawing.mqh";
@@ -20,7 +20,7 @@ class MinorMarketStructureClass
 private:
 
    // -> private variable ---------------------------------------
-   ImpulsePullbackDetectorClass* impulsePullbackDetector;
+   FractalClass* fractal;
    CandleBreakAnalyzerClass candleBreakAnalyzer;
 
 
@@ -46,11 +46,11 @@ public:
 
    int               prevMinorHighIndex,prevMinorLowIndex,latestMinorHighIndex,latestMinorLowIndex;
 
-                     MinorMarketStructureClass() : impulsePullbackDetector(NULL) {}
+                     
 
-   void              Init(ImpulsePullbackDetectorClass* impulsePullbackDetectorInstance)
+   void              Init(FractalClass* fractalInstance)
      {
-      impulsePullbackDetector = impulsePullbackDetectorInstance;
+      fractal = fractalInstance;
       trend = TREND_NONE;
       prevMarketStructure = MS_NONE;
       latestMarketStructure = MS_NONE;
@@ -86,11 +86,11 @@ public:
          return;
         }
 
-      int latestSwingHighIndex = impulsePullbackDetector.latestSwingHighIndex;
-      int latestSwingLowIndex = impulsePullbackDetector.latestSwingLowIndex;
+      int latestSwingHighIndex = fractal.latestFractalHighIndex;
+      int latestSwingLowIndex = fractal.latestFractalLowIndex;
 
-      int prevSwingHighIndex = impulsePullbackDetector.prevSwingHighIndex;
-      int prevSwingLowIndex = impulsePullbackDetector.prevSwingLowIndex;
+      int prevSwingHighIndex = fractal.prevFractalHighIndex;
+      int prevSwingLowIndex = fractal.prevFractalLowIndex;
 
       // first run . no trend
       
