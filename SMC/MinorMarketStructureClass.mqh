@@ -43,6 +43,7 @@ public:
    LineDrawing       bullishChochDrawing;
    LineDrawing       bearishBosDrawing;
    LineDrawing       bearishChochDrawing;
+   double minorSwingHighBuffer[],minorSwingLowBuffer[];
 
    int               prevMinorHighIndex,prevMinorLowIndex,latestMinorHighIndex,latestMinorLowIndex;
 
@@ -59,6 +60,9 @@ public:
       prevMinorLowIndex    = -1;
       latestMinorHighIndex = -1;
       latestMinorLowIndex  = -1;
+      
+      ArrayInitialize(minorSwingHighBuffer,EMPTY_VALUE);
+      ArrayInitialize(minorSwingLowBuffer,EMPTY_VALUE);
 
      }
 
@@ -75,11 +79,15 @@ public:
       ArrayResize(bullishChochDrawing.buffer, rates_total);
       ArrayResize(bearishBosDrawing.buffer, rates_total);
       ArrayResize(bearishChochDrawing.buffer, rates_total);
+      ArrayResize(minorSwingHighBuffer, rates_total);
+      ArrayResize(minorSwingLowBuffer, rates_total);
 
       bullishBosDrawing.buffer[i] = EMPTY_VALUE;
       bullishChochDrawing.buffer[i] = EMPTY_VALUE;
       bearishBosDrawing.buffer[i] = EMPTY_VALUE;
       bearishChochDrawing.buffer[i] = EMPTY_VALUE;
+      minorSwingHighBuffer[i] = EMPTY_VALUE;
+      minorSwingLowBuffer[i] = EMPTY_VALUE;
 
       if(i<1)
         {
@@ -113,6 +121,9 @@ public:
          latestMinorHighIndex = latestSwingHighIndex;
 
          latestMinorLowIndex = latestSwingLowIndex;
+         
+         minorSwingHighBuffer[latestSwingHighIndex] = high[latestSwingHighIndex];
+         minorSwingLowBuffer[latestSwingLowIndex] = low[latestSwingLowIndex];
 
         }
 
@@ -140,35 +151,9 @@ public:
       if(trend == TREND_BULLISH)
         {
         
-        // -> bos
-         if(latestMinorHighIndex == -1)
-           {
-            // -> get new swing high as minor high
-            if(latestSwingHighIndex > prevMinorHighIndex && high[latestSwingHighIndex] > high[prevMinorHighIndex])
-              {
-               latestMinorHighIndex = latestSwingHighIndex;
-              }
-           }
-         else
-           {
-            if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
-               // -> bos
-               bullishBosDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
-
-               UpdateMarketStructure(MS_BULLISH_BOS);
-
-               prevMinorHighIndex = latestMinorHighIndex;
-               prevMinorLowIndex = latestMinorLowIndex;
-
-               latestMinorHighIndex = -1;
-               latestMinorLowIndex = candleBreakAnalyzer.GetLowestLowIndex(low,prevMinorHighIndex,i);
-              }
-
-           }
-        
-         // choch curr price break minor low
+        // choch curr price break minor low
          if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
-         
+            Print("swing low:",time[latestMinorLowIndex]," break at:",time[i]);
             trend = TREND_BEARISH;
             bearishChochDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
 
@@ -178,8 +163,42 @@ public:
             prevMinorLowIndex = latestMinorLowIndex;
 
             latestMinorLowIndex = -1;
+            return;
+           }
+        
+        // -> bos
+         if(latestMinorHighIndex == -1)
+           {
+            // -> get new swing high as minor high
+            if(latestSwingHighIndex > prevMinorHighIndex && high[latestSwingHighIndex] > high[prevMinorHighIndex])
+              {
+               latestMinorHighIndex = latestSwingHighIndex;
+               minorSwingHighBuffer[latestSwingHighIndex] = high[latestSwingHighIndex];
+              }
+           }
+         else
+           {
+            if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
+               // -> bos
+               Print("swing high:",time[latestMinorHighIndex]," break at:",time[i]);
+               bullishBosDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
+
+               UpdateMarketStructure(MS_BULLISH_BOS);
+
+               prevMinorHighIndex = latestMinorHighIndex;
+               prevMinorLowIndex = latestMinorLowIndex;
+
+               latestMinorHighIndex = -1;
+               latestMinorLowIndex = candleBreakAnalyzer.GetLowestLowIndex(low,prevMinorHighIndex,i);
+               
+               minorSwingLowBuffer[latestMinorLowIndex] = low[latestMinorLowIndex];
+               
+               return;
+              }
 
            }
+        
+         
 
          
 
@@ -190,36 +209,10 @@ public:
 
       if(trend == TREND_BEARISH)
         {
-
-         // -> bos
-         if(latestMinorLowIndex == -1)
-           {
-            // -> get new swing high as minor high
-            if(latestSwingLowIndex > prevMinorLowIndex && low[latestSwingLowIndex] < low[prevMinorLowIndex])
-              {
-               latestMinorLowIndex = latestSwingLowIndex;
-              }
-           }
-         else
-           {
-            if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
-               // -> bos
-               bearishBosDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
-
-               UpdateMarketStructure(MS_BEARISH_BOS);
-
-               prevMinorHighIndex = latestMinorHighIndex;
-               prevMinorLowIndex = latestMinorLowIndex;
-
-               latestMinorHighIndex = candleBreakAnalyzer.GetHighestHighIndex(high,prevMinorLowIndex,i);
-               latestMinorLowIndex = -1;
-              }
-
-           }
-
-         // -> choch
+        
+        // -> choch
          if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
-         
+            Print("swing high:",time[latestMinorHighIndex]," break at:",time[i]);
             trend = TREND_BULLISH;
             bullishChochDrawing.DrawStraightLine(latestMinorHighIndex,i,high[latestMinorHighIndex],time);
 
@@ -230,8 +223,41 @@ public:
 
             latestMinorHighIndex = -1;
 
+            return;
+           }
+
+         // -> bos
+         if(latestMinorLowIndex == -1)
+           {
+            // -> get new swing high as minor high
+            if(latestSwingLowIndex > prevMinorLowIndex && low[latestSwingLowIndex] < low[prevMinorLowIndex])
+              {
+               latestMinorLowIndex = latestSwingLowIndex;
+               minorSwingLowBuffer[latestSwingLowIndex] = low[latestSwingLowIndex];
+              }
+           }
+         else
+           {
+            if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
+               // -> bos
+               Print("swing low:",time[latestMinorLowIndex]," break at:",time[i]);
+               bearishBosDrawing.DrawStraightLine(latestMinorLowIndex,i,low[latestMinorLowIndex],time);
+
+               UpdateMarketStructure(MS_BEARISH_BOS);
+
+               prevMinorHighIndex = latestMinorHighIndex;
+               prevMinorLowIndex = latestMinorLowIndex;
+
+               latestMinorHighIndex = candleBreakAnalyzer.GetHighestHighIndex(high,prevMinorLowIndex,i);
+               latestMinorLowIndex = -1;
+               
+               minorSwingHighBuffer[latestMinorHighIndex] = high[latestMinorHighIndex];
+               return;
+              }
 
            }
+
+         
 
          
          return;

@@ -56,13 +56,13 @@
 #property indicator_style9  STYLE_SOLID
 #property indicator_width9  1
 
-#property indicator_label10  "high fractal"
+#property indicator_label10  "minor high"
 #property indicator_type10   DRAW_ARROW
 #property indicator_color10  clrGold
 #property indicator_style10  STYLE_SOLID
 #property indicator_width10  1
 
-#property indicator_label11  "low fractal"
+#property indicator_label11  "minor low"
 #property indicator_type11   DRAW_ARROW
 #property indicator_color11  clrGold
 #property indicator_style11  STYLE_SOLID
@@ -90,8 +90,8 @@ int OnInit()
     SetIndexBuffer(2, impulsePullbackDetector.highZigZagBuffer, INDICATOR_DATA);
     SetIndexBuffer(3, impulsePullbackDetector.lowZigZagBuffer, INDICATOR_DATA);
     
-    SetIndexBuffer(4, impulsePullbackDetector.swingHighBuffer, INDICATOR_DATA);
-    SetIndexBuffer(5, impulsePullbackDetector.swingLowBuffer, INDICATOR_DATA);
+    SetIndexBuffer(4, fractal.highFractalBuffer, INDICATOR_DATA);
+    SetIndexBuffer(5, fractal.lowFractalBuffer, INDICATOR_DATA);
     
     ///
     SetIndexBuffer(6, minorMarketStructure.bullishBosDrawing.buffer, INDICATOR_DATA);
@@ -99,8 +99,8 @@ int OnInit()
     SetIndexBuffer(8, minorMarketStructure.bearishBosDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(9, minorMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
     
-    SetIndexBuffer(10, fractal.highFractalBuffer, INDICATOR_DATA);
-    SetIndexBuffer(11, fractal.lowFractalBuffer, INDICATOR_DATA);
+    SetIndexBuffer(10, minorMarketStructure.minorSwingHighBuffer, INDICATOR_DATA);
+    SetIndexBuffer(11, minorMarketStructure.minorSwingLowBuffer, INDICATOR_DATA);
     
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);
@@ -110,8 +110,8 @@ int OnInit()
     PlotIndexSetInteger(4, PLOT_ARROW, 159);
     PlotIndexSetInteger(5, PLOT_ARROW, 159);
     
-    PlotIndexSetInteger(9, PLOT_ARROW, 167);
-    PlotIndexSetInteger(10, PLOT_ARROW, 167);
+    PlotIndexSetInteger(10, PLOT_ARROW, 159);
+    PlotIndexSetInteger(11, PLOT_ARROW, 159);
     
     // zigzag plot empty
     PlotIndexSetDouble(0,PLOT_EMPTY_VALUE,EMPTY_VALUE);
@@ -159,7 +159,7 @@ int OnCalculate(const int rates_total,
                 const long &volume[],
                 const int &spread[])
 {
-   
+   //2024.01.08 18.00
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
    //int start = MathMax(rates_total - 130, 0);
    
