@@ -160,16 +160,15 @@ int OnCalculate(const int rates_total,
                 const int &spread[])
 {
    //2024.01.08 18.00
+   //2024.01.09 20.00
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
-   //int start = MathMax(rates_total - 130, 0);
-   
-   for (int i = start; i < rates_total; i++){
-      insideBar.Calculate(i,rates_total, high, low);
-      impulsePullbackDetector.Calculate(i,rates_total,high,low);
-      fractal.Calculate(i,high,low);
-      minorMarketStructure.Calculate(i,rates_total,time,open,high,low,close);
-      
+
+   for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
+      insideBar.Calculate(i, rates_total, high, low);
+      impulsePullbackDetector.Calculate(i, rates_total, high, low);
+      fractal.Calculate(i, high, low);
+      minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
    }
-   
+
    return rates_total;
 }

@@ -212,7 +212,7 @@ private:
       swingLowBuffer[swingLowIndex] = swingLowPrice;
         
       prevSwingLowIndex    = latestSwingLowIndex;
-      prevSwingHighPrice   = latestSwingHighPrice;
+      prevSwingLowPrice   = latestSwingLowPrice;
       
       latestSwingLowIndex  = swingLowIndex;
       latestSwingLowPrice  = swingLowPrice;

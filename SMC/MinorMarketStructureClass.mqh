@@ -88,6 +88,8 @@ public:
       bearishChochDrawing.buffer[i] = EMPTY_VALUE;
       minorSwingHighBuffer[i] = EMPTY_VALUE;
       minorSwingLowBuffer[i] = EMPTY_VALUE;
+      
+      if (i >= rates_total - 1) {return;};
 
       if(i<1)
         {
