@@ -161,6 +161,8 @@ int OnCalculate(const int rates_total,
 {
    //2024.01.08 18.00
    //2024.01.09 20.00
+   
+   //2023.09.05 12.00
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle

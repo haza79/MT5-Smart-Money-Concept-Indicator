@@ -157,6 +157,7 @@ public:
          if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)&&
             candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
             
+            Print("sweep:",time[i]);
             trend = TREND_BEARISH;
             UpdateMarketStructure(MS_BULLISH_BOS);
             UpdateMarketStructure(MS_BEARISH_CHOCH);
@@ -235,14 +236,13 @@ public:
       if(trend == TREND_BEARISH)
         {
         
+        /*
         // bos and choch. sweep. bearish bos -> bullish choch
         if(
         candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct) &&
         candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
            
             Print("sweep:",time[i]);
-            Print("prev minor high:",prevMinorHighIndex);
-            Print("prev minor low :",prevMinorLowIndex);
             
             trend = TREND_BULLISH;
             UpdateMarketStructure(MS_BEARISH_BOS);
@@ -262,6 +262,8 @@ public:
            
            
         }
+        */
+        
         
         // -> choch
          if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
