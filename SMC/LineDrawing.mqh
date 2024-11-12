@@ -15,6 +15,7 @@ public:
       // Check for a gap in dates
          buffer[i] = startValue; // Set the line value
       }
+      buffer[endIndex-1] = EMPTY_VALUE;
       buffer[endIndex] = EMPTY_VALUE;
      
    }

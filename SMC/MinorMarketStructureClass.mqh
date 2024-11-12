@@ -43,6 +43,7 @@ public:
    LineDrawing       bullishChochDrawing;
    LineDrawing       bearishBosDrawing;
    LineDrawing       bearishChochDrawing;
+   MarketStructureType prevMarketStructure,latestMarketStructure;
    double minorSwingHighBuffer[],minorSwingLowBuffer[];
 
    int               prevMinorHighIndex,prevMinorLowIndex,latestMinorHighIndex,latestMinorLowIndex;
@@ -153,6 +154,7 @@ public:
       if(trend == TREND_BULLISH)
         {
         
+        /*
         // bos and choch in same candle. sweep. bullish bos -> bearish choch
          if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)&&
             candleBreakAnalyzer.IsPriceBreakByAny(SWING_HIGH,latestMinorHighPriceStruct,prevCandleStruct,currCandleStruct)){
@@ -173,6 +175,7 @@ public:
             
             return;
          }
+         */
         
         // choch curr price break minor low
          if(candleBreakAnalyzer.IsPriceBreakByAny(SWING_LOW,latestMinorLowPriceStruct,prevCandleStruct,currCandleStruct)){
