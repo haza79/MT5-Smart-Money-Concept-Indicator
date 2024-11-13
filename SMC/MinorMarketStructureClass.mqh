@@ -26,8 +26,6 @@ private:
 
    Trend             trend;
    SwingType         swingType;
-
-   MarketStructureType prevMarketStructure,latestMarketStructure;
    // -----------------------------------------------------------
 
    // -> private function ---------------------------------------

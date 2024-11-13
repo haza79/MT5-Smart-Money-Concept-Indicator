@@ -74,12 +74,14 @@
 #include "CandleBreakAnalyzer.mqh";
 #include "MinorMarketStructureClass.mqh";
 #include "Fractal.mqh";
+#include "MajorMarketStructure.mqh";
 
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
 MinorMarketStructureClass minorMarketStructure;
 FractalClass fractal;
+MajorMarketStructureClass majorMarketStructure;
 
 int OnInit()
 {
@@ -143,6 +145,7 @@ int OnInit()
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
     minorMarketStructure.Init(&fractal);
+    majorMarketStructure.Init(&fractal,&minorMarketStructure);
     
 
     return(INIT_SUCCEEDED);
@@ -170,6 +173,7 @@ int OnCalculate(const int rates_total,
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       fractal.Calculate(i, high, low);
       minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
+      majorMarketStructure.Calculate();
    }
 
    return rates_total;
