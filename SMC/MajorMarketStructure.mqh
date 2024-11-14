@@ -4,6 +4,7 @@
 #include "Enums.mqh";
 #include "Fractal.mqh";
 #include "MinorMarketStructureClass.mqh";
+#include "MajorMarketStructureStruct.mqh";
 
 class MajorMarketStructureClass{
 
@@ -11,6 +12,7 @@ private:
    FractalClass* fractal;
    MinorMarketStructureClass* minorMarketStructure;
    int oneTimeRun;
+   MajorMarketStruct prevMarketStruct,latestMarketStruct;
    
 public:
 
@@ -80,16 +82,22 @@ public:
    void GetFirstMarketTrend(int marketTrend){
       switch (marketTrend){
          case 11:
-            biasTrend = TREND_BULLISH;
-            latestMajorTrend = TREND_NONE;
-            latestMajorHighIndex = -1;
-            latestMajorLowIndex = minorMarketStructure.prevMinorLowIndex;
-            latestInducementIndex = fractal.latestFractalLowIndex;
+            prevMarketStruct.swingLow.index = minorMarketStructure.prevMinorLowIndex;
+            prevMarketStruct.swingLow.value = minorMarketStructure.prevMinorLowPrice;
+            prevMarketStruct.swingHigh.index = minorMarketStructure.latestMinorHighIndex;
+            prevMarketStruct.swingHigh.value = minorMarketStructure.latestMinorHighPrice;
+            
+            latestMarketStruct.biasTrend = TREND_BULLISH;
+            latestMarketStruct.trend = TREND_NONE;
+            latestMarketStruct.biasSwingHigh.index = -1;
+            latestMarketStruct.swingHigh.index = -1;
+            latestMarketStruct.swingLow.index = -1;
+            latestMarketStruct.inducement.index = fractal.latestFractalLowIndex;
             break;
             
          case 12:
-            biasTrend = TREND_NONE;
-            latestMajorTrend = TREND_BULLISH;
+            prevMarketStruct.trend = TREND_BULLISH;
+            prevMarketStruct.swingLow
             
             break;
             

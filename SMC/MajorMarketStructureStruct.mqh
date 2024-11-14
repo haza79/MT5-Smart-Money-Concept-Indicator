@@ -1,9 +1,9 @@
-#ifndef MARKETSTRUCTURE_MQH
-#define MARKETSTRUCTURE_MQH
+#ifndef MAJORMARKETSTRUCT_MQH
+#define MAJORMARKETSTRUCT_MQH
 
 #include "Enums.mqh";
 
-struct MarketStructure {
+struct MajorMarketStruct {
    
    // Nested SwingPoint struct
    struct SwingPoint {
@@ -32,7 +32,7 @@ struct MarketStructure {
    MarketStructureType marketPhase;
 
    // Constructor for MarketStructure
-   MarketStructure()
+   MajorMarketStruct()
      : trend(TREND_NONE),
        biasTrend(TREND_NONE),
        swingHigh(),  // Initializes with SwingPoint(-1, 0.0) by default

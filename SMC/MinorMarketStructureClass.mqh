@@ -45,6 +45,7 @@ public:
    double minorSwingHighBuffer[],minorSwingLowBuffer[];
 
    int               prevMinorHighIndex,prevMinorLowIndex,latestMinorHighIndex,latestMinorLowIndex;
+   double prevMinorHighPrice,prevMinorLowPrice,latestMinorHighPrice,latestMinorLowPrice;
 
                      
 
@@ -124,7 +125,12 @@ public:
          latestMinorLowIndex = latestSwingLowIndex;
          
          minorSwingHighBuffer[latestSwingHighIndex] = high[latestSwingHighIndex];
+         prevMinorHighPrice = latestMinorHighPrice;
+         latestMinorHighPrice = high[latestSwingHighIndex];
+         
          minorSwingLowBuffer[latestSwingLowIndex] = low[latestSwingLowIndex];
+         prevMinorLowPrice = latestMinorLowPrice;
+         latestMinorLowPrice = low[latestSwingLowIndex];
 
         }
 
@@ -142,11 +148,13 @@ public:
       if(latestMinorHighIndex != -1)
         {
          latestMinorHighPriceStruct.setValue(open[latestMinorHighIndex],high[latestMinorHighIndex],low[latestMinorHighIndex],close[latestMinorHighIndex]);
+         latestMinorHighPrice = latestMinorHighPriceStruct.high;
         }
 
       if(latestMinorLowIndex != -1)
         {
          latestMinorLowPriceStruct.setValue(open[latestMinorLowIndex],high[latestMinorLowIndex],low[latestMinorLowIndex],close[latestMinorLowIndex]);
+         latestMinorLowPrice = latestMinorLowPriceStruct.low;
         }
 
       if(trend == TREND_BULLISH)
@@ -200,6 +208,8 @@ public:
               {
                latestMinorHighIndex = latestSwingHighIndex;
                minorSwingHighBuffer[latestSwingHighIndex] = high[latestSwingHighIndex];
+               prevMinorHighPrice = latestMinorHighPrice;
+         latestMinorHighPrice = high[latestSwingHighIndex];
               }
            }
          else
@@ -217,6 +227,8 @@ public:
                latestMinorLowIndex = candleBreakAnalyzer.GetLowestLowIndex(low,prevMinorHighIndex,i);
                
                minorSwingLowBuffer[latestMinorLowIndex] = low[latestMinorLowIndex];
+               prevMinorLowPrice = latestMinorLowPrice;
+         latestMinorLowPrice = low[latestSwingLowIndex];
                
                
                
@@ -289,6 +301,8 @@ public:
               {
                latestMinorLowIndex = latestSwingLowIndex;
                minorSwingLowBuffer[latestSwingLowIndex] = low[latestSwingLowIndex];
+               prevMinorLowPrice = latestMinorLowPrice;
+         latestMinorLowPrice = low[latestSwingLowIndex];
               }
            }
          else
@@ -306,6 +320,8 @@ public:
                latestMinorLowIndex = -1;
                
                minorSwingHighBuffer[latestMinorHighIndex] = high[latestMinorHighIndex];
+               prevMinorHighPrice = latestMinorHighPrice;
+         latestMinorHighPrice = high[latestSwingHighIndex];
                return;
               }
 
