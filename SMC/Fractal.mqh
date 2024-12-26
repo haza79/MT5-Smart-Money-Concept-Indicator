@@ -48,9 +48,11 @@ public:
       // Ensure the index is within the bounds for closed candles only
       if (index > 1 && index < ArraySize(high) - 2) {  // Ignore the last candle (open candle)
          if (type == FRACTAL_HIGH && high[index] > high[index - 1] && high[index] > high[index + 1]) {
+            //updateFractalIndex(FRACTAL_HIGH,index);
             return true;
          }
          else if (type == FRACTAL_LOW && low[index] < low[index - 1] && low[index] < low[index + 1]) {
+            //updateFractalIndex(FRACTAL_LOW,index);
             return true;
          }
       } else {
@@ -58,6 +60,22 @@ public:
       }
       return false;
    }
+   
+   void updateFractalIndex(FractalType fractalType,int newFractalIndex){
+      switch(fractalType){
+         case FRACTAL_HIGH:
+            prevFractalHighIndex = latestFractalHighIndex;
+            latestFractalHighIndex = newFractalIndex;
+            break;
+         case FRACTAL_LOW:
+            prevFractalLowIndex = latestFractalLowIndex;
+            latestFractalLowIndex = newFractalIndex;
+            break;
+      }
+      
+   }
+   
+   
 };
 
 #endif
