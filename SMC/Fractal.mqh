@@ -7,6 +7,15 @@
 class FractalClass {
 private:
    ImpulsePullbackDetectorClass* impulsePullbackDetector;
+   int highFractalIndices[], lowFractalIndices[]; // Arrays to collect fractal indices
+   int highFractalCount, lowFractalCount;        // Count of collected fractals'
+   
+   void AddToFractalArray(int &fractalArray[], int &count, int index) {
+      if (count >= ArraySize(fractalArray)) {
+         ArrayResize(fractalArray, count + 10); // Resize by a step to minimize frequent resizes
+      }
+      fractalArray[count++] = index; // Add index and increment count
+   }
 
 public:
    double highFractalBuffer[], lowFractalBuffer[];
@@ -31,6 +40,8 @@ public:
             highFractalBuffer[getLatestSwingHigh] = high[getLatestSwingHigh];
             prevFractalHighIndex = latestFractalHighIndex;
             latestFractalHighIndex = getLatestSwingHigh;
+            
+            
          }
       }
 
@@ -40,6 +51,8 @@ public:
             lowFractalBuffer[getLatestSwingLow] = low[getLatestSwingLow];
             prevFractalLowIndex = latestFractalLowIndex;
             latestFractalLowIndex = getLatestSwingLow;
+            
+            
          }
       }
    }
@@ -61,19 +74,6 @@ public:
       return false;
    }
    
-   void updateFractalIndex(FractalType fractalType,int newFractalIndex){
-      switch(fractalType){
-         case FRACTAL_HIGH:
-            prevFractalHighIndex = latestFractalHighIndex;
-            latestFractalHighIndex = newFractalIndex;
-            break;
-         case FRACTAL_LOW:
-            prevFractalLowIndex = latestFractalLowIndex;
-            latestFractalLowIndex = newFractalIndex;
-            break;
-      }
-      
-   }
    
    
 };
