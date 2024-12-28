@@ -145,7 +145,7 @@ int OnInit()
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
     minorMarketStructure.Init(&fractal);
-    majorMarketStructure.Init(&fractal,&minorMarketStructure);
+    majorMarketStructure.Init(&fractal);
     
 
     return(INIT_SUCCEEDED);

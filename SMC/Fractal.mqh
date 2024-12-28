@@ -22,6 +22,7 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
    double highFractalBuffer[], lowFractalBuffer[];
    int highFractalIndices[], lowFractalIndices[];
    int prevFractalHighIndex, prevFractalLowIndex, latestFractalHighIndex, latestFractalLowIndex;
+   double prevFractalHighPrice,prevFractalLowPrice,latestFractalHighPrice,latestFractalLowPrice;
 
    void Init(ImpulsePullbackDetectorClass* impulsePullbackDetectorInstance) {
       impulsePullbackDetector = impulsePullbackDetectorInstance;
@@ -50,6 +51,9 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
             highFractalBuffer[getLatestSwingHigh] = high[getLatestSwingHigh];
             prevFractalHighIndex = latestFractalHighIndex;
             latestFractalHighIndex = getLatestSwingHigh;
+            
+            prevFractalHighPrice = latestFractalHighPrice;
+            latestFractalHighPrice = high[getLatestSwingHigh];
             AddToFractalArray(highFractalIndices, highFractalCount, getLatestSwingHigh);
 
             
@@ -62,6 +66,9 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
             lowFractalBuffer[getLatestSwingLow] = low[getLatestSwingLow];
             prevFractalLowIndex = latestFractalLowIndex;
             latestFractalLowIndex = getLatestSwingLow;
+            
+            prevFractalLowPrice = latestFractalLowPrice;
+            latestFractalLowPrice = low[getLatestSwingLow];
             AddToFractalArray(lowFractalIndices, lowFractalCount, getLatestSwingLow);
 
             
@@ -86,26 +93,37 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
       return false;
    }
    
-   int GetLatestHighFractalIndex(int index) {
-   if (highFractalCount > 0) {
-      return highFractalIndices[highFractalCount - (1+index)]; // Return the last element
-   } else {
-      return -1; // Return -1 if no high fractals are available
+   int GetLatestHighFractalIndex() {
+      if (highFractalCount > 0) {
+         return highFractalIndices[highFractalCount - 1]; // Return the last element
+      } else {
+         return -1; // Return -1 if no high fractals are available
+      }
    }
-}
    
-   int GetHighFractalByReverseIndex(int reverseIndex) {
-    // Check if the reverseIndex is within bounds
-    if (reverseIndex < 0 || reverseIndex >= highFractalCount) {
-        PrintFormat("Reverse index out of bounds: %d", reverseIndex);
-        return -1; // Return -1 or any other invalid value for out-of-bounds access
-    }
-
-    // Access the element from right to left
-    int actualIndex = highFractalCount - (1 + reverseIndex); // Convert reverse index to actual index
-    return highFractalIndices[actualIndex];
-
-}
+   int GetPrevHighFractalIndex() {
+      if (highFractalCount > 1) {
+         return highFractalIndices[highFractalCount - 2]; // Return the last element
+      } else {
+         return -1; // Return -1 if no high fractals are available
+      }
+   }
+   
+   int GetLatestLowFractalIndex() {
+      if (lowFractalCount > 0) {
+         return lowFractalIndices[lowFractalCount - 1]; // Return the last element
+      } else {
+         return -1; // Return -1 if no high fractals are available
+      }
+   }
+   
+   int GetPrevLowFractalIndex() {
+      if (lowFractalCount > 1) {
+         return lowFractalIndices[lowFractalCount - 2]; // Return the last element
+      } else {
+         return -1; // Return -1 if no high fractals are available
+      }
+   }
    
    
    
