@@ -60,9 +60,11 @@ public:
     // Calculate method which works with references to the external arrays
     void Calculate() {
         // Add calculation logic here
-        GetBiasHighAndInducement();
-        Print("bias high:",biasHighIndex,":",High[biasHighIndex],":",Time[biasHighIndex]);
-        Print("inducement:",inducementIndex,":",Low[inducementIndex],":",Time[inducementIndex]);
+        Print("last high:",Time[fractal.latestFractalHighIndex]," : ",High[fractal.latestFractalHighIndex]);
+        Print("last low :",Time[fractal.latestFractalLowIndex]," : ",Low[fractal.latestFractalLowIndex]);
+        //GetBiasHighAndInducement();
+        //Print("bias high:",biasHighIndex,":",High[biasHighIndex],":",Time[biasHighIndex]);
+        //Print("inducement:",inducementIndex,":",Low[inducementIndex],":",Time[inducementIndex]);
     }
     
     
