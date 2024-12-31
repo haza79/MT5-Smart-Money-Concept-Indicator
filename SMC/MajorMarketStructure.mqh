@@ -61,16 +61,21 @@ public:
     void Calculate() {
         // Add calculation logic here
         GetBiasHighAndInducement();
-        Print(biasHighIndex,":",Time[biasHighIndex]);
+        Print("bias high:",biasHighIndex,":",High[biasHighIndex],":",Time[biasHighIndex]);
+        Print("inducement:",inducementIndex,":",Low[inducementIndex],":",Time[inducementIndex]);
     }
     
     
     void GetBiasHighAndInducement(){
-    Print("lh=",fractal.latestFractalHighIndex,",",fractal.latestFractalHighPrice,"\tlw=",fractal.latestFractalLowIndex,",",fractal.latestFractalLowPrice);
+    if(fractal.latestFractalHighIndex == -1 || fractal.latestFractalLowIndex == -1){
+      return;
+    }
+    
       Print("is have bias high:",biasHighIndex != -1);
       if(biasHighIndex != -1){
          // yes
-         Print("is last ")
+         Print("is last high fractal > bias high:",fractal.latestFractalHighIndex > biasHighIndex &&
+            fractal.latestFractalHighPrice > biasHighPrice);
          if(fractal.latestFractalHighIndex > biasHighIndex &&
             fractal.latestFractalHighPrice > biasHighPrice){
             // yes
@@ -78,10 +83,13 @@ public:
             biasHighPrice = fractal.latestFractalHighPrice;
             inducementIndex = fractal.latestFractalLowIndex;
             inducementPrice = fractal.latestFractalLowPrice;
+         }else{
+            Print("no bias high");
          }
       }else{
          // no
-         Print("is have prev major high:",prevMajorHighIndex == -1);
+         Print("is prev major high empty:",prevMajorHighIndex == -1);
+         Print(prevMajorHighIndex);
          if(prevMajorHighIndex == -1){
             // yes
             biasHighIndex = fractal.latestFractalHighIndex;
@@ -103,6 +111,8 @@ public:
             }
          }
       }
+      
+      Print("---");
     
     }
 

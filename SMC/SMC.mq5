@@ -166,7 +166,8 @@ int OnCalculate(const int rates_total,
    //2024.01.09 20.00
    
    //2023.09.05 12.00
-   int start = prev_calculated == 0 ? 0 : prev_calculated - 1;
+   //int start = MathMax(rates_total - 100, 0);// for limit candle to process
+   int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
       insideBar.Calculate(i, rates_total, high, low);
