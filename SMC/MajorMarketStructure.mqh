@@ -1,3 +1,17 @@
+#define SERIES(name,type)                               \                            
+class C##name                                           \
+{                                                       \
+public:                                                 \
+type operator[](const int i){return i##name(NULL,0,i);} \                                                
+}name;
+SERIES(Open,double)
+SERIES(Low,double)
+SERIES(High,double)
+SERIES(Close,double)
+SERIES(Time,datetime)
+SERIES(Volume,long)
+
+
 #ifndef MAJORMARKETSTRUCTURECLASS_MQH
 #define MAJORMARKETSTRUCTURECLASS_MQH
 
@@ -28,6 +42,8 @@ private:
     };
 
 public:
+
+
     // Constructor to initialize variables
     void Init(FractalClass *fractalInstance) {
         fractal = fractalInstance;
@@ -42,55 +58,52 @@ public:
     }
 
     // Calculate method which works with references to the external arrays
-    void Calculate(const double &open[],
-                   const double &high[],
-                   const double &low[],
-                   const double &close[]) {
-        // Use references to avoid copying the data
-         void GetBiasHighAndInducement(&open,&high,&low,&close);
+    void Calculate() {
         // Add calculation logic here
+        GetBiasHighAndInducement();
+        Print(biasHighIndex,":",Time[biasHighIndex]);
     }
     
     
-    void GetBiasHighAndInducement(const double &open[],const double &high[],const double &low[],const double &close[]){
-    bool isSet = false;
+    void GetBiasHighAndInducement(){
+    Print("lh=",fractal.latestFractalHighIndex,",",fractal.latestFractalHighPrice,"\tlw=",fractal.latestFractalLowIndex,",",fractal.latestFractalLowPrice);
+      Print("is have bias high:",biasHighIndex != -1);
       if(biasHighIndex != -1){
-         
-         if(fractal.latestFractalHighIndex > biasHighIndex && fractal.latestFractalHighPrice > biasHighPrice){
-            isSet = true;
-         }else{
-            isSet = false;
-         }
-         
-      }else{
-      
-         if(prevMajorHighIndex == -1){
-            // is prev major high EMPTY
-            isSet = true;
-         }else if(fractal.latestFractalHighIndex > prevMajorHighIndex && fractal.latestFractalHighPrice > prevMajorHighPrice){
-            isSet = true;
-         }else{
-            isSet = false;
-         }
-         
-      }
-      
-      if(isSet){
-         biasHighIndex = fractal.latestFractalHighIndex;
-         biasHighPrice = fractal.latestFractalHighPrice;
-         
-         if(fractal.latestFractalLowIndex == fractal.latestFractalHighIndex){
-            inducementIndex = fractal.prevFractalLowIndex;
-            inducementPrice = fractal.prevFractalLowPrice;
-         }else{
+         // yes
+         Print("is last ")
+         if(fractal.latestFractalHighIndex > biasHighIndex &&
+            fractal.latestFractalHighPrice > biasHighPrice){
+            // yes
+            biasHighIndex = fractal.latestFractalHighIndex;
+            biasHighPrice = fractal.latestFractalHighPrice;
             inducementIndex = fractal.latestFractalLowIndex;
             inducementPrice = fractal.latestFractalLowPrice;
          }
-         
+      }else{
+         // no
+         Print("is have prev major high:",prevMajorHighIndex == -1);
+         if(prevMajorHighIndex == -1){
+            // yes
+            biasHighIndex = fractal.latestFractalHighIndex;
+            biasHighPrice = fractal.latestFractalHighPrice;
+            inducementIndex = fractal.latestFractalLowIndex;
+            inducementPrice = fractal.latestFractalLowPrice;
+         }else{
+            // no
+            Print("is latest high fractal > prev major high:",fractal.latestFractalHighIndex > prevMajorHighIndex &&
+               fractal.latestFractalHighPrice > prevMajorHighPrice);
+            if(fractal.latestFractalHighIndex > prevMajorHighIndex &&
+               fractal.latestFractalHighPrice > prevMajorHighPrice){
+               // yes
+               
+               biasHighIndex = fractal.latestFractalHighIndex;
+               biasHighPrice = fractal.latestFractalHighPrice;
+               inducementIndex = fractal.latestFractalLowIndex;
+               inducementPrice = fractal.latestFractalLowPrice;
+            }
+         }
       }
-      
-      
-      
+    
     }
 
 

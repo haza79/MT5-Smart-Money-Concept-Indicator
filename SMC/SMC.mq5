@@ -175,9 +175,6 @@ int OnCalculate(const int rates_total,
       minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
       majorMarketStructure.Calculate();
       
-      if(fractal.highFractalCount > 1 && fractal.lowFractalCount > 1){
-         Print("h1:",time[fractal.highFractalIndices[fractal.highFractalCount-2]],"|h2:",time[fractal.highFractalIndices[fractal.highFractalCount-1]]);
-      }
       
    }
 
