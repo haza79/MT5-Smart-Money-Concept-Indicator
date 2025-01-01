@@ -68,6 +68,7 @@
 #property indicator_style11  STYLE_SOLID
 #property indicator_width11  1
 
+#include "BarData.mqh";
 #include "InsideBarClass.mqh";
 #include "ImpulsePullbackDetector.mqh";
 #include "CandleStructs.mqh"
@@ -76,6 +77,7 @@
 #include "Fractal.mqh";
 #include "MajorMarketStructure.mqh";
 
+BarData barData;
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
@@ -141,11 +143,12 @@ int OnInit()
     //PlotIndexSetInteger(8,PLOT_SHIFT,1);
     //PlotIndexSetInteger(9,PLOT_SHIFT,1);
     
+
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
     minorMarketStructure.Init(&fractal);
-    majorMarketStructure.Init(&fractal);
+    majorMarketStructure.Init(&barData,&fractal);
     
 
     return(INIT_SUCCEEDED);
@@ -162,14 +165,21 @@ int OnCalculate(const int rates_total,
                 const long &volume[],
                 const int &spread[])
 {
-   //2024.01.08 18.00
-   //2024.01.09 20.00
+
+   if (!barData.SetData(rates_total, time, open, high, low, close)) { // Call SetData() ONLY ONCE, BEFORE the loop
+       Print("Setting data failed");
+       return rates_total;
+   }
+//bias H     : 2024.03.14 07:00:00
+//inducement : 2024.03.14 04:00:00
+
    
-   //2023.09.05 12.00
+   
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
+      
       insideBar.Calculate(i, rates_total, high, low);
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       fractal.Calculate(i, high, low);
@@ -177,7 +187,10 @@ int OnCalculate(const int rates_total,
       majorMarketStructure.Calculate();
       
       
-   }
+
+      }
+      
 
    return rates_total;
+   
 }

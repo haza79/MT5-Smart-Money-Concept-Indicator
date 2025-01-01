@@ -1,20 +1,7 @@
-#define SERIES(name,type)                               \                            
-class C##name                                           \
-{                                                       \
-public:                                                 \
-type operator[](const int i){return i##name(NULL,0,i);} \                                                
-}name;
-SERIES(Open,double)
-SERIES(Low,double)
-SERIES(High,double)
-SERIES(Close,double)
-SERIES(Time,datetime)
-SERIES(Volume,long)
+#ifndef MAJORMARKETSTRUCTTURECLASS_MQH
+#define MAJORMARKETSTRUCTTURECLASS_MQH
 
-
-#ifndef MAJORMARKETSTRUCTURECLASS_MQH
-#define MAJORMARKETSTRUCTURECLASS_MQH
-
+#include "BarData.mqh"
 #include "Enums.mqh"
 #include "Fractal.mqh"
 #include "MinorMarketStructureClass.mqh"
@@ -23,6 +10,8 @@ SERIES(Volume,long)
 class MajorMarketStructureClass {
 
 private:
+   
+   BarData *barData;
     FractalClass *fractal;
     MinorMarketStructureClass *minorMarketStructure;
     int oneTimeRun;
@@ -45,7 +34,8 @@ public:
 
 
     // Constructor to initialize variables
-    void Init(FractalClass *fractalInstance) {
+    void Init(BarData *barDataInstance,FractalClass *fractalInstance) {
+      barData = barDataInstance;
         fractal = fractalInstance;
 
         prevMajorHighIndex = prevMajorLowIndex = latestMajorHighIndex = latestMajorLowIndex = -1;
@@ -59,12 +49,9 @@ public:
 
     // Calculate method which works with references to the external arrays
     void Calculate() {
-        // Add calculation logic here
-        Print("last high:",Time[fractal.latestFractalHighIndex]," : ",High[fractal.latestFractalHighIndex]);
-        Print("last low :",Time[fractal.latestFractalLowIndex]," : ",Low[fractal.latestFractalLowIndex]);
-        //GetBiasHighAndInducement();
-        //Print("bias high:",biasHighIndex,":",High[biasHighIndex],":",Time[biasHighIndex]);
-        //Print("inducement:",inducementIndex,":",Low[inducementIndex],":",Time[inducementIndex]);
+      GetBiasHighAndInducement();
+      Print("bias H     : ",barData.GetTime(biasHighIndex));
+      Print("inducement : ",barData.GetTime(inducementIndex));
     }
     
     
@@ -73,48 +60,56 @@ public:
       return;
     }
     
-      Print("is have bias high:",biasHighIndex != -1);
       if(biasHighIndex != -1){
          // yes
-         Print("is last high fractal > bias high:",fractal.latestFractalHighIndex > biasHighIndex &&
-            fractal.latestFractalHighPrice > biasHighPrice);
          if(fractal.latestFractalHighIndex > biasHighIndex &&
             fractal.latestFractalHighPrice > biasHighPrice){
             // yes
             biasHighIndex = fractal.latestFractalHighIndex;
             biasHighPrice = fractal.latestFractalHighPrice;
-            inducementIndex = fractal.latestFractalLowIndex;
-            inducementPrice = fractal.latestFractalLowPrice;
-         }else{
-            Print("no bias high");
+            
+            if(biasHighIndex == fractal.latestFractalLowIndex){
+               inducementIndex = fractal.prevFractalLowIndex;
+               inducementPrice = fractal.prevFractalLowPrice;
+            }else{
+               inducementIndex = fractal.latestFractalLowIndex;
+               inducementPrice = fractal.latestFractalLowPrice;
+            }
+            
          }
       }else{
          // no
-         Print("is prev major high empty:",prevMajorHighIndex == -1);
-         Print(prevMajorHighIndex);
          if(prevMajorHighIndex == -1){
             // yes
             biasHighIndex = fractal.latestFractalHighIndex;
             biasHighPrice = fractal.latestFractalHighPrice;
-            inducementIndex = fractal.latestFractalLowIndex;
-            inducementPrice = fractal.latestFractalLowPrice;
+            
+            if(biasHighIndex == fractal.latestFractalLowIndex){
+               inducementIndex = fractal.prevFractalLowIndex;
+               inducementPrice = fractal.prevFractalLowPrice;
+            }else{
+               inducementIndex = fractal.latestFractalLowIndex;
+               inducementPrice = fractal.latestFractalLowPrice;
+            }
          }else{
             // no
-            Print("is latest high fractal > prev major high:",fractal.latestFractalHighIndex > prevMajorHighIndex &&
-               fractal.latestFractalHighPrice > prevMajorHighPrice);
             if(fractal.latestFractalHighIndex > prevMajorHighIndex &&
                fractal.latestFractalHighPrice > prevMajorHighPrice){
                // yes
-               
                biasHighIndex = fractal.latestFractalHighIndex;
                biasHighPrice = fractal.latestFractalHighPrice;
+               
+               if(biasHighIndex == fractal.latestFractalLowIndex){
+               inducementIndex = fractal.prevFractalLowIndex;
+               inducementPrice = fractal.prevFractalLowPrice;
+            }else{
                inducementIndex = fractal.latestFractalLowIndex;
                inducementPrice = fractal.latestFractalLowPrice;
+            }
             }
          }
       }
       
-      Print("---");
     
     }
 
