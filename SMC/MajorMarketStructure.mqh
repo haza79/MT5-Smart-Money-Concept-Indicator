@@ -49,8 +49,8 @@ public:
 
     // Calculate method which works with references to the external arrays
     void Calculate() {
-      GetBiasHighAndInducement();
-      Print("bias H     : ",barData.GetTime(biasHighIndex));
+      GetBiasLowAndInducement();
+      Print("bias L     : ",barData.GetTime(biasLowIndex));
       Print("inducement : ",barData.GetTime(inducementIndex));
     }
     
@@ -86,6 +86,42 @@ public:
                           fractal.prevFractalLowIndex : fractal.latestFractalLowIndex;
         inducementPrice = (biasHighIndex == fractal.latestFractalLowIndex) ?
                           fractal.prevFractalLowPrice : fractal.latestFractalLowPrice;
+    }
+}
+
+
+
+void GetBiasLowAndInducement() {
+    if (fractal.latestFractalHighIndex == -1 || fractal.latestFractalLowIndex == -1) {
+        return;
+    }
+
+    int newBiasLowIndex = -1;
+    double newBiasLowPrice = 0.0;
+
+    if (biasLowIndex != -1) {
+        if (fractal.latestFractalLowIndex > biasLowIndex &&
+            fractal.latestFractalLowPrice < biasLowPrice) { // Note the '<' for lows
+            newBiasLowIndex = fractal.latestFractalLowIndex;
+            newBiasLowPrice = fractal.latestFractalLowPrice;
+        }
+    } else {
+        if (prevMajorLowIndex == -1 ||
+            (fractal.latestFractalLowIndex > prevMajorLowIndex &&
+             fractal.latestFractalLowPrice < prevMajorLowPrice)) { // Note the '<' for lows
+            newBiasLowIndex = fractal.latestFractalLowIndex;
+            newBiasLowPrice = fractal.latestFractalLowPrice;
+        }
+    }
+
+    if (newBiasLowIndex != -1) {
+        biasLowIndex = newBiasLowIndex;
+        biasLowPrice = newBiasLowPrice;
+
+        inducementIndex = (biasLowIndex == fractal.latestFractalHighIndex) ?
+                          fractal.prevFractalHighIndex : fractal.latestFractalHighIndex;
+        inducementPrice = (biasLowIndex == fractal.latestFractalHighIndex) ?
+                          fractal.prevFractalHighPrice : fractal.latestFractalHighPrice;
     }
 }
 
