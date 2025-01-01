@@ -21,11 +21,13 @@ public:
 int highFractalCount, lowFractalCount;        // Count of collected fractals'
    double highFractalBuffer[], lowFractalBuffer[];
    int highFractalIndices[], lowFractalIndices[];
-   int prevFractalHighIndex, prevFractalLowIndex, latestFractalHighIndex, latestFractalLowIndex;
-   double prevFractalHighPrice,prevFractalLowPrice,latestFractalHighPrice,latestFractalLowPrice;
+   int prev2FractalHighIndex,prev2FractalLowIndex,prevFractalHighIndex, prevFractalLowIndex, latestFractalHighIndex, latestFractalLowIndex;
+   double prev2FractalHighPrice,prev2FractalLowPrice,prevFractalHighPrice,prevFractalLowPrice,latestFractalHighPrice,latestFractalLowPrice;
 
    void Init(ImpulsePullbackDetectorClass* impulsePullbackDetectorInstance) {
       impulsePullbackDetector = impulsePullbackDetectorInstance;
+      
+      prev2FractalHighIndex = prev2FractalLowIndex = -1;
       prevFractalHighIndex = prevFractalLowIndex = -1;
       latestFractalHighIndex = latestFractalLowIndex = -1;
       
@@ -49,11 +51,15 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
       if (latestFractalHighIndex != getLatestSwingHigh && (i - getLatestSwingHigh) >= 2) {
          if (CheckFractalAtIndex(high, low, getLatestSwingHigh, FRACTAL_HIGH)) {
             highFractalBuffer[getLatestSwingHigh] = high[getLatestSwingHigh];
+            
+            prev2FractalHighIndex = prevFractalHighIndex;
             prevFractalHighIndex = latestFractalHighIndex;
             latestFractalHighIndex = getLatestSwingHigh;
             
+            prev2FractalHighPrice = prevFractalHighPrice;
             prevFractalHighPrice = latestFractalHighPrice;
             latestFractalHighPrice = high[getLatestSwingHigh];
+            
             AddToFractalArray(highFractalIndices, highFractalCount, getLatestSwingHigh);
 
             
@@ -64,11 +70,15 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
       if (latestFractalLowIndex != getLatestSwingLow && (i - getLatestSwingLow) >= 2) {
          if (CheckFractalAtIndex(high, low, getLatestSwingLow, FRACTAL_LOW)) {
             lowFractalBuffer[getLatestSwingLow] = low[getLatestSwingLow];
+            
+            prev2FractalLowIndex = prevFractalLowIndex;
             prevFractalLowIndex = latestFractalLowIndex;
             latestFractalLowIndex = getLatestSwingLow;
             
+            prev2FractalLowPrice = prevFractalLowPrice;
             prevFractalLowPrice = latestFractalLowPrice;
             latestFractalLowPrice = low[getLatestSwingLow];
+            
             AddToFractalArray(lowFractalIndices, lowFractalCount, getLatestSwingLow);
 
             

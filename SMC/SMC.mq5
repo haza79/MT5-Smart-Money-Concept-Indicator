@@ -170,8 +170,9 @@ int OnCalculate(const int rates_total,
        Print("Setting data failed");
        return rates_total;
    }
-//bias H     : 2024.03.14 07:00:00
-//inducement : 2024.03.14 04:00:00
+//bias L     : 2024.01.23 14:00:00
+//inducement : 2024.01.23 12:00:00
+
 
    
    
@@ -185,6 +186,11 @@ int OnCalculate(const int rates_total,
       fractal.Calculate(i, high, low);
       minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
       majorMarketStructure.Calculate();
+      
+      if(fractal.prev2FractalHighIndex != -1 && fractal.prevFractalHighIndex != -1 && fractal.latestFractalHighIndex != -1){
+         Print("h3: ",time[fractal.prev2FractalHighIndex]," h2: ",time[fractal.prevFractalHighIndex]," h1: ",time[fractal.latestFractalHighIndex]);
+      }
+      
       
       
 

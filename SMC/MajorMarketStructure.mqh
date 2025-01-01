@@ -49,8 +49,8 @@ public:
 
     // Calculate method which works with references to the external arrays
     void Calculate() {
-      GetBiasLowAndInducement();
-      Print("bias L     : ",barData.GetTime(biasLowIndex));
+      GetBiasHighAndInducement();
+      Print("bias H     : ",barData.GetTime(biasHighIndex));
       Print("inducement : ",barData.GetTime(inducementIndex));
     }
     
