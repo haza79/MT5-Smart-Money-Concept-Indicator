@@ -55,63 +55,39 @@ public:
     }
     
     
-    void GetBiasHighAndInducement(){
-    if(fractal.latestFractalHighIndex == -1 || fractal.latestFractalLowIndex == -1){
-      return;
+    void GetBiasHighAndInducement() {
+    if (fractal.latestFractalHighIndex == -1 || fractal.latestFractalLowIndex == -1) {
+        return;
+    }
+
+    int newBiasHighIndex = -1;
+    double newBiasHighPrice = 0.0;
+    
+    if (biasHighIndex != -1) {
+        if (fractal.latestFractalHighIndex > biasHighIndex &&
+            fractal.latestFractalHighPrice > biasHighPrice) {
+            newBiasHighIndex = fractal.latestFractalHighIndex;
+            newBiasHighPrice = fractal.latestFractalHighPrice;
+        }
+    } else {
+        if (prevMajorHighIndex == -1 ||
+            (fractal.latestFractalHighIndex > prevMajorHighIndex &&
+             fractal.latestFractalHighPrice > prevMajorHighPrice)) {
+            newBiasHighIndex = fractal.latestFractalHighIndex;
+            newBiasHighPrice = fractal.latestFractalHighPrice;
+        }
     }
     
-      if(biasHighIndex != -1){
-         // yes
-         if(fractal.latestFractalHighIndex > biasHighIndex &&
-            fractal.latestFractalHighPrice > biasHighPrice){
-            // yes
-            biasHighIndex = fractal.latestFractalHighIndex;
-            biasHighPrice = fractal.latestFractalHighPrice;
-            
-            if(biasHighIndex == fractal.latestFractalLowIndex){
-               inducementIndex = fractal.prevFractalLowIndex;
-               inducementPrice = fractal.prevFractalLowPrice;
-            }else{
-               inducementIndex = fractal.latestFractalLowIndex;
-               inducementPrice = fractal.latestFractalLowPrice;
-            }
-            
-         }
-      }else{
-         // no
-         if(prevMajorHighIndex == -1){
-            // yes
-            biasHighIndex = fractal.latestFractalHighIndex;
-            biasHighPrice = fractal.latestFractalHighPrice;
-            
-            if(biasHighIndex == fractal.latestFractalLowIndex){
-               inducementIndex = fractal.prevFractalLowIndex;
-               inducementPrice = fractal.prevFractalLowPrice;
-            }else{
-               inducementIndex = fractal.latestFractalLowIndex;
-               inducementPrice = fractal.latestFractalLowPrice;
-            }
-         }else{
-            // no
-            if(fractal.latestFractalHighIndex > prevMajorHighIndex &&
-               fractal.latestFractalHighPrice > prevMajorHighPrice){
-               // yes
-               biasHighIndex = fractal.latestFractalHighIndex;
-               biasHighPrice = fractal.latestFractalHighPrice;
-               
-               if(biasHighIndex == fractal.latestFractalLowIndex){
-               inducementIndex = fractal.prevFractalLowIndex;
-               inducementPrice = fractal.prevFractalLowPrice;
-            }else{
-               inducementIndex = fractal.latestFractalLowIndex;
-               inducementPrice = fractal.latestFractalLowPrice;
-            }
-            }
-         }
-      }
-      
-    
+    if(newBiasHighIndex != -1)
+    {
+        biasHighIndex = newBiasHighIndex;
+        biasHighPrice = newBiasHighPrice;
+        inducementIndex = (biasHighIndex == fractal.latestFractalLowIndex) ?
+                          fractal.prevFractalLowIndex : fractal.latestFractalLowIndex;
+        inducementPrice = (biasHighIndex == fractal.latestFractalLowIndex) ?
+                          fractal.prevFractalLowPrice : fractal.latestFractalLowPrice;
     }
+}
 
 
 };
