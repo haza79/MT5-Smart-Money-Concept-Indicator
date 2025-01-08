@@ -185,11 +185,8 @@ int OnCalculate(const int rates_total,
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       fractal.Calculate(i, high, low);
       minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
-      majorMarketStructure.Calculate();
+      majorMarketStructure.Calculate(i);
       
-      if(fractal.prev2FractalHighIndex != -1 && fractal.prevFractalHighIndex != -1 && fractal.latestFractalHighIndex != -1){
-         Print("h3: ",time[fractal.prev2FractalHighIndex]," h2: ",time[fractal.prevFractalHighIndex]," h1: ",time[fractal.latestFractalHighIndex]);
-      }
       
       
       
