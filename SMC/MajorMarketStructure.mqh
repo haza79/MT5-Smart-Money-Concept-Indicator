@@ -99,7 +99,10 @@ public:
       }
       
       if(latestTrend == TREND_BULLISH){
+         Print("bullish");
          BullishTrendMarketHandle();
+      }else if(latestTrend == TREND_BEARISH){
+         Print("bearish");
       }
    
    }
@@ -137,18 +140,6 @@ public:
       Candle currCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
       Candle prevCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
       
-      if(swingHighWickBreak){
-      
-         // end if statement
-      }else{
-      
-         if(CandleBreakAnalyzerStatic::IsPriceBreakByBody(SWING_HIGH,majorHighPriceStruct,currCandle)){
-            Print("high break:",barData.GetTime(index));
-            oneTime = true;
-         }
-         
-         // end else statement
-      }
       
       
       
@@ -208,6 +199,20 @@ public:
    int FindLowFractalBelowInducement(){
       // start function
       for(int j = fractal.lowFractalCount-1; j>=0; j--){
+         // start loop
+         if(fractal.lowFractalIndices[j] < inducementIndex && barData.GetLow(fractal.lowFractalIndices[j]) < inducementPrice){
+            return fractal.lowFractalIndices[j];
+         }
+         // end if statement
+      }
+      
+      return -1;
+      // end function
+   }
+   
+   int FindHighFractalAboveInducement(){
+      // start function
+      for(int j = fractal.highFractalCount-1; j>=0; j--){
          // start loop
          if(fractal.lowFractalIndices[j] < inducementIndex && barData.GetLow(fractal.lowFractalIndices[j]) < inducementPrice){
             return fractal.lowFractalIndices[j];
