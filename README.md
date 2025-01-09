@@ -2,47 +2,47 @@
 
 ## Overview
 
-The **Smart Money Concept with Price Action** indicator for MetaTrader 5 is a powerful tool designed for traders who follow institutional trading strategies. Built by a programmer with optimization in mind, this indicator is engineered for **fast performance**, **low memory usage**, and **minimal CPU overhead**.
+The **Smart Money Concept with Price Action** indicator for MetaTrader 5 is a powerful tool designed for traders who follow institutional trading strategies. This indicator is **currently under development**, with **daily updates** and continuous improvements being made. Built by a programmer with a focus on optimization, it aims to provide **fast performance**, **low memory usage**, and **minimal CPU overhead**.
 
-With its focus on the latest price data, the indicator helps traders identify key market structures, such as **Break of Structure (BOS)**, **Change of Character (CHOCH)**, and significant swing points, with precision and speed.
+Once completed, this indicator will assist traders in identifying key market structures, such as **Break of Structure (BOS)**, **Change of Character (CHOCH)**, and significant swing points, with precision and speed.
 
 ---
 
-## Key Features
+## Key Features (Work in Progress)
 
 ### 🔥 **Optimized for Performance**
-- **Efficient Algorithm**: Processes only the latest price data to ensure calculations are quick and accurate.
-- **Low Resource Usage**: Minimizes CPU and memory consumption, even on older or less powerful systems.
+- **Efficient Algorithm**: Focused on processing only the latest price data for quick and accurate calculations.
+- **Low Resource Usage**: Aims to minimize CPU and memory consumption, making it suitable for all systems.
 
 ### 📉 **Clear and Minimalistic Display**
-- **Line Buffers**: Uses MT5 line buffers for drawing lines instead of creating graphical objects, reducing the load on the platform's graphical resources.
-- **Arrow Display**: Employs arrows to mark key price points, ensuring clarity without clutter.
+- **Line Buffers**: Utilizes MT5 line buffers for drawing lines instead of creating graphical objects, reducing graphical load.
+- **Arrow Display**: Marks key price points with arrows for clarity without clutter.
 
 ### ⚡ **Fast Calculations**
-- Prioritizes analyzing recent price data, avoiding unnecessary recalculations for historical data.
-- Ideal for traders who need real-time insights in fast-moving markets.
+- Designed to analyze recent price data while avoiding unnecessary recalculations for historical data.
 
 ### 🎯 **Price Action Focus**
-- Highlights essential elements of market structure:
-  - **Swing Highs** and **Swing Lows**
-  - **Break of Structure (BOS)**
-  - **Change of Character (CHOCH)**
-- Assists traders in understanding market phases and potential trade setups.
+- Planned features include:
+  - Highlighting **Swing Highs** and **Swing Lows**
+  - Detecting **Break of Structure (BOS)** and **Change of Character (CHOCH)**
+  - Visualizing market phases and potential trade setups
 
 ---
 
-## Benefits
+## Project Status
 
-- **Improved Performance**: Optimized for smooth operation on all systems, ensuring a seamless trading experience.
-- **Reduced Platform Load**: Utilizes efficient graphical techniques to avoid overloading the MT5 platform.
-- **Real-Time Insights**: Focuses on the most relevant and up-to-date price action data.
+This indicator is a **work in progress**. Daily commits are being made to:
+- Enhance functionality
+- Optimize performance
+- Add new features based on trader feedback
 
 ---
 
 ## Installation
 
-1. **Download the Indicator**:
-   - [Smart Money Concept with Price Action Indicator for MT5](#) *(Add your download link here)*
+1. **Clone or Download**:
+   - Clone the repository or download the `.mq5` file (work-in-progress version).
+   - [Repository Link](#) *(Add your GitHub repository link here)*
 
 2. **Install in MT5**:
    - Open MetaTrader 5.
@@ -56,41 +56,28 @@ With its focus on the latest price data, the indicator helps traders identify ke
 
 ---
 
-## How to Use
+## Roadmap
 
-1. Attach the indicator to your trading chart.
-2. Configure the input settings according to your trading preferences.
-3. Observe the lines and arrows for BOS, CHOCH, swing points, and other key market structures.
-4. Incorporate the indicator's insights into your trading strategy to identify high-probability setups.
-
----
-
-## Input Parameters
-
-| Parameter         | Description                                      |
-|-------------------|--------------------------------------------------|
-| **Buffer Colors** | Customize the colors of lines and arrows.        |
-| **Line Styles**   | Adjust the style of BOS, CHOCH, and swing lines. |
-| **Alert Settings**| Enable/disable alerts for significant price events.|
+- [x] **identify mother bar, inside bar**
+- [x] **identify impulse pullback, swing high low**
+- [x] **identify fractal of swing high low**
+- [x] **identify minor market structure**
+- [ ] identify major market structure (major high,low / inducement / bos,choch)
+- [ ] identify fibonacci (retracement, circle, timezone)
+- [ ] identify key level (fvg, order block)
 
 ---
 
-## Example Chart
+## Feedback and Contributions
 
-*(Include an image or gif showing the indicator on a chart with marked BOS, CHOCH, and swing points.)*
-
----
-
-## Feedback and Support
-
-We value your feedback! If you encounter any issues or have suggestions for improvement, please reach out via the Issues section of this repository.
+We welcome feedback as we continue development! If you encounter any issues, have feature suggestions, or want to contribute to the project, please use the Issues or Pull Requests section on GitHub.
 
 ---
 
 ## License
 
-This indicator is provided for personal use only. Redistribution or commercial use is prohibited without permission.
+This indicator is provided for personal use only during development. Redistribution or commercial use is prohibited without permission.
 
 ---
 
-Optimize your trading experience with the **Smart Money Concept with Price Action** indicator — precision, speed, and clarity for the modern trader.
+Stay tuned for updates as we work to complete the **Smart Money Concept with Price Action** indicator!
