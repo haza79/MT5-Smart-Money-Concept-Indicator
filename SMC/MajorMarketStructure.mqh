@@ -35,6 +35,7 @@ private:
    double            prevMajorHighPrice, prevMajorLowPrice, latestMajorHighPrice, latestMajorLowPrice;
    double            biasHighPrice, biasLowPrice;
    double            inducementPrice;
+   bool swingHighWickBreak,swingLowWickBreak;
 
    struct BiasSwingAndInducement
      {
@@ -43,6 +44,7 @@ private:
      };
 
    bool              oneTime;
+   bool              firstTimeCheckInducementBreak;
 
 public:
 
@@ -54,6 +56,7 @@ public:
       fractal = fractalInstance;
 
       oneTime = false;
+      firstTimeCheckInducementBreak = true;
       prevTrend = TREND_NONE;
       latestTrend = TREND_NONE;
 
@@ -62,6 +65,8 @@ public:
 
       prevMajorHighPrice = prevMajorLowPrice = latestMajorHighPrice = latestMajorLowPrice = -1;
       biasHighPrice = biasLowPrice = -1;
+      
+      swingHighWickBreak = swingLowWickBreak = false;
 
       // No need to initialize arrays since we reference external arrays
      }
@@ -73,63 +78,128 @@ public:
       UpdateMarketStructure();
      }
 
-   void              UpdateMarketStructure()
-     {
-      if(oneTime == true)
-        {
+   void UpdateMarketStructure(){
+      if(oneTime == true){
          return;
-        }
-      if(latestTrend == TREND_NONE)
-        {
+      }
+      
+      if(fractal.prev2FractalHighIndex == -1 || fractal.prevFractalHighIndex == -1 || fractal.latestFractalHighIndex == -1
+      || fractal.prev2FractalLowIndex == -1 || fractal.prevFractalLowIndex == -1 || fractal.latestFractalLowIndex == -1){
+         return;
+      }
+      
+      if(latestTrend == TREND_NONE){
+         GetFirstTrend();
+      }
+      
+      if(latestTrend == TREND_BULLISH){
+         BullishTrendMarketHandle();
+      }
+   
+   }
 
-         if(fractal.prevFractalHighIndex != -1 && fractal.latestFractalHighIndex != -1
-            && fractal.prevFractalLowIndex != -1 && fractal.latestFractalLowIndex != -1)
-           {
-
-            if(fractal.latestFractalHighPrice > fractal.prevFractalHighPrice)
-              {
-               latestTrend = TREND_BULLISH;
-              }
-
-            if(fractal.latestFractalLowPrice < fractal.prevFractalLowPrice)
-              {
-               latestTrend = TREND_BEARISH;
-              }
-
-
-           }
-         else
-           {
+     
+   void BullishTrendMarketHandle(){
+      BullishMajorHighHandle();
+      BullishMajorLowHandle();
+      
+      if(latestMajorHighIndex != -1){
+         Print("high:",barData.GetTime(latestMajorHighIndex));
+         Print("inducement:",barData.GetTime(inducementIndex));
+         Print("low:",barData.GetTime(latestMajorLowIndex));
+         oneTime = true;
+      }
+   }
+   
+   void BullishMajorHighHandle(){
+      if(latestMajorHighIndex == -1){
+         GetBiasHighAndInducement();
+         
+         if(biasHighIndex == -1){
             return;
-           }
-
-
-        }
-
-      if(latestTrend == TREND_BULLISH)
-        {
-
-         if(latestMajorHighIndex == -1)
-           {
-            GetBiasHighAndInducement();
-            if(biasHighIndex == -1)
-              {
-               return;
-              }
-            Print(barData.GetTime(index)," | bias high:",barData.GetTime(biasHighIndex)," | inducement:",barData.GetTime(inducementIndex));
-
-            Print(barData.GetTime(index)," | low:",barData.GetLow(index)," | inducement price:",inducementPrice," | is break inducement:",barData.GetLow(index) <= inducementPrice);
-            if(barData.GetLow(index) <= inducementPrice)
-              {
-               Print("bias high:",barData.GetTime(biasHighIndex));
-               Print("inducement:",barData.GetTime(inducementIndex));
-               Print("price break inducement:",barData.GetTime(index));
-               oneTime = true;
-              }
-           }
-        }
-
-     }
+         }
+         
+         int inducementBreak = CheckLowInducementBreak();
+         if(inducementBreak != -1){
+            latestMajorHighIndex = biasHighIndex;
+            latestMajorHighPrice = biasHighPrice;
+         }
+         
+      }
+      
+      if(swingHighWickBreak){
+      }else{
+      
+      }
+      
+      
+      
+   }
+   
+   void BullishMajorLowHandle(){
+      if(latestMajorLowIndex == -1){
+         int fractalBeforeInducement = FindLowFractalBelowInducement();
+         if(fractalBeforeInducement == -1){
+            fractalBeforeInducement = inducementIndex;
+         }
+         latestMajorLowIndex = fractalBeforeInducement;
+         latestMajorLowPrice = barData.GetLow(latestMajorLowIndex);
+      }
+   }
+   
+   int CheckLowInducementBreak(){
+      if(!firstTimeCheckInducementBreak){
+         // first time run check inducement break
+         for(int i = biasHighIndex; i<=index; i++){
+            // loop check candle break inducement
+            if(barData.GetLow(i) <= inducementPrice){
+               // inducement break
+               return i;
+            }
+            // end loop
+         }
+         
+         firstTimeCheckInducementBreak = false;
+      }else{
+         if(barData.GetLow(index) <= inducementPrice){
+            return index;
+         }
+      }
+      
+      return -1;
+   }
+     
+   void GetFirstTrend(){
+      if(fractal.prevFractalHighIndex != -1 && fractal.latestFractalHighIndex != -1
+      && fractal.prevFractalLowIndex != -1 && fractal.latestFractalLowIndex != -1){
+      
+         if(fractal.latestFractalHighPrice > fractal.prevFractalHighPrice){
+            latestTrend = TREND_BULLISH;
+         }
+         
+         if(fractal.latestFractalLowPrice < fractal.prevFractalLowPrice){
+            latestTrend = TREND_BEARISH;
+         }
+      
+      }else{
+         return;
+      }
+      
+   }
+        
+   int FindLowFractalBelowInducement(){
+      // start function
+      for(int j = fractal.lowFractalCount-1; j>=0; j--){
+         // start loop
+         if(fractal.lowFractalIndices[j] < inducementIndex && barData.GetLow(fractal.lowFractalIndices[j]) < inducementPrice){
+            return fractal.lowFractalIndices[j];
+         }
+         // end if statement
+      }
+      
+      return -1;
+      // end function
+   }
 
    void              GetBiasHighAndInducement()
      {

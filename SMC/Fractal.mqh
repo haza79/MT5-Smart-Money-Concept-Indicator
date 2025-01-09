@@ -98,7 +98,7 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
             return true;
          }
       } else {
-         Print("Index ", index, " is out of bounds for fractal checking.");
+         //Print("Index ", index, " is out of bounds for fractal checking.");
       }
       return false;
    }
