@@ -11,6 +11,10 @@
 #include "Fractal.mqh"
 #include "MinorMarketStructureClass.mqh"
 #include "MajorMarketStructureStruct.mqh"
+#include "CandleBreakAnalyzerStatic.mqh"
+
+#include "CandleStructs.mqh"
+
 
 //+------------------------------------------------------------------+
 //|                                                                  |
@@ -36,6 +40,8 @@ private:
    double            biasHighPrice, biasLowPrice;
    double            inducementPrice;
    bool swingHighWickBreak,swingLowWickBreak;
+   
+   Candle majorHighPriceStruct,majorLowPriceStruct;
 
    struct BiasSwingAndInducement
      {
@@ -123,13 +129,25 @@ public:
          if(inducementBreak != -1){
             latestMajorHighIndex = biasHighIndex;
             latestMajorHighPrice = biasHighPrice;
+            majorHighPriceStruct.setValue(barData.GetOpen(latestMajorHighIndex),barData.GetHigh(latestMajorHighIndex),barData.GetLow(latestMajorHighIndex),barData.GetClose(latestMajorHighIndex));
          }
          
       }
       
+      Candle currCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
+      Candle prevCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
+      
       if(swingHighWickBreak){
+      
+         // end if statement
       }else{
       
+         if(CandleBreakAnalyzerStatic::IsPriceBreakByBody(SWING_HIGH,majorHighPriceStruct,currCandle)){
+            Print("high break:",barData.GetTime(index));
+            oneTime = true;
+         }
+         
+         // end else statement
       }
       
       
