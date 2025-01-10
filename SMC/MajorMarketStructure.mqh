@@ -99,10 +99,9 @@ public:
       }
       
       if(latestTrend == TREND_BULLISH){
-         Print("bullish");
          BullishTrendMarketHandle();
       }else if(latestTrend == TREND_BEARISH){
-         Print("bearish");
+         BearishTrendMarketHandle();
       }
    
    }
@@ -117,6 +116,39 @@ public:
          Print("inducement:",barData.GetTime(inducementIndex));
          Print("low:",barData.GetTime(latestMajorLowIndex));
          oneTime = true;
+      }
+   }
+   
+   void BearishTrendMarketHandle(){
+      BearishMajorLowHandle();
+      BearishMajorHighHandle();
+      
+      if(latestMajorLowIndex != -1){
+         Print("high:",barData.GetTime(latestMajorHighIndex));
+         Print("inducement:",barData.GetTime(inducementIndex));
+         Print("low:",barData.GetTime(latestMajorLowIndex));
+         oneTime = true;
+      }
+      
+      
+   }
+   
+   void BearishMajorLowHandle(){
+      if(latestMajorLowIndex == -1){
+         GetBiasLowAndInducement();
+         
+         if(biasLowIndex == -1){
+            return;
+         }
+         
+         int inducementBreak = CheckHighInducementBreak();
+         if(inducementBreak != -1){
+            latestMajorLowIndex = biasLowIndex;
+            latestMajorLowPrice = biasLowPrice;
+         }
+         return;
+         
+         
       }
    }
    
@@ -145,6 +177,18 @@ public:
       
    }
    
+   void BearishMajorHighHandle(){
+      // bearish choch
+      if(latestMajorHighIndex == -1){
+         int fractalBeforeInducement = FindHighFractalAboveInducement();
+         if(fractalBeforeInducement == -1){
+            fractalBeforeInducement = inducementIndex;
+         }
+         latestMajorHighIndex = fractalBeforeInducement;
+         latestMajorHighPrice = barData.GetHigh(latestMajorHighIndex);
+      }
+   }
+   
    void BullishMajorLowHandle(){
       if(latestMajorLowIndex == -1){
          int fractalBeforeInducement = FindLowFractalBelowInducement();
@@ -171,6 +215,28 @@ public:
          firstTimeCheckInducementBreak = false;
       }else{
          if(barData.GetLow(index) <= inducementPrice){
+            return index;
+         }
+      }
+      
+      return -1;
+   }
+   
+   int CheckHighInducementBreak(){
+      if(!firstTimeCheckInducementBreak){
+         // first time run check inducement break
+         for(int i = biasLowIndex; i<=index; i++){
+            // loop check candle break inducement
+            if(barData.GetHigh(i) >= inducementPrice){
+               // inducement break
+               return i;
+            }
+            // end loop
+         }
+         
+         firstTimeCheckInducementBreak = false;
+      }else{
+         if(barData.GetHigh(index) >= inducementPrice){
             return index;
          }
       }
@@ -214,8 +280,8 @@ public:
       // start function
       for(int j = fractal.highFractalCount-1; j>=0; j--){
          // start loop
-         if(fractal.lowFractalIndices[j] < inducementIndex && barData.GetLow(fractal.lowFractalIndices[j]) < inducementPrice){
-            return fractal.lowFractalIndices[j];
+         if(fractal.highFractalIndices[j] < inducementIndex && barData.GetHigh(fractal.highFractalIndices[j]) > inducementPrice){
+            return fractal.highFractalIndices[j];
          }
          // end if statement
       }
@@ -267,47 +333,52 @@ public:
 
 
 
-   void              GetBiasLowAndInducement()
-     {
-      if(fractal.latestFractalHighIndex == -1 || fractal.latestFractalLowIndex == -1)
-        {
-         return;
-        }
-
-      int newBiasLowIndex = -1;
-      double newBiasLowPrice = 0.0;
-
-      if(biasLowIndex != -1)
-        {
-         if(fractal.latestFractalLowIndex > biasLowIndex &&
-            fractal.latestFractalLowPrice < biasLowPrice)   // Note the '<' for lows
-           {
-            newBiasLowIndex = fractal.latestFractalLowIndex;
-            newBiasLowPrice = fractal.latestFractalLowPrice;
-           }
-        }
-      else
-        {
-         if(prevMajorLowIndex == -1 ||
-            (fractal.latestFractalLowIndex > prevMajorLowIndex &&
-             fractal.latestFractalLowPrice < prevMajorLowPrice))   // Note the '<' for lows
-           {
-            newBiasLowIndex = fractal.latestFractalLowIndex;
-            newBiasLowPrice = fractal.latestFractalLowPrice;
-           }
-        }
-
-      if(newBiasLowIndex != -1)
-        {
-         biasLowIndex = newBiasLowIndex;
-         biasLowPrice = newBiasLowPrice;
-
-         inducementIndex = (biasLowIndex == fractal.latestFractalHighIndex) ?
-                           fractal.prevFractalHighIndex : fractal.latestFractalHighIndex;
-         inducementPrice = (biasLowIndex == fractal.latestFractalHighIndex) ?
-                           fractal.prevFractalHighPrice : fractal.latestFractalHighPrice;
-        }
-     }
+   void GetBiasLowAndInducement(){
+      // start 
+      if(fractal.latestFractalHighIndex == -1 || fractal.latestFractalLowIndex == -1 
+         || fractal.prevFractalHighIndex == -1 || fractal.prevFractalLowIndex == -1){
+         // start if statement
+         return;   
+      }
+      
+      bool setBiasLowAndInducement = false;
+      
+      if(biasLowIndex == -1){
+         // no bias low
+         if(prevMajorLowIndex == -1){
+            // prev major low empty == first time run
+            setBiasLowAndInducement = true;
+         }else{
+            // prev major low not empty
+            if(fractal.latestFractalLowIndex < prevMajorLowIndex &&
+               fractal.latestFractalLowPrice < prevMajorLowPrice){
+               // latest low fractal < prev major low
+               setBiasLowAndInducement = true;
+            }
+         }
+      }else{
+         // have bias low
+         if(fractal.latestFractalLowIndex < biasLowIndex &&
+            fractal.latestFractalLowPrice < biasLowPrice){
+            // found new bias low
+            setBiasLowAndInducement = true;
+         }
+      }
+      // out of if statement
+      
+      if(setBiasLowAndInducement){
+         biasLowIndex = fractal.latestFractalLowIndex;
+         biasLowPrice = fractal.latestFractalLowPrice;
+         
+         if(fractal.latestFractalHighIndex >= biasLowIndex){
+            inducementIndex = fractal.prevFractalHighIndex;
+            inducementPrice = fractal.prevFractalHighPrice;
+         }else{
+            inducementIndex = fractal.latestFractalHighIndex;
+            inducementPrice = fractal.latestFractalHighPrice;
+         }
+      }
+   }
 
 
   };
