@@ -82,6 +82,24 @@ public:
 
       return lowestIndex;
    }
+   
+   static int GetLowestLowIndex(const BarData &barData, int startIndex, int endIndex) {
+      if (startIndex < 0 || endIndex >= barData.GetLowArrSize() || startIndex > endIndex) {
+         return -1; // Invalid range
+      }
+
+      double lowestLow = barData.GetLow(startIndex);
+      int lowestIndex = startIndex;
+
+      for (int i = startIndex + 1; i <= endIndex; i++) {
+         if (barData.GetLow(i) < lowestLow) {
+            lowestLow = barData.GetLow(i);
+            lowestIndex = i;
+         }
+      }
+
+      return lowestIndex;
+   }
 
    static bool IsPriceBreakByAny(const SwingType &swingType, const Candle &swingPrice, const Candle &beforeComparePrice, const Candle &comparePrice) {
       return IsPriceBreakByBody(swingType, swingPrice, comparePrice) || 

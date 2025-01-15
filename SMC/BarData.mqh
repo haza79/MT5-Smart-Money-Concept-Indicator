@@ -30,6 +30,26 @@ public:
         m_data_set = true;
         return true;
     }
+    
+    int GetTimeArrSize(){
+      return ArraySize(m_time);
+    }
+    
+    int GetOpenArrSize(){
+      return ArraySize(m_open);
+    }
+    
+    int GetHighArrSize(){
+      return ArraySize(m_high);
+    }
+    
+    int GetLowArrSize() const{
+      return ArraySize(m_low);
+    }
+    
+    int GetCloseArrSize(){
+      return ArraySize(m_close);
+    }
 
    datetime GetTime(int shift) const
      {

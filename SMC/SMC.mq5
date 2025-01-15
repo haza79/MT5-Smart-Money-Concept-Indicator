@@ -32,48 +32,19 @@
 #property indicator_style5  STYLE_SOLID
 #property indicator_width5  1
 
-#property indicator_label6  "minor bullish bos"
+#property indicator_label6  "bullish bos"
 #property indicator_type6   DRAW_LINE
 #property indicator_color6  clrGreen
 #property indicator_style6  STYLE_DOT
 #property indicator_width6  1
 
-#property indicator_label7  "minor bullish choch"
-#property indicator_type7   DRAW_LINE
-#property indicator_color7  clrRed
-#property indicator_style7  STYLE_SOLID
-#property indicator_width7  1
 
-#property indicator_label8  "minor bearish bos"
-#property indicator_type8   DRAW_LINE
-#property indicator_color8  clrGreen
-#property indicator_style8  STYLE_DOT
-#property indicator_width8  1
-
-#property indicator_label9  "minor bearish choch"
-#property indicator_type9   DRAW_LINE
-#property indicator_color9  clrRed
-#property indicator_style9  STYLE_SOLID
-#property indicator_width9  1
-
-#property indicator_label10  "minor high"
-#property indicator_type10   DRAW_ARROW
-#property indicator_color10  clrGold
-#property indicator_style10  STYLE_SOLID
-#property indicator_width10  1
-
-#property indicator_label11  "minor low"
-#property indicator_type11   DRAW_ARROW
-#property indicator_color11  clrGold
-#property indicator_style11  STYLE_SOLID
-#property indicator_width11  1
 
 #include "BarData.mqh";
 #include "InsideBarClass.mqh";
 #include "ImpulsePullbackDetector.mqh";
 #include "CandleStructs.mqh"
 #include "CandleBreakAnalyzer.mqh";
-#include "MinorMarketStructureClass.mqh";
 #include "Fractal.mqh";
 #include "MajorMarketStructure.mqh";
 
@@ -81,7 +52,6 @@ BarData barData;
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
-MinorMarketStructureClass minorMarketStructure;
 FractalClass fractal;
 MajorMarketStructureClass majorMarketStructure;
 
@@ -97,25 +67,11 @@ int OnInit()
     SetIndexBuffer(4, fractal.highFractalBuffer, INDICATOR_DATA);
     SetIndexBuffer(5, fractal.lowFractalBuffer, INDICATOR_DATA);
     
-    ///
-    SetIndexBuffer(6, minorMarketStructure.bullishBosDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(7, minorMarketStructure.bullishChochDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(8, minorMarketStructure.bearishBosDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(9, minorMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
-    
-    SetIndexBuffer(10, minorMarketStructure.minorSwingHighBuffer, INDICATOR_DATA);
-    SetIndexBuffer(11, minorMarketStructure.minorSwingLowBuffer, INDICATOR_DATA);
+    SetIndexBuffer(6, majorMarketStructure.bullishBosDrawing.buffer, INDICATOR_DATA);
     
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);
     PlotIndexSetInteger(1, PLOT_ARROW, 158);
-    
-    // swing high low
-    PlotIndexSetInteger(4, PLOT_ARROW, 159);
-    PlotIndexSetInteger(5, PLOT_ARROW, 159);
-    
-    PlotIndexSetInteger(10, PLOT_ARROW, 159);
-    PlotIndexSetInteger(11, PLOT_ARROW, 159);
     
     // zigzag plot empty
     PlotIndexSetDouble(0,PLOT_EMPTY_VALUE,EMPTY_VALUE);
@@ -131,23 +87,13 @@ int OnInit()
     PlotIndexSetDouble(10,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(11,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
-    // swing high low arrwo shift
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,-10);
     PlotIndexSetInteger(4,PLOT_ARROW_SHIFT,10);
-    
-    PlotIndexSetInteger(9,PLOT_ARROW_SHIFT,-15);
-    PlotIndexSetInteger(10,PLOT_ARROW_SHIFT,15);
-    
-    //PlotIndexSetInteger(6,PLOT_SHIFT,1);
-    //PlotIndexSetInteger(7,PLOT_SHIFT,1);
-    //PlotIndexSetInteger(8,PLOT_SHIFT,1);
-    //PlotIndexSetInteger(9,PLOT_SHIFT,1);
     
 
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
-    minorMarketStructure.Init(&fractal);
     majorMarketStructure.Init(&barData,&fractal);
     
 
@@ -184,7 +130,7 @@ int OnCalculate(const int rates_total,
       insideBar.Calculate(i, rates_total, high, low);
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       fractal.Calculate(i, high, low);
-      minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
+      //minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
       majorMarketStructure.Calculate(i);
       
       
