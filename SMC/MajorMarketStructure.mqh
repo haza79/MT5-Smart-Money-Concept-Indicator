@@ -35,13 +35,15 @@ private:
    int               prevMajorHighIndex, prevMajorLowIndex, latestMajorHighIndex, latestMajorLowIndex;
    int               biasHighIndex, biasLowIndex;
    int               inducementIndex;
+   int wickSwingHighIndex,wickSwingLowIndex;
 
    double            prevMajorHighPrice, prevMajorLowPrice, latestMajorHighPrice, latestMajorLowPrice;
    double            biasHighPrice, biasLowPrice;
    double            inducementPrice;
    bool swingHighWickBreak,swingLowWickBreak;
    
-   Candle majorHighPriceStruct,majorLowPriceStruct;
+   Candle majorHighPriceStruct,majorLowPriceStruct,wickSwingHighPriceStruct,wickSwingLowPriceStruct;
+   MarketStructureType prev2MarketStructure,prevMarketStructure,latestMarketStructure;
 
    struct BiasSwingAndInducement
      {
@@ -73,6 +75,8 @@ public:
       biasHighPrice = biasLowPrice = -1;
       
       swingHighWickBreak = swingLowWickBreak = false;
+      
+      prev2MarketStructure = prevMarketStructure = latestMarketStructure = TREND_NONE;
 
       // No need to initialize arrays since we reference external arrays
      }
@@ -99,8 +103,10 @@ public:
       }
       
       if(latestTrend == TREND_BULLISH){
+         Print("bullish");
          BullishTrendMarketHandle();
       }else if(latestTrend == TREND_BEARISH){
+         Print("bearish");
          BearishTrendMarketHandle();
       }
    
@@ -110,29 +116,80 @@ public:
    void BullishTrendMarketHandle(){
       BullishMajorHighHandle();
       BullishMajorLowHandle();
-      
-      if(latestMajorHighIndex != -1){
-         Print("high:",barData.GetTime(latestMajorHighIndex));
-         Print("inducement:",barData.GetTime(inducementIndex));
-         Print("low:",barData.GetTime(latestMajorLowIndex));
-         oneTime = true;
-      }
    }
    
    void BearishTrendMarketHandle(){
       BearishMajorLowHandle();
       BearishMajorHighHandle();
+   }
+   
+   // *** BULLISH TREND HIGH ***
+   void BullishMajorHighHandle(){
+      if(latestMajorHighIndex == -1){
+         GetBiasHighAndInducement();
+         
+         if(biasHighIndex == -1){
+            return;
+         }
+         
+         int inducementBreak = CheckLowInducementBreak();
+         if(inducementBreak != -1){
+            latestMajorHighIndex = biasHighIndex;
+            latestMajorHighPrice = biasHighPrice;
+            majorHighPriceStruct.setValue(barData.GetOpen(latestMajorHighIndex),barData.GetHigh(latestMajorHighIndex),barData.GetLow(latestMajorHighIndex),barData.GetClose(latestMajorHighIndex));
+         }
+         
+      }
       
-      if(latestMajorLowIndex != -1){
+      if(latestMajorHighIndex == -1){
+         return;
+      }
+      
+      Candle currCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
+      Candle prevCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
+      
+      if(swingHighWickBreak){
+         // YES
+      }else{
+         // NO
+         if(CandleBreakAnalyzerStatic::IsPriceBreakByBody(SWING_HIGH,majorHighPriceStruct,currCandle) ||
+            CandleBreakAnalyzerStatic::IsPriceBreakByGap(SWING_HIGH,majorHighPriceStruct,prevCandle,currCandle)){
+            // price break high by body or gap
+            AddTrend(TREND_BULLISH);
+            AddMarketStructure(MS_BULLISH_BOS);
+            
+         }else if(CandleBreakAnalyzerStatic::IsPriceBreakByWick(SWING_HIGH,majorHighPriceStruct,currCandle)){
+            // price break high by wick
+            swingHighWickBreak = true;
+            wickSwingHighIndex = index;
+            wickSwingHighPriceStruct = currCandle;
+         }
+      }
+      
+      if(CandleBreakAnalyzerStatic::IsPriceBreakByAny(SWING_HIGH,majorHighPriceStruct,prevCandle,currCandle)){
          Print("high:",barData.GetTime(latestMajorHighIndex));
          Print("inducement:",barData.GetTime(inducementIndex));
          Print("low:",barData.GetTime(latestMajorLowIndex));
          oneTime = true;
+         return;
       }
       
       
    }
    
+   // *** BULLISH TREND LOW ***
+   void BullishMajorLowHandle(){
+      if(latestMajorLowIndex == -1){
+         int fractalBeforeInducement = FindLowFractalBelowInducement();
+         if(fractalBeforeInducement == -1){
+            fractalBeforeInducement = inducementIndex;
+         }
+         latestMajorLowIndex = fractalBeforeInducement;
+         latestMajorLowPrice = barData.GetLow(latestMajorLowIndex);
+      }
+   }
+   
+   // *** BEARISH TREND LOW ***
    void BearishMajorLowHandle(){
       if(latestMajorLowIndex == -1){
          GetBiasLowAndInducement();
@@ -152,31 +209,7 @@ public:
       }
    }
    
-   void BullishMajorHighHandle(){
-      if(latestMajorHighIndex == -1){
-         GetBiasHighAndInducement();
-         
-         if(biasHighIndex == -1){
-            return;
-         }
-         
-         int inducementBreak = CheckLowInducementBreak();
-         if(inducementBreak != -1){
-            latestMajorHighIndex = biasHighIndex;
-            latestMajorHighPrice = biasHighPrice;
-            majorHighPriceStruct.setValue(barData.GetOpen(latestMajorHighIndex),barData.GetHigh(latestMajorHighIndex),barData.GetLow(latestMajorHighIndex),barData.GetClose(latestMajorHighIndex));
-         }
-         
-      }
-      
-      Candle currCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
-      Candle prevCandle(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
-      
-      
-      
-      
-   }
-   
+   // *** BEARISH TREND HIGH ***   
    void BearishMajorHighHandle(){
       // bearish choch
       if(latestMajorHighIndex == -1){
@@ -189,16 +222,7 @@ public:
       }
    }
    
-   void BullishMajorLowHandle(){
-      if(latestMajorLowIndex == -1){
-         int fractalBeforeInducement = FindLowFractalBelowInducement();
-         if(fractalBeforeInducement == -1){
-            fractalBeforeInducement = inducementIndex;
-         }
-         latestMajorLowIndex = fractalBeforeInducement;
-         latestMajorLowPrice = barData.GetLow(latestMajorLowIndex);
-      }
-   }
+   
    
    int CheckLowInducementBreak(){
       if(!firstTimeCheckInducementBreak){
@@ -378,6 +402,31 @@ public:
             inducementPrice = fractal.latestFractalHighPrice;
          }
       }
+   }
+   
+   void UpdateBullishBosVariable(){
+      AddTrend(TREND_BULLISH);
+      AddMarketStructure(MS_BEARISH_BOS);
+      
+      prevMajorHighIndex = latestMajorHighIndex;
+      prevMajorHighPrice = latestMajorHighPrice;
+      prevMajorLowIndex = latestMajorLowIndex;
+      prevMajorLowPrice = latestMajorLowPrice;
+      
+      latestMajorHighIndex = -1;
+      latestMajorHighPrice = -1;
+      latestMajorLowIndex = CandleBreakAnalyzerStatic::GetLowestLowIndex(const double &low[],int startIndex,int endIndex)
+   }
+   
+   void AddTrend(Trend newTrend){
+      prevTrend = latestTrend;
+      latestTrend = newTrend;
+   }
+   
+   void AddMarketStructure(MarketStructureType newMarketStructure){
+      prev2MarketStructure = prevMarketStructure;
+      prevMarketStructure = latestMarketStructure;
+      latestMarketStructure = newMarketStructure;
    }
 
 

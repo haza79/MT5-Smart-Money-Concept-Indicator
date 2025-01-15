@@ -3,6 +3,8 @@
 
 #include "CandleStructs.mqh"
 #include "Enums.mqh"
+#include "BarData.mqh"
+
 
 class CandleBreakAnalyzerStatic {
 
