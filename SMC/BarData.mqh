@@ -39,7 +39,7 @@ public:
       return ArraySize(m_open);
     }
     
-    int GetHighArrSize(){
+    int GetHighArrSize() const{
       return ArraySize(m_high);
     }
     

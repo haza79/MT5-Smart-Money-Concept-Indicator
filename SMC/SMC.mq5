@@ -35,8 +35,20 @@
 #property indicator_label6  "bullish bos"
 #property indicator_type6   DRAW_LINE
 #property indicator_color6  clrGreen
-#property indicator_style6  STYLE_DOT
+#property indicator_style6  STYLE_DASH
 #property indicator_width6  1
+
+#property indicator_label7  "bullish inducement"
+#property indicator_type7   DRAW_LINE
+#property indicator_color7  clrRed
+#property indicator_style7  STYLE_DOT
+#property indicator_width7  1
+
+#property indicator_label8  "bullish choch"
+#property indicator_type8   DRAW_LINE
+#property indicator_color8  clrRed
+#property indicator_style8  STYLE_DASH
+#property indicator_width8  1
 
 
 
@@ -68,6 +80,8 @@ int OnInit()
     SetIndexBuffer(5, fractal.lowFractalBuffer, INDICATOR_DATA);
     
     SetIndexBuffer(6, majorMarketStructure.bullishBosDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(7, majorMarketStructure.bullishInducementDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(8, majorMarketStructure.bullishChochDrawing.buffer, INDICATOR_DATA);
     
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);

@@ -83,17 +83,23 @@ public:
       return lowestIndex;
    }
    
-   static int GetLowestLowIndex(const BarData &barData, int startIndex, int endIndex) {
-      if (startIndex < 0 || endIndex >= barData.GetLowArrSize() || startIndex > endIndex) {
+   static bool IsPriceBreakByAny(const SwingType &swingType, const Candle &swingPrice, const Candle &beforeComparePrice, const Candle &comparePrice) {
+      return IsPriceBreakByBody(swingType, swingPrice, comparePrice) || 
+             IsPriceBreakByWick(swingType, swingPrice, comparePrice) || 
+             IsPriceBreakByGap(swingType, swingPrice, beforeComparePrice, comparePrice);
+   }
+   
+   static int GetLowestLowIndex(const BarData &data, int startIndex, int endIndex) {
+      if (startIndex < 0 || endIndex >= data.GetLowArrSize() || startIndex > endIndex) {
          return -1; // Invalid range
       }
 
-      double lowestLow = barData.GetLow(startIndex);
+      double lowestLow = data.GetLow(startIndex);
       int lowestIndex = startIndex;
 
       for (int i = startIndex + 1; i <= endIndex; i++) {
-         if (barData.GetLow(i) < lowestLow) {
-            lowestLow = barData.GetLow(i);
+         if (data.GetLow(i) < lowestLow) {
+            lowestLow = data.GetLow(i);
             lowestIndex = i;
          }
       }
@@ -101,11 +107,6 @@ public:
       return lowestIndex;
    }
 
-   static bool IsPriceBreakByAny(const SwingType &swingType, const Candle &swingPrice, const Candle &beforeComparePrice, const Candle &comparePrice) {
-      return IsPriceBreakByBody(swingType, swingPrice, comparePrice) || 
-             IsPriceBreakByWick(swingType, swingPrice, comparePrice) || 
-             IsPriceBreakByGap(swingType, swingPrice, beforeComparePrice, comparePrice);
-   }
 
    static int GetHighestHighIndex(const double &high[], int startIndex, int endIndex) {
       if (startIndex < 0 || endIndex >= ArraySize(high) || startIndex > endIndex) {
@@ -124,6 +125,25 @@ public:
 
       return highestIndex;
    }
+   
+   static int GetHighestHighIndex(const BarData &data, int startIndex, int endIndex) {
+      if (startIndex < 0 || endIndex >= data.GetHighArrSize() || startIndex > endIndex) {
+         return -1; // Invalid range
+      }
+
+      double highestHigh = data.GetHigh(startIndex);
+      int highestIndex = startIndex;
+
+      for (int i = startIndex + 1; i <= endIndex; i++) {
+         if (data.GetHigh(i) > highestHigh) {
+            highestHigh = data.GetHigh(i);
+            highestIndex = i;
+         }
+      }
+
+      return highestIndex;
+   }
+   
 };
 
 #endif

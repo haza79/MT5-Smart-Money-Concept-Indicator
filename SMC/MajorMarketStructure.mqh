@@ -96,10 +96,14 @@ public:
    // Calculate method which works with references to the external arrays
    void Calculate(int Iindex){
       ArrayResize(bullishBosDrawing.buffer, barData.RatesTotal());
+      ArrayResize(bullishInducementDrawing.buffer, barData.RatesTotal());
+      ArrayResize(bullishChochDrawing.buffer, barData.RatesTotal());
 
-      
       index = Iindex;
       bullishBosDrawing.buffer[index] = EMPTY_VALUE;
+      bullishInducementDrawing.buffer[index] = EMPTY_VALUE;
+      bullishChochDrawing.buffer[index] = EMPTY_VALUE;
+      
       UpdateMarketStructure();
    }
 
@@ -152,6 +156,7 @@ public:
          
          int inducementBreak = CheckLowInducementBreak();
          if(inducementBreak != -1){
+            bullishInducementDrawing.DrawStraightLine(inducementIndex,inducementBreak,inducementPrice);
             latestMajorHighIndex = biasHighIndex;
             latestMajorHighPrice = biasHighPrice;
             majorHighPriceStruct.setValue(barData.GetOpen(latestMajorHighIndex),barData.GetHigh(latestMajorHighIndex),barData.GetLow(latestMajorHighIndex),barData.GetClose(latestMajorHighIndex));
@@ -169,34 +174,22 @@ public:
             bullishBosDrawing.DrawStraightLine(wickSwingHighIndex,index,wickSwingHighPrice);
             swingHighWickBreak = false;
             UpdateBullishBosVariable();
-            oneTime = true;
          }else if(IsPriceBreakWickSwingHighByWick()){
             bullishBosDrawing.DrawStraightLine(wickSwingHighIndex,index,wickSwingHighPrice);
-            wickSwingHighIndex = index;
-            wickSwingHighPrice = barData.GetHigh(index);
-            wickSwingHighPriceStruct = currCandleStruct;
-            oneTime = true;
+            UpdateWickSwingHighVariable();
          }
       }else{
          // NO
          if(IsPriceBreakMajorHighByBodyOrGap()){
             // price break high by body or gap
-            Print("break by body:",barData.GetTime(index));
-            Print("high:",barData.GetTime(latestMajorHighIndex));
-            Print("indu:",barData.GetTime(inducementIndex));
-            Print("low :",barData.GetTime(latestMajorLowIndex));
             bullishBosDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
             UpdateBullishBosVariable();
-            oneTime = true;
             
          }else if(IsPriceBreakMajorHighByWick()){
             // price break high by wick
             bullishBosDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
             swingHighWickBreak = true;
-            wickSwingHighIndex = index;
-            wickSwingHighPrice = barData.GetHigh(index);
-            wickSwingHighPriceStruct = currCandleStruct;
-            oneTime = true;
+            UpdateWickSwingHighVariable();
          }
       }
       
@@ -212,6 +205,7 @@ public:
          }
          latestMajorLowIndex = fractalBeforeInducement;
          latestMajorLowPrice = barData.GetLow(fractalBeforeInducement);
+         majorLowPriceStruct.setValue(barData.GetOpen(latestMajorLowIndex),barData.GetHigh(latestMajorLowIndex),barData.GetLow(latestMajorLowIndex),barData.GetClose(latestMajorLowIndex));
       }
       
       if(latestMajorLowIndex == -1){
@@ -220,14 +214,23 @@ public:
       
       if(swingLowWickBreak){
          // swing low wick break
+         if(IsPriceBreakWickSwingLowyBodyOrGap()){
+            bullishChochDrawing.DrawStraightLine(wickSwingLowIndex,index,wickSwingLowPrice);
+            swingLowWickBreak = false;
+            UpdateBullishChochVariable();
+         }else if(IsPriceBreakWickSwingLowByWick()){
+            bullishChochDrawing.DrawStraightLine(wickSwingLowIndex,index,wickSwingLowPrice);
+            UpdateWickSwingLowVariable();
+         }
       }else{
          // not wick break
          if(IsPriceBreakMajorLowByBodyOrGap()){
-            Print("break:",barData.GetTime(index));
-            oneTime = true;
+            bullishChochDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
+            UpdateBullishChochVariable();
          }else if(IsPriceBreakMajorLowByWick()){
-            Print("break:",barData.GetTime(index));
-            oneTime = true;
+            bullishChochDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
+            swingLowWickBreak = true;
+            UpdateWickSwingLowVariable();
          }
       }
       
@@ -249,8 +252,10 @@ public:
          }
          return;
          
-         
       }
+      
+      
+      
    }
    
    // *** BEARISH TREND HIGH ***   
@@ -458,12 +463,45 @@ public:
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
+      
       prevMajorLowIndex = latestMajorLowIndex;
       prevMajorLowPrice = latestMajorLowPrice;
       
       latestMajorHighIndex = -1;
       latestMajorHighPrice = -1;
+      majorHighPriceStruct.setZero();
+      
       latestMajorLowIndex = CandleBreakAnalyzerStatic::GetLowestLowIndex(barData,prevMajorHighIndex,index);
+      latestMajorLowPrice = barData.GetLow(latestMajorLowIndex);
+      majorLowPriceStruct.setValue(barData.GetOpen(latestMajorLowIndex),barData.GetHigh(latestMajorLowIndex),barData.GetLow(latestMajorLowIndex),barData.GetClose(latestMajorLowIndex));
+   }
+   
+   void UpdateBullishChochVariable(){
+      AddTrend(TREND_BEARISH);
+      AddMarketStructure(MS_BEARISH_CHOCH);
+      
+      prevMajorLowIndex = latestMajorLowIndex;
+      prevMajorLowPrice = latestMajorLowPrice;
+      
+      latestMajorHighIndex = CandleBreakAnalyzerStatic::GetHighestHighIndex(barData,prevMajorLowIndex,index);
+      latestMajorHighPrice = barData.GetHigh(latestMajorHighIndex);
+      majorHighPriceStruct.setValue(barData.GetOpen(latestMajorHighIndex),barData.GetHigh(latestMajorHighIndex),barData.GetLow(latestMajorHighIndex),barData.GetClose(latestMajorHighIndex));
+      
+      latestMajorLowIndex = -1;
+      latestMajorLowPrice = -1;
+      majorLowPriceStruct.setZero();
+   }
+   
+   void UpdateWickSwingHighVariable(){
+      wickSwingHighIndex = index;
+      wickSwingHighPrice = barData.GetHigh(index);
+      wickSwingHighPriceStruct = currCandleStruct;
+   }
+            
+   void UpdateWickSwingLowVariable(){
+      wickSwingLowIndex = index;
+      wickSwingLowPrice = barData.GetLow(index);
+      wickSwingLowPriceStruct = currCandleStruct;
    }
    
    void AddTrend(Trend newTrend){
@@ -477,9 +515,15 @@ public:
       latestMarketStructure = newMarketStructure;
    }
    
+   
+   
    bool IsPriceBreakMajorHighByBodyOrGap(){
       return CandleBreakAnalyzerStatic::IsPriceBreakByBody(SWING_HIGH,majorHighPriceStruct,currCandleStruct) ||
          CandleBreakAnalyzerStatic::IsPriceBreakByGap(SWING_HIGH,majorHighPriceStruct,prevCandleStruct,currCandleStruct);
+   }
+   
+   bool IsPriceBreakMajorHighByWick(){
+      return CandleBreakAnalyzerStatic::IsPriceBreakByWick(SWING_HIGH,majorHighPriceStruct,currCandleStruct);
    }
    
    bool IsPriceBreakWickSwingHighByBodyOrGap(){
@@ -499,12 +543,17 @@ public:
          CandleBreakAnalyzerStatic::IsPriceBreakByGap(SWING_LOW,majorLowPriceStruct,prevCandleStruct,currCandleStruct);
    }
    
-   bool IsPriceBreakMajorHighByWick(){
-      return CandleBreakAnalyzerStatic::IsPriceBreakByWick(SWING_HIGH,majorHighPriceStruct,currCandleStruct);
-   }
-   
    bool IsPriceBreakMajorLowByWick(){
       return CandleBreakAnalyzerStatic::IsPriceBreakByWick(SWING_LOW,majorLowPriceStruct,currCandleStruct);
+   }
+   
+   bool IsPriceBreakWickSwingLowyBodyOrGap(){
+      return CandleBreakAnalyzerStatic::IsPriceBreakByBody(SWING_LOW,wickSwingLowPriceStruct,currCandleStruct) ||
+         CandleBreakAnalyzerStatic::IsPriceBreakByGap(SWING_LOW,wickSwingLowPriceStruct,prevCandleStruct,currCandleStruct);
+   }
+   
+   bool IsPriceBreakWickSwingLowByWick(){
+      return CandleBreakAnalyzerStatic::IsPriceBreakByWick(SWING_LOW,wickSwingLowPriceStruct,currCandleStruct);
    }
    
 
