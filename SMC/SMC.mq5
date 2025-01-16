@@ -41,7 +41,7 @@
 #property indicator_label7  "bullish inducement"
 #property indicator_type7   DRAW_LINE
 #property indicator_color7  clrRed
-#property indicator_style7  STYLE_DOT
+#property indicator_style7  STYLE
 #property indicator_width7  1
 
 #property indicator_label8  "bullish choch"
@@ -49,6 +49,24 @@
 #property indicator_color8  clrRed
 #property indicator_style8  STYLE_DASH
 #property indicator_width8  1
+
+#property indicator_label9  "bearish bos"
+#property indicator_type9   DRAW_LINE
+#property indicator_color9  clrGreen
+#property indicator_style9  STYLE_DASH
+#property indicator_width9  1
+
+#property indicator_label10  "bearish inducement"
+#property indicator_type10   DRAW_LINE
+#property indicator_color10  clrRed
+#property indicator_style10  STYLE_DOT
+#property indicator_width10  1
+
+#property indicator_label11  "bearish choch"
+#property indicator_type11   DRAW_LINE
+#property indicator_color11  clrRed
+#property indicator_style11  STYLE_DASH
+#property indicator_width11  1
 
 
 
@@ -82,6 +100,9 @@ int OnInit()
     SetIndexBuffer(6, majorMarketStructure.bullishBosDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(7, majorMarketStructure.bullishInducementDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(8, majorMarketStructure.bullishChochDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(9, majorMarketStructure.bearishBosDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(10, majorMarketStructure.bearishInducementDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(11, majorMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
     
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);
