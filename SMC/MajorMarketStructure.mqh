@@ -67,6 +67,7 @@ public:
    LineDrawing bearishBosDrawing;
    LineDrawing bearishChochDrawing;
    LineDrawing bearishInducementDrawing;
+   double majorSwingHighBuffer[],majorSwingLowBuffer[];
 
 
    // Constructor to initialize variables
@@ -101,6 +102,8 @@ public:
       ArrayResize(bearishBosDrawing.buffer, barData.RatesTotal());
       ArrayResize(bearishInducementDrawing.buffer, barData.RatesTotal());
       ArrayResize(bearishChochDrawing.buffer, barData.RatesTotal());
+      ArrayResize(majorSwingHighBuffer, barData.RatesTotal());
+      ArrayResize(majorSwingLowBuffer, barData.RatesTotal());
 
       index = Iindex;
       
@@ -110,6 +113,8 @@ public:
       bearishBosDrawing.buffer[index] = EMPTY_VALUE;
       bearishInducementDrawing.buffer[index] = EMPTY_VALUE;
       bearishChochDrawing.buffer[index] = EMPTY_VALUE;
+      majorSwingHighBuffer[index] = EMPTY_VALUE;
+      majorSwingLowBuffer[index] = EMPTY_VALUE;
       
       UpdateMarketStructure();
    }
@@ -185,6 +190,10 @@ public:
          if(IsPriceBreakWickSwingHighByBodyOrGap()){
             bullishBosDrawing.DrawStraightLine(wickSwingHighIndex,index,wickSwingHighPrice);
             UpdateBullishBosVariable();
+            
+            majorSwingHighBuffer[prevMajorHighIndex] = prevMajorHighPrice;
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            
          }else if(IsPriceBreakWickSwingHighByWick()){
             bullishBosDrawing.DrawStraightLine(wickSwingHighIndex,index,wickSwingHighPrice);
             UpdateWickSwingHighVariable();
@@ -195,6 +204,9 @@ public:
             // price break high by body or gap
             bullishBosDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
             UpdateBullishBosVariable();
+            
+            majorSwingHighBuffer[prevMajorHighIndex] = prevMajorHighPrice;
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             
          }else if(IsPriceBreakMajorHighByWick()){
             // price break high by wick
@@ -228,6 +240,10 @@ public:
          if(IsPriceBreakWickSwingLowyBodyOrGap()){
             bullishChochDrawing.DrawStraightLine(wickSwingLowIndex,index,wickSwingLowPrice);
             UpdateBullishChochVariable();
+            
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            majorSwingLowBuffer[prevMajorLowIndex] = prevMajorLowPrice;
+            
          }else if(IsPriceBreakWickSwingLowByWick()){
             bullishChochDrawing.DrawStraightLine(wickSwingLowIndex,index,wickSwingLowPrice);
             UpdateWickSwingLowVariable();
@@ -237,6 +253,10 @@ public:
          if(IsPriceBreakMajorLowByBodyOrGap()){
             bullishChochDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
             UpdateBullishChochVariable();
+            
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            majorSwingLowBuffer[prevMajorLowIndex] = prevMajorLowPrice;
+            
          }else if(IsPriceBreakMajorLowByWick()){
             bullishChochDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
             swingLowWickBreak = true;
@@ -273,6 +293,10 @@ public:
          if(IsPriceBreakWickSwingLowyBodyOrGap()){
             bearishBosDrawing.DrawStraightLine(wickSwingLowIndex,index,wickSwingLowPrice);
             UpdateBearishBosVariable();
+            
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            majorSwingLowBuffer[prevMajorLowIndex] = prevMajorLowPrice;
+            
          }else if(IsPriceBreakWickSwingLowByWick()){
             bearishBosDrawing.DrawStraightLine(wickSwingLowIndex,index,wickSwingLowPrice);
             UpdateWickSwingLowVariable();
@@ -281,6 +305,9 @@ public:
          if(IsPriceBreakMajorLowByBodyOrGap()){
             bearishBosDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
             UpdateBearishBosVariable();
+            
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            majorSwingLowBuffer[prevMajorLowIndex] = prevMajorLowPrice;
             
          }else if(IsPriceBreakMajorLowByWick()){
             bearishBosDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
@@ -314,6 +341,10 @@ public:
          if(IsPriceBreakWickSwingHighByBodyOrGap()){
             bearishChochDrawing.DrawStraightLine(wickSwingHighIndex,index,wickSwingHighPrice);
             UpdateBearishChochVariable();
+            
+            majorSwingHighBuffer[prevMajorHighIndex] = prevMajorHighPrice;
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            
          }else if(IsPriceBreakWickSwingHighByWick()){
             bearishChochDrawing.DrawStraightLine(wickSwingHighIndex,index,wickSwingHighPrice);
             UpdateWickSwingHighVariable();
@@ -324,6 +355,9 @@ public:
          if(IsPriceBreakMajorHighByBodyOrGap()){
             bearishChochDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
             UpdateBearishChochVariable();
+            
+            majorSwingHighBuffer[prevMajorHighIndex] = prevMajorHighPrice;
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             
          }else if(IsPriceBreakMajorHighByWick()){
             bearishChochDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);

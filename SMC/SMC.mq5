@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 12
-#property indicator_plots   12
+#property indicator_buffers 16
+#property indicator_plots   16
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -40,8 +40,8 @@
 
 #property indicator_label7  "bullish inducement"
 #property indicator_type7   DRAW_LINE
-#property indicator_color7  clrRed
-#property indicator_style7  STYLE
+#property indicator_color7  clrOrange
+#property indicator_style7  STYLE_DOT
 #property indicator_width7  1
 
 #property indicator_label8  "bullish choch"
@@ -58,7 +58,7 @@
 
 #property indicator_label10  "bearish inducement"
 #property indicator_type10   DRAW_LINE
-#property indicator_color10  clrRed
+#property indicator_color10  clrOrange
 #property indicator_style10  STYLE_DOT
 #property indicator_width10  1
 
@@ -68,6 +68,23 @@
 #property indicator_style11  STYLE_DASH
 #property indicator_width11  1
 
+#property indicator_label12  "Major High"
+#property indicator_type12   DRAW_ARROW
+#property indicator_color12  clrGold
+#property indicator_style12  STYLE_SOLID
+#property indicator_width12  1
+
+#property indicator_label13  "Major Low"
+#property indicator_type13   DRAW_ARROW
+#property indicator_color13  clrGold
+#property indicator_style13  STYLE_SOLID
+#property indicator_width13  1
+
+#property indicator_label14  "ZigZag M"
+#property indicator_type14   DRAW_ZIGZAG
+#property indicator_color14  clrGold
+#property indicator_style14  STYLE_SOLID
+#property indicator_width14  1
 
 
 #include "BarData.mqh";
@@ -104,6 +121,12 @@ int OnInit()
     SetIndexBuffer(10, majorMarketStructure.bearishInducementDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(11, majorMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
     
+    SetIndexBuffer(12, majorMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
+    SetIndexBuffer(13, majorMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
+    
+    SetIndexBuffer(14, majorMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
+    SetIndexBuffer(15, majorMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
+    
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);
     PlotIndexSetInteger(1, PLOT_ARROW, 158);
@@ -121,9 +144,16 @@ int OnInit()
     PlotIndexSetDouble(9,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(10,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(11,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(12,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(13,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(14,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(15,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,-10);
     PlotIndexSetInteger(4,PLOT_ARROW_SHIFT,10);
+    
+    PlotIndexSetInteger(11,PLOT_ARROW_SHIFT,-15);
+    PlotIndexSetInteger(12,PLOT_ARROW_SHIFT,15);
     
 
     insideBar.Init();
