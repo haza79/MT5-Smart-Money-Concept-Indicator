@@ -93,7 +93,9 @@
 #include "CandleStructs.mqh"
 #include "CandleBreakAnalyzer.mqh";
 #include "Fractal.mqh";
+
 #include "MajorMarketStructure.mqh";
+
 
 BarData barData;
 InsideBarClass insideBar;

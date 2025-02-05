@@ -1,84 +1,86 @@
-#ifndef EMACLASS_MQH
-#define EMACLASS_MQH
+#ifndef MACDCLASS_MQH
+#define MACDCLASS_MQH
 
-class EMAClass {
+class MACDClass {
 private:
-  int m_period;
-  double m_alpha;
-  double m_ema;
-  double m_buffer[];
-  int m_bufferSize;
-  int m_lastIndex;
-  int m_dataCount; // Counter for received data points
+    double       priceBuffer[];    // Price buffer for calculation
+    double       macdLine[];      // MACD Line buffer
+    double       signalLine[];    // Signal Line buffer
+    double       histogram[];     // MACD Histogram buffer
+    double       latestMACD;      // Latest MACD value
+    double       latestSignal;    // Latest Signal Line value
+    double       latestHistogram; // Latest Histogram value
+
+    int          emaFastPeriod;
+    int          emaSlowPeriod;
+    int          signalPeriod;
+    int          bufferSize;
+    double       emaFastPrev;
+    double       emaSlowPrev;
+    double       signalPrev;
+
+    double CalculateEMA(double price, double prevEMA, int period) {
+        double alpha = 2.0 / (period + 1);
+        return alpha * price + (1 - alpha) * prevEMA;
+    }
 
 public:
-  EMAClass(int period) : m_period(period), m_lastIndex(-1), m_bufferSize(0), m_dataCount(0) {
-    if (period <= 0) {
-      Print("Error: Invalid EMA period.");
-      m_period = 1;
+    // Constructor
+    MACDClass(int fastPeriod, int slowPeriod, int signalPeriod)
+        : emaFastPeriod(fastPeriod), emaSlowPeriod(slowPeriod), signalPeriod(signalPeriod),
+          emaFastPrev(0), emaSlowPrev(0), signalPrev(0) {
+        bufferSize = MathMax(emaSlowPeriod, signalPeriod);
+        ArrayResize(priceBuffer, bufferSize);
+        ArrayResize(macdLine, bufferSize);
+        ArrayResize(signalLine, bufferSize);
+        ArrayResize(histogram, bufferSize);
+        ArraySetAsSeries(priceBuffer, true);
+        ArraySetAsSeries(macdLine, true);
+        ArraySetAsSeries(signalLine, true);
+        ArraySetAsSeries(histogram, true);
     }
-    m_alpha = 2.0 / (m_period + 1);
-    ArrayResize(m_buffer, 0);
-  }
 
-  double Update(double newPrice) {
-    m_dataCount++; // Increment data counter
-
-    if (m_dataCount <= m_period) {
-      // Collect data until period is reached
-      m_lastIndex++;
-      if (m_lastIndex >= m_bufferSize) {
-        m_bufferSize += 100;
-        ArrayResize(m_buffer, m_bufferSize);
-      }
-      m_buffer[m_lastIndex] = newPrice; // Store the price temporarily
-
-      if (m_dataCount == m_period) {
-        // Initialize EMA when enough data is collected
-        double sum = 0;
-        for (int i = 0; i < m_period; i++) {
-          sum += m_buffer[i];
+    // Update new price and calculate MACD
+    void Update(double price) {
+        // Shift price buffer
+        for (int i = bufferSize - 1; i > 0; i--) {
+            priceBuffer[i] = priceBuffer[i - 1];
         }
-        m_ema = sum / m_period;
+        priceBuffer[0] = price;
 
-        //Now that EMA is initialized, overwrite the temporary price data with the EMA
-        for(int i = 0; i < m_period; i++){
-            m_buffer[i] = m_ema;
+        // Calculate EMAs
+        if (emaFastPrev == 0) {
+            emaFastPrev = price;
+            emaSlowPrev = price;
         }
-      } else {
-        return 0.0; // Or NaN, depending on your needs. Indicate that EMA is not yet initialized.
-      }
-    } else {
-      // Update EMA after initialization
-      m_ema = m_alpha * newPrice + (1 - m_alpha) * m_ema;
-      m_lastIndex++;
-      if (m_lastIndex >= m_bufferSize) {
-        m_bufferSize += 100;
-        ArrayResize(m_buffer, m_bufferSize);
-      }
-      m_buffer[m_lastIndex] = m_ema;
+
+        double emaFast = CalculateEMA(price, emaFastPrev, emaFastPeriod);
+        double emaSlow = CalculateEMA(price, emaSlowPrev, emaSlowPeriod);
+        emaFastPrev = emaFast;
+        emaSlowPrev = emaSlow;
+        latestMACD = emaFast - emaSlow;
+
+        // Shift MACD line buffer
+        for (int i = bufferSize - 1; i > 0; i--) {
+            macdLine[i] = macdLine[i - 1];
+        }
+        macdLine[0] = latestMACD;
+
+        // Calculate Signal Line
+        if (signalPrev == 0) {
+            signalPrev = latestMACD;
+        }
+        latestSignal = CalculateEMA(latestMACD, signalPrev, signalPeriod);
+        signalPrev = latestSignal;
+
+        // Calculate Histogram
+        latestHistogram = latestMACD - latestSignal;
     }
 
-    return m_ema;
-  }
-
-  double GetEMA() const {
-    return m_ema;
-  }
-
-    double GetEMA(int index) const {
-      if (index < 0 || index > m_lastIndex) {
-          Print("Error: Index out of range.");
-          return 0.0; // Or NaN
-      }
-      return m_buffer[index];
-  }
-
-    int GetLastIndex() const {
-        return m_lastIndex;
-    }
-
-
+    // Getters for latest values
+    double GetLatestMACD() const { return latestMACD; }
+    double GetLatestSignal() const { return latestSignal; }
+    double GetLatestHistogram() const { return latestHistogram; }
 };
 
 #endif

@@ -124,8 +124,8 @@ public:
          return;
       }
       
-      if(fractal.prev2FractalHighIndex == -1 || fractal.prevFractalHighIndex == -1 || fractal.latestFractalHighIndex == -1
-      || fractal.prev2FractalLowIndex == -1 || fractal.prevFractalLowIndex == -1 || fractal.latestFractalLowIndex == -1){
+      if(fractal.prevFractalHighIndex == -1 || fractal.latestFractalHighIndex == -1
+      || fractal.prevFractalLowIndex == -1 || fractal.latestFractalLowIndex == -1){
          return;
       }
       
