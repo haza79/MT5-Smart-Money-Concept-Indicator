@@ -137,10 +137,8 @@ public:
       prevCandleStruct.setValue(barData.GetOpen(index),barData.GetHigh(index),barData.GetLow(index),barData.GetClose(index));
       
       if(latestTrend == TREND_BULLISH){
-         Print("bullish");
          BullishTrendMarketHandle();
       }else if(latestTrend == TREND_BEARISH){
-         Print("bearish");
          BearishTrendMarketHandle();
       }
    

@@ -87,22 +87,26 @@
 #property indicator_width14  1
 
 
+
 #include "BarData.mqh";
 #include "InsideBarClass.mqh";
 #include "ImpulsePullbackDetector.mqh";
 #include "CandleStructs.mqh"
 #include "CandleBreakAnalyzer.mqh";
 #include "Fractal.mqh";
+#include "MACD.mqh"
+
 
 #include "MajorMarketStructure.mqh";
 
-
+MACD macd;
 BarData barData;
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
 MajorMarketStructureClass majorMarketStructure;
+
 
 int OnInit()
 {
@@ -193,7 +197,8 @@ int OnCalculate(const int rates_total,
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
-      
+      macd.update(close[i]);
+      Print(time[i]," | ",macd.getMACD());
       insideBar.Calculate(i, rates_total, high, low);
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       fractal.Calculate(i, high, low);
