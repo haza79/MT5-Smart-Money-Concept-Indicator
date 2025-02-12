@@ -67,7 +67,7 @@ public:
    LineDrawing bearishBosDrawing;
    LineDrawing bearishChochDrawing;
    LineDrawing bearishInducementDrawing;
-   double majorSwingHighBuffer[],majorSwingLowBuffer[];
+   double majorSwingHighBuffer[],majorSwingLowBuffer[],inducementBuffer[];
 
 
    // Constructor to initialize variables
@@ -87,6 +87,8 @@ public:
       prevMajorHighPrice = prevMajorLowPrice = latestMajorHighPrice = latestMajorLowPrice = -1;
       biasHighPrice = biasLowPrice = -1;
       
+      inducementIndex = -1;
+      
       swingHighWickBreak = swingLowWickBreak = false;
       
       prev2MarketStructure = prevMarketStructure = latestMarketStructure = MS_NONE;
@@ -104,6 +106,7 @@ public:
       ArrayResize(bearishChochDrawing.buffer, barData.RatesTotal());
       ArrayResize(majorSwingHighBuffer, barData.RatesTotal());
       ArrayResize(majorSwingLowBuffer, barData.RatesTotal());
+      ArrayResize(inducementBuffer, barData.RatesTotal());
 
       index = Iindex;
       
@@ -115,11 +118,25 @@ public:
       bearishChochDrawing.buffer[index] = EMPTY_VALUE;
       majorSwingHighBuffer[index] = EMPTY_VALUE;
       majorSwingLowBuffer[index] = EMPTY_VALUE;
+      inducementBuffer[index] = EMPTY_VALUE;
       
       UpdateMarketStructure();
    }
 
    void UpdateMarketStructure(){
+      if(latestMarketStructure == MS_NONE){
+         Print("=====");
+         if(latestTrend != TREND_NONE) Print("trend:",latestTrend);
+         if(biasHighIndex != -1) Print("bi H:",barData.GetTime(biasHighIndex));
+         if(biasLowIndex != -1) Print("bi L:",barData.GetTime(biasLowIndex));
+         if(latestMajorHighIndex != -1) Print("high:",barData.GetTime(latestMajorHighIndex));
+         if(latestMajorLowIndex != -1) Print("low :",barData.GetTime(latestMajorLowIndex));
+         if(inducementIndex != -1) Print("indu:",barData.GetTime(inducementIndex));
+         Print("=====");
+      }
+      if(latestMarketStructure != MS_NONE){
+         return;
+      }
       if(oneTime == true){
          return;
       }
@@ -171,6 +188,7 @@ public:
          
          int inducementBreak = CheckLowInducementBreak();
          if(inducementBreak != -1){
+            inducementBuffer[inducementIndex] = inducementPrice;
             bullishInducementDrawing.DrawStraightLine(inducementIndex,inducementBreak,inducementPrice);
             latestMajorHighIndex = biasHighIndex;
             latestMajorHighPrice = biasHighPrice;
@@ -275,6 +293,7 @@ public:
          
          int inducementBreak = CheckHighInducementBreak();
          if(inducementBreak != -1){
+            inducementBuffer[inducementIndex] = inducementPrice;
             bearishInducementDrawing.DrawStraightLine(inducementIndex,inducementBreak,inducementPrice);
             latestMajorLowIndex = biasLowIndex;
             latestMajorLowPrice = biasLowPrice;
@@ -423,12 +442,25 @@ public:
       if(fractal.prevFractalHighIndex != -1 && fractal.latestFractalHighIndex != -1
       && fractal.prevFractalLowIndex != -1 && fractal.latestFractalLowIndex != -1){
       
-         if(fractal.latestFractalHighPrice > fractal.prevFractalHighPrice){
+         if(fractal.latestFractalHighIndex > fractal.prevFractalHighIndex &&
+            fractal.latestFractalHighPrice > fractal.prevFractalHighPrice &&
+            fractal.latestFractalLowIndex > fractal.prevFractalLowIndex &&
+            fractal.latestFractalLowPrice > fractal.prevFractalLowPrice){
             latestTrend = TREND_BULLISH;
+            
+            Print("high1:",barData.GetTime(fractal.prevFractalHighIndex),"|high2:",barData.GetTime(fractal.latestFractalHighIndex));
+            Print("low1 :",barData.GetTime(fractal.prevFractalLowIndex),"|low :",barData.GetTime(fractal.latestFractalLowIndex));
+            return;
          }
          
-         if(fractal.latestFractalLowPrice < fractal.prevFractalLowPrice){
+         if(fractal.latestFractalHighIndex > fractal.prevFractalHighIndex &&
+            fractal.latestFractalHighPrice < fractal.prevFractalHighPrice &&
+            fractal.latestFractalLowIndex > fractal.prevFractalLowIndex &&
+            fractal.latestFractalLowPrice < fractal.prevFractalLowPrice){
             latestTrend = TREND_BEARISH;
+            Print("high1:",barData.GetTime(fractal.prevFractalHighIndex),"|high2:",barData.GetTime(fractal.latestFractalHighIndex));
+            Print("low1 :",barData.GetTime(fractal.prevFractalLowIndex),"|low :",barData.GetTime(fractal.latestFractalLowIndex));
+            return;
          }
       
       }else{
@@ -507,6 +539,11 @@ public:
                            fractal.prevFractalLowIndex : fractal.latestFractalLowIndex;
          inducementPrice = (biasHighIndex == fractal.latestFractalLowIndex) ?
                            fractal.prevFractalLowPrice : fractal.latestFractalLowPrice;
+         
+         
+         for(int i = biasHighIndex; i>0; i--){
+            Print(i,":",barData.GetTime(fractal.lowFractalBuffer[i]));
+         }
         }
      }
 
@@ -558,6 +595,18 @@ public:
          }
       }
    }
+   
+   bool GetLastValidValue(const double &buffer[], int startIndex, int &foundIndex, double &foundValue) {
+    for (int i = startIndex; i >= 0; i--) {
+        if (buffer[i] != EMPTY_VALUE && buffer[i] != -1) {
+            foundIndex = i;
+            foundValue = buffer[i];
+            return true;  // Found a valid value
+        }
+    }
+    return false;  // No valid value found
+}
+
    
    void UpdateBullishBosVariable(){
       AddTrend(TREND_BULLISH);

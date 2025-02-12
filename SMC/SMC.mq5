@@ -80,9 +80,9 @@
 #property indicator_style13  STYLE_SOLID
 #property indicator_width13  1
 
-#property indicator_label14  "ZigZag M"
-#property indicator_type14   DRAW_ZIGZAG
-#property indicator_color14  clrGold
+#property indicator_label14  "Inducement"
+#property indicator_type14   DRAW_ARROW
+#property indicator_color14  clrRed
 #property indicator_style14  STYLE_SOLID
 #property indicator_width14  1
 
@@ -129,9 +129,8 @@ int OnInit()
     
     SetIndexBuffer(12, majorMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
     SetIndexBuffer(13, majorMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
+    SetIndexBuffer(14, majorMarketStructure.inducementBuffer, INDICATOR_DATA);
     
-    SetIndexBuffer(14, majorMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
-    SetIndexBuffer(15, majorMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
     
     // mother bar fractal
     PlotIndexSetInteger(0, PLOT_ARROW, 158);
@@ -191,14 +190,13 @@ int OnCalculate(const int rates_total,
 //inducement : 2024.01.23 12:00:00
 
 
-   
-   
+   if (Period() == PERIOD_M15) Print("15 m");
+   if (Period() == PERIOD_H1) Print("1 hour");
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
       macd.update(close[i]);
-      Print(time[i]," | ",macd.getMACD());
       insideBar.Calculate(i, rates_total, high, low);
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       fractal.Calculate(i, high, low);
