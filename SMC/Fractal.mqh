@@ -44,6 +44,8 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
    }
 
    void Calculate(const int &i, const double &high[], const double &low[]) {
+   highFractalBuffer[i] = EMPTY_VALUE;
+   lowFractalBuffer[i] = EMPTY_VALUE;
       int getLatestSwingHigh = impulsePullbackDetector.latestSwingHighIndex;
       int getLatestSwingLow = impulsePullbackDetector.latestSwingLowIndex;
 
