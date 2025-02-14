@@ -107,12 +107,14 @@
 #include "Fractal.mqh";
 #include "MACD.mqh"
 #include "MACDFractal.mqh"
+#include "MacdMarketStructure.mqh"
 
 #include "MajorMarketStructure.mqh";
 
 MACD macd;
 BarData barData;
 MACDFractalClass macdFractal;
+MacdMarketStructureClass macdMarketStructure;
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
@@ -185,6 +187,7 @@ int OnInit()
     fractal.Init(&impulsePullbackDetector);
     macdFractal.Init(&macd,&barData);
     majorMarketStructure.Init(&barData,&fractal);
+    macdMarketStructure.init(&macdFractal,&barData);
     
 
     return(INIT_SUCCEEDED);
@@ -219,6 +222,7 @@ int OnCalculate(const int rates_total,
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
       macdFractal.Update(i);
       fractal.Calculate(i, high, low);
+      macdMarketStructure.update(i,rates_total);
       
       
       
