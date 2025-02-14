@@ -38,4 +38,16 @@ enum MarketStructureType {
     MS_BEARISH_CHOCH  // Bearish Change of Character
 };
 
+enum MACDPosition {
+   MACD_NONE,
+   MACD_ABOVE,
+   MACD_BELOW
+};
+
+enum MACDFractalType {
+   MACD_FRACTAL_NONE,
+   MACD_FRACTAL_ABOVE,
+   MACD_FRACTAL_BELOW
+};
+
 #endif

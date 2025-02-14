@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 16
-#property indicator_plots   16
+#property indicator_buffers 17
+#property indicator_plots   17
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -86,6 +86,17 @@
 #property indicator_style14  STYLE_SOLID
 #property indicator_width14  1
 
+#property indicator_label15  "MACD High"
+#property indicator_type15   DRAW_ARROW
+#property indicator_color15  clrLime
+#property indicator_style15  STYLE_SOLID
+#property indicator_width15  1
+
+#property indicator_label16  "MACD Low"
+#property indicator_type16   DRAW_ARROW
+#property indicator_color16  clrDeepPink
+#property indicator_style16  STYLE_SOLID
+#property indicator_width16  1
 
 
 #include "BarData.mqh";
@@ -95,22 +106,23 @@
 #include "CandleBreakAnalyzer.mqh";
 #include "Fractal.mqh";
 #include "MACD.mqh"
-
+#include "MACDFractal.mqh"
 
 #include "MajorMarketStructure.mqh";
 
 MACD macd;
 BarData barData;
+MACDFractalClass macdFractal;
 InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
 MajorMarketStructureClass majorMarketStructure;
 
-
+int handle;
 int OnInit()
-{
-
+{  
+      handle = iMACD(_Symbol,PERIOD_CURRENT,12,26,9,PRICE_CLOSE);
     SetIndexBuffer(0, insideBar.motherBarTopBuffer, INDICATOR_DATA);
     SetIndexBuffer(1, insideBar.motherBarBottomBuffer, INDICATOR_DATA);
     
@@ -130,6 +142,9 @@ int OnInit()
     SetIndexBuffer(12, majorMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
     SetIndexBuffer(13, majorMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
     SetIndexBuffer(14, majorMarketStructure.inducementBuffer, INDICATOR_DATA);
+    
+    SetIndexBuffer(15, macdFractal.macdHighFractalBuffer, INDICATOR_DATA);
+    SetIndexBuffer(16, macdFractal.macdLowFractalBuffer, INDICATOR_DATA);
     
     
     // mother bar fractal
@@ -153,6 +168,7 @@ int OnInit()
     PlotIndexSetDouble(13,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(14,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(15,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(16,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,-10);
     PlotIndexSetInteger(4,PLOT_ARROW_SHIFT,10);
@@ -160,10 +176,14 @@ int OnInit()
     PlotIndexSetInteger(11,PLOT_ARROW_SHIFT,-15);
     PlotIndexSetInteger(12,PLOT_ARROW_SHIFT,15);
     
+    PlotIndexSetInteger(14,PLOT_ARROW_SHIFT,-20);
+    PlotIndexSetInteger(15,PLOT_ARROW_SHIFT,20);
+    
 
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
+    macdFractal.Init(&macd,&barData);
     majorMarketStructure.Init(&barData,&fractal);
     
 
@@ -181,6 +201,7 @@ int OnCalculate(const int rates_total,
                 const long &volume[],
                 const int &spread[])
 {
+   
 
    if (!barData.SetData(rates_total, time, open, high, low, close)) { // Call SetData() ONLY ONCE, BEFORE the loop
        Print("Setting data failed");
@@ -189,19 +210,15 @@ int OnCalculate(const int rates_total,
 //bias L     : 2024.01.23 14:00:00
 //inducement : 2024.01.23 12:00:00
 
-
-   if (Period() == PERIOD_M15) Print("15 m");
-   if (Period() == PERIOD_H1) Print("1 hour");
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
-      macd.update(close[i]);
+      macd.update(close[i],i,rates_total);
       insideBar.Calculate(i, rates_total, high, low);
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
+      macdFractal.Update(i);
       fractal.Calculate(i, high, low);
-      //minorMarketStructure.Calculate(i, rates_total, time, open, high, low, close);
-      majorMarketStructure.Calculate(i);
       
       
       
