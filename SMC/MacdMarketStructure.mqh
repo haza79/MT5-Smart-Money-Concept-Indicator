@@ -119,7 +119,7 @@ private:
             updateBearishChochVariable();
             bearishChochDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
             
-         }else if(isPriceBreakHighByWick()){
+         }else if(isPriceBreakLowByWick()){
             // high wick break
             isLowWickBreak = true;
             updateWickLowVariable();
@@ -141,7 +141,7 @@ private:
    
    
    //--- BEARISH LOW **
-   void bullishMajorHighHandle(){
+   void bearishMajorLowHandle(){
       if(latestMajorLowIndex == -1){
          if(getNewMajorLow()){
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowIndex;
@@ -186,7 +186,39 @@ private:
    }
    
    
-   
+   //--- BEARISH HIGH **
+   void bearishMajorHighHandle(){
+      
+      if(isHighWickBreak){
+         // high wick break
+         if(isPriceBreakWickHighByBodyOrGap()){
+            // bullish bos
+            bullishChochDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
+            updateBullishChochVariable();
+            
+         }else if(isPriceBreakWickHighByWick()){
+            // continue wick break
+            bullishChochDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
+            updateWickHighVariable();
+         }
+         
+      }else{
+         // not wick break
+         if(isPriceBreakHighByBobyOrGap()){
+            // bullish bos
+            updateBullishChochVariable();
+            bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
+            
+         }else if(isPriceBreakHighByWick()){
+            // high wick break
+            isHighWickBreak = true;
+            updateWickHighVariable();
+            bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
+         }
+         
+         
+      }
+   }
    
    
    
@@ -303,7 +335,10 @@ private:
          barData.GetHigh(latestMajorLowIndex),
          barData.GetLow(latestMajorLowIndex),
          barData.GetClose(latestMajorLowIndex)
-      )
+      );
+      
+      resetWickBreak();
+      
    }
    
    void updateBearishChochVariable(){
@@ -316,6 +351,8 @@ private:
       
       latestMajorLowIndex = -1;
       latestMajorLowPrice = -1;
+      
+      resetWickBreak();
       
    }
    
@@ -338,12 +375,36 @@ private:
          barData.GetHigh(latestMajorHighIndex),
          barData.GetLow(latestMajorHighIndex),
          barData.GetClose(latestMajorHighIndex)
-      )
+      );
       latestMajorLowIndex = -1;
       latestMajorLowPrice = -1;
+      
+      resetWickBreak();
    }
    
+   void updateBullishChochVariable(){
+      addTrend(TREND_BULLISH);
+      addMarketStructure(MS_BULLISH_CHOCH);
+      
+      prevMajorHighIndex = latestMajorHighIndex;
+      prevMajorHighPrice = latestMajorHighPrice;
+      
+      latestMajorHighIndex = -1;
+      latestMajorHighPrice = -1;
+      
+      resetWickBreak();
+      
+      
+   }
    
+   void resetWickBreak(){
+      isHighWickBreak = false;
+      isLowWickBreak = false;
+      wickHighIndex = -1;
+      wickLowIndex = -1;
+      wickHighPrice = -1;
+      wickLowPrice = -1;
+   }
    
    void updateWickHighVariable(){
       wickHighIndex = index;
@@ -491,6 +552,17 @@ public:
       
       if(latestTrend == TREND_NONE){
          getFirstTrend();
+      }
+      
+      switch(latestTrend){
+         case TREND_BULLISH:
+            bullishMajorHighHandle();
+            bullishMajorLowHandle();
+            break;
+         case TREND_BEARISH:
+            bearishMajorHighHandle();
+            bearishMajorLowHandle();
+            break;   
       }
    }
    
