@@ -132,6 +132,69 @@ private:
    
    
    
+   
+   
+   
+   
+   
+   
+   
+   
+   //--- BEARISH LOW **
+   void bullishMajorHighHandle(){
+      if(latestMajorLowIndex == -1){
+         if(getNewMajorLow()){
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowIndex;
+         }
+      }
+      
+      if(latestMajorLowIndex == -1){
+         return;
+      }
+      
+      if(isLowWickBreak){
+         // high wick break
+         if(isPriceBreakWickLowByBodyOrGap()){
+            // bullish bos
+            bearishBosDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
+            updateBearishBosVariable();
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            
+         }else if(isPriceBreakWickLowByWick()){
+            // continue wick break
+            bearishBosDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
+            updateWickLowVariable();
+         }
+         
+      }else{
+         // not wick break
+         if(isPriceBreakLowByBodyOrGap()){
+            // bullish bos
+            updateBearishBosVariable();
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            bearishBosDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
+            
+         }else if(isPriceBreakLowByWick()){
+            // high wick break
+            isLowWickBreak = true;
+            updateWickLowVariable();
+            bearishBosDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
+         }
+         
+         
+      }
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    //+------------------------------------------------------------------+
    //|   HELPER FUNCTION                                                |
    //+------------------------------------------------------------------+
@@ -234,7 +297,13 @@ private:
       latestMajorHighIndex = -1;
       latestMajorHighPrice = -1;
       latestMajorLowIndex = CandleBreakAnalyzerStatic::GetLowestLowIndex(barData,prevMajorHighIndex,index);
-      latestMajorLowPrice = -1;
+      latestMajorLowPrice = barData.GetLow(latestMajorLowIndex);
+      latestMajorLowCandle.setValue(
+         barData.GetOpen(latestMajorLowIndex),
+         barData.GetHigh(latestMajorLowIndex),
+         barData.GetLow(latestMajorLowIndex),
+         barData.GetClose(latestMajorLowIndex)
+      )
    }
    
    void updateBearishChochVariable(){
@@ -249,6 +318,32 @@ private:
       latestMajorLowPrice = -1;
       
    }
+   
+   
+   
+   
+   void updateBearishBosVariable(){
+      addTrend(TREND_BEARISH);
+      addMarketStructure(MS_BEARISH_BOS);
+      
+      prevMajorHighIndex = latestMajorHighIndex;
+      prevMajorHighPrice = latestMajorHighPrice;
+      prevMajorLowIndex = latestMajorLowIndex;
+      prevMajorLowPrice = latestMajorLowPrice;
+      
+      latestMajorHighIndex = CandleBreakAnalyzerStatic::GetHighestHighIndex(barData,prevMajorLowIndex,index);
+      latestMajorHighPrice = barData.GetHigh(latestMajorHighIndex);
+      latestMajorHighCandle.setValue(
+         barData.GetOpen(latestMajorHighIndex),
+         barData.GetHigh(latestMajorHighIndex),
+         barData.GetLow(latestMajorHighIndex),
+         barData.GetClose(latestMajorHighIndex)
+      )
+      latestMajorLowIndex = -1;
+      latestMajorLowPrice = -1;
+   }
+   
+   
    
    void updateWickHighVariable(){
       wickHighIndex = index;
