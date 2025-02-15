@@ -140,7 +140,7 @@ void Update(int Iindex) {
             break;
     }
 
-    Print("position:", position, "| macd:", macd.getMACD(), "| time:", barData.GetTime(index));
+    //Print("position:", position, "| macd:", macd.getMACD(), "| time:", barData.GetTime(index));
 }
 
 };
