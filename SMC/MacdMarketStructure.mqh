@@ -68,8 +68,9 @@ private:
          if(isPriceBreakWickHighByBodyOrGap()){
             // bullish bos
             bullishBosDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
-            updateBullishBosVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            updateBullishBosVariable();
+            
             
          }else if(isPriceBreakWickHighByWick()){
             // continue wick break
@@ -125,7 +126,7 @@ private:
             // high wick break
             isLowWickBreak = true;
             updateWickLowVariable();
-            bearishChochDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
+            bearishChochDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
          }
          
          
@@ -159,8 +160,9 @@ private:
          if(isPriceBreakWickLowByBodyOrGap()){
             // bullish bos
             bearishBosDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
             updateBearishBosVariable();
-            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            
             
          }else if(isPriceBreakWickLowByWick()){
             // continue wick break
@@ -171,7 +173,7 @@ private:
       }else{
          // not wick break
          if(isPriceBreakLowByBodyOrGap()){
-            // bullish bos
+            // bearish bos
             updateBearishBosVariable();
             majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
             bearishBosDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
@@ -214,9 +216,10 @@ private:
             
          }else if(isPriceBreakHighByWick()){
             // high wick break
+            Print("BULLISH CHOCH WICK");
             isHighWickBreak = true;
             updateWickHighVariable();
-            bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
+            bullishChochDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
          }
          
          
@@ -259,7 +262,7 @@ private:
    bool getNewMajorLow(){
    
       if(macdFractal.latestMacdLowFractalIndex > prevMajorLowIndex &&
-         macdFractal.latestMacdLowFractalPrice > prevMajorLowPrice){
+         macdFractal.latestMacdLowFractalPrice < prevMajorLowPrice){
          
          latestMajorLowIndex = macdFractal.latestMacdLowFractalIndex;
          latestMajorLowPrice = macdFractal.latestMacdLowFractalPrice;

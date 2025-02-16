@@ -101,7 +101,6 @@ ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
 
-int handle;
 int OnInit()
 {  
     SetIndexBuffer(0, insideBar.motherBarTopBuffer, INDICATOR_DATA);
