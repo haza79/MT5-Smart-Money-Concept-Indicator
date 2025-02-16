@@ -123,6 +123,8 @@ int OnInit()
     
     SetIndexBuffer(8, macdMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
     SetIndexBuffer(9, macdMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
+    PlotIndexSetInteger(7, PLOT_ARROW, 217);
+    PlotIndexSetInteger(8, PLOT_ARROW, 218);
     PlotIndexSetInteger(7,PLOT_ARROW_SHIFT,-20);
     PlotIndexSetInteger(8,PLOT_ARROW_SHIFT,20);
     
