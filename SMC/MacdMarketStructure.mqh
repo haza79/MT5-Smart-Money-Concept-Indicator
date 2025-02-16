@@ -117,6 +117,8 @@ private:
          if(isPriceBreakLowByBodyOrGap()){
             // bullish bos
             updateBearishChochVariable();
+            Print("bullish low break");
+            Print("prev low:",prevMajorLowIndex,"|",barData.GetTime(prevMajorLowIndex));
             bearishChochDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
             
          }else if(isPriceBreakLowByWick()){
@@ -206,6 +208,7 @@ private:
          // not wick break
          if(isPriceBreakHighByBobyOrGap()){
             // bullish bos
+            Print("BULLISH CHOCH");
             updateBullishChochVariable();
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
             
@@ -308,11 +311,15 @@ private:
          latestMajorHighPrice >= latestMajorLowPrice){
          
          latestTrend = TREND_BULLISH;
+         Print("BULLISH");
+         Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
       }
       else if(latestMajorLowIndex >= latestMajorHighIndex &&
          latestMajorLowPrice <= latestMajorHighPrice){
          
          latestTrend = TREND_BEARISH;
+         Print("BEARISH");
+         Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
       }
       
    }
@@ -556,10 +563,14 @@ public:
       
       switch(latestTrend){
          case TREND_BULLISH:
+            Print("BULLISH");
+            Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
             bullishMajorHighHandle();
             bullishMajorLowHandle();
             break;
          case TREND_BEARISH:
+            Print("BEARISH");
+            Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
             bearishMajorHighHandle();
             bearishMajorLowHandle();
             break;   
