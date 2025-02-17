@@ -11,7 +11,8 @@
 #include "MACDFractal.mqh"
 #include "CandleBreakAnalyzerStatic.mqh"
 #include "CandleStructs.mqh"
-#include "LineDrawing.mqh";
+#include "LineDrawing.mqh"
+#include "HorizontalRay.mqh";
 
 class MacdMarketStructureClass{
 
@@ -55,7 +56,8 @@ private:
    void bullishMajorHighHandle(){
       if(latestMajorHighIndex == -1){
          if(getNewMajorHigh()){
-            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighIndex;
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            bosRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
          }
       }
       
@@ -65,17 +67,24 @@ private:
       
       if(isHighWickBreak){
          // high wick break
+         if(!bosRay.drew){
+            bosRay.drawRay(wickHighIndex,index,wickHighPrice);
+         }
+         
          if(isPriceBreakWickHighByBodyOrGap()){
             // bullish bos
             bullishBosDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
-            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
-            updateBullishBosVariable();
             
+            updateBullishBosVariable();
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakWickHighByWick()){
             // continue wick break
             bullishBosDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
             updateWickHighVariable();
+            bosRay.deleteRay();
          }
          
       }else{
@@ -85,12 +94,15 @@ private:
             updateBullishBosVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishBosDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakHighByWick()){
             // high wick break
             isHighWickBreak = true;
             updateWickHighVariable();
             bullishBosDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
+            bosRay.deleteRay();
          }
          
          
@@ -99,6 +111,10 @@ private:
    
    //--- BULLISH LOW **
    void bullishMajorLowHandle(){
+   
+      if(!chochRay.drew){
+         chochRay.drawRay(latestMajorLowIndex,index,latestMajorLowPrice);
+      }
       
       if(isLowWickBreak){
          // high wick break
@@ -106,6 +122,8 @@ private:
             // bullish bos
             bearishChochDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
             updateBearishChochVariable();
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakWickLowByWick()){
             // continue wick break
@@ -118,9 +136,9 @@ private:
          if(isPriceBreakLowByBodyOrGap()){
             // bullish bos
             updateBearishChochVariable();
-            Print("bullish low break");
-            Print("prev low:",prevMajorLowIndex,"|",barData.GetTime(prevMajorLowIndex));
             bearishChochDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakLowByWick()){
             // high wick break
@@ -147,7 +165,7 @@ private:
    void bearishMajorLowHandle(){
       if(latestMajorLowIndex == -1){
          if(getNewMajorLow()){
-            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowIndex;
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
          }
       }
       
@@ -160,9 +178,9 @@ private:
          if(isPriceBreakWickLowByBodyOrGap()){
             // bullish bos
             bearishBosDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
-            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
-            updateBearishBosVariable();
             
+            updateBearishBosVariable();
+            majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
             
          }else if(isPriceBreakWickLowByWick()){
             // continue wick break
@@ -183,6 +201,7 @@ private:
             isLowWickBreak = true;
             updateWickLowVariable();
             bearishBosDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
+            
          }
          
          
@@ -210,13 +229,12 @@ private:
          // not wick break
          if(isPriceBreakHighByBobyOrGap()){
             // bullish bos
-            Print("BULLISH CHOCH");
             updateBullishChochVariable();
+            majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
             
          }else if(isPriceBreakHighByWick()){
             // high wick break
-            Print("BULLISH CHOCH WICK");
             isHighWickBreak = true;
             updateWickHighVariable();
             bullishChochDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
@@ -314,15 +332,11 @@ private:
          latestMajorHighPrice >= latestMajorLowPrice){
          
          latestTrend = TREND_BULLISH;
-         Print("BULLISH");
-         Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
       }
       else if(latestMajorLowIndex >= latestMajorHighIndex &&
          latestMajorLowPrice <= latestMajorHighPrice){
          
          latestTrend = TREND_BEARISH;
-         Print("BEARISH");
-         Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
       }
       
    }
@@ -500,12 +514,14 @@ private:
 
 public:
 
-   LineDrawing bullishBosDrawing;
-   LineDrawing bullishChochDrawing;
-   LineDrawing bullishInducementDrawing;
-   LineDrawing bearishBosDrawing;
-   LineDrawing bearishChochDrawing;
-   LineDrawing bearishInducementDrawing;
+   LineDrawing bullishBosDrawing,
+               bullishChochDrawing,
+               bullishInducementDrawing,
+               bearishBosDrawing,
+               bearishChochDrawing,
+               bearishInducementDrawing;
+   HorizontalRay bosRay,chochRay;               
+   
    double majorSwingHighBuffer[],majorSwingLowBuffer[];
 
    MacdMarketStructureClass(){
@@ -533,6 +549,9 @@ public:
       ArrayResize(bearishBosDrawing.buffer, totalBars);
       ArrayResize(bearishInducementDrawing.buffer, totalBars);
       ArrayResize(bearishChochDrawing.buffer, barData.RatesTotal());
+      ArrayResize(bosRay.lineDrawing.buffer, barData.RatesTotal());
+      ArrayResize(chochRay.lineDrawing.buffer, barData.RatesTotal());
+      
       ArrayResize(majorSwingHighBuffer, totalBars);
       ArrayResize(majorSwingLowBuffer, totalBars);
       
@@ -542,8 +561,15 @@ public:
       bearishBosDrawing.buffer[index] = EMPTY_VALUE;
       bearishInducementDrawing.buffer[index] = EMPTY_VALUE;
       bearishChochDrawing.buffer[index] = EMPTY_VALUE;
+      
+      bosRay.lineDrawing.buffer[index] = EMPTY_VALUE;
+      chochRay.lineDrawing.buffer[index] = EMPTY_VALUE;
+      
       majorSwingHighBuffer[index] = EMPTY_VALUE;
       majorSwingLowBuffer[index] = EMPTY_VALUE;
+      
+      bosRay.extendeRay(index);
+      chochRay.extendeRay(index);
       
       index = Iindex;
       if (index >= totalBars - 1) {
@@ -566,14 +592,10 @@ public:
       
       switch(latestTrend){
          case TREND_BULLISH:
-            Print("BULLISH");
-            Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
             bullishMajorHighHandle();
             bullishMajorLowHandle();
             break;
          case TREND_BEARISH:
-            Print("BEARISH");
-            Print("high:",barData.GetTime(latestMajorHighIndex)," | low:",barData.GetTime(latestMajorLowIndex));
             bearishMajorHighHandle();
             bearishMajorLowHandle();
             break;   

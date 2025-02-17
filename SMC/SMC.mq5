@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 17
-#property indicator_plots   17
+#property indicator_buffers 19
+#property indicator_plots   19
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -80,6 +80,17 @@
 #property indicator_style13  STYLE_DASH
 #property indicator_width13  1
 
+#property indicator_label14  "bos ray"
+#property indicator_type14   DRAW_LINE
+#property indicator_color14  clrGreen
+#property indicator_style14  STYLE_DOT
+#property indicator_width14  1
+
+#property indicator_label15  "choch ray"
+#property indicator_type15   DRAW_LINE
+#property indicator_color15  clrRed
+#property indicator_style15  STYLE_DOT
+#property indicator_width15  1
 
 
 #include "BarData.mqh";
@@ -134,6 +145,9 @@ int OnInit()
     SetIndexBuffer(12, macdMarketStructure.bearishBosDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(13, macdMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
     
+    SetIndexBuffer(14, macdMarketStructure.bosRay.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(15, macdMarketStructure.chochRay.lineDrawing.buffer, INDICATOR_DATA);
+    
     
     
     
@@ -160,6 +174,9 @@ int OnInit()
     PlotIndexSetDouble(14,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(15,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(16,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(17,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(18,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(19,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     
     

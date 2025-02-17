@@ -3,6 +3,8 @@
 
 class LineDrawing{
 
+private:
+
 public:
    double buffer[];
    
