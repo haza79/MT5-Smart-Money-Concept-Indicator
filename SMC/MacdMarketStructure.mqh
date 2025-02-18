@@ -117,7 +117,11 @@ private:
       }
       
       if(isLowWickBreak){
-         // high wick break
+         // low wick break
+         if(!chochRay.drew){
+            chochRay.drawRay(wickLowIndex,index,wickLowPrice);
+         }
+         
          if(isPriceBreakWickLowByBodyOrGap()){
             // bullish bos
             bearishChochDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
@@ -129,6 +133,7 @@ private:
             // continue wick break
             bearishChochDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
             updateWickLowVariable();
+            chochRay.deleteRay();
          }
          
       }else{
@@ -145,6 +150,7 @@ private:
             isLowWickBreak = true;
             updateWickLowVariable();
             bearishChochDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
+            chochRay.deleteRay();
          }
          
          
@@ -166,6 +172,7 @@ private:
       if(latestMajorLowIndex == -1){
          if(getNewMajorLow()){
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            bosRay.drawRay(latestMajorLowIndex,index,latestMajorLowPrice);
          }
       }
       
@@ -174,7 +181,11 @@ private:
       }
       
       if(isLowWickBreak){
-         // high wick break
+      
+         if(!bosRay.drew){
+            bosRay.drawRay(wickLowIndex,index,wickLowPrice);
+         }
+         
          if(isPriceBreakWickLowByBodyOrGap()){
             // bullish bos
             bearishBosDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
@@ -182,10 +193,14 @@ private:
             updateBearishBosVariable();
             majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
             
+            bosRay.deleteRay();
+            chochRay.deleteRay();
+            
          }else if(isPriceBreakWickLowByWick()){
             // continue wick break
             bearishBosDrawing.DrawStraightLine(wickLowIndex,index,wickLowPrice);
             updateWickLowVariable();
+            bosRay.deleteRay();
          }
          
       }else{
@@ -195,12 +210,15 @@ private:
             updateBearishBosVariable();
             majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
             bearishBosDrawing.DrawStraightLine(prevMajorLowIndex,index,prevMajorLowPrice);
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakLowByWick()){
             // high wick break
             isLowWickBreak = true;
             updateWickLowVariable();
             bearishBosDrawing.DrawStraightLine(latestMajorLowIndex,index,latestMajorLowPrice);
+            bosRay.deleteRay();
             
          }
          
@@ -211,18 +229,29 @@ private:
    
    //--- BEARISH HIGH **
    void bearishMajorHighHandle(){
+   
+      if(!chochRay.drew){
+         chochRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
+      }
       
       if(isHighWickBreak){
          // high wick break
+         if(!chochRay.drew){
+            chochRay.drawRay(wickHighIndex,index,wickHighPrice);
+         }
+         
          if(isPriceBreakWickHighByBodyOrGap()){
             // bullish bos
             bullishChochDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
             updateBullishChochVariable();
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakWickHighByWick()){
             // continue wick break
             bullishChochDrawing.DrawStraightLine(wickHighIndex,index,wickHighPrice);
             updateWickHighVariable();
+            chochRay.deleteRay();
          }
          
       }else{
@@ -232,12 +261,15 @@ private:
             updateBullishChochVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
+            bosRay.deleteRay();
+            chochRay.deleteRay();
             
          }else if(isPriceBreakHighByWick()){
             // high wick break
             isHighWickBreak = true;
             updateWickHighVariable();
             bullishChochDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
+            bosRay.deleteRay();
          }
          
          
