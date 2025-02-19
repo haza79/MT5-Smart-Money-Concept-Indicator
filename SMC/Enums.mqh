@@ -50,4 +50,9 @@ enum MACDFractalType {
    MACD_FRACTAL_BELOW
 };
 
+enum FiboTopOrBottom{
+   FIBO_TOP,
+   FIBO_BOTTOM
+};
+
 #endif
