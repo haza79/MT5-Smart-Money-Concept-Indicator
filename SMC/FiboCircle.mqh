@@ -10,7 +10,7 @@ private:
 
 public:
    
-   void init(int swingHigh, int swingLow){
+   void init(double swingHigh, double swingLow){
       center = (swingHigh+swingLow)/2;
       radius = (swingHigh-swingLow)/2;
    }

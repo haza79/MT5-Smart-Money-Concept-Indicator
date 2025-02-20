@@ -26,8 +26,7 @@ private:
    //|   GLOBAL VARIABLE                                                |
    //+------------------------------------------------------------------+
    
-   Trend prevTrend,latestTrend;
-   MarketStructureType prev2MarketStructure,prevMarketStructure,latestMarketStructure;
+   
    
    Candle prevMajorHighCandle,latestMajorHighCandle,
       prevMajorLowCandle,latestMajorLowCandle,
@@ -555,11 +554,30 @@ public:
    HorizontalRay bosRay,chochRay;               
    
    double majorSwingHighBuffer[],majorSwingLowBuffer[];
+   Trend prevTrend,latestTrend;
+   MarketStructureType prev2MarketStructure,prevMarketStructure,latestMarketStructure;
 
    MacdMarketStructureClass(){
       // construction
       
    }
+   
+   int getLatestMajorHighIndex(){
+      return latestMajorHighIndex;
+   }
+   
+   int getLatestMajorLowIndex(){
+      return latestMajorLowIndex;
+   }
+   
+   double getLatestmajorHighPrice(){
+      return latestMajorHighPrice;
+   }
+   
+   double getLatestMajorLowPrice(){
+      return latestMajorLowPrice;
+   }
+   
    
    void init(MACDFractalClass* macdFractalInstance, BarData* barDataInstance){
       // init function

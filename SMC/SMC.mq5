@@ -102,6 +102,11 @@
 #include "MACD.mqh";
 #include "MACDFractal.mqh";
 #include "MacdMarketStructure.mqh";
+#include "FiboOnChart.mqh";
+
+
+const double fiboCircleRatios[] =   {0.236,0.382,0.5,0.618,0.786,0.887,1.13,1.272,1.618,2.618,4.236};
+const double fiboFanRatios[] =      {0.236,0.382,0.5,0.618,0.786,0.887,1,1.13,1.272,1.618,2.618,4.236};
 
 MACD macd;
 BarData barData;
@@ -111,6 +116,7 @@ InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
+FiboOnChart fiboOnChart;
 
 int OnInit()
 {  
@@ -187,6 +193,8 @@ int OnInit()
     fractal.Init(&impulsePullbackDetector);
     macdFractal.Init(&macd,&barData);
     macdMarketStructure.init(&macdFractal,&barData);
+    fiboOnChart.init(&barData,&macdMarketStructure);
+    fiboOnChart.setFiboCircleRatios(fiboCircleRatios);
     
 
     return(INIT_SUCCEEDED);
@@ -222,7 +230,7 @@ int OnCalculate(const int rates_total,
       macdFractal.Update(i);
       fractal.Calculate(i, high, low);
       macdMarketStructure.update(i,rates_total);
-      
+      fiboOnChart.update(i,rates_total);
       
       
       
