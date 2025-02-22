@@ -55,4 +55,19 @@ enum FiboTopOrBottom{
    FIBO_BOTTOM
 };
 
+enum FiboLevel {
+    Fibo_236 = 236,
+    Fibo_382 = 382,
+    Fibo_500 = 500,
+    Fibo_618 = 618,
+    Fibo_786 = 786,
+    Fibo_887 = 887,
+    Fibo_1130 = 1130,
+    Fibo_1272 = 1272,
+    Fibo_1618 = 1618,
+    Fibo_2618 = 2618,
+    Fibo_4236 = 4236
+};
+
+
 #endif

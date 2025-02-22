@@ -6,7 +6,9 @@
 class FiboCircle{
 
 private:
+   const double fiboCircleRatios[] = {0.236,0.382,0.5,0.618,0.786,0.887,1.13,1.272,1.618,2.618,4.236};
    double center,radius;
+   
 
 public:
    
