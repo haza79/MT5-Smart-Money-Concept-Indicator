@@ -194,7 +194,6 @@ int OnInit()
     macdFractal.Init(&macd,&barData);
     macdMarketStructure.init(&macdFractal,&barData);
     fiboOnChart.init(&barData,&macdMarketStructure);
-    fiboOnChart.setFiboCircleRatios(fiboCircleRatios);
     
 
     return(INIT_SUCCEEDED);
