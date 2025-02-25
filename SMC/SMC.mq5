@@ -102,7 +102,7 @@
 #include "MACD.mqh";
 #include "MACDFractal.mqh";
 #include "MacdMarketStructure.mqh";
-#include "FiboOnChart.mqh";
+#include "Fibonacci.mqh";
 
 
 const double fiboCircleRatios[] =   {0.236,0.382,0.5,0.618,0.786,0.887,1.13,1.272,1.618,2.618,4.236};
@@ -116,7 +116,7 @@ InsideBarClass insideBar;
 ImpulsePullbackDetectorClass impulsePullbackDetector;
 CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
-FiboOnChart fiboOnChart;
+Fibonacci fibonacci;
 
 int OnInit()
 {  
@@ -193,7 +193,7 @@ int OnInit()
     fractal.Init(&impulsePullbackDetector);
     macdFractal.Init(&macd,&barData);
     macdMarketStructure.init(&macdFractal,&barData);
-    fiboOnChart.init(&barData,&macdMarketStructure);
+    fibonacci.init(&barData,&macdMarketStructure);
     
 
     return(INIT_SUCCEEDED);
@@ -229,7 +229,7 @@ int OnCalculate(const int rates_total,
       macdFractal.Update(i);
       fractal.Calculate(i, high, low);
       macdMarketStructure.update(i,rates_total);
-      fiboOnChart.update(i,rates_total);
+      fibonacci.update(i,rates_total);
       
       
       
