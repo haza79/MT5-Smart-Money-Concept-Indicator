@@ -5,60 +5,51 @@
 #include "MacdMarketStructure.mqh";
 #include "FiboCircle.mqh";
 
-
-class Fibonacci{
-
+class Fibonacci {
 private:
-   BarData* barData;
-   MacdMarketStructureClass* macdMarketStructure;
-   FiboCircle fiboCircle;
-   int index;
-   int macdSwingHigh,macdSwingLow;
-   double macdSwingHighPrice,macdSwingLowPrice;
-   
-   void fiboCircleHandle(){
-      Print("high:",barData.GetTime(macdSwingHigh)," | low:",barData.GetTime(macdSwingLow));
-      fiboCircle.calculateFibo(macdSwingHighPrice,macdSwingLowPrice);
-   }
-   
+    BarData* barData;
+    MacdMarketStructureClass* macdMarketStructure;
+    
+    int index;
+    int macdSwingHigh, macdSwingLow;
+    double macdSwingHighPrice, macdSwingLowPrice;
+
+    void fiboCircleHandle() {
+        Print("High Time: ", barData.GetTime(macdSwingHigh), " | Low Time: ", barData.GetTime(macdSwingLow));
+        fiboCircle.calculateFibo(macdSwingHighPrice, macdSwingLowPrice);
+    }
 
 public:
+   
+   FiboCircle fiboCircle;
+   
+    void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance) {
+        barData = barDataInstance;
+        macdMarketStructure = macdMarketStructureInstance;
+        fiboCircle = new FiboCircle();
+        macdSwingHigh = -1;
+        macdSwingLow = -1;
+        macdSwingHighPrice = 0;
+        macdSwingLowPrice = 0;
+    }
 
-   void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance){
-      // init function
-      barData = barDataInstance;
-      macdMarketStructure = macdMarketStructureInstance;
-   }
-   
-   void update(int Iindex,int rates_total){
-      index = Iindex;
-      
-      if (index >= rates_total - 1) {
-        return;
-      }
-      
-      if(macdMarketStructure.getLatestMajorHighIndex() == -1 || macdMarketStructure.getLatestMajorLowIndex() == -1){
-         return;
-      }
-      if(macdMarketStructure.getLatestMajorHighIndex() == macdSwingHigh && macdMarketStructure.getLatestMajorLowIndex() == macdSwingLow){
-         return;
-      }else{
-         macdSwingHigh = macdMarketStructure.getLatestMajorHighIndex();
-         macdSwingLow = macdMarketStructure.getLatestMajorLowIndex();
-         
-         macdSwingHighPrice = macdMarketStructure.getLatestmajorHighPrice();
-         macdSwingLowPrice = macdMarketStructure.getLatestMajorLowPrice();
-      }
-      
-      if(macdMarketStructure.latestMarketStructure != MS_NONE){
-         fiboCircleHandle();
-      }
-   }
-   
-   
-   
-   
+    void update(int iIndex, int rates_total) {
+        if (iIndex >= rates_total - 1) return;
 
-}
+        int newHigh = macdMarketStructure.getLatestMajorHighIndex();
+        int newLow = macdMarketStructure.getLatestMajorLowIndex();
+
+        if (newHigh == -1 || newLow == -1 || (newHigh == macdSwingHigh && newLow == macdSwingLow)) return;
+
+        macdSwingHigh = newHigh;
+        macdSwingLow = newLow;
+        macdSwingHighPrice = macdMarketStructure.getLatestmajorHighPrice();
+        macdSwingLowPrice = macdMarketStructure.getLatestMajorLowPrice();
+
+        if (macdMarketStructure.latestMarketStructure != MS_NONE) {
+            fiboCircleHandle();
+        }
+    }
+};
 
 #endif
