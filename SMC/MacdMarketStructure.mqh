@@ -93,6 +93,7 @@ private:
             updateBullishBosVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishBosDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
+            
             bosRay.deleteRay();
             chochRay.deleteRay();
             
@@ -392,6 +393,8 @@ private:
          barData.GetClose(latestMajorLowIndex)
       );
       
+      marketBreakAtIndex = index;
+      
       resetWickBreak();
       
    }
@@ -406,6 +409,8 @@ private:
       
       latestMajorLowIndex = -1;
       latestMajorLowPrice = -1;
+      
+      marketBreakAtIndex = index;
       
       resetWickBreak();
       
@@ -434,6 +439,8 @@ private:
       latestMajorLowIndex = -1;
       latestMajorLowPrice = -1;
       
+      marketBreakAtIndex = index;
+      
       resetWickBreak();
    }
    
@@ -446,6 +453,8 @@ private:
       
       latestMajorHighIndex = -1;
       latestMajorHighPrice = -1;
+      
+      marketBreakAtIndex = index;
       
       resetWickBreak();
       
@@ -556,6 +565,8 @@ public:
    double majorSwingHighBuffer[],majorSwingLowBuffer[];
    Trend prevTrend,latestTrend;
    MarketStructureType prev2MarketStructure,prevMarketStructure,latestMarketStructure;
+   
+   int marketBreakAtIndex;
 
    MacdMarketStructureClass(){
       // construction
@@ -589,6 +600,8 @@ public:
       
       prevTrend = TREND_NONE;
       latestTrend = TREND_NONE;
+      
+      marketBreakAtIndex = -1;
    }
 
    void update(int Iindex, int totalBars){

@@ -13,20 +13,28 @@ private:
     int index;
     int macdSwingHigh, macdSwingLow;
     double macdSwingHighPrice, macdSwingLowPrice;
+    int getMarketBreakAtIndex;
 
     void fiboCircleHandle() {
-        Print("High Time: ", barData.GetTime(macdSwingHigh), " | Low Time: ", barData.GetTime(macdSwingLow));
-        fiboCircle.calculateFibo(macdSwingHighPrice, macdSwingLowPrice);
+         if(macdMarketStructure.getLatestMajorHighIndex() != -1 &&
+            macdMarketStructure.getLatestMajorLowIndex() != -1){
+            fiboCircle.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice());
+            fiboCircle.printFiboLevels();
+         }
+        
     }
 
 public:
    
    FiboCircle fiboCircle;
    
+   Fibonacci(){
+      getMarketBreakAtIndex = -1;
+   }
+   
     void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance) {
         barData = barDataInstance;
         macdMarketStructure = macdMarketStructureInstance;
-        fiboCircle = new FiboCircle();
         macdSwingHigh = -1;
         macdSwingLow = -1;
         macdSwingHighPrice = 0;
@@ -35,20 +43,20 @@ public:
 
     void update(int iIndex, int rates_total) {
         if (iIndex >= rates_total - 1) return;
+        index = iIndex;
 
-        int newHigh = macdMarketStructure.getLatestMajorHighIndex();
-        int newLow = macdMarketStructure.getLatestMajorLowIndex();
-
-        if (newHigh == -1 || newLow == -1 || (newHigh == macdSwingHigh && newLow == macdSwingLow)) return;
-
-        macdSwingHigh = newHigh;
-        macdSwingLow = newLow;
-        macdSwingHighPrice = macdMarketStructure.getLatestmajorHighPrice();
-        macdSwingLowPrice = macdMarketStructure.getLatestMajorLowPrice();
-
-        if (macdMarketStructure.latestMarketStructure != MS_NONE) {
-            fiboCircleHandle();
+        if (macdMarketStructure.latestMarketStructure == MS_NONE) {
+            return;
         }
+        
+        
+        if(getMarketBreakAtIndex != macdMarketStructure.marketBreakAtIndex){
+            //
+            Print("break:");
+            getMarketBreakAtIndex = macdMarketStructure.marketBreakAtIndex;
+            
+        }
+        fiboCircleHandle();
     }
 };
 

@@ -1,14 +1,17 @@
-#ifndef FIBOCIRCLE_MQH
-#define FIBOCIRCLE_MQH
+#ifndef PLOTFIBOONCHART_MQH
+#define PLOTFIBOONCHART_MQH
 
 #include "Fibonacci.mqh";
 
 class PlotFiboOnChart{
 
-private 
-   Fibonacci *fibonacci;
+private:
+   Fibonacci* fibonacci;
 
 public:
+
+   PlotFiboOnChart(){
+   }
    
    void init(Fibonacci *fibonacciInstance){
       fibonacci = fibonacciInstance;
@@ -38,9 +41,7 @@ public:
          fibo_circle_bottom_2618_buffer[],
          fibo_circle_bottom_4236_buffer[];
          
-   void plotFiboCircle(int startIndex,int endIndex){
-      
-   }
+   
 }
 
 #endif
