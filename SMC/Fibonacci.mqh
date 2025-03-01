@@ -14,12 +14,14 @@ private:
     int macdSwingHigh, macdSwingLow;
     double macdSwingHighPrice, macdSwingLowPrice;
     int getMarketBreakAtIndex;
+    bool isMarketChange,isFiboCircleCalculated;
 
     void fiboCircleHandle() {
          if(macdMarketStructure.getLatestMajorHighIndex() != -1 &&
             macdMarketStructure.getLatestMajorLowIndex() != -1){
             fiboCircle.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice());
             fiboCircle.printFiboLevels();
+            isFiboCircleCalculated = true;
          }
         
     }
@@ -30,6 +32,8 @@ public:
    
    Fibonacci(){
       getMarketBreakAtIndex = -1;
+      isMarketChange = false;
+      isFiboCircleCalculated = false;
    }
    
     void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance) {
@@ -49,14 +53,24 @@ public:
             return;
         }
         
+       
+         if(!isFiboCircleCalculated){
+            fiboCircleHandle();
+         }
+
+        
         
         if(getMarketBreakAtIndex != macdMarketStructure.marketBreakAtIndex){
             //
-            Print("break:");
             getMarketBreakAtIndex = macdMarketStructure.marketBreakAtIndex;
+            Print("market break:",barData.GetTime(index));
+            isFiboCircleCalculated = false;
             
         }
-        fiboCircleHandle();
+        
+        
+        
+        
     }
 };
 

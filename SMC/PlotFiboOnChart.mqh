@@ -41,6 +41,10 @@ public:
          fibo_circle_bottom_2618_buffer[],
          fibo_circle_bottom_4236_buffer[];
          
+   void update(){
+      
+   }      
+         
    
 }
 
