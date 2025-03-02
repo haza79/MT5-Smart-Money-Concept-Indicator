@@ -14,7 +14,7 @@ private:
     int macdSwingHigh, macdSwingLow;
     double macdSwingHighPrice, macdSwingLowPrice;
     int getMarketBreakAtIndex;
-    bool isMarketChange,isFiboCircleCalculated;
+    
 
     void fiboCircleHandle() {
          if(macdMarketStructure.getLatestMajorHighIndex() != -1 &&
@@ -28,6 +28,7 @@ private:
 
 public:
    
+   bool isMarketChange,isFiboCircleCalculated;
    FiboCircle fiboCircle;
    
    Fibonacci(){

@@ -2,19 +2,30 @@
 #define PLOTFIBOONCHART_MQH
 
 #include "Fibonacci.mqh";
+#include "BarData.mqh";
 
 class PlotFiboOnChart{
 
 private:
+   int index;
    Fibonacci* fibonacci;
+   BarData* barData;
+   
+   bool extendsFiboRay;
+   
+   void fiboCirclePlotHandle(){
+      
+   }
 
 public:
 
    PlotFiboOnChart(){
+      extendsFiboRay = false;
    }
    
-   void init(Fibonacci *fibonacciInstance){
+   void init(Fibonacci *fibonacciInstance, BarData *barDataInstance){
       fibonacci = fibonacciInstance;
+      barData = barDataInstance;
    }
    
    double fibo_circle_top_236_buffer[],
@@ -41,9 +52,23 @@ public:
          fibo_circle_bottom_2618_buffer[],
          fibo_circle_bottom_4236_buffer[];
          
-   void update(){
+   void update(int Iindex, int totalBars){
+      index = Iindex;
+      if (index >= totalBars - 1) {
+        return;
+      }
       
-   }      
+      
+      if(fibonacci.isFiboCircleCalculated){
+         extendsFiboRay = true;
+      }else{
+         extendsFiboRay = false;
+      }
+      
+      if(extendsFiboRay){
+         Print("fibo extends:",barData.GetTime(index));
+      }
+   }   
          
    
 }
