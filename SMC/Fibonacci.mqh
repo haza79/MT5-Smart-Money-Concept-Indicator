@@ -19,6 +19,9 @@ private:
     void fiboCircleHandle() {
          if(macdMarketStructure.getLatestMajorHighIndex() != -1 &&
             macdMarketStructure.getLatestMajorLowIndex() != -1){
+            
+            fiboCircle.swingHighIndex = macdMarketStructure.getLatestMajorHighIndex();
+            fiboCircle.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
             fiboCircle.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice());
             fiboCircle.printFiboLevels();
             isFiboCircleCalculated = true;
@@ -30,6 +33,7 @@ public:
    
    bool isMarketChange,isFiboCircleCalculated;
    FiboCircle fiboCircle;
+   Trend trend;
    
    Fibonacci(){
       getMarketBreakAtIndex = -1;
@@ -49,10 +53,13 @@ public:
     void update(int iIndex, int rates_total) {
         if (iIndex >= rates_total - 1) return;
         index = iIndex;
+        trend = macdMarketStructure.getLatestTrend();
 
         if (macdMarketStructure.latestMarketStructure == MS_NONE) {
             return;
         }
+        
+        
         
        
          if(!isFiboCircleCalculated){

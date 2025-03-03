@@ -12,6 +12,7 @@ private:
 
 public:
     // Constructor
+    int swingHighIndex,swingLowIndex;
     FiboCircle() {
         // Initialize fiboValues
         static const double tempFiboValues[Fibo_Count] = {

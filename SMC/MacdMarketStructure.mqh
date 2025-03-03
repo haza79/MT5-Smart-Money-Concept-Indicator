@@ -589,6 +589,10 @@ public:
       return latestMajorLowPrice;
    }
    
+   Trend getLatestTrend(){
+      return latestTrend;
+   }
+   
    
    void init(MACDFractalClass* macdFractalInstance, BarData* barDataInstance){
       // init function

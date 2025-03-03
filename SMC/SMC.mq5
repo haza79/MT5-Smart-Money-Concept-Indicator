@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 19
-#property indicator_plots   19
+#property indicator_buffers 21
+#property indicator_plots   21
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -92,6 +92,18 @@
 #property indicator_style15  STYLE_DOT
 #property indicator_width15  1
 
+#property indicator_label16  "fibo circle top 236"
+#property indicator_type16   DRAW_LINE
+#property indicator_color16  clrRed
+#property indicator_style16  STYLE_DOT
+#property indicator_width16  1
+
+#property indicator_label17  "fibo circle bottom 236"
+#property indicator_type17   DRAW_LINE
+#property indicator_color17  clrRed
+#property indicator_style17  STYLE_DOT
+#property indicator_width17  1
+
 
 #include "BarData.mqh";
 #include "InsideBarClass.mqh";
@@ -157,7 +169,8 @@ int OnInit()
     SetIndexBuffer(14, macdMarketStructure.bosRay.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(15, macdMarketStructure.chochRay.lineDrawing.buffer, INDICATOR_DATA);
     
-    
+    SetIndexBuffer(16, plotFiboOnChart.fibo_circle_top_2618_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(17, plotFiboOnChart.fibo_circle_bottom_2618_ray.lineDrawing.buffer, INDICATOR_DATA);
     
     
     
@@ -186,6 +199,8 @@ int OnInit()
     PlotIndexSetDouble(17,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(18,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(19,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(20,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(21,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     
     
