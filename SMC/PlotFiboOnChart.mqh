@@ -28,6 +28,8 @@ public:
    void init(Fibonacci *fibonacciInstance, BarData *barDataInstance){
       fibonacci = fibonacciInstance;
       barData = barDataInstance;
+      ArrayInitialize(fibo_circle_top_236_ray.lineDrawing.buffer, EMPTY_VALUE);
+      ArrayInitialize(fibo_circle_bottom_236_ray.lineDrawing.buffer, EMPTY_VALUE);
    }
    
    HorizontalRay fibo_circle_top_236_ray,
@@ -58,13 +60,15 @@ public:
       ArrayResize(fibo_circle_top_236_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_236_ray.lineDrawing.buffer, totalBars);
       
+      fibo_circle_top_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_circle_bottom_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      
       index = Iindex;
       if (index >= totalBars - 1) {
         return;
       }
       
-      fibo_circle_top_236_ray.lineDrawing.buffer[index] = EMPTY_VALUE;
-      fibo_circle_bottom_236_ray.lineDrawing.buffer[index] = EMPTY_VALUE;
+      
       
       if(fibonacci.isFiboCircleCalculated){
          extendsFiboRay = true;
@@ -78,12 +82,6 @@ public:
       if(extendsFiboRay){
          if(!isInitFibo){
             isInitFibo = true;
-            Print("init fibo");
-            Print("fibo 236 top:",fibonacci.fiboCircle.getFiboLevel(Fibo_236,true));
-            Print("fibo 236 bottom:",fibonacci.fiboCircle.getFiboLevel(Fibo_236,false));
-            Print("high:",fibonacci.fiboCircle.swingHighIndex,":",barData.GetTime(fibonacci.fiboCircle.swingHighIndex));
-            Print("low :",fibonacci.fiboCircle.swingLowIndex,":",barData.GetTime(fibonacci.fiboCircle.swingLowIndex));
-            Print("trend:",fibonacci.trend);
             switch(fibonacci.trend){
                case TREND_BULLISH:
                   fibo_circle_top_236_ray.drawRay(fibonacci.fiboCircle.swingLowIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,true));
@@ -96,7 +94,7 @@ public:
             }
             
          }
-         Print("fibo extends:",barData.GetTime(index));
+         //Print("fibo extends:",barData.GetTime(index));
          fibo_circle_top_236_ray.extendeRay(index);
          fibo_circle_bottom_236_ray.extendeRay(index);
       }

@@ -169,8 +169,8 @@ int OnInit()
     SetIndexBuffer(14, macdMarketStructure.bosRay.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(15, macdMarketStructure.chochRay.lineDrawing.buffer, INDICATOR_DATA);
     
-    SetIndexBuffer(16, plotFiboOnChart.fibo_circle_top_2618_ray.lineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(17, plotFiboOnChart.fibo_circle_bottom_2618_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(16, plotFiboOnChart.fibo_circle_top_236_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(17, plotFiboOnChart.fibo_circle_bottom_236_ray.lineDrawing.buffer, INDICATOR_DATA);
     
     
     
@@ -201,8 +201,10 @@ int OnInit()
     PlotIndexSetDouble(19,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(20,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(21,PLOT_EMPTY_VALUE,EMPTY_VALUE);
-    
-    
+    PlotIndexSetDouble(22,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(23,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(24,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(25,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     
     
 
