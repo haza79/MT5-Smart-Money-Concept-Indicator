@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 21
-#property indicator_plots   21
+#property indicator_buffers 23
+#property indicator_plots   23
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -92,17 +92,41 @@
 #property indicator_style15  STYLE_DOT
 #property indicator_width15  1
 
-#property indicator_label16  "fibo circle top 236"
+#property indicator_label16  "fibo circle top 23.6"
 #property indicator_type16   DRAW_LINE
 #property indicator_color16  clrRed
-#property indicator_style16  STYLE_DOT
+#property indicator_style16  STYLE_SOLID
 #property indicator_width16  1
 
-#property indicator_label17  "fibo circle bottom 236"
+#property indicator_label17  "fibo circle bottom 23.6"
 #property indicator_type17   DRAW_LINE
 #property indicator_color17  clrRed
-#property indicator_style17  STYLE_DOT
+#property indicator_style17  STYLE_SOLID
 #property indicator_width17  1
+
+#property indicator_label18  "fibo circle top 50"
+#property indicator_type18   DRAW_LINE
+#property indicator_color18  clrGreen
+#property indicator_style18  STYLE_SOLID
+#property indicator_width18  1
+
+#property indicator_label19  "fibo circle bottom 50"
+#property indicator_type19   DRAW_LINE
+#property indicator_color19  clrGreen
+#property indicator_style19  STYLE_SOLID
+#property indicator_width19  1
+
+#property indicator_label20  "fibo circle top 61.8"
+#property indicator_type20   DRAW_LINE
+#property indicator_color20  clrGreen
+#property indicator_style20  STYLE_SOLID
+#property indicator_width20  1
+
+#property indicator_label21  "fibo circle bottom 61.8"
+#property indicator_type21   DRAW_LINE
+#property indicator_color21  clrGreen
+#property indicator_style21  STYLE_SOLID
+#property indicator_width21  1
 
 
 #include "BarData.mqh";
@@ -171,7 +195,8 @@ int OnInit()
     
     SetIndexBuffer(16, plotFiboOnChart.fibo_circle_top_236_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(17, plotFiboOnChart.fibo_circle_bottom_236_ray.lineDrawing.buffer, INDICATOR_DATA);
-    
+    SetIndexBuffer(18, plotFiboOnChart.fibo_circle_top_500_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(19, plotFiboOnChart.fibo_circle_bottom_500_ray.lineDrawing.buffer, INDICATOR_DATA);
     
     
     

@@ -28,8 +28,6 @@ public:
    void init(Fibonacci *fibonacciInstance, BarData *barDataInstance){
       fibonacci = fibonacciInstance;
       barData = barDataInstance;
-      ArrayInitialize(fibo_circle_top_236_ray.lineDrawing.buffer, EMPTY_VALUE);
-      ArrayInitialize(fibo_circle_bottom_236_ray.lineDrawing.buffer, EMPTY_VALUE);
    }
    
    HorizontalRay fibo_circle_top_236_ray,
@@ -59,9 +57,13 @@ public:
    void update(int Iindex, int totalBars){
       ArrayResize(fibo_circle_top_236_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_236_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_circle_top_500_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_circle_bottom_500_ray.lineDrawing.buffer, totalBars);
       
       fibo_circle_top_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_circle_top_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_circle_bottom_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       
       index = Iindex;
       if (index >= totalBars - 1) {
@@ -77,26 +79,38 @@ public:
          isInitFibo = false;
          fibo_circle_top_236_ray.deleteRay();
          fibo_circle_bottom_236_ray.deleteRay();
+         fibo_circle_top_500_ray.deleteRay();
+         fibo_circle_bottom_500_ray.deleteRay();
       }
       
       if(extendsFiboRay){
          if(!isInitFibo){
             isInitFibo = true;
+            int startIndex = -1;
             switch(fibonacci.trend){
                case TREND_BULLISH:
-                  fibo_circle_top_236_ray.drawRay(fibonacci.fiboCircle.swingLowIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,true));
-                  fibo_circle_bottom_236_ray.drawRay(fibonacci.fiboCircle.swingLowIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,false));
+                  startIndex = fibonacci.fiboCircle.swingLowIndex;
                   break;
                case TREND_BEARISH:
-                  fibo_circle_top_236_ray.drawRay(fibonacci.fiboCircle.swingHighIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,true));
-                  fibo_circle_bottom_236_ray.drawRay(fibonacci.fiboCircle.swingHighIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,false));
+                  startIndex = fibonacci.fiboCircle.swingHighIndex;
                   break;
             }
+            
+            if(startIndex == -1){
+               return;
+            }
+            
+            fibo_circle_top_236_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,true));
+            fibo_circle_bottom_236_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,false));
+            fibo_circle_top_500_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_500,true));
+            fibo_circle_bottom_500_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_500,false));
             
          }
          //Print("fibo extends:",barData.GetTime(index));
          fibo_circle_top_236_ray.extendeRay(index);
          fibo_circle_bottom_236_ray.extendeRay(index);
+         fibo_circle_top_500_ray.extendeRay(index);
+         fibo_circle_bottom_500_ray.extendeRay(index);
       }
    }   
          
