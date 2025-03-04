@@ -59,11 +59,15 @@ public:
       ArrayResize(fibo_circle_bottom_236_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_top_500_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_500_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_circle_top_618_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_circle_bottom_618_ray.lineDrawing.buffer, totalBars);
       
       fibo_circle_top_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_top_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_circle_top_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_circle_bottom_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       
       index = Iindex;
       if (index >= totalBars - 1) {
@@ -81,6 +85,8 @@ public:
          fibo_circle_bottom_236_ray.deleteRay();
          fibo_circle_top_500_ray.deleteRay();
          fibo_circle_bottom_500_ray.deleteRay();
+         fibo_circle_top_618_ray.deleteRay();
+         fibo_circle_bottom_618_ray.deleteRay();
       }
       
       if(extendsFiboRay){
@@ -104,6 +110,8 @@ public:
             fibo_circle_bottom_236_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_236,false));
             fibo_circle_top_500_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_500,true));
             fibo_circle_bottom_500_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_500,false));
+            fibo_circle_top_618_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_618,true));
+            fibo_circle_bottom_618_ray.drawRay(startIndex,index,fibonacci.fiboCircle.getFiboLevel(Fibo_618,false));
             
          }
          //Print("fibo extends:",barData.GetTime(index));
@@ -111,6 +119,8 @@ public:
          fibo_circle_bottom_236_ray.extendeRay(index);
          fibo_circle_top_500_ray.extendeRay(index);
          fibo_circle_bottom_500_ray.extendeRay(index);
+         fibo_circle_top_618_ray.extendeRay(index);
+         fibo_circle_bottom_618_ray.extendeRay(index);
       }
    }   
          

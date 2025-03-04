@@ -1,6 +1,6 @@
 #property indicator_chart_window
-#property indicator_buffers 23
-#property indicator_plots   23
+#property indicator_buffers 25
+#property indicator_plots   25
 
 #property indicator_label1  "MotherBarTop"
 #property indicator_type1   DRAW_ARROW
@@ -197,7 +197,10 @@ int OnInit()
     SetIndexBuffer(17, plotFiboOnChart.fibo_circle_bottom_236_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(18, plotFiboOnChart.fibo_circle_top_500_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(19, plotFiboOnChart.fibo_circle_bottom_500_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(20, plotFiboOnChart.fibo_circle_top_618_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(21, plotFiboOnChart.fibo_circle_bottom_618_ray.lineDrawing.buffer, INDICATOR_DATA);
     
+    SetIndexLabel()
     
     
     // mother bar fractal
@@ -230,8 +233,8 @@ int OnInit()
     PlotIndexSetDouble(23,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(24,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(25,PLOT_EMPTY_VALUE,EMPTY_VALUE);
-    
-    
+    PlotIndexSetDouble(26,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+    PlotIndexSetDouble(27,PLOT_EMPTY_VALUE,EMPTY_VALUE);
 
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);
