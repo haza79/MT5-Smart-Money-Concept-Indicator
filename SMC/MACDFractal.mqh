@@ -32,6 +32,10 @@ private:
 
         int lowIndex = CandleBreakAnalyzerStatic::GetLowestLowIndex(barData, startIndex, endIndex);
         if (lowIndex >= 0 && lowIndex < barData.RatesTotal()) {
+        
+            prevMacdLowFractalIndex = latestMacdLowFractalIndex;
+            prevMacdLowFractalPrice = latestMacdLowFractalPrice;
+            
             latestMacdLowFractalIndex = lowIndex;
             latestMacdLowFractalPrice = barData.GetLow(latestMacdLowFractalIndex);
             macdLowFractalBuffer[latestMacdLowFractalIndex] = latestMacdLowFractalPrice;
@@ -46,6 +50,10 @@ private:
 
         int highIndex = CandleBreakAnalyzerStatic::GetHighestHighIndex(barData, startIndex, endIndex);
         if (highIndex >= 0 && highIndex < barData.RatesTotal()) {
+            
+            prevMacdHighFractalIndex = latestMacdHighFractalIndex;
+            prevMacdHighFractalPrice = latestMacdHighFractalPrice;
+        
             latestMacdHighFractalIndex = highIndex;
             latestMacdHighFractalPrice = barData.GetHigh(latestMacdHighFractalIndex);
             macdHighFractalBuffer[latestMacdHighFractalIndex] = latestMacdHighFractalPrice;
@@ -68,8 +76,11 @@ private:
 
 public:
     double macdHighFractalBuffer[], macdLowFractalBuffer[];
-    int latestMacdHighFractalIndex, latestMacdLowFractalIndex;
-    double latestMacdHighFractalPrice, latestMacdLowFractalPrice;
+    int latestMacdHighFractalIndex, latestMacdLowFractalIndex,
+         prevMacdHighFractalIndex, prevMacdLowFractalIndex;
+         
+    double latestMacdHighFractalPrice, latestMacdLowFractalPrice,
+         prevMacdHighFractalPrice, prevMacdLowFractalPrice;
 
     MACDFractalClass() {
         macdPosition = MACD_NONE;
@@ -78,11 +89,18 @@ public:
     void Init(MACD* MACDInstance, BarData* barDataInstance) {
         macd = MACDInstance;
         barData = barDataInstance;
+        
+        prevMacdHighFractalIndex = -1;
+        prevMacdHighFractalPrice = -1;
+        prevMacdLowFractalIndex = -1;
+        prevMacdLowFractalPrice = -1;
 
         latestMacdHighFractalIndex = -1;
         latestMacdLowFractalIndex = -1;
         latestMacdHighFractalPrice = -1;
         latestMacdLowFractalPrice = -1;
+        
+        
 
         int size = barData.RatesTotal();
         if (size > 0) {

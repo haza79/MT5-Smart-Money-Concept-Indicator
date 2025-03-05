@@ -23,7 +23,7 @@ private:
             fiboCircle.swingHighIndex = macdMarketStructure.getLatestMajorHighIndex();
             fiboCircle.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
             fiboCircle.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice());
-            fiboCircle.printFiboLevels();
+            //fiboCircle.printFiboLevels();
             isFiboCircleCalculated = true;
          }
         
@@ -71,7 +71,7 @@ public:
         if(getMarketBreakAtIndex != macdMarketStructure.marketBreakAtIndex){
             //
             getMarketBreakAtIndex = macdMarketStructure.marketBreakAtIndex;
-            Print("market break:",barData.GetTime(index));
+            //Print("market break:",barData.GetTime(index));
             isFiboCircleCalculated = false;
             
         }

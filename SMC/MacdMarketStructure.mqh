@@ -258,6 +258,9 @@ private:
          // not wick break
          if(isPriceBreakHighByBobyOrGap()){
             // bullish bos
+            Print("high:",barData.GetTime(latestMajorHighIndex));
+            Print("low:",barData.GetTime(latestMajorLowIndex));
+            Print("break:",barData.GetTime(index));
             updateBullishChochVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
@@ -331,6 +334,12 @@ private:
    }
    
    void getFirstTrend(){
+      
+      if(macdFractal.prevMacdHighFractalIndex == -1 || macdFractal.prevMacdLowFractalIndex == -1
+         || macdFractal.latestMacdHighFractalIndex == -1 || macdFractal.latestMacdLowFractalIndex == -1){
+         return;
+      }
+   
       if(latestMajorHighIndex == -1 || latestMajorLowIndex == -1){
          latestMajorHighIndex = macdFractal.latestMacdHighFractalIndex;
          latestMajorHighPrice = macdFractal.latestMacdHighFractalPrice;
@@ -339,7 +348,7 @@ private:
          latestMajorLowPrice = macdFractal.latestMacdLowFractalPrice;
       }
    
-      if(latestMajorHighIndex == -1 || latestMajorLowIndex == -1){
+      if(latestMajorHighIndex == -1 || latestMajorLowIndex == -1 || latestMajorLowIndex == EMPTY_VALUE || latestMajorLowIndex == EMPTY_VALUE){
          return;
       }
       
@@ -360,15 +369,20 @@ private:
          barData.GetClose(latestMajorLowIndex)
       );
       
+      Print("high:",latestMajorHighIndex);
+      Print("low :",latestMajorLowIndex);
+      
       if(latestMajorHighIndex >= latestMajorLowIndex &&
          latestMajorHighPrice >= latestMajorLowPrice){
          
          latestTrend = TREND_BULLISH;
+         Print("first trend: BULLISH");
       }
       else if(latestMajorLowIndex >= latestMajorHighIndex &&
          latestMajorLowPrice <= latestMajorHighPrice){
          
          latestTrend = TREND_BEARISH;
+         Print("first trend: BEARISH");
       }
       
    }

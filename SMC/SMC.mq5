@@ -200,7 +200,6 @@ int OnInit()
     SetIndexBuffer(20, plotFiboOnChart.fibo_circle_top_618_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(21, plotFiboOnChart.fibo_circle_bottom_618_ray.lineDrawing.buffer, INDICATOR_DATA);
     
-    SetIndexLabel()
     
     
     // mother bar fractal
