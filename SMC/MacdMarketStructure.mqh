@@ -18,7 +18,7 @@ class MacdMarketStructureClass{
 
 private:
    BarData* barData;
-   MACDFractalClass* macdFractal;
+   
    int index;
    
    
@@ -567,6 +567,8 @@ private:
    
 
 public:
+
+   MACDFractalClass* macdFractal;
 
    LineDrawing bullishBosDrawing,
                bullishChochDrawing,

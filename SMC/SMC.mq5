@@ -273,7 +273,7 @@ int OnCalculate(const int rates_total,
 
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
-   verticalLineBuffer[rates_total-10] = high[rates_total-10] * 10;
+   //verticalLineBuffer[rates_total-10] = high[rates_total-10] * 10;
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
       macd.update(close[i],i,rates_total);

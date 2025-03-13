@@ -4,6 +4,7 @@
 #include "BarData.mqh";
 #include "MacdMarketStructure.mqh";
 #include "FiboCircle.mqh";
+#include "FiboTimeZone.mqh";
 
 class Fibonacci {
 private:
@@ -28,17 +29,42 @@ private:
          }
         
     }
+    
+    void fiboTimeZoneHandle(){
+      if(macdMarketStructure.getLatestMajorHighIndex() == -1 && macdMarketStructure.getLatestMajorLowIndex() == -1){
+         return;
+      }
+      
+      if(macdMarketStructure.getLatestTrend() == TREND_BULLISH){
+      
+         if(macdMarketStructure.getLatestMajorHighIndex() != -1 && macdMarketStructure.macdFractal.latestMacdLowFractalIndex > macdMarketStructure.getLatestMajorLowIndex()){
+            Print("Calc fibo time zone:BULLISH");
+            isFiboTimeZoneCalculated = true;
+         }
+      
+      }else if(macdMarketStructure.getLatestTrend() == TREND_BEARISH){
+         
+         if(macdMarketStructure.getLatestMajorLowIndex() != -1 && macdMarketStructure.macdFractal.latestMacdHighFractalIndex > macdMarketStructure.getLatestMajorHighIndex()){
+            Print("Calc fibo time zone:BEARISH");
+            isFiboTimeZoneCalculated = true;
+         }
+         
+      }
+      
+    }
 
 public:
    
-   bool isMarketChange,isFiboCircleCalculated;
+   bool isMarketChange,isFiboCircleCalculated,isFiboTimeZoneCalculated;
    FiboCircle fiboCircle;
+   FiboTimeZone fiboTimeZone;
    Trend trend;
    
    Fibonacci(){
       getMarketBreakAtIndex = -1;
       isMarketChange = false;
       isFiboCircleCalculated = false;
+      isFiboTimeZoneCalculated = false;
    }
    
     void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance) {
@@ -65,6 +91,10 @@ public:
          if(!isFiboCircleCalculated){
             fiboCircleHandle();
          }
+         
+         if(!isFiboTimeZoneCalculated){
+            fiboTimeZoneHandle();
+         }
 
         
         
@@ -73,6 +103,7 @@ public:
             getMarketBreakAtIndex = macdMarketStructure.marketBreakAtIndex;
             //Print("market break:",barData.GetTime(index));
             isFiboCircleCalculated = false;
+            isFiboTimeZoneCalculated = false;
             
         }
         
