@@ -94,39 +94,45 @@
 
 #property indicator_label16  "fibo circle top 23.6"
 #property indicator_type16   DRAW_LINE
-#property indicator_color16  clrRed
-#property indicator_style16  STYLE_SOLID
+#property indicator_color16  clrBlue
+#property indicator_style16  STYLE_DASH
 #property indicator_width16  1
 
 #property indicator_label17  "fibo circle bottom 23.6"
 #property indicator_type17   DRAW_LINE
-#property indicator_color17  clrRed
-#property indicator_style17  STYLE_SOLID
+#property indicator_color17  clrBlue
+#property indicator_style17  STYLE_DASH
 #property indicator_width17  1
 
 #property indicator_label18  "fibo circle top 50"
 #property indicator_type18   DRAW_LINE
-#property indicator_color18  clrGreen
-#property indicator_style18  STYLE_SOLID
+#property indicator_color18  clrBlue
+#property indicator_style18  STYLE_DASH
 #property indicator_width18  1
 
 #property indicator_label19  "fibo circle bottom 50"
 #property indicator_type19   DRAW_LINE
-#property indicator_color19  clrGreen
-#property indicator_style19  STYLE_SOLID
+#property indicator_color19  clrBlue
+#property indicator_style19  STYLE_DASH
 #property indicator_width19  1
 
 #property indicator_label20  "fibo circle top 61.8"
 #property indicator_type20   DRAW_LINE
-#property indicator_color20  clrGreen
-#property indicator_style20  STYLE_SOLID
+#property indicator_color20  clrBlue
+#property indicator_style20  STYLE_DASH
 #property indicator_width20  1
 
 #property indicator_label21  "fibo circle bottom 61.8"
 #property indicator_type21   DRAW_LINE
-#property indicator_color21  clrGreen
-#property indicator_style21  STYLE_SOLID
+#property indicator_color21  clrBlue
+#property indicator_style21  STYLE_DASH
 #property indicator_width21  1
+
+#property indicator_label22  "vertical"
+#property indicator_type22   DRAW_HISTOGRAM
+#property indicator_color22  clrBlue
+#property indicator_style22  STYLE_DASH
+#property indicator_width22  1
 
 
 #include "BarData.mqh";
@@ -141,10 +147,7 @@
 #include "Fibonacci.mqh";
 #include "PlotFiboOnChart.mqh";
 
-
-
-const double fiboCircleRatios[] =   {0.236,0.382,0.5,0.618,0.786,0.887,1.13,1.272,1.618,2.618,4.236};
-const double fiboFanRatios[] =      {0.236,0.382,0.5,0.618,0.786,0.887,1,1.13,1.272,1.618,2.618,4.236};
+double verticalLineBuffer[];
 
 MACD macd;
 BarData barData;
@@ -200,6 +203,7 @@ int OnInit()
     SetIndexBuffer(20, plotFiboOnChart.fibo_circle_top_618_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(21, plotFiboOnChart.fibo_circle_bottom_618_ray.lineDrawing.buffer, INDICATOR_DATA);
     
+    SetIndexBuffer(22, verticalLineBuffer, INDICATOR_DATA);
     
     
     // mother bar fractal
@@ -269,6 +273,7 @@ int OnCalculate(const int rates_total,
 
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
+   verticalLineBuffer[rates_total-10] = high[rates_total-10] * 10;
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
       macd.update(close[i],i,rates_total);
