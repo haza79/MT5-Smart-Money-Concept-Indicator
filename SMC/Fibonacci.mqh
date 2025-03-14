@@ -5,6 +5,7 @@
 #include "MacdMarketStructure.mqh";
 #include "FiboCircle.mqh";
 #include "FiboTimeZone.mqh";
+#include "FiboRetrace.mqh";
 
 class Fibonacci {
 private:
@@ -26,6 +27,19 @@ private:
             fiboCircle.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice());
             //fiboCircle.printFiboLevels();
             isFiboCircleCalculated = true;
+         }
+        
+    }
+    
+    void fiboRetraceHandle() {
+         if(macdMarketStructure.getLatestMajorHighIndex() != -1 &&
+            macdMarketStructure.getLatestMajorLowIndex() != -1){
+            
+            fiboRetrace.swingHighIndex = macdMarketStructure.getLatestMajorHighIndex();
+            fiboRetrace.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
+            fiboRetrace.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice());
+            //fiboCircle.printFiboLevels();
+            isFiboRetraceCalculated = true;
          }
         
     }
@@ -55,9 +69,10 @@ private:
 
 public:
    
-   bool isMarketChange,isFiboCircleCalculated,isFiboTimeZoneCalculated;
+   bool isMarketChange,isFiboCircleCalculated,isFiboTimeZoneCalculated,isFiboRetraceCalculated;
    FiboCircle fiboCircle;
    FiboTimeZone fiboTimeZone;
+   FiboRetrace fiboRetrace;
    Trend trend;
    
    Fibonacci(){
@@ -65,6 +80,7 @@ public:
       isMarketChange = false;
       isFiboCircleCalculated = false;
       isFiboTimeZoneCalculated = false;
+      isFiboRetraceCalculated = false;
    }
    
     void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance) {
@@ -95,6 +111,10 @@ public:
          if(!isFiboTimeZoneCalculated){
             fiboTimeZoneHandle();
          }
+         
+         if(!isFiboRetraceCalculated){
+            fiboRetraceHandle();
+         }
 
         
         
@@ -104,6 +124,7 @@ public:
             //Print("market break:",barData.GetTime(index));
             isFiboCircleCalculated = false;
             isFiboTimeZoneCalculated = false;
+            isFiboRetraceCalculated = false;
             
         }
         

@@ -12,7 +12,7 @@ private:
    Fibonacci* fibonacci;
    BarData* barData;
    
-   bool extendsFiboRay,isInitFibo;
+   bool extendsFiboRay,isInitFibo,extendsFiboRetraceRay,isInitFiboRetrace;
    
    void fiboCirclePlotHandle(){
       
@@ -22,7 +22,9 @@ public:
 
    PlotFiboOnChart(){
       extendsFiboRay = false;
+      extendsFiboRetraceRay = false;
       isInitFibo = false;
+      isInitFiboRetrace = false;
    }
    
    void init(Fibonacci *fibonacciInstance, BarData *barDataInstance){
@@ -52,7 +54,12 @@ public:
          fibo_circle_bottom_1272_ray,
          fibo_circle_bottom_1618_ray,
          fibo_circle_bottom_2618_ray,
-         fibo_circle_bottom_4236_ray;
+         fibo_circle_bottom_4236_ray,
+         
+         fibo_retrace_500_ray,
+         fibo_retrace_618_ray,
+         fibo_retrace_786_ray,
+         fibo_retrace_887_ray;
          
    void update(int Iindex, int totalBars){
       ArrayResize(fibo_circle_top_236_ray.lineDrawing.buffer, totalBars);
@@ -62,12 +69,22 @@ public:
       ArrayResize(fibo_circle_top_618_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_618_ray.lineDrawing.buffer, totalBars);
       
+      ArrayResize(fibo_retrace_500_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_retrace_618_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_retrace_786_ray.lineDrawing.buffer, totalBars);
+      ArrayResize(fibo_retrace_887_ray.lineDrawing.buffer, totalBars);
+      
       fibo_circle_top_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_top_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_top_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      
+      fibo_retrace_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_retrace_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_retrace_786_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
+      fibo_retrace_887_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       
       index = Iindex;
       if (index >= totalBars - 1) {
@@ -87,6 +104,17 @@ public:
          fibo_circle_bottom_500_ray.deleteRay();
          fibo_circle_top_618_ray.deleteRay();
          fibo_circle_bottom_618_ray.deleteRay();
+      }
+      
+      if(fibonacci.isFiboRetraceCalculated){
+         extendsFiboRetraceRay = true;
+      }else{
+         extendsFiboRetraceRay = false;
+         isInitFiboRetrace = false;
+         fibo_retrace_500_ray.deleteRay();
+         fibo_retrace_618_ray.deleteRay();
+         fibo_retrace_786_ray.deleteRay();
+         fibo_retrace_887_ray.deleteRay();
       }
       
       if(extendsFiboRay){
@@ -122,7 +150,43 @@ public:
          fibo_circle_top_618_ray.extendeRay(index);
          fibo_circle_bottom_618_ray.extendeRay(index);
       }
+      
+      if(extendsFiboRetraceRay){
+         if(!isInitFiboRetrace){
+            isInitFiboRetrace = true;
+            int startIndex = -1;
+            switch(fibonacci.trend){
+               case TREND_BULLISH:
+                  startIndex = fibonacci.fiboRetrace.swingLowIndex;
+                  break;
+               case TREND_BEARISH:
+                  startIndex = fibonacci.fiboRetrace.swingHighIndex;
+                  break;
+            }
+            
+            if(startIndex == -1){
+               return;
+            }
+            
+            fibo_retrace_500_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_500));
+            fibo_retrace_618_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_618));
+            fibo_retrace_786_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_786));
+            fibo_retrace_887_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_887));
+            
+         }
+         
+         fibo_retrace_500_ray.extendeRay(index);
+         fibo_retrace_618_ray.extendeRay(index);
+         fibo_retrace_786_ray.extendeRay(index);
+         fibo_retrace_887_ray.extendeRay(index);
+         
+         
+         
+      }
+      
    }   
+   
+   
          
    
 }
