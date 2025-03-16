@@ -260,7 +260,6 @@ private:
             // bullish bos
             Print("break:",barData.GetTime(index));
             updateBullishChochVariable();
-            Print("get major low")
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
             bosRay.deleteRay();
@@ -420,6 +419,15 @@ private:
       prevMajorLowIndex = latestMajorLowIndex;
       prevMajorLowPrice = latestMajorLowPrice;
       
+      latestMajorHighIndex = CandleBreakAnalyzerStatic::GetHighestHighIndex(barData,latestMajorLowIndex,index);
+      latestMajorHighPrice = barData.GetHigh(latestMajorHighIndex);
+      latestMajorHighCandle.setValue(
+         barData.GetOpen(latestMajorHighIndex),
+         barData.GetHigh(latestMajorHighIndex),
+         barData.GetLow(latestMajorHighIndex),
+         barData.GetClose(latestMajorHighIndex)
+      );
+      
       latestMajorLowIndex = -1;
       latestMajorLowPrice = -1;
       
@@ -464,8 +472,19 @@ private:
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
       
+      latestMajorLowIndex = CandleBreakAnalyzerStatic::GetLowestLowIndex(barData,latestMajorHighIndex,index);
+      latestMajorLowPrice = barData.GetLow(latestMajorLowIndex);
+      latestMajorLowCandle.setValue(
+         barData.GetOpen(latestMajorLowIndex),
+         barData.GetHigh(latestMajorLowIndex),
+         barData.GetLow(latestMajorLowIndex),
+         barData.GetClose(latestMajorLowIndex)
+      );
+      
       latestMajorHighIndex = -1;
       latestMajorHighPrice = -1;
+      
+      
       
       marketBreakAtIndex = index;
       
