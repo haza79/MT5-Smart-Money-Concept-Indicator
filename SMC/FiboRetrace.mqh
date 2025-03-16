@@ -25,12 +25,13 @@ public:
     // Calculate Fibonacci Circle levels
     void calculateFibo(double swingHigh, double swingLow, Trend trend) {
         swingRange = swingHigh - swingLow;
+        
         for (int i = 0; i < Fibo_Count; i++) {
             double fiboLevelCalc = 0;
             if(trend == TREND_BULLISH){
-               fiboLevelCalc = swingLow + ( fiboLevel[i] * swingRange );
+               fiboLevelCalc = swingHigh - (swingRange*fiboLevel[i]);
             }else if(trend == TREND_BEARISH){
-               fiboLevelCalc = swingHigh - ( fiboLevel[i] * swingRange );
+               fiboLevelCalc = swingLow + (swingRange*fiboLevel[i]);
             }
             fiboValue[i] = fiboLevelCalc;
         }

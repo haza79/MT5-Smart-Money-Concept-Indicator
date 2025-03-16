@@ -258,10 +258,9 @@ private:
          // not wick break
          if(isPriceBreakHighByBobyOrGap()){
             // bullish bos
-            Print("high:",barData.GetTime(latestMajorHighIndex));
-            Print("low:",barData.GetTime(latestMajorLowIndex));
             Print("break:",barData.GetTime(index));
             updateBullishChochVariable();
+            Print("get major low")
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
             bosRay.deleteRay();
@@ -369,8 +368,8 @@ private:
          barData.GetClose(latestMajorLowIndex)
       );
       
-      Print("high:",latestMajorHighIndex);
-      Print("low :",latestMajorLowIndex);
+      Print("high:",latestMajorHighIndex,"|",barData.GetTime(latestMajorHighIndex));
+      Print("low :",latestMajorLowIndex,"|",barData.GetTime(latestMajorLowIndex));
       
       if(latestMajorHighIndex >= latestMajorLowIndex &&
          latestMajorHighPrice >= latestMajorLowPrice){

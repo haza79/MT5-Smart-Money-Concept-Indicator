@@ -38,8 +38,8 @@ private:
             fiboRetrace.swingHighIndex = macdMarketStructure.getLatestMajorHighIndex();
             fiboRetrace.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
             fiboRetrace.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice(),macdMarketStructure.getLatestTrend());
-            Print("fibo retrace| swing H:",barData.GetHigh(fiboRetrace.swingHighIndex)," swing low:",barData.GetHigh(fiboRetrace.swingLowIndex));
-            fiboRetrace.printFiboLevels();
+            //Print("fibo retrace| swing H:",barData.GetHigh(fiboRetrace.swingHighIndex)," swing low:",barData.GetHigh(fiboRetrace.swingLowIndex));
+            //fiboRetrace.printFiboLevels();
             isFiboRetraceCalculated = true;
          }
         
@@ -53,14 +53,14 @@ private:
       if(macdMarketStructure.getLatestTrend() == TREND_BULLISH){
       
          if(macdMarketStructure.getLatestMajorHighIndex() != -1 && macdMarketStructure.macdFractal.latestMacdLowFractalIndex > macdMarketStructure.getLatestMajorLowIndex()){
-            Print("Calc fibo time zone:BULLISH");
+            //Print("Calc fibo time zone:BULLISH");
             isFiboTimeZoneCalculated = true;
          }
       
       }else if(macdMarketStructure.getLatestTrend() == TREND_BEARISH){
          
          if(macdMarketStructure.getLatestMajorLowIndex() != -1 && macdMarketStructure.macdFractal.latestMacdHighFractalIndex > macdMarketStructure.getLatestMajorHighIndex()){
-            Print("Calc fibo time zone:BEARISH");
+            //Print("Calc fibo time zone:BEARISH");
             isFiboTimeZoneCalculated = true;
          }
          
