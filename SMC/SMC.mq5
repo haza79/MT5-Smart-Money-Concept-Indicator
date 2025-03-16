@@ -94,7 +94,7 @@
 
 #property indicator_label16  "fibo retrace 50"
 #property indicator_type16   DRAW_LINE
-#property indicator_color16  clrBlue
+#property indicator_color16  clrDeepSkyBlue
 #property indicator_style16  STYLE_DASH
 #property indicator_width16  1
 
@@ -155,11 +155,15 @@ int OnInit()
     SetIndexBuffer(5, fractal.lowFractalBuffer, INDICATOR_DATA);
     PlotIndexSetInteger(3,PLOT_ARROW_SHIFT,-10);
     PlotIndexSetInteger(4,PLOT_ARROW_SHIFT,10);
+    PlotIndexSetInteger(3, PLOT_ARROW, 115);
+    PlotIndexSetInteger(4, PLOT_ARROW, 115);
     
     SetIndexBuffer(6, macdFractal.macdHighFractalBuffer, INDICATOR_DATA);
     SetIndexBuffer(7, macdFractal.macdLowFractalBuffer, INDICATOR_DATA);
     PlotIndexSetInteger(5,PLOT_ARROW_SHIFT,-15);
     PlotIndexSetInteger(6,PLOT_ARROW_SHIFT,15);
+    PlotIndexSetInteger(5, PLOT_ARROW, 169);
+    PlotIndexSetInteger(6, PLOT_ARROW, 169);
     
     SetIndexBuffer(8, macdMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
     SetIndexBuffer(9, macdMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);

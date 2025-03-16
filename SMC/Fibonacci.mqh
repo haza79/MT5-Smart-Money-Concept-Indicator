@@ -38,8 +38,6 @@ private:
             fiboRetrace.swingHighIndex = macdMarketStructure.getLatestMajorHighIndex();
             fiboRetrace.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
             fiboRetrace.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice(),macdMarketStructure.getLatestTrend());
-            //Print("fibo retrace| swing H:",barData.GetHigh(fiboRetrace.swingHighIndex)," swing low:",barData.GetHigh(fiboRetrace.swingLowIndex));
-            //fiboRetrace.printFiboLevels();
             isFiboRetraceCalculated = true;
          }
         
@@ -104,10 +102,11 @@ public:
         
         
         
-       
+       /*
          if(!isFiboCircleCalculated){
             fiboCircleHandle();
          }
+         */
          
          if(!isFiboTimeZoneCalculated){
             fiboTimeZoneHandle();
