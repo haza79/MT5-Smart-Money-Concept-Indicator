@@ -62,28 +62,28 @@ public:
          fibo_retrace_887_ray;
          
    void update(int Iindex, int totalBars){
-   /*
+   
       ArrayResize(fibo_circle_top_236_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_236_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_top_500_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_500_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_top_618_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_circle_bottom_618_ray.lineDrawing.buffer, totalBars);
-      */
+      
       
       ArrayResize(fibo_retrace_500_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_retrace_618_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_retrace_786_ray.lineDrawing.buffer, totalBars);
       ArrayResize(fibo_retrace_887_ray.lineDrawing.buffer, totalBars);
       
-      /*
+      
       fibo_circle_top_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_236_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_top_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_top_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_circle_bottom_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
-      */
+      
       
       fibo_retrace_500_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
       fibo_retrace_618_ray.lineDrawing.buffer[Iindex] = EMPTY_VALUE;
@@ -96,7 +96,7 @@ public:
       }
       
       
-      /*
+      
       if(fibonacci.isFiboCircleCalculated){
          extendsFiboRay = true;
       }else{
@@ -154,7 +154,7 @@ public:
          fibo_circle_top_618_ray.extendeRay(index);
          fibo_circle_bottom_618_ray.extendeRay(index);
       }
-      */
+      
       
       if(extendsFiboRetraceRay){
          if(!isInitFiboRetrace){
