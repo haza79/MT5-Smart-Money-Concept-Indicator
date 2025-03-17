@@ -22,37 +22,37 @@
 
 #property indicator_label4  "SwingHigh"
 #property indicator_type4   DRAW_ARROW
-#property indicator_color4  clrGreen
+#property indicator_color4  clrDarkGray
 #property indicator_style4  STYLE_SOLID
 #property indicator_width4  1
 
 #property indicator_label5  "SwingLow"
 #property indicator_type5   DRAW_ARROW
-#property indicator_color5  clrGreen
+#property indicator_color5  clrDarkGray
 #property indicator_style5  STYLE_SOLID
 #property indicator_width5  1
 
 #property indicator_label6  "MACD High"
 #property indicator_type6   DRAW_ARROW
-#property indicator_color6  clrLime
+#property indicator_color6  clrDarkOrange
 #property indicator_style6  STYLE_SOLID
 #property indicator_width6  1
 
 #property indicator_label7  "MACD Low"
 #property indicator_type7   DRAW_ARROW
-#property indicator_color7  clrDeepPink
+#property indicator_color7  clrDarkOrange
 #property indicator_style7  STYLE_SOLID
 #property indicator_width7  1
 
 #property indicator_label8  "Major High"
 #property indicator_type8   DRAW_ARROW
-#property indicator_color8  clrGold
+#property indicator_color8  clrRoyalBlue
 #property indicator_style8  STYLE_SOLID
 #property indicator_width8  1
 
 #property indicator_label9  "Major Low"
 #property indicator_type9   DRAW_ARROW
-#property indicator_color9  clrGold
+#property indicator_color9  clrCrimson
 #property indicator_style9  STYLE_SOLID
 #property indicator_width9  1
 
@@ -94,25 +94,25 @@
 
 #property indicator_label16  "fibo retrace 50"
 #property indicator_type16   DRAW_LINE
-#property indicator_color16  clrDeepSkyBlue
+#property indicator_color16  clrGold
 #property indicator_style16  STYLE_DASH
 #property indicator_width16  1
 
 #property indicator_label17  "fibo retrace 61.8"
 #property indicator_type17   DRAW_LINE
-#property indicator_color17  clrBlue
+#property indicator_color17  clrSilver
 #property indicator_style17  STYLE_DASH
 #property indicator_width17  1
 
 #property indicator_label18  "fibo retrace 78.6"
 #property indicator_type18   DRAW_LINE
-#property indicator_color18  clrBlue
+#property indicator_color18  clrSilver
 #property indicator_style18  STYLE_DASH
 #property indicator_width18  1
 
 #property indicator_label19  "fibo retrace 88.7"
 #property indicator_type19   DRAW_LINE
-#property indicator_color19  clrBlue
+#property indicator_color19  clrSilver
 #property indicator_style19  STYLE_DASH
 #property indicator_width19  1
 
