@@ -7,7 +7,7 @@
 class ImpulsePullbackDetectorClass
 {
 private:
-   InsideBarClass* insideBarClass;
+   
    Trend trend;
    bool isInsideBar;
    int swingHighIndex,swingLowIndex;
@@ -15,6 +15,8 @@ private:
    double swingHighPrice,swingLowPrice;
 
 public:
+
+   InsideBarClass* insideBarClass;
 
    double highZigZagBuffer[],lowZigZagBuffer[];
    double swingHighBuffer[],swingLowBuffer[];

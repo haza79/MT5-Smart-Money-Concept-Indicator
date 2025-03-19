@@ -116,6 +116,11 @@
 #property indicator_style19  STYLE_DASH
 #property indicator_width19  1
 
+#property indicator_label20  "draw filling"
+#property indicator_type20   DRAW_FILLING
+#property indicator_color20  clrOrange
+#property indicator_width20  1
+
 
 
 #include "BarData.mqh";
@@ -140,6 +145,8 @@ CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
 Fibonacci fibonacci;
 PlotFiboOnChart plotFiboOnChart;
+
+double FibUpper[], FibLower[];  
 
 int OnInit()
 {  
@@ -186,6 +193,10 @@ int OnInit()
     SetIndexBuffer(18, plotFiboOnChart.fibo_retrace_786_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(19, plotFiboOnChart.fibo_retrace_887_ray.lineDrawing.buffer, INDICATOR_DATA);
     
+    SetIndexBuffer(20, FibUpper, INDICATOR_DATA);
+    SetIndexBuffer(21, FibLower, INDICATOR_DATA);
+    PlotIndexSetInteger(20, PLOT_DRAW_BEGIN, 0);
+    PlotIndexSetInteger(21, PLOT_DRAW_BEGIN, 0);
     
     // mother bar fractal
     
@@ -251,6 +262,15 @@ int OnCalculate(const int rates_total,
    }
 //bias L     : 2024.01.23 14:00:00
 //inducement : 2024.01.23 12:00:00
+
+   ArrayResize(FibUpper,rates_total);
+   ArrayResize(FibLower,rates_total);
+   
+   for(int i = rates_total-1; i>rates_total-100; i--){
+      FibUpper[i] = high[rates_total-100];
+      FibLower[i] = low[rates_total-100];
+   }
+   
 
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process
    int start = prev_calculated == 0 ? 0 : prev_calculated - 1; // for normal use
