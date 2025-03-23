@@ -116,11 +116,10 @@
 #property indicator_style19  STYLE_DASH
 #property indicator_width19  1
 
-#property indicator_label20  "draw filling"
-#property indicator_type20   DRAW_FILLING
-#property indicator_color20  clrOrange
+#property indicator_label20  "bearish Reverse"
+#property indicator_type20   DRAW_ARROW
+#property indicator_color20  clrWhite
 #property indicator_width20  1
-
 
 
 #include "BarData.mqh";
@@ -134,6 +133,9 @@
 #include "MacdMarketStructure.mqh";
 #include "Fibonacci.mqh";
 #include "PlotFiboOnChart.mqh";
+#include "BalanceOfPower.mqh";
+#include "BalanceOfPowerReverseCandle.mqh";
+
 
 MACD macd;
 BarData barData;
@@ -145,6 +147,8 @@ CandleBreakAnalyzerClass candleBreakAnalyzer;
 FractalClass fractal;
 Fibonacci fibonacci;
 PlotFiboOnChart plotFiboOnChart;
+BalanceOfPower balanceOfPower;
+BalanceOfPowerReverseCandle balanceOfPowerReverseCandle;
 
 double FibUpper[], FibLower[];  
 
@@ -193,10 +197,8 @@ int OnInit()
     SetIndexBuffer(18, plotFiboOnChart.fibo_retrace_786_ray.lineDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(19, plotFiboOnChart.fibo_retrace_887_ray.lineDrawing.buffer, INDICATOR_DATA);
     
-    SetIndexBuffer(20, FibUpper, INDICATOR_DATA);
-    SetIndexBuffer(21, FibLower, INDICATOR_DATA);
-    PlotIndexSetInteger(20, PLOT_DRAW_BEGIN, 0);
-    PlotIndexSetInteger(21, PLOT_DRAW_BEGIN, 0);
+   SetIndexBuffer(20, balanceOfPowerReverseCandle.bearishReverse, INDICATOR_DATA);
+   PlotIndexSetInteger(19, PLOT_ARROW, 234);
     
     // mother bar fractal
     
@@ -231,6 +233,7 @@ int OnInit()
     PlotIndexSetDouble(26,PLOT_EMPTY_VALUE,EMPTY_VALUE);
     PlotIndexSetDouble(27,PLOT_EMPTY_VALUE,EMPTY_VALUE);
 
+   balanceOfPowerReverseCandle.init(&balanceOfPower,&barData);
     insideBar.Init();
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
@@ -277,6 +280,8 @@ int OnCalculate(const int rates_total,
    //verticalLineBuffer[rates_total-10] = high[rates_total-10] * 10;
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
+      balanceOfPower.update(i,open[i],high[i],low[i],close[i],rates_total);
+      balanceOfPowerReverseCandle.update(i,rates_total);
       macd.update(close[i],i,rates_total);
       insideBar.Calculate(i, rates_total, high, low);
       impulsePullbackDetector.Calculate(i, rates_total, high, low);
