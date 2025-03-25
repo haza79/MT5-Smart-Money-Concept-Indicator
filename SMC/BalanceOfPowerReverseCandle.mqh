@@ -28,16 +28,33 @@ public:
    }
    
    void update(const int &index,const int &rate_total){
-      ArrayResize(bullishReverse,rate_total);
-      ArrayResize(bearishReverse,rate_total);
-      if (index >= rate_total - 1) {
+      if (index >= rate_total) {
+        return;  // Ensure we don't process out-of-bounds indices
+    }
+
+    // Resize arrays properly before assigning values
+    ArrayResize(bearishReverse, rate_total);
+    ArrayResize(bullishReverse, rate_total);
+
+    bearishReverse[index] = EMPTY_VALUE;
+    bullishReverse[index] = EMPTY_VALUE;
+
+    // Ensure there are at least 3 valid values before checking reversal logic
+    if (index < 2) {
         return;
-      }
+    }
       
-      if(balanceOfPower.prev2Bop >= 0 && balanceOfPower.latestBop <= 0 &&
-         balanceOfPower.latestBop < balanceOfPower.prevBop && balanceOfPower.prevBop < balanceOfPower.prev2Bop){
+      if(balanceOfPower.prev2BopEma >= 0 && balanceOfPower.latestBopEma <= 0 && balanceOfPower.latestBopEma <= -0.1 &&
+         balanceOfPower.latestBopEma < balanceOfPower.prevBopEma && balanceOfPower.prevBopEma < balanceOfPower.prev2BopEma){
          // bearish reverse
-         bearishReverse[index] = barData.GetHigh(index);
+         Print(barData.GetTime(index),"| true");
+         if(bearishReverse[index-1] == EMPTY_VALUE){
+            Print("adding to array");
+            bearishReverse[index] = barData.GetHigh(index);
+         }
+         
+      }else{
+         Print(barData.GetTime(index),"| false");
       }
       
    }

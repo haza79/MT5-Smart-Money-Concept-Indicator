@@ -11,16 +11,16 @@
 #property indicator_plots   2
 //--- plot bop
 #property indicator_label1  "bop"
-#property indicator_type1   DRAW_HISTOGRAM
+#property indicator_type1   DRAW_LINE
 #property indicator_color1  clrRed
 #property indicator_style1  STYLE_SOLID
-#property indicator_width1  1
+#property indicator_width1  2
 
 #property indicator_label2  "bop ema"
 #property indicator_type2   DRAW_HISTOGRAM
 #property indicator_color2  clrGreen
 #property indicator_style2  STYLE_SOLID
-#property indicator_width2  1
+#property indicator_width2  5
 //--- indicator buffers
 //+------------------------------------------------------------------+
 //| Custom indicator initialization function                         |

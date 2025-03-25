@@ -280,7 +280,7 @@ int OnCalculate(const int rates_total,
    //verticalLineBuffer[rates_total-10] = high[rates_total-10] * 10;
 
    for (int i = start; i < rates_total; i++) {  // Exclude last unclosed candle
-      balanceOfPower.update(i,open[i],high[i],low[i],close[i],rates_total);
+      balanceOfPower.update(i,open[i],high[i],low[i],close[i],rates_total,3);
       balanceOfPowerReverseCandle.update(i,rates_total);
       macd.update(close[i],i,rates_total);
       insideBar.Calculate(i, rates_total, high, low);
