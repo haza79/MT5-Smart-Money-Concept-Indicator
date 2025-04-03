@@ -47,14 +47,19 @@ public:
       if(balanceOfPower.prev2BopEma >= 0 && balanceOfPower.latestBopEma <= 0 && balanceOfPower.latestBopEma <= -0.1 &&
          balanceOfPower.latestBopEma < balanceOfPower.prevBopEma && balanceOfPower.prevBopEma < balanceOfPower.prev2BopEma){
          // bearish reverse
-         Print(barData.GetTime(index),"| true");
          if(bearishReverse[index-1] == EMPTY_VALUE){
-            Print("adding to array");
             bearishReverse[index] = barData.GetHigh(index);
          }
          
-      }else{
-         Print(barData.GetTime(index),"| false");
+      }
+      
+      if(balanceOfPower.prev2BopEma <= 0 && balanceOfPower.latestBopEma >= 0 && balanceOfPower.latestBopEma >= 0.1 &&
+         balanceOfPower.latestBopEma > balanceOfPower.prevBopEma && balanceOfPower.prevBopEma > balanceOfPower.prev2BopEma){
+         // bearish reverse
+         if(bullishReverse[index-1] == EMPTY_VALUE){
+            bullishReverse[index] = barData.GetLow(index);
+         }
+         
       }
       
    }

@@ -121,6 +121,11 @@
 #property indicator_color20  clrWhite
 #property indicator_width20  1
 
+#property indicator_label21  "bullish Reverse"
+#property indicator_type21   DRAW_ARROW
+#property indicator_color21  clrWhite
+#property indicator_width21  1
+
 
 #include "BarData.mqh";
 #include "InsideBarClass.mqh";
@@ -198,7 +203,9 @@ int OnInit()
     SetIndexBuffer(19, plotFiboOnChart.fibo_retrace_887_ray.lineDrawing.buffer, INDICATOR_DATA);
     
    SetIndexBuffer(20, balanceOfPowerReverseCandle.bearishReverse, INDICATOR_DATA);
+   SetIndexBuffer(21, balanceOfPowerReverseCandle.bullishReverse, INDICATOR_DATA);
    PlotIndexSetInteger(19, PLOT_ARROW, 234);
+   PlotIndexSetInteger(20, PLOT_ARROW, 233);
     
     // mother bar fractal
     
