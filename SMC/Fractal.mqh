@@ -3,6 +3,7 @@
 
 #include "Enums.mqh"
 #include "ImpulsePullbackDetector.mqh"
+#include <Generic\ArrayList.mqh>
 
 class FractalClass {
 private:
@@ -104,6 +105,26 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
       }
       return false;
    }
+   
+   void GetFractalFromRange(int fromIndex, int toIndex, bool isHigh, int &result[])
+{
+   int tmp[];
+   ArrayResize(tmp, toIndex - fromIndex); // max possible size
+   int count = 0;
+
+   for (int i = fromIndex; i < toIndex; i++)
+   {
+      if (isHigh && highFractalBuffer[i] != EMPTY_VALUE)
+         tmp[count++] = i;
+      else if (!isHigh && lowFractalBuffer[i] != EMPTY_VALUE)
+         tmp[count++] = i;
+   }
+
+   ArrayResize(result, count);
+   for (int i = 0; i < count; i++)
+      result[i] = tmp[i];
+}
+
    
    int GetLatestHighFractalIndex() {
       if (highFractalCount > 0) {

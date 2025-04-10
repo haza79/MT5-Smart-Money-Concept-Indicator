@@ -36,15 +36,17 @@ private:
    int prevMajorHighIndex,latestMajorHighIndex,
       prevMajorLowIndex,latestMajorLowIndex,
       wickHighIndex,wickLowIndex,
-      prevWickHighIndex,prevWickLowIndex;
+      prevWickHighIndex,prevWickLowIndex,
+      inducementIndex;
       
    double prevMajorHighPrice,latestMajorHighPrice,
       prevMajorLowPrice,latestMajorLowPrice,
       wickHighPrice,wickLowPrice,
-      prevWickHighPrice,prevWickLowPrice;
+      prevWickHighPrice,prevWickLowPrice,
+      inducementPrice;
       
    bool isHighWickBreak,isLowWickBreak,
-      isPrevHighWickBreak,isPrevLowWickBreak;
+      isPrevHighWickBreak,isPrevLowWickBreak,isInducementBreak;
       
 
    //+------------------------------------------------------------------+
@@ -270,7 +272,7 @@ private:
             isHighWickBreak = true;
             updateWickHighVariable();
             bullishChochDrawing.DrawStraightLine(latestMajorHighIndex,index,latestMajorHighPrice);
-            bosRay.deleteRay();
+            chochRay.deleteRay();
          }
          
          
@@ -388,6 +390,7 @@ private:
    void updateBullishBosVariable(){
       addTrend(TREND_BULLISH);
       addMarketStructure(MS_BULLISH_BOS);
+      
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
@@ -593,8 +596,9 @@ public:
                bullishInducementDrawing,
                bearishBosDrawing,
                bearishChochDrawing,
-               bearishInducementDrawing;
-   HorizontalRay bosRay,chochRay;               
+               bearishInducementDrawing,
+               inducementDrawing;
+   HorizontalRay bosRay,chochRay,inducementRay;
    
    double majorSwingHighBuffer[],majorSwingLowBuffer[];
    Trend prevTrend,latestTrend;
@@ -623,6 +627,11 @@ public:
       return latestMajorLowPrice;
    }
    
+   bool getInducementBreak(){
+      return isInducementBreak;
+   }
+   
+   
    Trend getLatestTrend(){
       return latestTrend;
    }
@@ -640,6 +649,9 @@ public:
       latestTrend = TREND_NONE;
       
       marketBreakAtIndex = -1;
+      inducementIndex = -1;
+      inducementPrice = -1;
+      isInducementBreak = false;
    }
 
    void update(int Iindex, int totalBars){
@@ -650,8 +662,10 @@ public:
       ArrayResize(bearishBosDrawing.buffer, totalBars);
       ArrayResize(bearishInducementDrawing.buffer, totalBars);
       ArrayResize(bearishChochDrawing.buffer, barData.RatesTotal());
+      ArrayResize(inducementDrawing.buffer, barData.RatesTotal());
       ArrayResize(bosRay.lineDrawing.buffer, barData.RatesTotal());
       ArrayResize(chochRay.lineDrawing.buffer, barData.RatesTotal());
+      ArrayResize(inducementRay.lineDrawing.buffer, barData.RatesTotal());
       
       ArrayResize(majorSwingHighBuffer, totalBars);
       ArrayResize(majorSwingLowBuffer, totalBars);
@@ -662,15 +676,18 @@ public:
       bearishBosDrawing.buffer[index] = EMPTY_VALUE;
       bearishInducementDrawing.buffer[index] = EMPTY_VALUE;
       bearishChochDrawing.buffer[index] = EMPTY_VALUE;
+      inducementDrawing.buffer[index] = EMPTY_VALUE;
       
       bosRay.lineDrawing.buffer[index] = EMPTY_VALUE;
       chochRay.lineDrawing.buffer[index] = EMPTY_VALUE;
+      inducementRay.lineDrawing.buffer[index] = EMPTY_VALUE;
       
       majorSwingHighBuffer[index] = EMPTY_VALUE;
       majorSwingLowBuffer[index] = EMPTY_VALUE;
       
       bosRay.extendeRay(index);
       chochRay.extendeRay(index);
+      inducementRay.extendeRay(index);
       
       index = Iindex;
       if (index >= totalBars - 1) {

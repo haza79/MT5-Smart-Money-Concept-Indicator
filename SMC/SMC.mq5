@@ -140,6 +140,7 @@
 #include "PlotFiboOnChart.mqh";
 #include "BalanceOfPower.mqh";
 #include "BalanceOfPowerReverseCandle.mqh";
+#include "OrderBlock.mqh";
 
 
 MACD macd;
@@ -154,6 +155,7 @@ Fibonacci fibonacci;
 PlotFiboOnChart plotFiboOnChart;
 BalanceOfPower balanceOfPower;
 BalanceOfPowerReverseCandle balanceOfPowerReverseCandle;
+OrderBlock orderBlock;
 
 double FibUpper[], FibLower[];  
 
@@ -279,6 +281,13 @@ int OnCalculate(const int rates_total,
    for(int i = rates_total-1; i>rates_total-100; i--){
       FibUpper[i] = high[rates_total-100];
       FibLower[i] = low[rates_total-100];
+   }
+   
+   int fractalAr[];
+   fractal.GetFractalFromRange(rates_total-50,rates_total-1,false,fractalAr);
+   
+   for(int i = 0; i<ArraySize(fractalAr); i++){
+      Print("fractal:",time[fractalAr[i]]);
    }
    
 
