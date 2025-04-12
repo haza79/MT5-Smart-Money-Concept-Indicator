@@ -130,7 +130,7 @@ private:
                
                AddHighZigZag();
                AddSwingHighPoint();
-               
+               // 2024.8.30 20.45
                break;
             }
             

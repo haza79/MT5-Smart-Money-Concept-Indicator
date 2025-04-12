@@ -13,11 +13,14 @@
 #include "CandleStructs.mqh"
 #include "LineDrawing.mqh"
 #include "HorizontalRay.mqh";
+#include "Fractal.mqh";
+
 
 class MacdMarketStructureClass{
 
 private:
    BarData* barData;
+   FractalClass* fractal;
    
    int index;
    
@@ -58,6 +61,8 @@ private:
       if(latestMajorHighIndex == -1){
          if(getNewMajorHigh()){
             majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
+            getInducement(TREND_BULLISH);
+            Print("inducement:",barData.GetTime(inducementIndex));
             bosRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
          }
       }
@@ -174,6 +179,8 @@ private:
       if(latestMajorLowIndex == -1){
          if(getNewMajorLow()){
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
+            getInducement(TREND_BEARISH);
+            Print("inducement:",barData.GetTime(inducementIndex));
             bosRay.drawRay(latestMajorLowIndex,index,latestMajorLowPrice);
          }
       }
@@ -384,6 +391,53 @@ private:
          latestTrend = TREND_BEARISH;
          Print("first trend: BEARISH");
       }
+      
+   }
+   
+   void getInducement(Trend trend){
+   
+      if(trend == TREND_BULLISH){
+         getBullishInducement();
+      }else if(trend == TREND_BEARISH){
+         getBearishInducement();
+      }
+   }
+   
+   void getBullishInducement(){
+   
+      if(latestMajorHighIndex == -1){
+         return;
+      }
+      
+      int lowFractal[];
+      fractal.GetFractalFromRange(latestMajorLowIndex+1,latestMajorHighIndex-1,false,lowFractal);
+      
+      if(ArraySize(lowFractal)<1){
+         inducementIndex=-1;
+      }else{
+         inducementIndex = lowFractal[ArraySize(lowFractal)-1];
+         inducementPrice = barData.GetLow(inducementIndex);
+      }
+      
+      
+   }
+   
+   void getBearishInducement(){
+   
+      if(latestMajorLowIndex == -1){
+         return;
+      }
+      
+      int highFractal[];
+      fractal.GetFractalFromRange(latestMajorHighIndex+1,latestMajorLowIndex-1,true,highFractal);
+      
+      if(ArraySize(highFractal)<1){
+         inducementIndex=-1;
+      }else{
+         inducementIndex = highFractal[ArraySize(highFractal)-1];
+         inducementPrice = barData.GetHigh(inducementIndex);
+      }
+      
       
    }
    
@@ -637,10 +691,11 @@ public:
    }
    
    
-   void init(MACDFractalClass* macdFractalInstance, BarData* barDataInstance){
+   void init(MACDFractalClass* macdFractalInstance, BarData* barDataInstance, FractalClass* fractalInstance){
       // init function
       macdFractal = macdFractalInstance;
       barData = barDataInstance;
+      fractal = fractalInstance;
       
       latestMajorHighIndex = -1;
       latestMajorLowIndex = -1;

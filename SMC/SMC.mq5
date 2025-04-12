@@ -247,7 +247,7 @@ int OnInit()
     impulsePullbackDetector.Init(&insideBar);
     fractal.Init(&impulsePullbackDetector);
     macdFractal.Init(&macd,&barData);
-    macdMarketStructure.init(&macdFractal,&barData);
+    macdMarketStructure.init(&macdFractal,&barData,&fractal);
     fibonacci.init(&barData,&macdMarketStructure);
     plotFiboOnChart.init(&fibonacci,&barData);
     
@@ -283,12 +283,6 @@ int OnCalculate(const int rates_total,
       FibLower[i] = low[rates_total-100];
    }
    
-   int fractalAr[];
-   fractal.GetFractalFromRange(rates_total-50,rates_total-1,false,fractalAr);
-   
-   for(int i = 0; i<ArraySize(fractalAr); i++){
-      Print("fractal:",time[fractalAr[i]]);
-   }
    
 
    //int start = MathMax(rates_total - 100, 0);// for limit candle to process

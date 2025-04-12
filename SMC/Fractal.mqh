@@ -3,7 +3,6 @@
 
 #include "Enums.mqh"
 #include "ImpulsePullbackDetector.mqh"
-#include <Generic\ArrayList.mqh>
 
 class FractalClass {
 private:
