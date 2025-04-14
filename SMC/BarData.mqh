@@ -50,6 +50,10 @@ public:
     int GetCloseArrSize(){
       return ArraySize(m_close);
     }
+    
+    double getLowestLowValueByRange(int startIndex){
+      return ArrayMinimum(m_low,startIndex);
+    }
 
    datetime GetTime(int shift) const
      {

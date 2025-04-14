@@ -40,7 +40,7 @@ private:
       prevMajorLowIndex,latestMajorLowIndex,
       wickHighIndex,wickLowIndex,
       prevWickHighIndex,prevWickLowIndex,
-      inducementIndex;
+      inducementIndex,inducementBreakAtIndex;
       
    double prevMajorHighPrice,latestMajorHighPrice,
       prevMajorLowPrice,latestMajorLowPrice,
@@ -49,7 +49,7 @@ private:
       inducementPrice;
       
    bool isHighWickBreak,isLowWickBreak,
-      isPrevHighWickBreak,isPrevLowWickBreak,isInducementBreak;
+      isPrevHighWickBreak,isPrevLowWickBreak,isInducementBreak,firstTimeCheckInducement;
       
 
    //+------------------------------------------------------------------+
@@ -62,7 +62,11 @@ private:
          if(getNewMajorHigh()){
             majorSwingHighBuffer[latestMajorHighIndex] = latestMajorHighPrice;
             getInducement(TREND_BULLISH);
-            Print("inducement:",barData.GetTime(inducementIndex));
+            checkInducementBreak(true);
+            if(isInducementBreak){
+               Print("inducement breaked");
+               inducementRay.drawRay(inducementIndex,inducementBreakAtIndex,inducementPrice);
+            }
             bosRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
          }
       }
@@ -441,6 +445,37 @@ private:
       
    }
    
+   void checkInducementBreak(bool isHigh){
+      if(inducementIndex==-1){
+         return;
+      }
+      
+      if(isHigh){
+         if(firstTimeCheckInducement){
+            firstTimeCheckInducement = false;
+            int lowestLowIndex = barData.getLowestLowValueByRange(latestMajorHighIndex);
+            double lowestLowPrice = barData.GetLow(lowestLowIndex);
+            if(lowestLowPrice<=inducementPrice){
+               isInducementBreak = true;
+               for(int i = latestMajorHighIndex; i<= index; i++){
+                  if(barData.GetLow(i)<=inducementPrice){
+                     inducementBreakAtIndex = i;
+                     break;
+                  }
+               }
+               return;
+            }
+         }else{
+            if(barData.GetLow(index) <= inducementPrice){
+               isInducementBreak = true;
+               inducementBreakAtIndex = index;
+            }
+         }
+      }
+   }
+   
+   
+   
    void updateBullishBosVariable(){
       addTrend(TREND_BULLISH);
       addMarketStructure(MS_BULLISH_BOS);
@@ -707,6 +742,7 @@ public:
       inducementIndex = -1;
       inducementPrice = -1;
       isInducementBreak = false;
+      firstTimeCheckInducement = true;
    }
 
    void update(int Iindex, int totalBars){
