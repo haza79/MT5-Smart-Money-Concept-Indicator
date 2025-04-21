@@ -65,7 +65,10 @@ private:
             checkInducementBreak(true);
             if(isInducementBreak){
                Print("inducement breaked");
-               inducementRay.drawRay(inducementIndex,inducementBreakAtIndex,inducementPrice);
+               Print("inducement:",barData.GetTime(inducementIndex));
+               Print("break at index:",barData.GetTime(inducementBreakAtIndex));
+               Print("price:",inducementPrice);
+               inducementDrawing.DrawStraightLine(inducementIndex,inducementBreakAtIndex,inducementPrice);
             }
             bosRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
          }
@@ -682,10 +685,8 @@ public:
 
    LineDrawing bullishBosDrawing,
                bullishChochDrawing,
-               bullishInducementDrawing,
                bearishBosDrawing,
                bearishChochDrawing,
-               bearishInducementDrawing,
                inducementDrawing;
    HorizontalRay bosRay,chochRay,inducementRay;
    
@@ -748,10 +749,8 @@ public:
    void update(int Iindex, int totalBars){
    
       ArrayResize(bullishBosDrawing.buffer, totalBars);
-      ArrayResize(bullishInducementDrawing.buffer, totalBars);
       ArrayResize(bullishChochDrawing.buffer, totalBars);
       ArrayResize(bearishBosDrawing.buffer, totalBars);
-      ArrayResize(bearishInducementDrawing.buffer, totalBars);
       ArrayResize(bearishChochDrawing.buffer, barData.RatesTotal());
       ArrayResize(inducementDrawing.buffer, barData.RatesTotal());
       ArrayResize(bosRay.lineDrawing.buffer, barData.RatesTotal());
@@ -762,10 +761,8 @@ public:
       ArrayResize(majorSwingLowBuffer, totalBars);
       
       bullishBosDrawing.buffer[index] = EMPTY_VALUE;
-      bullishInducementDrawing.buffer[index] = EMPTY_VALUE;
       bullishChochDrawing.buffer[index] = EMPTY_VALUE;
       bearishBosDrawing.buffer[index] = EMPTY_VALUE;
-      bearishInducementDrawing.buffer[index] = EMPTY_VALUE;
       bearishChochDrawing.buffer[index] = EMPTY_VALUE;
       inducementDrawing.buffer[index] = EMPTY_VALUE;
       

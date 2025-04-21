@@ -80,57 +80,63 @@
 #property indicator_style13  STYLE_DASH
 #property indicator_width13  1
 
-#property indicator_label14  "bos ray"
+#property indicator_label14  "inducement"
 #property indicator_type14   DRAW_LINE
-#property indicator_color14  clrGreen
-#property indicator_style14  STYLE_DOT
+#property indicator_color14  clrRed
+#property indicator_style14  STYLE_DASH
 #property indicator_width14  1
 
-#property indicator_label15  "choch ray"
+#property indicator_label15  "bos ray"
 #property indicator_type15   DRAW_LINE
-#property indicator_color15  clrRed
+#property indicator_color15  clrGreen
 #property indicator_style15  STYLE_DOT
 #property indicator_width15  1
 
-#property indicator_label16  "inducement"
+#property indicator_label16  "choch ray"
 #property indicator_type16   DRAW_LINE
 #property indicator_color16  clrRed
-#property indicator_style16  STYLE_SOLID
+#property indicator_style16  STYLE_DOT
 #property indicator_width16  1
 
-#property indicator_label17  "fibo retrace 50"
+#property indicator_label17  "inducement ray"
 #property indicator_type17   DRAW_LINE
-#property indicator_color17  clrGold
-#property indicator_style17  STYLE_DASH
+#property indicator_color17  clrRed
+#property indicator_style17  STYLE_SOLID
 #property indicator_width17  1
 
-#property indicator_label18  "fibo retrace 61.8"
+#property indicator_label18  "fibo retrace 50"
 #property indicator_type18   DRAW_LINE
-#property indicator_color18  clrSilver
+#property indicator_color18  clrGold
 #property indicator_style18  STYLE_DASH
 #property indicator_width18  1
 
-#property indicator_label19  "fibo retrace 78.6"
+#property indicator_label19  "fibo retrace 61.8"
 #property indicator_type19   DRAW_LINE
 #property indicator_color19  clrSilver
 #property indicator_style19  STYLE_DASH
 #property indicator_width19  1
 
-#property indicator_label20  "fibo retrace 88.7"
+#property indicator_label20  "fibo retrace 78.6"
 #property indicator_type20   DRAW_LINE
 #property indicator_color20  clrSilver
 #property indicator_style20  STYLE_DASH
 #property indicator_width20  1
 
-#property indicator_label21  "bearish Reverse"
-#property indicator_type21   DRAW_ARROW
-#property indicator_color21  clrWhite
+#property indicator_label21  "fibo retrace 88.7"
+#property indicator_type21   DRAW_LINE
+#property indicator_color21  clrSilver
+#property indicator_style21  STYLE_DASH
 #property indicator_width21  1
 
-#property indicator_label22  "bullish Reverse"
+#property indicator_label22  "bearish Reverse"
 #property indicator_type22   DRAW_ARROW
 #property indicator_color22  clrWhite
 #property indicator_width22  1
+
+#property indicator_label23  "bullish Reverse"
+#property indicator_type23   DRAW_ARROW
+#property indicator_color23  clrWhite
+#property indicator_width23  1
 
 
 #include "BarData.mqh";
@@ -201,20 +207,21 @@ int OnInit()
     SetIndexBuffer(11, macdMarketStructure.bullishChochDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(12, macdMarketStructure.bearishBosDrawing.buffer, INDICATOR_DATA);
     SetIndexBuffer(13, macdMarketStructure.bearishChochDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(14, macdMarketStructure.inducementDrawing.buffer, INDICATOR_DATA);
     
-    SetIndexBuffer(14, macdMarketStructure.bosRay.lineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(15, macdMarketStructure.chochRay.lineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(16, macdMarketStructure.inducementRay.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(15, macdMarketStructure.bosRay.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(16, macdMarketStructure.chochRay.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(17, macdMarketStructure.inducementRay.lineDrawing.buffer, INDICATOR_DATA);
     
-    SetIndexBuffer(17, plotFiboOnChart.fibo_retrace_500_ray.lineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(18, plotFiboOnChart.fibo_retrace_618_ray.lineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(19, plotFiboOnChart.fibo_retrace_786_ray.lineDrawing.buffer, INDICATOR_DATA);
-    SetIndexBuffer(20, plotFiboOnChart.fibo_retrace_887_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(18, plotFiboOnChart.fibo_retrace_500_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(19, plotFiboOnChart.fibo_retrace_618_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(20, plotFiboOnChart.fibo_retrace_786_ray.lineDrawing.buffer, INDICATOR_DATA);
+    SetIndexBuffer(21, plotFiboOnChart.fibo_retrace_887_ray.lineDrawing.buffer, INDICATOR_DATA);
     
-   SetIndexBuffer(21, balanceOfPowerReverseCandle.bearishReverse, INDICATOR_DATA);
-   SetIndexBuffer(22, balanceOfPowerReverseCandle.bullishReverse, INDICATOR_DATA);
-   PlotIndexSetInteger(20, PLOT_ARROW, 234);
-   PlotIndexSetInteger(21, PLOT_ARROW, 233);
+   SetIndexBuffer(22, balanceOfPowerReverseCandle.bearishReverse, INDICATOR_DATA);
+   SetIndexBuffer(23, balanceOfPowerReverseCandle.bullishReverse, INDICATOR_DATA);
+   PlotIndexSetInteger(21, PLOT_ARROW, 234);
+   PlotIndexSetInteger(22, PLOT_ARROW, 233);
     
     // mother bar fractal
     
