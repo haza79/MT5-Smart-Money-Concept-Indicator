@@ -62,7 +62,7 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
             prevFractalHighPrice = latestFractalHighPrice;
             latestFractalHighPrice = high[getLatestSwingHigh];
             
-            AddToFractalArray(highFractalIndices, highFractalCount, getLatestSwingHigh);
+            //AddToFractalArray(highFractalIndices, highFractalCount, getLatestSwingHigh);
 
             
          }
@@ -81,7 +81,7 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
             prevFractalLowPrice = latestFractalLowPrice;
             latestFractalLowPrice = low[getLatestSwingLow];
             
-            AddToFractalArray(lowFractalIndices, lowFractalCount, getLatestSwingLow);
+            //AddToFractalArray(lowFractalIndices, lowFractalCount, getLatestSwingLow);
 
             
          }

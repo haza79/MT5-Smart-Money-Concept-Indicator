@@ -51,9 +51,10 @@ public:
       return ArraySize(m_close);
     }
     
-    double getLowestLowValueByRange(int startIndex){
-      return ArrayMinimum(m_low,startIndex);
-    }
+    int getLowestLowValueByRange(int startIndex){
+   return ArrayMinimum(m_low, startIndex, WHOLE_ARRAY);
+}
+
 
    datetime GetTime(int shift) const
      {

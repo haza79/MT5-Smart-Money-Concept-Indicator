@@ -49,7 +49,7 @@ private:
       inducementPrice;
       
    bool isHighWickBreak,isLowWickBreak,
-      isPrevHighWickBreak,isPrevLowWickBreak,isInducementBreak,firstTimeCheckInducement;
+      isPrevHighWickBreak,isPrevLowWickBreak,firstTimeCheckInducement;
       
 
    //+------------------------------------------------------------------+
@@ -64,11 +64,9 @@ private:
             getInducement(TREND_BULLISH);
             checkInducementBreak(true);
             if(isInducementBreak){
-               Print("inducement breaked");
-               Print("inducement:",barData.GetTime(inducementIndex));
-               Print("break at index:",barData.GetTime(inducementBreakAtIndex));
-               Print("price:",inducementPrice);
                inducementDrawing.DrawStraightLine(inducementIndex,inducementBreakAtIndex,inducementPrice);
+            }else{
+               //inducementRay.drawRay(inducementIndex,index,inducementPrice);
             }
             bosRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
          }
@@ -76,6 +74,14 @@ private:
       
       if(latestMajorHighIndex == -1){
          return;
+      }
+      
+      if(!isInducementBreak){
+         checkInducementBreak(true);
+         if(isInducementBreak){
+            inducementRay.deleteRay();
+            inducementDrawing.DrawStraightLine(inducementIndex,inducementBreakAtIndex,inducementPrice);
+         }
       }
       
       if(isHighWickBreak){
@@ -187,7 +193,6 @@ private:
          if(getNewMajorLow()){
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             getInducement(TREND_BEARISH);
-            Print("inducement:",barData.GetTime(inducementIndex));
             bosRay.drawRay(latestMajorLowIndex,index,latestMajorLowPrice);
          }
       }
@@ -247,7 +252,12 @@ private:
    void bearishMajorHighHandle(){
    
       if(!chochRay.drew){
-         chochRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
+         if(isHighWickBreak){
+            chochRay.drawRay(wickHighIndex,index,wickHighPrice);
+         }else{
+            chochRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
+         }
+         
       }
       
       if(isHighWickBreak){
@@ -274,7 +284,6 @@ private:
          // not wick break
          if(isPriceBreakHighByBobyOrGap()){
             // bullish bos
-            Print("break:",barData.GetTime(index));
             updateBullishChochVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
@@ -383,20 +392,16 @@ private:
          barData.GetClose(latestMajorLowIndex)
       );
       
-      Print("high:",latestMajorHighIndex,"|",barData.GetTime(latestMajorHighIndex));
-      Print("low :",latestMajorLowIndex,"|",barData.GetTime(latestMajorLowIndex));
       
       if(latestMajorHighIndex >= latestMajorLowIndex &&
          latestMajorHighPrice >= latestMajorLowPrice){
          
          latestTrend = TREND_BULLISH;
-         Print("first trend: BULLISH");
       }
       else if(latestMajorLowIndex >= latestMajorHighIndex &&
          latestMajorLowPrice <= latestMajorHighPrice){
          
          latestTrend = TREND_BEARISH;
-         Print("first trend: BEARISH");
       }
       
    }
@@ -453,11 +458,17 @@ private:
          return;
       }
       
+      if(isInducementBreak){
+         return;
+      }
+      
       if(isHigh){
          if(firstTimeCheckInducement){
             firstTimeCheckInducement = false;
             int lowestLowIndex = barData.getLowestLowValueByRange(latestMajorHighIndex);
             double lowestLowPrice = barData.GetLow(lowestLowIndex);
+            
+            
             if(lowestLowPrice<=inducementPrice){
                isInducementBreak = true;
                for(int i = latestMajorHighIndex; i<= index; i++){
@@ -468,6 +479,7 @@ private:
                }
                return;
             }
+            
          }else{
             if(barData.GetLow(index) <= inducementPrice){
                isInducementBreak = true;
@@ -483,6 +495,11 @@ private:
       addTrend(TREND_BULLISH);
       addMarketStructure(MS_BULLISH_BOS);
       
+      firstTimeCheckInducement = true;
+      isInducementBreak = false;
+      inducementIndex = -1;
+      inducementPrice = -1;
+      inducementBreakAtIndex = -1;
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
@@ -511,8 +528,16 @@ private:
       addTrend(TREND_BEARISH);
       addMarketStructure(MS_BEARISH_CHOCH);
       
+      firstTimeCheckInducement = true;
+      isInducementBreak = false;
+      inducementIndex = -1;
+      inducementPrice = -1;
+      inducementBreakAtIndex = -1;
+      
       prevMajorLowIndex = latestMajorLowIndex;
       prevMajorLowPrice = latestMajorLowPrice;
+      
+      //bullishBosDrawing.DeleteLineByRange(latestMajorHighIndex,index);
       
       latestMajorHighIndex = CandleBreakAnalyzerStatic::GetHighestHighIndex(barData,latestMajorLowIndex,index);
       latestMajorHighPrice = barData.GetHigh(latestMajorHighIndex);
@@ -539,6 +564,12 @@ private:
       addTrend(TREND_BEARISH);
       addMarketStructure(MS_BEARISH_BOS);
       
+      firstTimeCheckInducement = true;
+      isInducementBreak = false;
+      inducementIndex = -1;
+      inducementPrice = -1;
+      inducementBreakAtIndex = -1;
+      
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
       prevMajorLowIndex = latestMajorLowIndex;
@@ -563,6 +594,12 @@ private:
    void updateBullishChochVariable(){
       addTrend(TREND_BULLISH);
       addMarketStructure(MS_BULLISH_CHOCH);
+      
+      firstTimeCheckInducement = true;
+      isInducementBreak = false;
+      inducementIndex = -1;
+      inducementPrice = -1;
+      inducementBreakAtIndex = -1;
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
@@ -695,6 +732,8 @@ public:
    MarketStructureType prev2MarketStructure,prevMarketStructure,latestMarketStructure;
    
    int marketBreakAtIndex;
+   
+   bool isInducementBreak;
 
    MacdMarketStructureClass(){
       // construction
@@ -725,6 +764,19 @@ public:
    Trend getLatestTrend(){
       return latestTrend;
    }
+   
+   string getLatestTrendAsString() {
+    switch(latestTrend) {
+        case TREND_NONE:
+            return "None";
+        case TREND_BULLISH:
+            return "Bullish";
+        case TREND_BEARISH:
+            return "Bearish";
+        default:
+            return "Unknown";
+    }
+}
    
    
    void init(MACDFractalClass* macdFractalInstance, BarData* barDataInstance, FractalClass* fractalInstance){

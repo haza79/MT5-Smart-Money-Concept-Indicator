@@ -82,8 +82,8 @@
 
 #property indicator_label14  "inducement"
 #property indicator_type14   DRAW_LINE
-#property indicator_color14  clrRed
-#property indicator_style14  STYLE_DASH
+#property indicator_color14  clrOrangeRed
+#property indicator_style14  STYLE_DASHDOT
 #property indicator_width14  1
 
 #property indicator_label15  "bos ray"
@@ -100,8 +100,8 @@
 
 #property indicator_label17  "inducement ray"
 #property indicator_type17   DRAW_LINE
-#property indicator_color17  clrRed
-#property indicator_style17  STYLE_SOLID
+#property indicator_color17  clrOrangeRed
+#property indicator_style17  STYLE_DASHDOT
 #property indicator_width17  1
 
 #property indicator_label18  "fibo retrace 50"
@@ -319,6 +319,22 @@ int OnCalculate(const int rates_total,
       
 
       }
+      
+      static string lastComment = "";
+      string newComment = 
+      "Trend: " + macdMarketStructure.getLatestTrendAsString() + "\n"
+      +"Inducement Break: "+macdMarketStructure.isInducementBreak;
+
+      if(newComment != lastComment) {
+          Comment(newComment);
+          lastComment = newComment;
+      }
+      
+      /*
+      string comment = "TREND :  "+macdMarketStructure.getLatestTrendAsString()+"\n"
+      +"Inducement Taken   :  "+macdMarketStructure.isInducementBreak;
+      Comment(comment);
+      */
       
 
    return rates_total;

@@ -20,6 +20,13 @@ public:
      
    }
    
+   void DeleteLineByRange(int startIndex,int endIndex){
+      for (int i = startIndex; i < ArraySize(buffer); i++) {
+      // Check for a gap in dates
+         buffer[i] = EMPTY_VALUE; // Set the line value
+      }
+   }
+   
 
 
 }
