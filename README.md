@@ -62,8 +62,8 @@ This indicator is a **work in progress**. Daily commits are being made to:
 - [x] **identify impulse pullback, swing high low**
 - [x] **identify fractal of swing high low**
 - [x] **identify minor market structure**
-- [x] identify major market structure (major high,low / inducement / bos,choch)
-- [ ] identify fibonacci (retracement, circle, timezone)
+- [x] **identify major market structure (major high,low / inducement / bos,choch)**
+- [x] **identify fibonacci (retracement, circle, timezone)**
 - [ ] identify key level (fvg, order block)
 
 ---
