@@ -264,6 +264,7 @@ int OnInit()
     macdMarketStructure.init(&macdFractal,&barData,&fractal);
     fibonacci.init(&barData,&macdMarketStructure);
     plotFiboOnChart.init(&fibonacci,&barData);
+    orderBlock.Init(&barData,&macdMarketStructure,&fractal);
     
 
     return(INIT_SUCCEEDED);
@@ -286,8 +287,7 @@ int OnCalculate(const int rates_total,
        Print("Setting data failed");
        return rates_total;
    }
-//bias L     : 2024.01.23 14:00:00
-//inducement : 2024.01.23 12:00:00
+//bias L     : 2024.09.02
 
    ArrayResize(FibUpper,rates_total);
    ArrayResize(FibLower,rates_total);
@@ -314,6 +314,7 @@ int OnCalculate(const int rates_total,
       macdMarketStructure.update(i,rates_total);
       fibonacci.update(i,rates_total);
       plotFiboOnChart.update(i,rates_total);
+      orderBlock.update(i,rates_total);
       
       
       

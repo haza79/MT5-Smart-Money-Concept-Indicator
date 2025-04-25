@@ -760,6 +760,10 @@ public:
       return isInducementBreak;
    }
    
+   int getInducementIndex(){
+      return inducementIndex;
+   }
+   
    
    Trend getLatestTrend(){
       return latestTrend;
