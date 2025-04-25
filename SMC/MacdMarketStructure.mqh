@@ -636,7 +636,7 @@ private:
    
    void updateWickHighVariable(){
       wickHighIndex = index;
-      wickHighPrice = barData.GetHigh(index);
+      wickHighPrice = barData.GetHigh(wickHighIndex);
       wickHighCandle.setValue(
          barData.GetOpen(wickHighIndex),
          barData.GetHigh(wickHighIndex),
@@ -647,7 +647,7 @@ private:
    
    void updateWickLowVariable(){
       wickLowIndex = index;
-      wickLowPrice = barData.GetLow(index);
+      wickLowPrice = barData.GetLow(wickLowIndex);
       wickLowCandle.setValue(
          barData.GetOpen(wickLowIndex),
          barData.GetHigh(wickLowIndex),
@@ -746,6 +746,10 @@ public:
    
    int getLatestMajorLowIndex(){
       return latestMajorLowIndex;
+   }
+   
+   int getPrevMajorLowIndex(){
+      return prevMajorLowIndex;
    }
    
    double getLatestmajorHighPrice(){
