@@ -51,9 +51,13 @@ public:
       return ArraySize(m_close);
     }
     
-    int getLowestLowValueByRange(int startIndex){
-   return ArrayMinimum(m_low, startIndex, WHOLE_ARRAY);
-}
+   int getLowestLowValueByRange(int startIndex){
+      return ArrayMinimum(m_low, startIndex, WHOLE_ARRAY);
+   }
+   
+   int getHighestHighValueByRange(int startIndex){
+      return ArrayMaximum(m_high, startIndex, WHOLE_ARRAY);
+   }
 
 
    datetime GetTime(int shift) const

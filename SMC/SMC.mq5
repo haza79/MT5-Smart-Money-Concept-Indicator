@@ -287,7 +287,7 @@ int OnCalculate(const int rates_total,
        Print("Setting data failed");
        return rates_total;
    }
-//bias L     : 2024.09.02
+   // 2024.12.17
 
    ArrayResize(FibUpper,rates_total);
    ArrayResize(FibLower,rates_total);

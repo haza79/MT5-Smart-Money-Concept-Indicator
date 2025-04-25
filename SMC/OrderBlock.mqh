@@ -26,42 +26,118 @@ private:
    };
    
    void calcOrderBlock(){
-   
-      if(macdMarketStructure.getLatestTrend() == TREND_BULLISH){
-         calcBullishOrderBlock();
-      }
+      
+      switch(macdMarketStructure.getLatestTrend()){
+         case TREND_BULLISH:
+            calcBullishOrderBlock();
+            break;
+         case TREND_BEARISH:
+            calcBearishOrderBlock();
+            break;
+      };
       
       isOrderBlockCalculated = true;
    
    }
    
    void calcBullishOrderBlock(){
-      int fractalFromRange[];
+      int fractalFromRange[],result[];
       fractal.GetFractalFromRange(macdMarketStructure.getLatestMajorLowIndex(),macdMarketStructure.getInducementIndex()-1,false,fractalFromRange);
    
+      int tmp[];
+      ArrayResize(tmp, macdMarketStructure.getInducementIndex() - macdMarketStructure.getLatestMajorLowIndex()); // max possible size
+      int count = 0;
+      
       for(int i = 0; i<ArraySize(fractalFromRange); i++){
-         Print(i,":",barData.GetTime(fractalFromRange[i]));
          
          InducementBand inducementBand = getInducementBand(fractalFromRange[i]);
          
-         checkBullishFractalSweep(fractalFromRange[i],inducementBand);
+         bool isFractalSweep = checkBullishFractalSweep(fractalFromRange[i],inducementBand);
          
-         Print("---");
+         if(isFractalSweep){
+            tmp[count++] = fractalFromRange[i];
+         }
+
       }
+      
+      ArrayResize(result, count);
+      for (int i = 0; i < count; i++){
+         result[i] = tmp[i];
+      }
+      
+      for(int i = 0; i<ArraySize(result); i++){
+         //Print(i," : fractal sweep : ",barData.GetTime(result[i]));
+      }
+         
+         
    }
    
-   void checkBullishFractalSweep(int fractalIndex,InducementBand &inducementBand){
+   void calcBearishOrderBlock(){
+      int fractalFromRange[],result[];
+      fractal.GetFractalFromRange(macdMarketStructure.getLatestMajorHighIndex(),macdMarketStructure.getInducementIndex()-1,true,fractalFromRange);
+      
+      
+   
+      int tmp[];
+      ArrayResize(tmp, macdMarketStructure.getInducementIndex() - macdMarketStructure.getLatestMajorHighIndex()); // max possible size
+      int count = 0;
+      
+      for(int i = 0; i<ArraySize(fractalFromRange); i++){
+         
+         InducementBand inducementBand = getInducementBand(fractalFromRange[i]);
+         
+         bool isFractalSweep = checkBearishFractalSweep(fractalFromRange[i],inducementBand);
+         
+         if(isFractalSweep){
+            tmp[count++] = fractalFromRange[i];
+         }
+
+      }
+      
+      ArrayResize(result, count);
+      for (int i = 0; i < count; i++){
+         result[i] = tmp[i];
+      }
+      
+      for(int i = 0; i<ArraySize(result); i++){
+         Print(i," : fractal sweep : ",barData.GetTime(result[i]));
+      }
+         
+         
+   }
+   
+   bool checkBullishFractalSweep(int fractalIndex,InducementBand &inducementBand){
       for(int j = fractalIndex-1; j > macdMarketStructure.getPrevMajorLowIndex(); j--){
          if(barData.GetLow(j) < inducementBand.lowerBand){
-            Print(j,": out at candle:",barData.GetTime(j));
-            break;
+            // out of candle to process
+            // candle are break inducement band
+            return false;
          }
-         Print(j,": check at:",barData.GetTime(j));
+         
          if(barData.GetLow(j) >= inducementBand.lowerBand && barData.GetLow(j) <= inducementBand.upperBand){
-            Print(j,": fractal sweep from candle:",barData.GetTime(j));
-            break;
+            // fractal get sweep by wick
+            return true;
          }
       }
+      
+      return false;
+   }
+   
+   bool checkBearishFractalSweep(int fractalIndex,InducementBand &inducementBand){
+      for(int j = fractalIndex-1; j > macdMarketStructure.getPrevMajorHighIndex(); j--){
+         if(barData.GetHigh(j) > inducementBand.upperBand){
+            // out of candle to process
+            // candle are break inducement band
+            return false;
+         }
+         
+         if(barData.GetHigh(j) >= inducementBand.lowerBand && barData.GetHigh(j) <= inducementBand.upperBand){
+            // fractal get sweep by wick
+            return true;
+         }
+      }
+      
+      return false;
    }
    
    InducementBand getInducementBand(int inducementIndex){
@@ -72,8 +148,8 @@ private:
          inducementLowerBand = barData.GetLow(inducementIndex);
       }else{
          // inducement bearish candle
-         inducementUpperBand = barData.GetClose(inducementIndex);
-         inducementLowerBand = barData.GetLow(inducementIndex);
+         inducementUpperBand = barData.GetHigh(inducementIndex);
+         inducementLowerBand = barData.GetOpen(inducementIndex);
       }
       
       InducementBand inducement;

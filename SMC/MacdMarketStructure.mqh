@@ -66,7 +66,7 @@ private:
             if(isInducementBreak){
                inducementDrawing.DrawStraightLine(inducementIndex,inducementBreakAtIndex,inducementPrice);
             }else{
-               //inducementRay.drawRay(inducementIndex,index,inducementPrice);
+               inducementRay.drawRay(inducementIndex,index,inducementPrice);
             }
             bosRay.drawRay(latestMajorHighIndex,index,latestMajorHighPrice);
          }
@@ -193,12 +193,26 @@ private:
          if(getNewMajorLow()){
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             getInducement(TREND_BEARISH);
+            checkInducementBreak(false);
+            if(isInducementBreak){
+               inducementDrawing.DrawStraightLine(inducementIndex,inducementBreakAtIndex,inducementPrice);
+            }else{
+               inducementRay.drawRay(inducementIndex,index,inducementPrice);
+            }
             bosRay.drawRay(latestMajorLowIndex,index,latestMajorLowPrice);
          }
       }
       
       if(latestMajorLowIndex == -1){
          return;
+      }
+      
+      if(!isInducementBreak){
+         checkInducementBreak(false);
+         if(isInducementBreak){
+            inducementRay.deleteRay();
+            inducementDrawing.DrawStraightLine(inducementIndex,inducementBreakAtIndex,inducementPrice);
+         }
       }
       
       if(isLowWickBreak){
@@ -486,6 +500,32 @@ private:
                inducementBreakAtIndex = index;
             }
          }
+      }else if(!isHigh){
+         
+         if(firstTimeCheckInducement){
+            firstTimeCheckInducement = false;
+            int highestHighIndex = barData.getHighestHighValueByRange(latestMajorLowIndex);
+            double highestHighPrice = barData.GetHigh(highestHighIndex);
+            
+            
+            if(highestHighPrice>=inducementPrice){
+               isInducementBreak = true;
+               for(int i = latestMajorLowIndex; i<= index; i++){
+                  if(barData.GetHigh(i)>=inducementPrice){
+                     inducementBreakAtIndex = i;
+                     break;
+                  }
+               }
+               return;
+            }
+            
+         }else{
+            if(barData.GetHigh(index) >= inducementPrice){
+               isInducementBreak = true;
+               inducementBreakAtIndex = index;
+            }
+         }
+         
       }
    }
    
@@ -500,6 +540,7 @@ private:
       inducementIndex = -1;
       inducementPrice = -1;
       inducementBreakAtIndex = -1;
+      inducementRay.deleteRay();
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
@@ -533,6 +574,7 @@ private:
       inducementIndex = -1;
       inducementPrice = -1;
       inducementBreakAtIndex = -1;
+      inducementRay.deleteRay();
       
       prevMajorLowIndex = latestMajorLowIndex;
       prevMajorLowPrice = latestMajorLowPrice;
@@ -569,6 +611,7 @@ private:
       inducementIndex = -1;
       inducementPrice = -1;
       inducementBreakAtIndex = -1;
+      inducementRay.deleteRay();
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
@@ -600,6 +643,7 @@ private:
       inducementIndex = -1;
       inducementPrice = -1;
       inducementBreakAtIndex = -1;
+      inducementRay.deleteRay();
       
       prevMajorHighIndex = latestMajorHighIndex;
       prevMajorHighPrice = latestMajorHighPrice;
@@ -750,6 +794,10 @@ public:
    
    int getPrevMajorLowIndex(){
       return prevMajorLowIndex;
+   }
+   
+   int getPrevMajorHighIndex(){
+      return prevMajorHighIndex;
    }
    
    double getLatestmajorHighPrice(){
