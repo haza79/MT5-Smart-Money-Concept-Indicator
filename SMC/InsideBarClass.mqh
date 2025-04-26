@@ -52,6 +52,8 @@ public:
             motherBarHigh = high[i-1];
             motherBarLow = low[i-1];
             
+            motherBarBuffer[i-1] = 1;
+            insideBarBuffer[i] = 1;
             motherBarTopBuffer[i-1]    = motherBarHigh;
             motherBarBottomBuffer[i-1] = motherBarLow;
             motherBarTopBuffer[i]      = motherBarHigh;
@@ -59,6 +61,7 @@ public:
          }
       }else{
          if(IsInsideMotherBar(i,high,low)){
+            insideBarBuffer[i] = 1;
             motherBarTopBuffer[i] = motherBarHigh;
             motherBarBottomBuffer[i] = motherBarLow;
          }else{

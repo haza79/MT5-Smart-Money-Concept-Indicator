@@ -264,7 +264,7 @@ int OnInit()
     macdMarketStructure.init(&macdFractal,&barData,&fractal);
     fibonacci.init(&barData,&macdMarketStructure);
     plotFiboOnChart.init(&fibonacci,&barData);
-    orderBlock.Init(&barData,&macdMarketStructure,&fractal);
+    orderBlock.Init(&barData,&macdMarketStructure,&fractal,&insideBar);
     
 
     return(INIT_SUCCEEDED);
@@ -288,6 +288,7 @@ int OnCalculate(const int rates_total,
        return rates_total;
    }
    // 2024.12.17
+   // usdjpy 2567.9.2
 
    ArrayResize(FibUpper,rates_total);
    ArrayResize(FibLower,rates_total);
