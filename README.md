@@ -14,6 +14,7 @@ graph TD;
     MACD-->MacdMarketStructure;
     MacdFractal-->MacdMarketStructure;
     Fractal-->MacdMarketStructure;
+    Fractal-->OrderBlock;
     MacdMarketStructure-->Fibonacci;
     MacdMarketStructure-->OrderBlock;
 ```
