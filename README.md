@@ -6,6 +6,18 @@ The **Smart Money Concept with Price Action** indicator for MetaTrader 5 is a po
 
 Once completed, this indicator will assist traders in identifying key market structures, such as **Break of Structure (BOS)**, **Change of Character (CHOCH)**, and significant swing points, with precision and speed.
 
+```mermaid
+graph TD;
+    InsideBarClass-->ImpulsePullbackDetector;
+    ImpulsePullbackDetector-->Fractal;
+    MACD-->MacdFractal;
+    MACD-->MacdMarketStructure;
+    MacdFractal-->MacdMarketStructure;
+    Fractal-->MacdMarketStructure;
+    MacdMarketStructure-->Fibonacci;
+    MacdMarketStructure-->OrderBlock;
+```
+
 ---
 
 ## Key Features (Work in Progress)
