@@ -192,8 +192,8 @@ int OnInit()
     SetIndexBuffer(7, macdFractal.macdLowFractalBuffer, INDICATOR_DATA);
     PlotIndexSetInteger(5,PLOT_ARROW_SHIFT,-15);
     PlotIndexSetInteger(6,PLOT_ARROW_SHIFT,15);
-    PlotIndexSetInteger(5, PLOT_ARROW, 169);
-    PlotIndexSetInteger(6, PLOT_ARROW, 169);
+    PlotIndexSetInteger(5, PLOT_ARROW, 161);
+    PlotIndexSetInteger(6, PLOT_ARROW, 161);
     
     SetIndexBuffer(8, macdMarketStructure.majorSwingHighBuffer, INDICATOR_DATA);
     SetIndexBuffer(9, macdMarketStructure.majorSwingLowBuffer, INDICATOR_DATA);
@@ -220,8 +220,8 @@ int OnInit()
     
    SetIndexBuffer(22, balanceOfPowerReverseCandle.bearishReverse, INDICATOR_DATA);
    SetIndexBuffer(23, balanceOfPowerReverseCandle.bullishReverse, INDICATOR_DATA);
-   PlotIndexSetInteger(21, PLOT_ARROW, 234);
-   PlotIndexSetInteger(22, PLOT_ARROW, 233);
+   //PlotIndexSetInteger(21, PLOT_ARROW, 234);
+   //PlotIndexSetInteger(22, PLOT_ARROW, 233);
     
     // mother bar fractal
     
@@ -264,7 +264,7 @@ int OnInit()
     macdMarketStructure.init(&macdFractal,&barData,&fractal);
     fibonacci.init(&barData,&macdMarketStructure);
     plotFiboOnChart.init(&fibonacci,&barData);
-    orderBlock.Init(&barData,&macdMarketStructure,&fractal,&insideBar);
+    orderBlock.Init(&barData,&macdMarketStructure,&fractal,&insideBar,&fibonacci);
     
 
     return(INIT_SUCCEEDED);
@@ -290,13 +290,14 @@ int OnCalculate(const int rates_total,
    // 2024.12.17
    // usdjpy 2567.9.2
 
+/*
    ArrayResize(FibUpper,rates_total);
    ArrayResize(FibLower,rates_total);
    
    for(int i = rates_total-1; i>rates_total-100; i--){
       FibUpper[i] = high[rates_total-100];
       FibLower[i] = low[rates_total-100];
-   }
+   }*/
    
    
 
@@ -322,6 +323,7 @@ int OnCalculate(const int rates_total,
 
       }
       
+      /*
       static string lastComment = "";
       string newComment = 
       "Trend: " + macdMarketStructure.getLatestTrendAsString() + "\n"
@@ -330,7 +332,7 @@ int OnCalculate(const int rates_total,
       if(newComment != lastComment) {
           Comment(newComment);
           lastComment = newComment;
-      }
+      }*/
       
       /*
       string comment = "TREND :  "+macdMarketStructure.getLatestTrendAsString()+"\n"

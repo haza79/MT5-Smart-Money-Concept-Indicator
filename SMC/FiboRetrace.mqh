@@ -1,63 +1,55 @@
 #ifndef FIBORETRACE_MQH
 #define FIBORETRACE_MQH
 
-#include "Enums.mqh";
+#include "Enums.mqh"
 
 class FiboRetrace {
-
 private:
-    double fiboLevel[Fibo_Count];
-    double fiboValue[Fibo_Count];
+    double fiboLevel[];
+    double fiboValue[];
     double swingRange;
 
 public:
-    // Constructor
-    int swingHighIndex,swingLowIndex;
-    FiboRetrace() {
-        // Initialize fiboValues
-        static const double tempFiboValues[Fibo_Count] = {
-            0.236, 0.382, 0.5, 0.618, 0.786, 0.887, 
-            1.13, 1.272, 1.618, 2.618, 4.236
-        };
+    int swingHighIndex, swingLowIndex;
 
-        ArrayCopy(fiboLevel, tempFiboValues);
+    // Default constructor
+    FiboRetrace() {}
+
+    // Set fibo levels dynamically
+    void setLevels(const double &inputLevels[]) {
+        int count = ArraySize(inputLevels);
+        ArrayResize(fiboLevel, count);
+        ArrayResize(fiboValue, count);
+
+        for (int i = 0; i < count; i++)
+            fiboLevel[i] = inputLevels[i];
     }
-   
-    // Calculate Fibonacci Circle levels
+
     void calculateFibo(double swingHigh, double swingLow, Trend trend) {
         swingRange = swingHigh - swingLow;
-        
-        for (int i = 0; i < Fibo_Count; i++) {
+        for (int i = 0; i < ArraySize(fiboLevel); i++) {
             double fiboLevelCalc = 0;
-            if(trend == TREND_BULLISH){
-               fiboLevelCalc = swingHigh - (swingRange*fiboLevel[i]);
-            }else if(trend == TREND_BEARISH){
-               fiboLevelCalc = swingLow + (swingRange*fiboLevel[i]);
-            }
+            if (trend == TREND_BULLISH)
+                fiboLevelCalc = swingHigh - (swingRange * fiboLevel[i]);
+            else if (trend == TREND_BEARISH)
+                fiboLevelCalc = swingLow + (swingRange * fiboLevel[i]);
+
             fiboValue[i] = fiboLevelCalc;
         }
     }
     
-    // Add this function inside the FiboCircle class
-double getFiboLevel(FiboLevel level) {
-    if (level < 0 || level >= Fibo_Count) {
-        Print("Invalid FiboLevel enum value.");
-        return 0.0;
+
+    double getFiboLevel(int index) {
+        if (index < 0 || index >= ArraySize(fiboValue)) return 0.0;
+        return fiboValue[index];
     }
 
-    // Return the top or bottom value based on the 'isTop' flag
-    return fiboValue[level];
-}
-
-
-    // Print all Fibonacci levels with their values
     void printFiboLevels() {
-        Print("Fibonacci Circle Levels:");
-        for (int i = 0; i < Fibo_Count; i++) {
-            PrintFormat("Level: %f, Value: %f", fiboLevel[i], fiboValue[i]);
+        for (int i = 0; i < ArraySize(fiboLevel); i++) {
+            PrintFormat("Level: %.3f, Value: %.5f", fiboLevel[i], fiboValue[i]);
         }
     }
-
 };
+
 
 #endif

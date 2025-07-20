@@ -173,10 +173,10 @@ public:
                return;
             }
             
-            fibo_retrace_500_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_500));
-            fibo_retrace_618_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_618));
-            fibo_retrace_786_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_786));
-            fibo_retrace_887_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(Fibo_887));
+            fibo_retrace_500_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(0));
+            fibo_retrace_618_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(1));
+            fibo_retrace_786_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(2));
+            fibo_retrace_887_ray.drawRay(startIndex,index,fibonacci.fiboRetrace.getFiboLevel(3));
             
          }
          

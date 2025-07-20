@@ -16,6 +16,7 @@ private:
     int macdSwingHigh, macdSwingLow;
     double macdSwingHighPrice, macdSwingLowPrice;
     int getMarketBreakAtIndex;
+
     
 
     void fiboCircleHandle() {
@@ -39,6 +40,7 @@ private:
             fiboRetrace.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
             fiboRetrace.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice(),macdMarketStructure.getLatestTrend());
             isFiboRetraceCalculated = true;
+            fiboRetrace.printFiboLevels();
          }
         
     }
@@ -80,6 +82,10 @@ public:
       isFiboCircleCalculated = false;
       isFiboTimeZoneCalculated = false;
       isFiboRetraceCalculated = false;
+      
+      double fiboRetraceLevel[] = {0.5,0.618,0.786,0.887};
+      fiboRetrace.setLevels(fiboRetraceLevel);
+      
    }
    
     void init(BarData* barDataInstance, MacdMarketStructureClass* macdMarketStructureInstance) {

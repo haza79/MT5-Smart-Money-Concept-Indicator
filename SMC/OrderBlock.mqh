@@ -7,7 +7,7 @@
 #include "Fractal.mqh";
 #include "CandleBreakAnalyzerStatic.mqh";
 #include "InsideBarClass.mqh";
-
+#include "Fibonacci.mqh";
 
 class OrderBlock{
 
@@ -19,6 +19,7 @@ private:
    MacdMarketStructureClass* macdMarketStructure;
    FractalClass* fractal;
    InsideBarClass *insideBar;
+   Fibonacci *fibonacci;
    
    int getMarketBreakAtIndex;
    
@@ -31,31 +32,72 @@ private:
       
       switch(macdMarketStructure.getLatestTrend()){
          case TREND_BULLISH:
+            Print("bullish orderblock at major swing H:",barData.GetTime(macdMarketStructure.getLatestMajorHighIndex())," L:",barData.GetTime(macdMarketStructure.getPrevMajorLowIndex()));
             calcBullishOrderBlock();
             break;
          case TREND_BEARISH:
+            Print("bearish orderblock at major swing H:",barData.GetTime(macdMarketStructure.getLatestMajorHighIndex())," L:",barData.GetTime(macdMarketStructure.getPrevMajorLowIndex()));
             calcBearishOrderBlock();
             break;
       };
       
+      Print("++++++++");
       isOrderBlockCalculated = true;
    
    }
    
    void calcBullishOrderBlock(){
-      int fractalFromRange[],result[];
+      int fractalFromRange[],result[],orderBlock[];
       fractal.GetFractalFromRange(macdMarketStructure.getLatestMajorLowIndex(),macdMarketStructure.getInducementIndex()-1,false,fractalFromRange);
-   
-      int tmp[];
+      
+      int fractalRemoveCount = ArraySize(fractalFromRange);
+      if (fractalRemoveCount == 0)
+         return; // nothing to do
+      
+      double fiboLevel = fibonacci.fiboRetrace.getFiboLevel(0);
+      
+      for (int i = fractalRemoveCount - 1; i >= 0; i--) {
+          int fractalIndex = fractalFromRange[i];
+          double low = barData.GetLow(fractalIndex);
+      
+          if (low < fiboLevel) {
+              ArrayRemove(fractalFromRange, i + 1);  // Keep elements 0..i
+              break;
+          }
+      }
+      
+
+      
+      int tmp[],orderBlockTmp[];
       ArrayResize(tmp, macdMarketStructure.getInducementIndex() - macdMarketStructure.getLatestMajorLowIndex()); // max possible size
-      int count = 0;
+      ArrayResize(orderBlockTmp, macdMarketStructure.getInducementIndex() - macdMarketStructure.getLatestMajorLowIndex()); // max possible size
+      int count = 0,orderBlockCount = 0;
       
       for(int i = 0; i<ArraySize(fractalFromRange); i++){
+      
+         int getFractal = fractalFromRange[i];
          
-         InducementBand inducementBand = getInducementBand(fractalFromRange[i]);
+         InducementBand inducementBand = getInducementBand(getFractal);
          
-         bool isFractalSweep = checkBullishFractalSweep(fractalFromRange[i],inducementBand);
+         bool isFractalSweep = checkBullishFractalSweep(getFractal,inducementBand);
          
+         if(isFractalSweep){
+            
+            bool isFvg = identifyFVG(TREND_BULLISH,getFractal,getFractal+1,getFractal+2);
+            
+            int lowestLowIndex = barData.getLowestLowValueByRange(getFractal+3);
+            double lowestLowPrice = barData.GetLow(lowestLowIndex);
+            
+            if(lowestLowPrice<=barData.GetHigh(getFractal)){
+               continue;
+            }
+            
+            if(isFvg){
+               orderBlockTmp[orderBlockCount++] = getFractal;
+            }
+         }
+         
+         /*
          if(insideBar.GetMotherBar(fractalFromRange[i]) == 1){
             // fractal are mother bar
          }else{
@@ -65,9 +107,10 @@ private:
                Print("orderblock:",barData.GetTime(fractalFromRange[i])," | have fvg");
             }
          }
+         */
          
          if(isFractalSweep){
-            tmp[count++] = fractalFromRange[i];
+            tmp[count++] = getFractal;
          }
 
       }
@@ -77,8 +120,18 @@ private:
          result[i] = tmp[i];
       }
       
+      ArrayResize(orderBlock, orderBlockCount);
+      for (int i = 0; i < orderBlockCount; i++){
+         orderBlock[i] = orderBlockTmp[i];
+      }
+      
+      
       for(int i = 0; i<ArraySize(result); i++){
-         //Print(i," : fractal sweep : ",barData.GetTime(result[i]));
+         Print(i," : fractal sweep : ",barData.GetTime(result[i]));
+      }
+      
+      for(int i = 0; i<ArraySize(orderBlock); i++){
+         Print(i," : orderblock : ",barData.GetTime(orderBlock[i]));
       }
          
          
@@ -123,21 +176,36 @@ private:
       if(firstCandleIndex < 0 || secondCandleIndex < 0 || thirdCandleIndex < 0)
          return false;
    
-      if(trend == TREND_BULLISH)
-      {
-         // Bullish FVG: second candle low > first candle high AND third candle low > first candle high
-         if(barData.GetLow(secondCandleIndex) > barData.GetHigh(firstCandleIndex) &&
-            barData.GetLow(thirdCandleIndex) > barData.GetHigh(firstCandleIndex))
-         {
-            return true;
+      double firstCandleHigh,firstCandleLow,secondCandleHigh,secondCandleLow,thirdCandleHigh,thirdCandleLow;
+      
+      firstCandleHigh = barData.GetHigh(firstCandleIndex);
+      secondCandleHigh = barData.GetHigh(secondCandleIndex);
+      thirdCandleHigh = barData.GetHigh(thirdCandleIndex);
+      
+      firstCandleLow = barData.GetLow(firstCandleIndex);
+      secondCandleLow = barData.GetLow(secondCandleIndex);
+      thirdCandleLow = barData.GetLow(thirdCandleIndex);
+      
+      if(trend == TREND_BULLISH){
+         if(secondCandleHigh > firstCandleHigh &&
+            secondCandleLow <= firstCandleHigh &&
+            secondCandleLow > firstCandleLow &&
+            thirdCandleHigh > secondCandleHigh &&
+            thirdCandleLow <= secondCandleHigh &&
+            thirdCandleLow > secondCandleLow){
+            
+            // fvg
+            return true;   
          }
       }
-      else if(trend == TREND_BEARISH)
-      {
-         // Bearish FVG: second candle high < first candle low AND third candle high < first candle low
-         if(barData.GetHigh(secondCandleIndex) < barData.GetLow(firstCandleIndex) &&
-            barData.GetHigh(thirdCandleIndex) < barData.GetLow(firstCandleIndex))
-         {
+      else if(trend == TREND_BEARISH){
+         if(secondCandleHigh >= firstCandleLow &&
+            secondCandleHigh < firstCandleHigh &&
+            secondCandleLow < firstCandleLow &&
+            thirdCandleHigh >= secondCandleLow &&
+            thirdCandleHigh < secondCandleHigh &&
+            thirdCandleLow < secondCandleLow){
+            // fvg
             return true;
          }
       }
@@ -210,11 +278,12 @@ private:
    
 public:
 
-   void Init(BarData* barDataInstance,MacdMarketStructureClass* macdMarketStructureInstance,FractalClass* fractalInstance,InsideBarClass *insideBarInstance){
+   void Init(BarData* barDataInstance,MacdMarketStructureClass* macdMarketStructureInstance,FractalClass* fractalInstance,InsideBarClass *insideBarInstance,Fibonacci *fibonacciInstance){
       barData = barDataInstance;
       macdMarketStructure = macdMarketStructureInstance;
       fractal = fractalInstance;
       insideBar = insideBarInstance;
+      fibonacci = fibonacciInstance;
       
       isOrderBlockCalculated = false;
    }

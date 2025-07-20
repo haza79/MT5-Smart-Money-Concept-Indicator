@@ -298,6 +298,7 @@ private:
          // not wick break
          if(isPriceBreakHighByBobyOrGap()){
             // bullish bos
+            //Print("error at ",barData.GetTime(index));
             updateBullishChochVariable();
             majorSwingLowBuffer[latestMajorLowIndex] = latestMajorLowPrice;
             bullishChochDrawing.DrawStraightLine(prevMajorHighIndex,index,prevMajorHighPrice);
@@ -482,15 +483,15 @@ private:
             int lowestLowIndex = barData.getLowestLowValueByRange(latestMajorHighIndex);
             double lowestLowPrice = barData.GetLow(lowestLowIndex);
             
-            
             if(lowestLowPrice<=inducementPrice){
                isInducementBreak = true;
-               for(int i = latestMajorHighIndex; i<= index; i++){
-                  if(barData.GetLow(i)<=inducementPrice){
+               for(int i = inducementIndex+1; i<= lowestLowIndex; i++){
+                  if(barData.GetLow(i) <= inducementPrice){
                      inducementBreakAtIndex = i;
                      break;
                   }
                }
+
                return;
             }
             
@@ -510,12 +511,14 @@ private:
             
             if(highestHighPrice>=inducementPrice){
                isInducementBreak = true;
-               for(int i = latestMajorLowIndex; i<= index; i++){
-                  if(barData.GetHigh(i)>=inducementPrice){
+               
+               for(int i = inducementIndex+1; i<= highestHighIndex; i++){
+                  if(barData.GetHigh(i) >= inducementPrice){
                      inducementBreakAtIndex = i;
                      break;
                   }
                }
+               
                return;
             }
             
