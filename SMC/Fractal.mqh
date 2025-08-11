@@ -43,7 +43,9 @@ int highFractalCount, lowFractalCount;        // Count of collected fractals'
       ArrayResize(lowFractalIndices, 10); // Initialize with a capacity of 10
    }
 
-   void Calculate(const int &i, const double &high[], const double &low[]) {
+   void Calculate(const int &i, const double &high[], const double &low[], const int &rate_total) {
+   ArrayResize(highFractalBuffer,rate_total);
+   ArrayResize(lowFractalBuffer,rate_total);
    highFractalBuffer[i] = EMPTY_VALUE;
    lowFractalBuffer[i] = EMPTY_VALUE;
       int getLatestSwingHigh = impulsePullbackDetector.latestSwingHighIndex;

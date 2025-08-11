@@ -32,16 +32,13 @@ private:
       
       switch(macdMarketStructure.getLatestTrend()){
          case TREND_BULLISH:
-            Print("bullish orderblock at major swing H:",barData.GetTime(macdMarketStructure.getLatestMajorHighIndex())," L:",barData.GetTime(macdMarketStructure.getPrevMajorLowIndex()));
             calcBullishOrderBlock();
             break;
          case TREND_BEARISH:
-            Print("bearish orderblock at major swing H:",barData.GetTime(macdMarketStructure.getLatestMajorHighIndex())," L:",barData.GetTime(macdMarketStructure.getPrevMajorLowIndex()));
             calcBearishOrderBlock();
             break;
       };
       
-      Print("++++++++");
       isOrderBlockCalculated = true;
    
    }
@@ -82,9 +79,34 @@ private:
          bool isFractalSweep = checkBullishFractalSweep(getFractal,inducementBand);
          
          if(isFractalSweep){
+         
+            bool isFvg = false;
             
-            bool isFvg = identifyFVG(TREND_BULLISH,getFractal,getFractal+1,getFractal+2);
+            isFvg = identifyFVG(TREND_BULLISH,getFractal,getFractal+1,getFractal+2);
             
+            /*
+            // mother bar fvg
+            if(insideBar.GetMotherBar(getFractal) == 1){
+               
+               int findInsideBarCount = getFractal+1;
+               while(findInsideBarCount < macdMarketStructure.getLatestMajorHighIndex()){
+                  int result = insideBar.GetInsideBar(findInsideBarCount);
+                  
+                  if(result == 0){
+                     isFvg = identifyFVG(TREND_BULLISH,getFractal,findInsideBarCount,findInsideBarCount+1);
+                     break;
+                  }
+                  
+                  findInsideBarCount++;
+               }
+               
+            }else{
+               isFvg = identifyFVG(TREND_BULLISH,getFractal,getFractal+1,getFractal+2);
+            }
+            //
+            */
+            
+            // check is orderblock are taked
             int lowestLowIndex = barData.getLowestLowValueByRange(getFractal+3);
             double lowestLowPrice = barData.GetLow(lowestLowIndex);
             
@@ -92,22 +114,13 @@ private:
                continue;
             }
             
+            //
+            
             if(isFvg){
                orderBlockTmp[orderBlockCount++] = getFractal;
             }
          }
          
-         /*
-         if(insideBar.GetMotherBar(fractalFromRange[i]) == 1){
-            // fractal are mother bar
-         }else{
-            // fractal not mother bar
-            bool isFvg = identifyFVG(TREND_BULLISH,fractalFromRange[i],fractalFromRange[i]+1,fractalFromRange[i]+2);
-            if(isFvg){
-               Print("orderblock:",barData.GetTime(fractalFromRange[i])," | have fvg");
-            }
-         }
-         */
          
          if(isFractalSweep){
             tmp[count++] = getFractal;
@@ -125,14 +138,17 @@ private:
          orderBlock[i] = orderBlockTmp[i];
       }
       
-      
+      /*
       for(int i = 0; i<ArraySize(result); i++){
          Print(i," : fractal sweep : ",barData.GetTime(result[i]));
       }
+      */
+      
       
       for(int i = 0; i<ArraySize(orderBlock); i++){
          Print(i," : orderblock : ",barData.GetTime(orderBlock[i]));
       }
+      
          
          
    }
@@ -164,9 +180,11 @@ private:
          result[i] = tmp[i];
       }
       
+      /*
       for(int i = 0; i<ArraySize(result); i++){
          Print(i," : fractal sweep : ",barData.GetTime(result[i]));
       }
+      */
          
          
    }

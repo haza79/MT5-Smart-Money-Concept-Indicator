@@ -40,7 +40,6 @@ private:
             fiboRetrace.swingLowIndex = macdMarketStructure.getLatestMajorLowIndex();
             fiboRetrace.calculateFibo(macdMarketStructure.getLatestmajorHighPrice(), macdMarketStructure.getLatestMajorLowPrice(),macdMarketStructure.getLatestTrend());
             isFiboRetraceCalculated = true;
-            fiboRetrace.printFiboLevels();
          }
         
     }

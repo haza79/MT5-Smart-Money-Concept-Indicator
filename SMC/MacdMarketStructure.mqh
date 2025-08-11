@@ -859,6 +859,8 @@ public:
 
    void update(int Iindex, int totalBars){
    
+   Print("ms start at index:",Iindex," ",barData.GetTime(Iindex));
+   
       ArrayResize(bullishBosDrawing.buffer, totalBars);
       ArrayResize(bullishChochDrawing.buffer, totalBars);
       ArrayResize(bearishBosDrawing.buffer, totalBars);
